@@ -2,11 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:
 
-#ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
-EGIT_REPO_URI="http://musicpd.org/~normalperson/mpd-ke/mpd-ke.git"
-EGIT_STORE_DIR="${DISTDIR}/git-src"
-#EGIT_BOOTSTRAP="autogen.sh"
 inherit git
+EGIT_REPO_URI="http://musicpd.org/~normalperson/mpd-ke/mpd-ke.git"
+EGIT_STORE_DIR="/usr/distfiles/git-src/"
 
 S="${WORKDIR}/${P}"
 

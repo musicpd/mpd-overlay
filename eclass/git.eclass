@@ -35,8 +35,8 @@ DEPEND="dev-util/cogito"
 
 
 ## -- EGIT_STORE_DIR:  subversion sources store directory
-#
-EGIT_STORE_DIR="${DISTDIR}/git-src"
+#EGIT_STORE_DIR="${DISTDIR}/git-src"
+EGIT_STORE_DIR="/usr/distfiles/git-src"
 
 
 ## -- EGIT_FETCH_CMD:  subversion fetch command
@@ -90,7 +90,7 @@ function git_fetch() {
 	fi
 
 	cd -P "${EGIT_STORE_DIR}" || die "${EGIT}: can't chdir to ${EGIT_STORE_DIR}"
-	EGIT_STORE_DIR=${PWD}
+	#EGIT_STORE_DIR=${PWD}
 
 	# every time
 	addwrite "${EGIT_STORE_DIR}"
