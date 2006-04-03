@@ -95,7 +95,9 @@ function git_fetch() {
 	case ${EGIT_REPO_URI%%:*} in
 		rsync)	;;
 		ssh)	;;
-		http)	;;
+		http)	
+			einfo "Fetching will fail if dev-util/git is compiled without the curl USE flag"
+			;;
 		*)
 			die "${EGITN}: fetch from "${EGIT_REPO_URI%:*}" is not yet implemented."
 			;;
