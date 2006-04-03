@@ -40,16 +40,27 @@ EGIT_STORE_DIR="${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}/git-src"
 ## -- EGIT_REV:  something other than the head is being requested
 [ -z "${EGIT_REV}" ] && EGIT_REV="HEAD"
 
-## -- EGIT_FETCH_CMD:  subversion fetch command
+
+## -- EGIT_REV:  something other than the head is being requested
+[ -z "${EGIT_REV}" ] && EGIT_REV="HEAD"
+
+
+## -- EGIT_EXPORT_CMD:  cogito export command
+[ -z "${EGIT_EXPORT_CMD}" ] && EGIT_EXPORT_CMD="cg-export"
+
+
+## -- EGIT_FETCH_CMD:  cogito fetch command
 #
 # default: git checkout
 #
 [ -z "${EGIT_FETCH_CMD}" ]  && EGIT_FETCH_CMD="cg-clone"
+
+
+## -- EGIT_UPDATE_CMD:  cogito update command
 [ -z "${EGIT_UPDATE_CMD}" ]  && EGIT_UPDATE_CMD="cg-update"
 
 
 ## -- EGIT_REPO_URI:  repository uri
-#
 [ -z "${EGIT_REPO_URI}" ]  && EGIT_REPO_URI=""
 
 
@@ -66,7 +77,6 @@ EGIT_STORE_DIR="${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}/git-src"
 
 
 ## -- EGIT_BOOSTRAP:  bootstrap script like autogen.sh or etc...
-#
 [ -z "${EGIT_BOOTSTRAP}" ] && EGIT_BOOTSTRAP=""
 
 ## -- git_bootstrap() --------------------------------------------- #
@@ -145,8 +155,7 @@ function git_fetch() {
 
 	fi
 
-	# copy to the ${WORKDIR}
-	
+	# export to the ${WORKDIR}	
         cd "${EGIT_STORE_DIR}/${EGIT_CO_DIR}" || die "${EGIT}: couldn't cd to store directory."
         cg-export -r "${EGIT_REV}" "${S}" || die "${EGIT}: can't export copy to ${S}."
 
