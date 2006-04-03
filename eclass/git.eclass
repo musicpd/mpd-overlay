@@ -37,6 +37,9 @@ DEPEND="dev-util/cogito"
 ## -- EGIT_STORE_DIR:  subversion sources store directory
 EGIT_STORE_DIR="${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}/git-src"
 
+## -- EGIT_REV:  something other than the head is being requested
+[ -z "${EGIT_REV}" ] && EGIT_REV="HEAD"
+
 ## -- EGIT_FETCH_CMD:  subversion fetch command
 #
 # default: git checkout
@@ -143,9 +146,11 @@ function git_fetch() {
 	fi
 
 	# copy to the ${WORKDIR}
-	cp -Rf "${EGIT_STORE_DIR}/${EGIT_CO_DIR}" "${S}" || die "${EGIT}: can't copy to ${S}."
-	einfo "     copied to: ${S}"
-	echo
+	
+        cd "${EGIT_STORE_DIR}/${EGIT_CO_DIR}" || die "${EGIT}: couldn't cd to store directory."
+        cg-export -r "${EGIT_REV}" "${S}" || die "${EGIT}: can't export copy to ${S}."
+
+	einfo "     exported to: ${S}"
 
 }
 
