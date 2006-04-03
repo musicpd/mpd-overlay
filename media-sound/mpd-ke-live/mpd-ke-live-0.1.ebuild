@@ -5,11 +5,12 @@
 inherit git
 EGIT_REPO_URI="http://musicpd.org/~normalperson/mpd-ke/mpd-ke.git"
 EGIT_STORE_DIR="/usr/distfiles/git-src/"
+EGIT_BOOTSTRAP="./autogen.sh"
 
 S="${WORKDIR}/${P}"
 
 IUSE="ao alsa oss mp3 aac ao audiofile flac icecast ipv6 mad mpd-mad \
-	mpd-id3tag mikmod musepack mod mpc ogg vorbis"
+	mpd-id3tag mikmod musepack mod mpc ogg vorbis unicode"
 DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
 HOMEPAGE="http://musicpd.org/"
 
@@ -35,20 +36,7 @@ DEPEND="dev-util/gperf
 RDEPEND="!media-sound/mpd \
 	!media-sound/mpd-svn"
 
-upgrade_warning() {
-        echo
-        ewarn "This package now correctly uses 'vorbis' USE flag, instead of 'ogg'."
-        ewarn "See http://bugs.gentoo.org/show_bug.cgi?id=101877 for details."
-        echo
-        ewarn "Home directory of user mpd, as well as default locations in mpd.conf have"
-        ewarn "been changed to /var/lib/mpd, please bear that in mind while updating"
-        ewarn "your mpd.conf file."
-        echo
-        epause 7
-}
-
 pkg_setup() {
-        upgrade_warning
         enewuser mpd '' '' "/var/lib/mpd" audio || die "problem adding user mpd"
 
         # also change the homedir if the user has existed before
@@ -57,7 +45,7 @@ pkg_setup() {
 
 
 src_compile() {
-	./autogen.sh \
+	econf \
                 $(use_enable alsa) \
                 $(use_enable alsa alsatest) \
                 $(use_enable oss) \
@@ -145,6 +133,5 @@ pkg_postinst() {
         ewarn "Note that this is just a development version of Music Player Daemon,"
         ewarn "so if you want to report any bug to MPD developers, please state this fact in"
         ewarn "your bug report, as well as the fact that you used a ${P} Gentoo ebuild."
-        upgrade_warning
 }
 

@@ -10,7 +10,7 @@ inherit subversion
 S="${WORKDIR}/${P}"
 
 IUSE="ao alsa oss mp3 aac ao audiofile flac icecast ipv6 mad mpd-mad \
-	mpd-id3tag mikmod musepack mod mpc ogg vorbis"
+	mpd-id3tag mikmod musepack mod mpc ogg vorbis unicode"
 DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
 HOMEPAGE="http://musicpd.org/"
 
