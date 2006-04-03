@@ -35,9 +35,7 @@ DEPEND="dev-util/cogito"
 
 
 ## -- EGIT_STORE_DIR:  subversion sources store directory
-#EGIT_STORE_DIR="${DISTDIR}/git-src"
-EGIT_STORE_DIR="/usr/distfiles/git-src"
-
+EGIT_STORE_DIR="${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}/git-src"
 
 ## -- EGIT_FETCH_CMD:  subversion fetch command
 #
@@ -62,6 +60,29 @@ EGIT_STORE_DIR="/usr/distfiles/git-src"
 # default: ${PN/-git}.
 #
 [ -z "${EGIT_PROJECT}" ] && EGIT_PROJECT="${PN/-git}"
+
+
+## -- EGIT_BOOSTRAP:  bootstrap script like autogen.sh or etc...
+#
+[ -z "${EGIT_BOOTSTRAP}" ] && EGIT_BOOTSTRAP=""
+
+## -- git_bootstrap() --------------------------------------------- #
+
+function git_bootstrap() {
+	cd "${S}"
+
+	if [ "${EGIT_BOOTSTRAP}" ]; then
+		einfo "begin bootstrap -->"
+
+		if [ -f "$EGIT_BOOTSTRAP" -a -x "${EGIT_BOOTSTRAP}" ]; then
+			einfo "   bootstrap with a file: ${EGIT_BOOTSTRAP}"
+			eval "./${EGIT_BOOTSTRAP}" || die "${EGIT}: can't execute EGIT_BOOTSTRAP"
+		else
+			einfo "   bootstrap with commands: ${EGIT_BOOTSTRAP}"
+			eval "${EGIT_BOOTSTRAP}" || die "${EGIT}: can't eval EGIT_BOOTSTRAP"
+		fi
+	fi 
+}
 
 
 ## -- git_fetch() ------------------------------------------------- #
@@ -90,7 +111,7 @@ function git_fetch() {
 	fi
 
 	cd -P "${EGIT_STORE_DIR}" || die "${EGIT}: can't chdir to ${EGIT_STORE_DIR}"
-	#EGIT_STORE_DIR=${PWD}
+	EGIT_STORE_DIR=${PWD}
 
 	# every time
 	addwrite "${EGIT_STORE_DIR}"
@@ -134,4 +155,5 @@ function git_src_unpack() {
 		unpack ${A}
 	fi
 	git_fetch || die "${EGIT}: unknown problem in git_fetch()."
+	git_bootstrap || die "${EGIT}: unknown problem in git_bootstrap()."
 }
