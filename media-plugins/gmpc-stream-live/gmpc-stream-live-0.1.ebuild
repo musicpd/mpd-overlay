@@ -2,10 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/media-sound/gmpc/gmpc-0.12.0-r1.ebuild,v 1.8 2005/11/11 23:26:32 hansmi Exp $
 
-IUSE="gnome"
-
 ESVN_REPO_URI="https://svn.qballcow.nl/gmpc-stream/trunk/"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
 ESVN_BOOTSTRAP="autogen.sh"
 inherit subversion
 

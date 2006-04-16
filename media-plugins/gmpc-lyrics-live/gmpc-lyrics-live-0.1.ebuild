@@ -2,8 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_REPO_URI="https://svn.qballcow.nl/gmpc-mdcover/trunk/"
+ESVN_REPO_URI="https://ssl.bulix.org/svn/gmpc-lyrics/trunk/"
 ESVN_BOOTSTRAP="autogen.sh"
+ESVN_PATCHES="thread.diff"
 inherit subversion
 
 DESCRIPTION="A GMPC plugin to generate playlists based on rules"
@@ -13,10 +14,10 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 
-DEPEND="net-misc/curl
-	media-sound/gmpc-live"
+DEPEND="media-sound/gmpc-live net-misc/curl"
 
 src_install()  {
+        # This makefile ignores DEST, so manual installation
         insinto "/usr/share/gmpc/plugins"
-        doins "src/.libs/mdcaplugin.so"
+        doins "src/.libs/lyricsplugin.so"
 }

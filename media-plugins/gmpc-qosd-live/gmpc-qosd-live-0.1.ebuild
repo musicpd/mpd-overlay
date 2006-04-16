@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-IUSE="gnome"
-
 ESVN_REPO_URI="https://svn.qballcow.nl/gmpc-qosd/trunk/"
 ESVN_BOOTSTRAP="autogen.sh"
 inherit subversion
