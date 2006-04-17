@@ -4,7 +4,7 @@
 
 ESVN_REPO_URI="https://ssl.bulix.org/svn/gmpc-lyrics/trunk/"
 ESVN_BOOTSTRAP="autogen.sh"
-ESVN_PATCHES="thread.diff"
+ESVN_PATCHES="thread2.diff"
 inherit subversion
 
 DESCRIPTION="A GMPC plugin to generate playlists based on rules"
