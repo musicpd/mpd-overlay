@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 
-DEPEND="media-sound/gmpc-svn
+DEPEND="media-sound/gmpc-live
 	>gnome-base/gnome-vfs-2"
 
 src_install()  {
