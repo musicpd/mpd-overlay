@@ -1,0 +1,7 @@
+EBUILD kmp-live-0.1.ebuild 1128 RMD160 d40cf8eef8fea698c644d2aa18e7729f8d4b6f1a SHA1 4c7f3d67e878ab621519b20c87e7d8f2a0d767ca SHA256 5dd0dab7f4c6d2acc55e54c6f0991f1c46cc933ce6911c5f8198a8c129f0f64d size 1128
+MD5 f1d395d01940da2a633c6cc196ded292 kmp-live-0.1.ebuild 1128
+RMD160 d40cf8eef8fea698c644d2aa18e7729f8d4b6f1a kmp-live-0.1.ebuild 1128
+SHA256 5dd0dab7f4c6d2acc55e54c6f0991f1c46cc933ce6911c5f8198a8c129f0f64d kmp-live-0.1.ebuild 1128
+MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-kmp-live-0.1 1
+RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-kmp-live-0.1 1
+SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-kmp-live-0.1 1
