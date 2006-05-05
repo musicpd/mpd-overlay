@@ -195,8 +195,7 @@ function subversion_bootstrap() {
 
 	cd "${S}"
 
-	# Some of these subversion repositories have a time skew, this fixes that
-	find ${S} -type f -exec touch {} \;
+	find "${S}" -type f -exec touch {} \;
 
 	if [ "${ESVN_PATCHES}" ]; then
 		einfo "apply patches -->"
