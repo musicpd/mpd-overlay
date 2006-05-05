@@ -18,4 +18,8 @@ DEPEND="net-im/gaim \
 
 src_install() {
 	emake install DESTDIR=${D} || die
+
+	einfo "If you're installing this with gaim-1.x this"
+	einfo "plugin may not work as expected, please contact"
+	einfo "the author if something unexpected occurs"
 }
