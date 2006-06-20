@@ -2,9 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+ESVN_REPO_URI="https://svn.qballcow.nl/gmpc-stopbutton/trunk/"
+ESVN_BOOTSTRAP="autogen.sh"
+inherit subversion
+
 DESCRIPTION="A GMPC plugin to simply put a stop button in the main window"
 HOMEPAGE="http://etomite.qballcow.nl/"
-SRC_URI="http://xeon.ele.tue.nl/~qball/Code/gmpc/plugins/gmpc-stopbutton-${PV}.tar.gz"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
