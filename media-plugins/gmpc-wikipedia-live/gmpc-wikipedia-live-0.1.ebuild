@@ -9,8 +9,7 @@ inherit subversion
 DESCRIPTION="A GMPC plugin to retrieve coverart from amazon.com"
 HOMEPAGE="http://etomite.qballcow.nl/qgmpc-0.12.html"
 
-#KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-KEYWORDS="-*"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 
