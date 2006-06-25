@@ -4,7 +4,8 @@
 
 ESVN_REPO_URI="http://svn.brokentrain.net/gmpc-alarm/trunk/"
 ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
+GMPC_DOCS="AUTHORS TODO README"
+inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to generate playlists based on rules"
 HOMEPAGE="http://etomite.qballcow.nl/qgmpc-0.12.html"
@@ -13,11 +14,4 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 
-DEPEND="media-sound/gmpc-live net-misc/curl"
-
-src_install()  {
-        # This makefile ignores DEST, so manual installation
-        insinto "/usr/share/gmpc/plugins"
-	dodoc AUTHORS TODO README
-        doins "src/.libs/alarmplugin.so"
-}
+DEPEND="net-misc/curl"

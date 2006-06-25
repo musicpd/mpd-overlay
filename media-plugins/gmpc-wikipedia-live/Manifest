@@ -1,7 +1,7 @@
-EBUILD gmpc-wikipedia-live-0.1.ebuild 621 RMD160 8eb177e16441ba316660e1628eada066d04604b9 SHA1 1caaded350b9da27f793c07e7c720cc2fa5111c1 SHA256 84b903e4e16931498871ea1d32bf89d99e23b091f2d320d218f8e2f558faed46
-MD5 261508cdec2adbb6f1e03fbb7ce8bfe1 gmpc-wikipedia-live-0.1.ebuild 621
-RMD160 8eb177e16441ba316660e1628eada066d04604b9 gmpc-wikipedia-live-0.1.ebuild 621
-SHA256 84b903e4e16931498871ea1d32bf89d99e23b091f2d320d218f8e2f558faed46 gmpc-wikipedia-live-0.1.ebuild 621
+EBUILD gmpc-wikipedia-live-0.1.ebuild 375 RMD160 eb319c365016077718e11c5bb42b224c8db7106a SHA1 28f25a8d62ba205c8e798ab844239d40653c5389 SHA256 3b3df8fc3a0ec81bb18fc7046da7767b00bcdbbb4be29053840d82e481e82366
+MD5 35b7598bf17b377dc37ee4324aea853a gmpc-wikipedia-live-0.1.ebuild 375
+RMD160 eb319c365016077718e11c5bb42b224c8db7106a gmpc-wikipedia-live-0.1.ebuild 375
+SHA256 3b3df8fc3a0ec81bb18fc7046da7767b00bcdbbb4be29053840d82e481e82366 gmpc-wikipedia-live-0.1.ebuild 375
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-gmpc-wikipedia-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-gmpc-wikipedia-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-gmpc-wikipedia-live-0.1 1
