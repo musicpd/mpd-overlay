@@ -9,8 +9,9 @@ inherit subversion
 
 S="${WORKDIR}/${P}"
 
-IUSE="ao alsa oss mp3 aac ao audiofile flac icecast ipv6 mad mpd-mad \
-	mpd-id3tag mikmod musepack mod mpc ogg vorbis unicode"
+IUSE="aac alsa ao audiofile fifo flac icecast ipv6 mad mikmod mp3 musepack oss
+pulseaudio unicode vorbis"
+
 DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
 HOMEPAGE="http://musicpd.org/"
 
@@ -20,6 +21,7 @@ KEYWORDS="x86 amd64 fbsd ppc sparc alpha hppa mips"
 
 DEPEND="dev-util/gperf
         !media-sound/mpd
+	!media-sound/mpd-svn
         sys-libs/zlib
         aac? ( >=media-libs/faad2-2.0_rc2 )
         alsa? ( media-libs/alsa-lib )
@@ -31,6 +33,7 @@ DEPEND="dev-util/gperf
                media-libs/libid3tag )
         mikmod? ( media-libs/libmikmod )
         musepack? ( media-libs/libmpcdec )
+	pulseaudio? ( media-sound/pulseaudio )
         vorbis? ( media-libs/libvorbis )"
 
 RDEPEND="!media-sound/mpd \
@@ -70,15 +73,14 @@ src_compile() {
                 $(use_enable audiofile audiofiletest) \
                 $(use_enable flac libFLACtest) \
                 $(use_enable flac) \
+		$(use_enable oggflac) \
                 $(use_enable icecast shout) \
                 $(use_enable ipv6) \
-                $(use_enable !mad mpd-mad) \
-                $(use_enable !mad mpd-id3tag) \
                 $(use_enable mikmod libmikmodtest) \
                 $(use_enable mikmod mod) \
                 $(use_enable musepack mpc) \
-                $(use_enable vorbis ogg) \
-                $(use_enable vorbis oggtest) \
+		$(use_enable pulseaudio pulse) \
+                $(use_enable vorbis oggvorbis) \
                 $(use_enable vorbis vorbistest) \
                 || die "could not configure"
 
@@ -148,4 +150,3 @@ pkg_postinst() {
         ewarn "your bug report, as well as the fact that you used a ${P} Gentoo ebuild."
         upgrade_warning
 }
-
