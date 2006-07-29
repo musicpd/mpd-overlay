@@ -8,7 +8,7 @@ ESVN_BOOTSTRAP="autogen.sh"
 inherit subversion
 
 DESCRIPTION="A library handling connection to a MPD server."
-HOMEPAGE="http://www.qballcow.nl/libmpd/"
+HOMEPAGE="http://cms.qballcow.nl/"
 LICENSE="GPL-2"
 
 SLOT="0.01"

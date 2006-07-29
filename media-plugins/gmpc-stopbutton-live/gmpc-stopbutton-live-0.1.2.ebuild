@@ -6,7 +6,7 @@ ESVN_BOOTSTRAP="autogen.sh"
 inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to simply put a stop button in the main window"
-HOMEPAGE="http://etomite.qballcow.nl/"
+HOMEPAGE="http://cms.qballcow.nl/"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"

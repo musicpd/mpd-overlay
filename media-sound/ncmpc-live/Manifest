@@ -1,6 +1,7 @@
-MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-ncmpc-live-0.1 1
-RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-ncmpc-live-0.1 1
-SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-ncmpc-live-0.1 1
+EBUILD ncmpc-live-0.1.ebuild 1853 RMD160 c069770e924a4a0e8d99c2e077583f3dd23a6489 SHA1 b0ef08ce4ae4ba06464ed160bc5499a02ee99672 SHA256 f5760cf2d872e689fecb227b206a1891f59fc9cc9d9af361d005d2fffe745a7c
 MD5 e7700803318d748fd3827fcc6a2ee100 ncmpc-live-0.1.ebuild 1853
 RMD160 c069770e924a4a0e8d99c2e077583f3dd23a6489 ncmpc-live-0.1.ebuild 1853
 SHA256 f5760cf2d872e689fecb227b206a1891f59fc9cc9d9af361d005d2fffe745a7c ncmpc-live-0.1.ebuild 1853
+MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-ncmpc-live-0.1 1
+RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-ncmpc-live-0.1 1
+SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-ncmpc-live-0.1 1

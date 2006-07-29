@@ -8,7 +8,7 @@ GMPC_DOCS="AUTHORS TODO README"
 inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to generate playlists based on rules"
-HOMEPAGE="http://etomite.qballcow.nl/qgmpc-0.12.html"
+HOMEPAGE="http://cms.qballcow.nl/"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"

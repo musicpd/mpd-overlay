@@ -6,7 +6,7 @@ ESVN_BOOTSTRAP="autogen.sh"
 inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to create a random playlist of 20% of your songs"
-HOMEPAGE="http://etomite.qballcow.nl/"
+HOMEPAGE="http://cms.qballcow.nl/"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"

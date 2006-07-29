@@ -1,6 +1,7 @@
-MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-mpd-ke-live-0.1 1
-RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-mpd-ke-live-0.1 1
-SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-mpd-ke-live-0.1 1
+EBUILD mpd-ke-live-0.1.ebuild 5056 RMD160 7bbaea62890ec0a062aaf9567c1407541c8ca703 SHA1 916fed882005f4aabf7a6fd1c0f8c119f0161d5b SHA256 1ae2820d9baf2e80481138040c8f432d406603b4bac981f43f43325110c46898
 MD5 7c90f24065f25a482b02977df65deb13 mpd-ke-live-0.1.ebuild 5056
 RMD160 7bbaea62890ec0a062aaf9567c1407541c8ca703 mpd-ke-live-0.1.ebuild 5056
 SHA256 1ae2820d9baf2e80481138040c8f432d406603b4bac981f43f43325110c46898 mpd-ke-live-0.1.ebuild 5056
+MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-mpd-ke-live-0.1 1
+RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-mpd-ke-live-0.1 1
+SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-mpd-ke-live-0.1 1

@@ -7,7 +7,7 @@ ESVN_BOOTSTRAP="autogen.sh"
 GMPC_PLUGIN="tiles"
 
 DESCRIPTION="A GMPC plugin to generate show albums as tiles"
-HOMEPAGE="http://etomite.qballcow.nl/"
+HOMEPAGE="http://cms.qballcow.nl/"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"

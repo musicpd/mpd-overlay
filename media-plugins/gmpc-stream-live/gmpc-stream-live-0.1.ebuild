@@ -7,7 +7,7 @@ ESVN_BOOTSTRAP="autogen.sh"
 inherit subversion
 
 DESCRIPTION="A GMPC plugin to parse and browse online stream lists and files"
-HOMEPAGE="http://etomite.qballcow.nl/qgmpc-0.12.html"
+HOMEPAGE="http://cms.qballcow.nl/"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
