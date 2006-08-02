@@ -9,7 +9,7 @@ inherit subversion
 DESCRIPTION="A GMPC plugin to parse and browse online stream lists and files"
 HOMEPAGE="http://cms.qballcow.nl/"
 
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="-*" ## This package is known unstable, ask QballCow for more information
 SLOT="0"
 LICENSE="GPL-2"
 
