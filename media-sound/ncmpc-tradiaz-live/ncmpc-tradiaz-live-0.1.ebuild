@@ -2,14 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:
 
-ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/trunk/"
+ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/branches/tradiaz/"
 ESVN_STORE_DIR="${DISTDIR}/svn-src"
 ESVN_BOOTSTRAP="autogen.sh"
 inherit subversion
 
 S="${WORKDIR}/${P}"
-IUSE="clock-screen debug mouse key-screen search-screen nls raw-mode"
-DESCRIPTION="A ncurses client for the Music Player Daemon (MPD)"
+IUSE="clock-screen debug mouse key-screen lyrics-screen search-screen nls raw-mode"
+DESCRIPTION="A branch for fixes and enhancements to ncmpc, a client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
 
 LICENSE="GPL-2"
@@ -21,7 +21,7 @@ RDEPEND="virtual/libc
         dev-libs/popt
         >=dev-libs/glib-2.4
 	!media-sound/ncmpc
-	!media-sound/ncmpc-tradiaz-live"
+	!media-sound/ncmpc-live"
 DEPEND="${RDEPEND}"
 
 pkg_setup() {
@@ -34,6 +34,7 @@ src_compile() {
 		$(use_enable debug) \
 		$(use_enable mouse) \
 		$(use_enable key-screen) \
+		$(use_enable lyrics-screen) \
 		$(use_enable search-screen) \
 		$(use_with nls) \
 		$(use_with raw-mode)
@@ -53,39 +54,3 @@ src_install() {
 		doc/ncmpc.lirc
 	doman doc/ncmpc.1
 }
-
-#S=${WORKDIR}/${ECVS_MODULE}mpc-svn-0.1/
-
-#src_compile() {
-	# Fixes bug 27584
-#	export WANT_AUTOCONF=2.5
-
-#	cd ${S}
-#	./configure \
-#		--host=${CHOST} \
-#		--prefix=/usr \
-#		--infodir=/usr/share/info \
-#		--mandir=/usr/share/man \
-#		--sysconfdir=/etc \
-#		${myconf} || die "./configure failed"
-#	emake || die
-#}
-
-#src_install() {
-#	dobin src/mpc
-#	dodoc AUTHORS INSTALL README COPYING
-#}
-
-#src_install() {
-#	myflags=""
-
-#	make DESTDIR=${D} \
-#		docdir=/usr/share/doc/${PF} \
-#		install || die
-
-#	prepalldocs
-#	dodoc AUTHORS INSTALL README COPYING
-#	cd ${S}doc
-#	doman mpc.1
-#	dohtml -r . || die "dohtml failed"
-#}
