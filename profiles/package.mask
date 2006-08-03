@@ -1,1 +1,1 @@
-www-apps/phpMp2-live
+www-apps/phpmp2-live
