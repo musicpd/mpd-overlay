@@ -1,7 +1,11 @@
-EBUILD phpmp-live-0.1.ebuild 953 RMD160 0163b78cf27a670c9e466bdd91cc74ed0bcaf6bc SHA1 421be60606674adc8a19723553fc8b3e99f20816 SHA256 8f6e433f5e78f1c6469e079bf87e32dd0cf5c9f7107cd5cd25aa663b2dd152b4
-MD5 c844bc0ee080d6aee52eed89f3217aad phpmp-live-0.1.ebuild 953
-RMD160 0163b78cf27a670c9e466bdd91cc74ed0bcaf6bc phpmp-live-0.1.ebuild 953
-SHA256 8f6e433f5e78f1c6469e079bf87e32dd0cf5c9f7107cd5cd25aa663b2dd152b4 phpmp-live-0.1.ebuild 953
+AUX postinstall-en.txt 33 RMD160 efe4c0fe002dce8f29cb94269d0d0c6b01fa6d89 SHA1 5cd6e61f35ea434e36720c9dd6922585dff9cc67 SHA256 c5c688eb7c8da48d82cc9fd5e062e7f02880b58f7d293b4af97c23d5884974da
+MD5 e3fadc42d755dce00fb495211e7610a0 files/postinstall-en.txt 33
+RMD160 efe4c0fe002dce8f29cb94269d0d0c6b01fa6d89 files/postinstall-en.txt 33
+SHA256 c5c688eb7c8da48d82cc9fd5e062e7f02880b58f7d293b4af97c23d5884974da files/postinstall-en.txt 33
+EBUILD phpmp-live-0.1.ebuild 1096 RMD160 c03f6bf8db8c0a7aea7898441da9ed8d9b3c90a0 SHA1 33170fe34ca92b63243672d1cc9f4f1f7e97d7db SHA256 0411a7ab51817e2eb3ee829ed45f30f045dfad36aa34b57b64c9d97472ee3c42
+MD5 04a692ce5b58bd6aff61fd343d1881eb phpmp-live-0.1.ebuild 1096
+RMD160 c03f6bf8db8c0a7aea7898441da9ed8d9b3c90a0 phpmp-live-0.1.ebuild 1096
+SHA256 0411a7ab51817e2eb3ee829ed45f30f045dfad36aa34b57b64c9d97472ee3c42 phpmp-live-0.1.ebuild 1096
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-phpmp-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-phpmp-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-phpmp-live-0.1 1
