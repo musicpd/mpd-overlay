@@ -1,1 +1,2 @@
+www-apps/phpmp2
 www-apps/phpmp2-live
