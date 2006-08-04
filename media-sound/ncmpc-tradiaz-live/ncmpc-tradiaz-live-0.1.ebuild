@@ -8,7 +8,7 @@ ESVN_BOOTSTRAP="autogen.sh"
 inherit subversion
 
 S="${WORKDIR}/${P}"
-IUSE="clock-screen debug mouse key-screen lyrics-screen search-screen nls raw-mode"
+IUSE="artist-screen clock-screen debug mouse key-screen lyrics-screen search-screen nls raw-mode"
 DESCRIPTION="A branch for fixes and enhancements to ncmpc, a client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
 
@@ -20,6 +20,7 @@ RDEPEND="virtual/libc
         sys-libs/ncurses
         dev-libs/popt
         >=dev-libs/glib-2.4
+	net-misc/curl
 	!media-sound/ncmpc
 	!media-sound/ncmpc-live"
 DEPEND="${RDEPEND}"
@@ -30,7 +31,8 @@ pkg_setup() {
 }
 
 src_compile() {
-	econf $(use_enable clock-screen) \
+	econf 	$(use_enable artist-screen) \
+		$(use_enable clock-screen) \
 		$(use_enable debug) \
 		$(use_enable mouse) \
 		$(use_enable key-screen) \
