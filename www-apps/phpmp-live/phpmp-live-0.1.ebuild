@@ -39,4 +39,8 @@ src_install() {
 	webapp_postinst_txt en ${FILESDIR}/postinstall-en.txt
 
 	webapp_src_install
+
+	einfo "phpMp-live is installed in your webroot under"
+	einfo "/phpmp-live/, you may want to symlink to it"
+	einfo "from phpMp or something."
 }
