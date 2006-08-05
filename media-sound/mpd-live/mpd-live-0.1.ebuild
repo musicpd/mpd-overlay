@@ -3,11 +3,8 @@
 # $Header:
 
 ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
 ESVN_BOOTSTRAP="autogen.sh"
 inherit subversion
-
-S="${WORKDIR}/${P}"
 
 IUSE="aac alsa ao audiofile fifo flac icecast ipv6 mad mikmod mp3 musepack oss
 pulseaudio unicode vorbis"
