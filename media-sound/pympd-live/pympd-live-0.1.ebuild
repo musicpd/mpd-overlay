@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pympd/pympd-0.07.ebuild,v 1.1 2006/07/22 16:05:33 ticho Exp $
+# $Header: $
 
 ESVN_REPO_URI="https://svn.sourceforge.net/svnroot/pympd/trunk/pympd/"
 inherit subversion toolchain-funcs python
