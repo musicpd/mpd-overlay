@@ -7,7 +7,7 @@ ESVN_STORE_DIR="${DISTDIR}/svn-src"
 inherit distutils subversion
 
 S="${WORKDIR}/${P}"
-DESCRIPTION="A ncurses client for the Music Player Daemon (MPD)"
+DESCRIPTION="A GTK2 client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
 
 LICENSE="GPL-2"
