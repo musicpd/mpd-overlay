@@ -1,2 +1,6 @@
+# Doesn't work, says incorrect protocol
+media-sound/playgui
+
+# Known security issues, see Gentoo bugzilla
 www-apps/phpmp2
 www-apps/phpmp2-live

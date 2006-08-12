@@ -14,4 +14,5 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~fbsd ~ppc ~sparc ~alpha ~hppa ~mips"
 
-DEPEND="dev-python/py-libmpdclient-live"
+DEPEND="dev-python/py-libmpdclient-live
+	dev-python/empy"

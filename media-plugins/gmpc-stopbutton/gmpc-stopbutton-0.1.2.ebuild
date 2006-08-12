@@ -3,14 +3,11 @@
 # $Header: $
 
 inherit gmpc-plugin
-ESVN_BOOTSTRAP="autogen.sh"
-GMPC_PLUGIN="tiles"
 
-DESCRIPTION="A GMPC plugin to generate show albums as tiles"
+DESCRIPTION="A GMPC plugin to simply put a stop button in the main window"
 HOMEPAGE="http://cms.qballcow.nl/"
+SRC_URI="http://xeon.ele.tue.nl/~qball/Code/gmpc/plugins/gmpc-stopbutton-${PV}.tar.gz"
 
-KEYWORDS="-*" ## Superseded by gmpc-metabrowser-live
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
-
-#DEPEND="net-misc/curl"

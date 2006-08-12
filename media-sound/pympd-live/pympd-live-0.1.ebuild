@@ -25,6 +25,9 @@ src_compile() {
 }
 
 src_install() {
+        # Fix for 'src//glade/../pympd.svg': No such file or directory
+        sed -i -e 's:\..\/py:/usr/share/pympd/py:g' src/glade/pympd.glade
+
 	emake PREFIX="/usr" DESTDIR="${D}" install || die "emake install failed."
 	dodoc README
 }
