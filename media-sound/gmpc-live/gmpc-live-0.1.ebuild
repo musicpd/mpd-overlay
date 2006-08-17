@@ -21,6 +21,7 @@ DEPEND=">=x11-libs/gtk+-2.4
 	gnome? ( >=gnome-base/gnome-vfs-2.6 )
 	dev-perl/XML-Parser
 	>=media-libs/libmpd-live-0.1
+	>dev-util/gob-2
 	!media-sound/gmpc
 	!media-sound/gmpc-svn"
 
