@@ -7,7 +7,7 @@ HOMEPAGE="http://sccs.swarthmore.edu/~cbr/PlayGUI/"
 SRC_URI="http://sccs.swarthmore.edu/~cbr/PlayGUI/${PF}.tar.gz"
 SLOT="0"
 RDEPEND=">=virtual/jre-1.4"
-KEYWORDS="x86 amd64 ppc"
+KEYWORDS="~x86 ~amd64 ~ppc"
 IUSE=""
 LICENSE="GPL-2"
 

@@ -22,8 +22,7 @@ DEPEND=">=x11-libs/gtk+-2.4
 	dev-perl/XML-Parser
 	>=media-libs/libmpd-live-0.1
 	>dev-util/gob-2
-	!media-sound/gmpc
-	!media-sound/gmpc-svn"
+	!media-sound/gmpc"
 
 src_compile() {
 	econf $(use_enable gnome gnome-vfs) || die "configure failed"

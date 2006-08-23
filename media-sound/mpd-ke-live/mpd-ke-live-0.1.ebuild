@@ -16,10 +16,12 @@ HOMEPAGE="http://musicpd.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 amd64 fbsd ppc sparc alpha hppa mips"
+KEYWORDS="~x86 ~amd64 ~fbsd ~ppc ~sparc ~alpha ~hppa ~mips"
 
 DEPEND="dev-util/gperf
         !media-sound/mpd
+	!media-sound/mpd-svn
+	!media-sound/mpd-live
         sys-libs/zlib
         aac? ( >=media-libs/faad2-2.0_rc2 )
         alsa? ( media-libs/alsa-lib )

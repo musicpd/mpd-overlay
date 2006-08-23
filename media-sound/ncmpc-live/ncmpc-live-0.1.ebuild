@@ -14,7 +14,7 @@ HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 amd64 fbsd ppc sparc alpha hppa mips"
+KEYWORDS="~x86 ~amd64 ~fbsd ~ppc ~sparc ~alpha ~hppa ~mips"
 
 RDEPEND="virtual/libc
         sys-libs/ncurses

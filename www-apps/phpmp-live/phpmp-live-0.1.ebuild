@@ -17,7 +17,7 @@ HOMEPAGE="http://www.musicpd.org/"
 #SRC_URI="mirror://sourceforge/musicpd/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc sparc alpha amd64"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64"
 
 DEPEND="virtual/httpd-php"
 

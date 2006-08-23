@@ -12,7 +12,7 @@ HOMEPAGE="http://cms.qballcow.nl/"
 LICENSE="GPL-2"
 
 SLOT="0.01"
-KEYWORDS="~amd64 ppc sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 DEPEND="virtual/libc
 		sys-devel/libtool"
