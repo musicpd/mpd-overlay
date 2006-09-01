@@ -6,7 +6,7 @@ ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
 ESVN_BOOTSTRAP="autogen.sh"
 inherit subversion
 
-IUSE="aac alsa ao audiofile flac icecast ipv6 mad mikmod mp3 musepack oss
+IUSE="aac alsa ao audiofile flac icecast ipv6 mikmod mp3 musepack oss
 pulseaudio unicode vorbis"
 
 DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
@@ -27,7 +27,7 @@ DEPEND="dev-util/gperf
         audiofile? ( media-libs/audiofile )
         flac? ( >=media-libs/flac-1.1.0 )
         icecast? ( media-libs/libshout )
-        mad? ( media-libs/libmad
+        mp3? ( media-libs/libmad
                media-libs/libid3tag )
         mikmod? ( media-libs/libmikmod )
         musepack? ( media-libs/libmpcdec )
