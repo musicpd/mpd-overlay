@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="http://svn.brokentrain.net/gmpc-alarm/trunk/"
-ESVN_BOOTSTRAP="autogen.sh"
+# ESVN_BOOTSTRAP="autogen.sh"
 GMPC_DOCS="AUTHORS TODO README"
 inherit gmpc-plugin
 
@@ -14,4 +14,4 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 
-DEPEND="net-misc/curl"
+#DEPEND="net-misc/curl"

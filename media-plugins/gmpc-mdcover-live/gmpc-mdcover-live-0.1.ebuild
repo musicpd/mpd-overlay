@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_BOOTSTRAP="autogen.sh"
 GMPC_PLUGIN="mdcaplugin"
 inherit gmpc-plugin
 
@@ -12,5 +11,3 @@ HOMEPAGE="http://cms.qballcow.nl/"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
-
-DEPEND="net-misc/curl"

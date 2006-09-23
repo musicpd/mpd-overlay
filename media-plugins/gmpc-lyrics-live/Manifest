@@ -1,7 +1,7 @@
-EBUILD gmpc-lyrics-live-0.1-r2.ebuild 416 RMD160 7cbc59169501417cd5d213118c8cbea210379071 SHA1 c8b10e1a58f8efa6214947f439c046849361e507 SHA256 abef34268bb9fa732cf4070b43adfa0daabbb3473c1509a0ce9061bc2a897531
-MD5 b120982afde03854c25d999f8d790ed2 gmpc-lyrics-live-0.1-r2.ebuild 416
-RMD160 7cbc59169501417cd5d213118c8cbea210379071 gmpc-lyrics-live-0.1-r2.ebuild 416
-SHA256 abef34268bb9fa732cf4070b43adfa0daabbb3473c1509a0ce9061bc2a897531 gmpc-lyrics-live-0.1-r2.ebuild 416
+EBUILD gmpc-lyrics-live-0.1-r2.ebuild 364 RMD160 0e8ef58397d692fdaf2b32cfdf300c5de8f2ce2f SHA1 b8302e51c02eb5bcca56df337c185b65b75a82ad SHA256 82851aa30b6b57a5532028c27bcfc5a3626071f55a48891c0ccedaccbc10fb60
+MD5 1ecaa2a14ef8c59088449d04cbd80e89 gmpc-lyrics-live-0.1-r2.ebuild 364
+RMD160 0e8ef58397d692fdaf2b32cfdf300c5de8f2ce2f gmpc-lyrics-live-0.1-r2.ebuild 364
+SHA256 82851aa30b6b57a5532028c27bcfc5a3626071f55a48891c0ccedaccbc10fb60 gmpc-lyrics-live-0.1-r2.ebuild 364
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-gmpc-lyrics-live-0.1-r2 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-gmpc-lyrics-live-0.1-r2 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-gmpc-lyrics-live-0.1-r2 1

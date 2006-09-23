@@ -3,7 +3,6 @@
 # $Header: $
 
 GMPC_PLUGIN="wikiplugin"
-ESVN_BOOTSTRAP="autogen.sh"
 inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to retrieve coverart from amazon.com"

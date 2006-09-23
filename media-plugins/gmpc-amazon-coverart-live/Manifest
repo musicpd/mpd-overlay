@@ -1,7 +1,7 @@
-EBUILD gmpc-amazon-coverart-live-0.1.ebuild 412 RMD160 7fc28c292a5952c84b6e0cf3266e136e0dea4762 SHA1 f2dc6230aba89a928e750fe3145b26fe1f447bd2 SHA256 82ea81c5aba85303c4ad8c8758c8041b8b013711fa6964a87e0607cfb9ccc811
-MD5 38d51ea34f391311bb0145d57d6c05a0 gmpc-amazon-coverart-live-0.1.ebuild 412
-RMD160 7fc28c292a5952c84b6e0cf3266e136e0dea4762 gmpc-amazon-coverart-live-0.1.ebuild 412
-SHA256 82ea81c5aba85303c4ad8c8758c8041b8b013711fa6964a87e0607cfb9ccc811 gmpc-amazon-coverart-live-0.1.ebuild 412
+EBUILD gmpc-amazon-coverart-live-0.1.ebuild 360 RMD160 508d49283c64571d3de675d645291ced439ec838 SHA1 06e4569573dd04e175bb3de3ff5a075f688f9361 SHA256 a9fb81dbf65a4bc65a766f3af6757449a0fe2c8214723a73c30037da48a345ac
+MD5 d9cdb0cd68107162d23045b03e79d9cc gmpc-amazon-coverart-live-0.1.ebuild 360
+RMD160 508d49283c64571d3de675d645291ced439ec838 gmpc-amazon-coverart-live-0.1.ebuild 360
+SHA256 a9fb81dbf65a4bc65a766f3af6757449a0fe2c8214723a73c30037da48a345ac gmpc-amazon-coverart-live-0.1.ebuild 360
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-gmpc-amazon-coverart-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-gmpc-amazon-coverart-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-gmpc-amazon-coverart-live-0.1 1

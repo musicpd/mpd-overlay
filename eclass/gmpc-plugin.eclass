@@ -11,6 +11,21 @@ if expr match "${PN}" '.*\(-live\)'>/dev/null; then
 	inherit subversion
 fi
 
+gmpc-plugin_src_compile() {
+## We don't need the protection of 'econf' in here, we do the installing by hand.
+    if [ -x ./autogen.sh ]; then
+        ./autogen.sh
+    elif [ -x ./configure ]; then
+        ./configure
+    else
+        die "Couldn't find a configure for this plugin!"
+    fi
+
+    if [ -f Makefile ] || [ -f GNUmakefile ] || [ -f makefile ]; then
+        emake || die "emake failed"
+    fi
+}
+
 gmpc-plugin_src_install() {
 	if [[ -z ${GMPC_PLUGIN} ]]; then
 		GMPC_PLUGIN="${PN#gmpc}"
@@ -32,4 +47,4 @@ gmpc-plugin_src_install() {
 	fi
 }
 
-EXPORT_FUNCTIONS src_install
+EXPORT_FUNCTIONS src_compile src_install

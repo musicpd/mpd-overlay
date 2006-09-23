@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_REPO_URI="https://ssl.bulix.org/svn/gmpc-lyrics/trunk/"
-ESVN_BOOTSTRAP="autogen.sh"
 inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to generate playlists based on rules"
@@ -12,5 +11,3 @@ HOMEPAGE="http://cms.qballcow.nl/"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
-
-DEPEND="net-misc/curl"

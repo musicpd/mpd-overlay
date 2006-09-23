@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_BOOTSTRAP="autogen.sh"
 ESVN_REPO_URI="https://svn.qballcow.nl/gmpc-last.fm/trunk"
 inherit gmpc-plugin
 
