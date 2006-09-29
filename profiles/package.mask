@@ -8,3 +8,8 @@ www-apps/phpmp-live
 # Known security issues, see Gentoo bugzilla
 www-apps/phpmp2
 www-apps/phpmp2-live
+
+# Need feedback on weather it works as advertised.
+# I couldn't even get xfce4 beta2 to start :/
+xfce-extra/xfce4-mpc-plugin
+xfce-extra/xfce4-mpc-plugin-live
