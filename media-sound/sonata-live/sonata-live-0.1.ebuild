@@ -17,7 +17,8 @@ IUSE="gnome"
 
 RDEPEND=">=virtual/python-2.4
 	>=dev-python/pygtk-2.6
-	gnome? ( dev-python/gnome-python-extras )"
+	gnome? ( dev-python/gnome-python-extras )
+	!media-sound/sonata"
 
 src_compile() {
 	distutils_src_compile
