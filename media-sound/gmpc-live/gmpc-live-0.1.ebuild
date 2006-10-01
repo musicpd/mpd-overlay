@@ -27,13 +27,16 @@ DEPEND=">=x11-libs/gtk+-2.4
 ## to the working directory, this information is unavilable.
 pkg_setup() {
 	local repo_uri=${ESVN_REPO_URI%/}
-
-        cd "${ESVN_STORE_DIR}/${ESVN_PROJECT}/${repo_uri##*/}/src"
-	REV=`svn info | grep "Last Changed Rev" | awk -F ': ' '{ print $2}'`
-	einfo "Found Revision $REV"
-        sed -ie "s/REVISION=.*/REVISION=$REV/" Makefile.am
+	local repo="${ESVN_STORE_DIR}/${ESVN_PROJECT}/${repo_uri##*/}/src"
+	REV=`svn info ${repo} | grep "Last Changed Rev" | awk -F ': ' '{ print $2}'`
 }
 
+src_compile() {
+       	sed -ie "s%REVISION=.*%REVISION=$REV%" ${WORKDIR}/${PF}/src/Makefile.am
+
+	econf || die "Configure failed!"
+	emake || die "Make failed!"
+}
 src_install() {
 	make DESTDIR=${D} install || die "make install failed"
 }
