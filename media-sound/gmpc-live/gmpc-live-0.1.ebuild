@@ -22,6 +22,18 @@ DEPEND=">=x11-libs/gtk+-2.4
 	!media-sound/gmpc
 	net-misc/curl"
 
+## This is needed to extract the svn revision for the about window. The
+## subversion.eclass doen't copy the .svn directories, so after the copy
+## to the working directory, this information is unavilable.
+pkg_setup() {
+	local repo_uri=${ESVN_REPO_URI%/}
+
+        cd "${ESVN_STORE_DIR}/${ESVN_PROJECT}/${repo_uri##*/}/src"
+	REV=`svn info | grep "Last Changed Rev" | awk -F ': ' '{ print $2}'`
+	einfo "Found Revision $REV"
+        sed -ie "s/REVISION=.*/REVISION=$REV/" Makefile.am
+}
+
 src_install() {
 	make DESTDIR=${D} install || die "make install failed"
 }
