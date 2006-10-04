@@ -22,6 +22,10 @@ DEPEND=">=x11-libs/gtk+-2.4
 	!media-sound/gmpc
 	net-misc/curl"
 
+## Ugly but covers up missing portage feature, we don't want
+## gmpc installing over gmpc-live
+PROVIDE="media-sound/gmpc"
+
 ## This is needed to extract the svn revision for the about window. The
 ## subversion.eclass doen't copy the .svn directories, so after the copy
 ## to the working directory, this information is unavilable.

@@ -19,6 +19,10 @@ DEPEND="virtual/libc
 
 DEPEND="!>=media-libs/libmpd-0.01"
 
+## Ugly but covers up missing portage feature, we don't want
+## libmpd installing over libmpd-live
+PROVIDES="media-libs/libmpd"
+
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 	dodoc README ChangeLog

@@ -13,3 +13,8 @@ www-apps/phpmp2-live
 # I couldn't even get xfce4 beta2 to start :/
 xfce-extra/xfce4-mpc-plugin
 xfce-extra/xfce4-mpc-plugin-live
+
+# It's broken and mostly unusable, here for testers
+# and testing
+media-sound/kanola
+media-sound/kanola-live
