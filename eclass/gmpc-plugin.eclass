@@ -1,6 +1,6 @@
 DEPEND="media-sound/gmpc-live"
 
-if expr match "${PN}" '.*\(-live\)'>/dev/null; then
+if [[ "${PN##*-}" == "live" ]]; then
 	if [[ -z ${ESVN_REPO_URI} ]]; then
 		if [[ -z ${GMPC_SVN_ROOT} ]]; then
 			GMPC_SVN_ROOT="${PN%-live}"
