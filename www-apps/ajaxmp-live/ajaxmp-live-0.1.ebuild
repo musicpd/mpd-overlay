@@ -4,18 +4,18 @@
 
 IUSE=""
 
-inherit webapp
+inherit webapp darcs
 
 DESCRIPTION="ajaxmp is a web client for MPD"
 HOMEPAGE="http://www.musicpd.org/"
-SRC_URI="http://mroyer31.hd.free.fr/ajaxmp/ajaxmp-0.6.1.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64"
+EDARCS_REPOSITORY="http://mroyer31.hd.free.fr/roy/ajaxmp"
 
 DEPEND="virtual/httpd-php"
 
-MY_PN="ajaxmp"
-S=${WORKDIR}/${MY_PN}
+#MY_PN="ajaxmp-live"
+#S=${WORKDIR}/${MY_PN}
 
 src_install() {
 	webapp_src_preinst
