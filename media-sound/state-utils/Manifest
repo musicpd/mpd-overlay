@@ -1,8 +1,0 @@
-DIST state-utils-1.0.0-rc1.tar.bz2 75340 RMD160 4d5dfe7ad36457e85be0a36614b47af789df16c6 SHA1 8f5b86d41a27f87a507e508429fdbf877b224565 SHA256 96f712689dd6d7c665bbd1e97e704a1e1ab4e5c32ed32a37d2b0d52b6cd9c5a4
-EBUILD state-utils-1.0.0_rc1.ebuild 518 RMD160 80a4e36a1dd0adc8b6a6ac6787341d25894a8e3d SHA1 d9884d1418313a0f5a1e2ec815a09c8e46c600cd SHA256 c1dd2a506419320bf1867e8ef38d2f91ad77acb7ffbb419c6cdab9eaa131c368
-MD5 6bf0c616b5a99f35db29bf7a2f4ef683 state-utils-1.0.0_rc1.ebuild 518
-RMD160 80a4e36a1dd0adc8b6a6ac6787341d25894a8e3d state-utils-1.0.0_rc1.ebuild 518
-SHA256 c1dd2a506419320bf1867e8ef38d2f91ad77acb7ffbb419c6cdab9eaa131c368 state-utils-1.0.0_rc1.ebuild 518
-MD5 170fd69c7041cbb44619ca4225c68cd1 files/digest-state-utils-1.0.0_rc1 265
-RMD160 58ae9d3accf390871f84833e7796fede6511d4cc files/digest-state-utils-1.0.0_rc1 265
-SHA256 839b320f5b2fa17ccf1383d518d37516f659506a08f169df743e6edd3bd9382a files/digest-state-utils-1.0.0_rc1 265

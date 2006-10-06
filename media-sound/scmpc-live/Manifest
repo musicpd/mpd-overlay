@@ -1,7 +1,7 @@
-EBUILD scmpc-live-0.1.ebuild 568 RMD160 436c4ef6cab8bb64f5da6bb7cef3a94f19962d8b SHA1 60c9c47dd09129357e42c7eef174ed3cefa1c4d7 SHA256 c5b5f0bbb65b5312af7553c402705a181f4216d1fd7bff64eadfd77c95463aa7
-MD5 937440b5b54aeda1b2ec408a180fa873 scmpc-live-0.1.ebuild 568
-RMD160 436c4ef6cab8bb64f5da6bb7cef3a94f19962d8b scmpc-live-0.1.ebuild 568
-SHA256 c5b5f0bbb65b5312af7553c402705a181f4216d1fd7bff64eadfd77c95463aa7 scmpc-live-0.1.ebuild 568
+EBUILD scmpc-live-0.1.ebuild 940 RMD160 1d31fe28e40eee0d1d31f1f2c108815e86726cf3 SHA1 9dcac097c37f40501c670e324373c8a29d62a6c5 SHA256 5b4cc70de0f90e413d7404677cbd10d67cc39ded99452dec89b2da3bb1eabac7
+MD5 67f44339d4d4ef64ba0f84c3fc2246c4 scmpc-live-0.1.ebuild 940
+RMD160 1d31fe28e40eee0d1d31f1f2c108815e86726cf3 scmpc-live-0.1.ebuild 940
+SHA256 5b4cc70de0f90e413d7404677cbd10d67cc39ded99452dec89b2da3bb1eabac7 scmpc-live-0.1.ebuild 940
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-scmpc-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-scmpc-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-scmpc-live-0.1 1

@@ -12,9 +12,11 @@ LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
 
-RDEPEND=">=virtual/python-2.4
+DEPEND="${RDEPEND}
+	>=virtual/python-2.4
 	>=dev-python/PyQt4
 	kde-base/pykde"
+RDEPEND="!media-sound/kanola-live"
 
 src_compile() {
 	distutils_src_compile
@@ -22,7 +24,6 @@ src_compile() {
 
 src_install() {
 	distutils_src_install
-	dodoc COPYING CHANGELOG README TODO TRANSLATORS
 }
 
 pkg_postinst() {

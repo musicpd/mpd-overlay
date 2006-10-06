@@ -13,6 +13,7 @@ LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
 IUSE="gnome"
+PROVIDE="media-sound/sonata"
 
 RDEPEND=">=virtual/python-2.4
 	>=dev-python/pygtk-2.6

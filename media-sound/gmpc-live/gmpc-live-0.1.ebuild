@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/gmpc/trunk/"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
 inherit subversion eautogen-sh
 
 DESCRIPTION="A Gnome client for the Music Player Daemon."
@@ -16,13 +15,10 @@ LICENSE="GPL-2"
 DEPEND=">=x11-libs/gtk+-2.4
 	>=gnome-base/libglade-2.3
 	dev-perl/XML-Parser
-	>=media-libs/libmpd-live-0.1
+	media-libs/libmpd-live
 	>dev-util/gob-2
-	!media-sound/gmpc
 	net-misc/curl"
 
-## Ugly but covers up missing portage feature, we don't want
-## gmpc installing over gmpc-live
 PROVIDE="media-sound/gmpc"
 
 ## This is needed to extract the svn revision for the about window. The

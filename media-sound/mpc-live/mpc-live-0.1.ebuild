@@ -11,15 +11,15 @@ HOMEPAGE="http://musicpd.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~fbsd ~ppc ~sparc ~alpha ~hppa ~mips"
+PROVIDE="media-sound/mpc"
 
 DEPEND=">=sys-devel/autoconf-2.52
 	>=automake-1.6
 	dev-util/gperf
 	dev-libs/openssl
         dev-util/subversion
+	!media-sound/mpc
 	sys-devel/libtool"
-
-RDEPEND="!media-sound/mpc"
 
 src_install() {
         dobin src/mpc

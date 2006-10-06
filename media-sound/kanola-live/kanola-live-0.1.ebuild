@@ -5,7 +5,6 @@
 inherit distutils subversion
 
 ESVN_REPO_URI="http://kanola.googlecode.com/svn/trunk/"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
 
 DESCRIPTION="A lightweight client for MPD, in PyQt 4"
 HOMEPAGE="http://dadexter.googlepages.com/kanola"
@@ -13,10 +12,11 @@ HOMEPAGE="http://dadexter.googlepages.com/kanola"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="gnome"
+PROVIDE="media-sound/kanola"
 
 RDEPEND=">=virtual/python-2.4
 	>=dev-python/PyQt4
+	!media-sound/kanola
 	kde-base/pykde"
 
 src_compile() {
@@ -25,7 +25,6 @@ src_compile() {
 
 src_install() {
 	distutils_src_install
-	dodoc COPYING CHANGELOG README TODO TRANSLATORS
 }
 
 pkg_postinst() {

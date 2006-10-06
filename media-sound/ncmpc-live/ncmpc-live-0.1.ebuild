@@ -12,14 +12,14 @@ HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~fbsd ~ppc ~sparc ~alpha ~hppa ~mips"
+PROVIDE="media-sound/ncmpc"
 
-RDEPEND="virtual/libc
+DEPEND="virtual/libc
         sys-libs/ncurses
         dev-libs/popt
         >=dev-libs/glib-2.4
 	!media-sound/ncmpc
 	!media-sound/ncmpc-tradiaz-live"
-DEPEND="${RDEPEND}"
 
 pkg_setup() {
 	        use search-screen && einfo "Please note that the search-screen is

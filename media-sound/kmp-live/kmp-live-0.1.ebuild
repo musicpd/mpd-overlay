@@ -11,16 +11,14 @@ ESVN_BOOTSTRAP="autogen.sh"
 
 DESCRIPTION="An MPD client that uses Qt"
 HOMEPAGE="http://www.threadbox.net/kmp.php"
-#SRC_URI="http://www.threadbox.net/code/files/kmp/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
+PROVIDE="media-sound/kmp"
 
-S=${WORKDIR}/${PN}
-
-RDEPEND="!media-sound/kmp"
+DEPEND="!media-sound/kmp"
 
 src_compile() {
 	echo QMAKE_CFLAGS_RELEASE=${CFLAGS} >> kmp.pro
