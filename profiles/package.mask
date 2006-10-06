@@ -1,10 +1,6 @@
 # Doesn't work, says incorrect protocol
 media-sound/playgui
 
-# Addall stopped working in a recent MPD rev.
-# It is no longer supported by the MPD team.
-www-apps/phpmp-live
-
 # Known security issues, see Gentoo bugzilla
 www-apps/phpmp2
 www-apps/phpmp2-live
