@@ -1,7 +1,7 @@
-EBUILD gmpc-osd-live-0.1.ebuild 341 RMD160 339c975c6892b3454aff6c7a9dff01d4a31749ee SHA1 faafd3308424af411eff6ff956f72f1f52f4fb90 SHA256 c551b1ac01bb1789c9689f3b6e4000c954d47f300bfc03d0bae073b140b60d61
-MD5 7538608a4235f41df38a9e2b1c8667f6 gmpc-osd-live-0.1.ebuild 341
-RMD160 339c975c6892b3454aff6c7a9dff01d4a31749ee gmpc-osd-live-0.1.ebuild 341
-SHA256 c551b1ac01bb1789c9689f3b6e4000c954d47f300bfc03d0bae073b140b60d61 gmpc-osd-live-0.1.ebuild 341
+EBUILD gmpc-osd-live-0.1.ebuild 353 RMD160 f393500a00dc35723d29b5b4c7ac2826d0c74341 SHA1 c28cd55e5cd6aed37edaa55e02607f79d47f9d8e SHA256 c59cd09fc32282a3bacf8b1e85aebddea679da5111ebe2ef7f8e73fea4a1c4ff
+MD5 2f138ab4575fa06838ff473107efe9e8 gmpc-osd-live-0.1.ebuild 353
+RMD160 f393500a00dc35723d29b5b4c7ac2826d0c74341 gmpc-osd-live-0.1.ebuild 353
+SHA256 c59cd09fc32282a3bacf8b1e85aebddea679da5111ebe2ef7f8e73fea4a1c4ff gmpc-osd-live-0.1.ebuild 353
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-gmpc-osd-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-gmpc-osd-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-gmpc-osd-live-0.1 1

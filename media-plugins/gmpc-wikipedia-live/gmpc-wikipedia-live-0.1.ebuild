@@ -3,7 +3,7 @@
 # $Header: $
 
 GMPC_PLUGIN="wikiplugin"
-inherit gmpc-plugin
+inherit gmpc-plugin eautogen-sh
 
 DESCRIPTION="A GMPC plugin to retrieve coverart from amazon.com"
 HOMEPAGE="http://cms.qballcow.nl/"

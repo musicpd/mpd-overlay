@@ -2,21 +2,21 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+inherit git eautogen-sh
+EGIT_REPO_URI="http://musicpd.org/~normalperson/mpd-ke/mpd-ke.git"
+EGIT_STORE_DIR="/usr/distfiles/git-src/"
 
-ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
-inherit subversion eautogen-sh
-
-DESCRIPTION="The Music Player Daemon (mpd)"
+DESCRIPTION="Music Player Daemon- Kill Eric branch"
 HOMEPAGE="http://www.musicpd.org"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile flac icecast ipv6 mp3 mikmod mp3 musepack oss
-pulseaudio unicode vorbis"
+IUSE="aac alsa ao audiofile flac icecast ipv6 mp3 mikmod mp3 musepack 
+nonblock-update oss pulseaudio unicode vorbis"
 
-DEPEND="${RDEPEND}
-	dev-util/gperf
+DEPEND="dev-util/gperf
+	!media-sound/mpd-svn
 	!sys-cluster/mpich2
 	sys-libs/zlib
 	aac? ( >=media-libs/faad2-2.0_rc2 )
@@ -32,9 +32,9 @@ DEPEND="${RDEPEND}
 	pulseaudio? ( media-sound/pulseaudio )
 	vorbis? ( media-libs/libvorbis )"
 
-RDEPEND="!media-sound/mpd
-	!media-sound/mpd-svn
-	!media-sound/mpd-ke"
+RDEPEND="!media-sound/mpd \
+	!media-sound/mpd-svn \
+	!media-sound/mpd-live"
 
 upgrade_warning() {
 	echo
@@ -77,6 +77,7 @@ src_compile() {
 		$(use_enable pulseaudio pulse) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable vorbis vorbistest) \
+		$(use_enable nonblock-update nonblock-update) \
 		|| die "could not configure"
 
 	emake || die "emake failed"
@@ -121,4 +122,6 @@ pkg_postinst() {
 	elog "/usr/share/doc/${PF}/mpdconf.example.gz, and mpd.conf manual page."
 	elog ""
 	elog "Please make sure that MPD's pid_file is set to /var/run/mpd/mpd.pid."
+	elog ""
+	ewarn "This branch is not supported by anyone but Eric Wong <normalperson@yhbt.net>"
 }

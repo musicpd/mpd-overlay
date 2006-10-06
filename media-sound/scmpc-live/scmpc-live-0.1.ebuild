@@ -3,9 +3,7 @@
 # $Header:
 
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/scmpc/trunk"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
-ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
+inherit subversion eautogen-sh
 
 IUSE=""
 DESCRIPTION="scmpc is yet another audioscrobbler client for MPD"

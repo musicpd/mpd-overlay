@@ -1,7 +1,7 @@
-EBUILD state-utils-live-0.1.ebuild 626 RMD160 013f224805d8c1115075a677015e08e39d24eecf SHA1 f223426fe38e0e4017c95f3c65963215c6c7129c SHA256 d3b4a9156dfb4623638bcda0a2e1afdf9c8dbee670a76536fab46ea64b4dae4e
-MD5 914cf9764194360df0ac04834289cdd1 state-utils-live-0.1.ebuild 626
-RMD160 013f224805d8c1115075a677015e08e39d24eecf state-utils-live-0.1.ebuild 626
-SHA256 d3b4a9156dfb4623638bcda0a2e1afdf9c8dbee670a76536fab46ea64b4dae4e state-utils-live-0.1.ebuild 626
+EBUILD state-utils-live-0.1.ebuild 608 RMD160 a783971ca65e9adaaa313f33b65943617c6f6b87 SHA1 0ab8492e9a051acba0bedd7bc726289fbc3a6917 SHA256 ab63b21b81d8c794d909dcc62d73d4904eaf26e2ffea522d4dc12163190b654a
+MD5 1080c06711546d1599ef33cdfaa92707 state-utils-live-0.1.ebuild 608
+RMD160 a783971ca65e9adaaa313f33b65943617c6f6b87 state-utils-live-0.1.ebuild 608
+SHA256 ab63b21b81d8c794d909dcc62d73d4904eaf26e2ffea522d4dc12163190b654a state-utils-live-0.1.ebuild 608
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-state-utils-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-state-utils-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-state-utils-live-0.1 1

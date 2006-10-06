@@ -6,8 +6,7 @@ IUSE="debug"
 
 ESVN_REPO_URI="https://svn.musicpd.org/glurp/trunk/"
 ESVN_STORE_DIR="${DISTDIR}/svn-src"
-ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
+inherit subversion eautogen-sh
 
 DESCRIPTION="Glurp is a GTK2 based graphical client for the Music Player Daemon"
 HOMEPAGE="http://sourceforge.net/projects/glurp/"
@@ -20,7 +19,7 @@ DEPEND=">=x11-libs/gtk+-2.4.0
 	>=gnome-base/libglade-2.3.6"
 
 src_compile() {
-	econf $(use_enable debug) || die
+	eautogen-sh $(use_enable debug) || die
 	emake || die
 }
 

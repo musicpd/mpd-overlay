@@ -2,9 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git
+inherit git eautogen-sh
 EGIT_REPO_URI="git://olricha.homelinux.net/var/git/state-utils.git"
-EGIT_BOOTSTRAP="./autogen.sh"
 
 DESCRIPTION="A suite of utilities to transfer, restore, save state for the Music Player Daemon."
 HOMEPAGE="http://mpd.wikia.com/wiki/Client:State-utils"

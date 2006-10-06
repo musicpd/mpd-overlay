@@ -3,9 +3,7 @@
 # $Header:
 
 ESVN_REPO_URI="https://svn.musicpd.org/mpc/trunk/"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
-ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
+inherit subversion eautogen-sh
 
 DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
 HOMEPAGE="http://musicpd.org/"

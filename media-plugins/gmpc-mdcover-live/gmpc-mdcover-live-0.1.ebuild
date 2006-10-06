@@ -3,7 +3,7 @@
 # $Header: $
 
 GMPC_PLUGIN="mdcaplugin"
-inherit gmpc-plugin
+inherit gmpc-plugin eautogen-sh
 
 DESCRIPTION="A GMPC plugin to generate playlists based on rules"
 HOMEPAGE="http://cms.qballcow.nl/"

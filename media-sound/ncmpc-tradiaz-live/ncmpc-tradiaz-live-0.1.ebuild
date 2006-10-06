@@ -3,11 +3,8 @@
 # $Header:
 
 ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/branches/tradiaz/"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
-ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
+inherit subversion eautogen-sh
 
-S="${WORKDIR}/${P}"
 IUSE="artist-screen clock-screen debug mouse key-screen lyrics-screen search-screen nls raw-mode"
 DESCRIPTION="A branch for fixes and enhancements to ncmpc, a client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
@@ -31,7 +28,8 @@ pkg_setup() {
 }
 
 src_compile() {
-	econf 	$(use_enable artist-screen) \
+	eautogen-sh \
+		$(use_enable artist-screen) \
 		$(use_enable clock-screen) \
 		$(use_enable debug) \
 		$(use_enable mouse) \
@@ -45,14 +43,8 @@ src_compile() {
 }																																	
 
 src_install() {
-	dobin src/ncmpc
-	dodoc AUTHORS \
-		ChangeLog \
-		NEWS \
-		README \
-		TODO \
-		doc/config.sample \
-		doc/keys.sample \
-		doc/ncmpc.lirc
-	doman doc/ncmpc.1
+       make install DESTDIR=${D} docdir=/usr/share/doc/${PF} \
+               || die "install failed"
+
+       prepalldocs
 }

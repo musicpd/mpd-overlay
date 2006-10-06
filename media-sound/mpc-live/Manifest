@@ -1,7 +1,7 @@
-EBUILD mpc-live-0.1.ebuild 746 RMD160 555b341d033f733a0b8ebb5dfa2ff21c62ead2ae SHA1 425fda20d3be0d2e61c7c77490f0568b0fbdf624 SHA256 b8db396050a5ca03e311a1b7a95da5a7e0a39fd149c60b6a6e2d6e4f45ba573c
-MD5 99d17a4742bbbea6e07fec0d6bb2ec96 mpc-live-0.1.ebuild 746
-RMD160 555b341d033f733a0b8ebb5dfa2ff21c62ead2ae mpc-live-0.1.ebuild 746
-SHA256 b8db396050a5ca03e311a1b7a95da5a7e0a39fd149c60b6a6e2d6e4f45ba573c mpc-live-0.1.ebuild 746
+EBUILD mpc-live-0.1.ebuild 694 RMD160 f4034fda716f535193edc0abb95ecb03ec76bd60 SHA1 45b2076aa0e6f12024027446918ac3c6c0db55f6 SHA256 58541f41c7dccd1662d8cec5785b766ad08fd9294c1ab9420f8ed4831886bf6f
+MD5 357dba7c4c757e0d2fa7fa449f04827d mpc-live-0.1.ebuild 694
+RMD160 f4034fda716f535193edc0abb95ecb03ec76bd60 mpc-live-0.1.ebuild 694
+SHA256 58541f41c7dccd1662d8cec5785b766ad08fd9294c1ab9420f8ed4831886bf6f mpc-live-0.1.ebuild 694
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-mpc-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-mpc-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-mpc-live-0.1 1

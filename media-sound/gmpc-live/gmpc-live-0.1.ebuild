@@ -4,8 +4,7 @@
 
 ESVN_REPO_URI="https://svn.musicpd.org/gmpc/trunk/"
 ESVN_STORE_DIR="${DISTDIR}/svn-src"
-ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
+inherit subversion eautogen-sh
 
 DESCRIPTION="A Gnome client for the Music Player Daemon."
 HOMEPAGE="http://cms.qballcow.nl/"
@@ -38,7 +37,7 @@ pkg_setup() {
 src_compile() {
        	sed -ie "s%REVISION=.*%REVISION=$REV%" ${WORKDIR}/${PF}/src/Makefile.am
 
-	econf || die "Configure failed!"
+	eautogen-sh || die "autogen.sh failed!"
 	emake || die "Make failed!"
 }
 src_install() {

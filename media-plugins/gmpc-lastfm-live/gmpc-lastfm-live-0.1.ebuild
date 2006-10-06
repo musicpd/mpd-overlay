@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.qballcow.nl/gmpc-last.fm/trunk"
-inherit gmpc-plugin
+inherit gmpc-plugin eautogen-sh
 
 DESCRIPTION="A GMPC plugin to simply put a stop button in the main window"
 HOMEPAGE="http://cms.qballcow.nl/"

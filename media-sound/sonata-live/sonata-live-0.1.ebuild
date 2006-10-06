@@ -5,7 +5,6 @@
 inherit distutils subversion
 
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/sonata/trunk"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
 
 DESCRIPTION="A lightweight music player for MPD, written in Python."
 HOMEPAGE="http://sonata.berlios.de/"

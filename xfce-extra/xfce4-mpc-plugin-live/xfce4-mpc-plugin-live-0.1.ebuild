@@ -3,9 +3,7 @@
 # $Header:
 
 ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/xfce4-mpc-plugin/trunk/"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
-ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
+inherit subversion eautogen-sh
 
 IUSE=""
 DESCRIPTION="A simple xfce4 plugin for MPD"

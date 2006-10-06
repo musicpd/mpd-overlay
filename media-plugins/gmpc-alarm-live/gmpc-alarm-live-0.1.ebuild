@@ -3,9 +3,8 @@
 # $Header: $
 
 ESVN_REPO_URI="http://svn.brokentrain.net/gmpc-alarm/trunk/"
-# ESVN_BOOTSTRAP="autogen.sh"
 GMPC_DOCS="AUTHORS TODO README"
-inherit gmpc-plugin
+inherit gmpc-plugin eautogen-sh
 
 DESCRIPTION="A GMPC plugin to generate playlists based on rules"
 HOMEPAGE="http://cms.qballcow.nl/"
@@ -13,5 +12,3 @@ HOMEPAGE="http://cms.qballcow.nl/"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
-
-#DEPEND="net-misc/curl"

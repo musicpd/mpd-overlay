@@ -1,7 +1,7 @@
-EBUILD gmpc-autoplaylist-live-0.1.ebuild 303 RMD160 8f76b4e8c853dbcbfaee4e4e2f32cac27f9e8e10 SHA1 61434515ad276d91fc7fdadd99fd6cf2ea4cfb6b SHA256 1b6dfa3dc7fa658a3e1ac88abef08576a5ca8923ad00b8328f2720a521ff95e7
-MD5 720348402e32f8af836f3bc05370a027 gmpc-autoplaylist-live-0.1.ebuild 303
-RMD160 8f76b4e8c853dbcbfaee4e4e2f32cac27f9e8e10 gmpc-autoplaylist-live-0.1.ebuild 303
-SHA256 1b6dfa3dc7fa658a3e1ac88abef08576a5ca8923ad00b8328f2720a521ff95e7 gmpc-autoplaylist-live-0.1.ebuild 303
+EBUILD gmpc-autoplaylist-live-0.1.ebuild 315 RMD160 120e1d090f744481e7f98c636021e5909dcce446 SHA1 40feb20e91a572bf2da4285490ef891da6696f43 SHA256 8a2544115eeed304804d7da1370da3f08dfa2617db0cad9b722541530e09d992
+MD5 8741229bfb6c1546cf88e2ae03cb4296 gmpc-autoplaylist-live-0.1.ebuild 315
+RMD160 120e1d090f744481e7f98c636021e5909dcce446 gmpc-autoplaylist-live-0.1.ebuild 315
+SHA256 8a2544115eeed304804d7da1370da3f08dfa2617db0cad9b722541530e09d992 gmpc-autoplaylist-live-0.1.ebuild 315
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-gmpc-autoplaylist-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-gmpc-autoplaylist-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-gmpc-autoplaylist-live-0.1 1

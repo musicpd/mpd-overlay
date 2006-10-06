@@ -3,11 +3,8 @@
 # $Header:
 
 ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/trunk/"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
-ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
+inherit subversion eautogen-sh
 
-S="${WORKDIR}/${P}"
 IUSE="clock-screen debug mouse key-screen search-screen nls raw-mode"
 DESCRIPTION="A ncurses client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
@@ -30,7 +27,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	econf $(use_enable clock-screen) \
+	eautogen-sh $(use_enable clock-screen) \
 		$(use_enable debug) \
 		$(use_enable mouse) \
 		$(use_enable key-screen) \
@@ -42,50 +39,19 @@ src_compile() {
 }																																	
 
 src_install() {
-	dobin src/ncmpc
-	dodoc AUTHORS \
-		ChangeLog \
-		NEWS \
-		README \
-		TODO \
-		doc/config.sample \
-		doc/keys.sample \
-		doc/ncmpc.lirc
-	doman doc/ncmpc.1
+       make install DESTDIR=${D} docdir=/usr/share/doc/${PF} \
+               || die "install failed"
+
+       prepalldocs
+
+#	dobin src/ncmpc
+#	dodoc AUTHORS \
+#		ChangeLog \
+#		NEWS \
+#		README \
+#		TODO \
+#		doc/config.sample \
+#		doc/keys.sample \
+#		doc/ncmpc.lirc
+#	doman doc/ncmpc.1
 }
-
-#S=${WORKDIR}/${ECVS_MODULE}mpc-svn-0.1/
-
-#src_compile() {
-	# Fixes bug 27584
-#	export WANT_AUTOCONF=2.5
-
-#	cd ${S}
-#	./configure \
-#		--host=${CHOST} \
-#		--prefix=/usr \
-#		--infodir=/usr/share/info \
-#		--mandir=/usr/share/man \
-#		--sysconfdir=/etc \
-#		${myconf} || die "./configure failed"
-#	emake || die
-#}
-
-#src_install() {
-#	dobin src/mpc
-#	dodoc AUTHORS INSTALL README COPYING
-#}
-
-#src_install() {
-#	myflags=""
-
-#	make DESTDIR=${D} \
-#		docdir=/usr/share/doc/${PF} \
-#		install || die
-
-#	prepalldocs
-#	dodoc AUTHORS INSTALL README COPYING
-#	cd ${S}doc
-#	doman mpc.1
-#	dohtml -r . || die "dohtml failed"
-#}

@@ -2,11 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:
 
-ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/xfce4-mpc-plugin/trunk/"
-ESVN_STORE_DIR="${DISTDIR}/svn-src"
-ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
-
 IUSE=""
 DESCRIPTION="A simple xfce4 plugin for MPD"
 HOMEPAGE="http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin"

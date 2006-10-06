@@ -5,8 +5,7 @@
 IUSE=""
 
 ESVN_REPO_URI="https://svn.musicpd.org/WMmp/trunk/"
-ESVN_BOOTSTRAP="autogen.sh"
-inherit subversion
+inherit subversion eautogen-sh
 
 MY_P=${P/wm/WM}
 DESCRIPTION="A Window Maker dock app client for Music Player Daemon(media-sound/mpd)"

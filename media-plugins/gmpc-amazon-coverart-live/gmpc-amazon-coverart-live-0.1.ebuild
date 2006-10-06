@@ -4,7 +4,7 @@
 
 GMPC_SVN_ROOT="gmpc-coveramazon"
 GMPC_PLUGIN="caaplugin"
-inherit gmpc-plugin
+inherit gmpc-plugin eautogen-sh
 
 DESCRIPTION="A GMPC plugin to retrieve coverart from amazon.com"
 HOMEPAGE="http://cms.qballcow.nl/"

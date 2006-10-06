@@ -1,7 +1,7 @@
-EBUILD gmpc-random-playlist-live-0.1.ebuild 315 RMD160 0e868a87f05a86fbc723781c247ae7bac9892d3c SHA1 41838dd4aaa8492387497ede32e06b6c4e39644d SHA256 285a5ca30e8827ccb7638453b20e01c959f229c150e8adc951750fef2ca141a9
-MD5 0bab901cad10026462de4a7db3c2b594 gmpc-random-playlist-live-0.1.ebuild 315
-RMD160 0e868a87f05a86fbc723781c247ae7bac9892d3c gmpc-random-playlist-live-0.1.ebuild 315
-SHA256 285a5ca30e8827ccb7638453b20e01c959f229c150e8adc951750fef2ca141a9 gmpc-random-playlist-live-0.1.ebuild 315
+EBUILD gmpc-random-playlist-live-0.1.ebuild 327 RMD160 5369a685c189dd02a30a1edb4b8cf0166de15c42 SHA1 5a02193995a1c3864b9e5a4c1577b530e328457f SHA256 d6b5b148c604d732004ced8da06a8e447d34ed92701faba73e769b9ce13cb5d9
+MD5 45dc6af1b764f189d4ac88311cfb7781 gmpc-random-playlist-live-0.1.ebuild 327
+RMD160 5369a685c189dd02a30a1edb4b8cf0166de15c42 gmpc-random-playlist-live-0.1.ebuild 327
+SHA256 d6b5b148c604d732004ced8da06a8e447d34ed92701faba73e769b9ce13cb5d9 gmpc-random-playlist-live-0.1.ebuild 327
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-gmpc-random-playlist-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-gmpc-random-playlist-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-gmpc-random-playlist-live-0.1 1
