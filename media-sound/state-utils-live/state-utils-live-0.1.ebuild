@@ -13,9 +13,9 @@ SLOT="0"
 LICENSE="GPL-2"
 
 src_install() {
-       dodoc README ChangeLog TODO COPYING
-       dobin src/state-restore src/state-save src/state-sync
-       doman doc/state-restore.1 doc/state-save.1 doc/state-sync.1
+       dodoc README
+       dobin src/state-restore src/state-save
+       doman doc/state-restore.1 doc/state-save.1
 }
 
 
