@@ -1,7 +1,7 @@
-EBUILD libmpd-live-0.1.ebuild 669 RMD160 e6bac5e48788a9c1684b98082fed105ee7e34fef SHA1 a962d5625c06c6b94c92a1c1bbb94ba8808705bd SHA256 7eb0452447e84fac1e2ac3b47092bbb88e758e257064babd41a621341d6c9cc2
-MD5 2393ee58f7aed4dee0a639fde74d25ec libmpd-live-0.1.ebuild 669
-RMD160 e6bac5e48788a9c1684b98082fed105ee7e34fef libmpd-live-0.1.ebuild 669
-SHA256 7eb0452447e84fac1e2ac3b47092bbb88e758e257064babd41a621341d6c9cc2 libmpd-live-0.1.ebuild 669
+EBUILD libmpd-live-0.1.ebuild 555 RMD160 ae2ae507ca833e802c49afaeaad1192bb65fa5d3 SHA1 e7937e5d06e07aedb69972bce89725bd7e9a423f SHA256 e7d6577f7e1ddf5c592753b70a6ec8785688423b76a2f6028a15ee680a2cde07
+MD5 e3d8143783d801fc6146fb1bf4742a5c libmpd-live-0.1.ebuild 555
+RMD160 ae2ae507ca833e802c49afaeaad1192bb65fa5d3 libmpd-live-0.1.ebuild 555
+SHA256 e7d6577f7e1ddf5c592753b70a6ec8785688423b76a2f6028a15ee680a2cde07 libmpd-live-0.1.ebuild 555
 MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-libmpd-live-0.1 1
 RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-libmpd-live-0.1 1
 SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-libmpd-live-0.1 1
