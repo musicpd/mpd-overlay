@@ -4,7 +4,6 @@
 
 inherit git eautogen-sh
 EGIT_REPO_URI="http://musicpd.org/~normalperson/mpd-ke/mpd-ke.git"
-EGIT_STORE_DIR="/usr/distfiles/git-src/"
 
 DESCRIPTION="Music Player Daemon- Kill Eric branch"
 HOMEPAGE="http://www.musicpd.org"
