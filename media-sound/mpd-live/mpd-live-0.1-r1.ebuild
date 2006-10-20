@@ -12,8 +12,9 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile flac icecast ipv6 mp3 mikmod mp3 musepack oss
+IUSE="aac alsa ao audiofile flac icecast ipv6 jack mp3 mikmod mp3 musepack oss
 pulseaudio unicode vorbis"
+PROVIDES="media-sound/mpd"
 
 DEPEND="${RDEPEND}
 	dev-util/gperf
@@ -23,7 +24,7 @@ DEPEND="${RDEPEND}
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
-	flac? ( >=media-libs/flac-1.1.0 )
+	flac? ( >=media-libs/flac-1.1.1 )
 	icecast? ( media-libs/libshout )
 	mp3? ( media-libs/libmad
 	       media-libs/libid3tag )
@@ -69,6 +70,7 @@ src_compile() {
 		$(use_enable flac oggflac) \
 		$(use_enable icecast shout) \
 		$(use_enable ipv6) \
+		$(use_enable jack) \
 		$(use_enable mp3) \
 		$(use_enable mp3 id3) \
 		$(use_enable mikmod libmikmodtest) \
