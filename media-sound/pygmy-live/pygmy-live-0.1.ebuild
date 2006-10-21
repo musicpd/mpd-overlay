@@ -8,7 +8,7 @@ inherit distutils subversion
 
 S="${WORKDIR}/${P}"
 DESCRIPTION="A GTK2 client for the Music Player Daemon (MPD)"
-HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
+HOMEPAGE="http://pygmy.berlios.de/"
 
 LICENSE="GPL-2"
 SLOT="0"
