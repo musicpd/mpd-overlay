@@ -3,7 +3,7 @@
 # $Header: $
 
 inherit git eautogen-sh
-EGIT_REPO_URI="http://mpd.bogomips.org/mpd-ke/mpd-ke.git/"
+EGIT_REPO_URI="git://mpd.bogomips.org/mpd-uclinux.git/"
 
 DESCRIPTION="Music Player Daemon- Kill Eric branch"
 HOMEPAGE="http://www.musicpd.org"
