@@ -2,6 +2,6 @@ EBUILD kutempc-live-0.1.ebuild 485 RMD160 2178ac428682ed8be9ef7d3ee181f5e2f68033
 MD5 bcc5051696acc7a5f836248a7eb40b1d kutempc-live-0.1.ebuild 485
 RMD160 2178ac428682ed8be9ef7d3ee181f5e2f6803309 kutempc-live-0.1.ebuild 485
 SHA256 9131d21493149068bc5a989ea4bd8bfc68bfd83243807ff21b559108eba51380 kutempc-live-0.1.ebuild 485
-MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-kutempc-live-0.1 1
-RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-kutempc-live-0.1 1
-SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-kutempc-live-0.1 1
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-kutempc-live-0.1 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-kutempc-live-0.1 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-kutempc-live-0.1 0

@@ -2,6 +2,6 @@ EBUILD mpd_inotify-live-0.1.ebuild 889 RMD160 a67b834a60082a8acd18cd2276e5cef8c7
 MD5 debc29ba7ce3ac6b37a1045a799d9965 mpd_inotify-live-0.1.ebuild 889
 RMD160 a67b834a60082a8acd18cd2276e5cef8c7998b07 mpd_inotify-live-0.1.ebuild 889
 SHA256 200d7c0b203be8543b20ce8eede978044c1dbf2ca5267078d3e0f39abeca8dc8 mpd_inotify-live-0.1.ebuild 889
-MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-mpd_inotify-live-0.1 1
-RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-mpd_inotify-live-0.1 1
-SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-mpd_inotify-live-0.1 1
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-mpd_inotify-live-0.1 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-mpd_inotify-live-0.1 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-mpd_inotify-live-0.1 0

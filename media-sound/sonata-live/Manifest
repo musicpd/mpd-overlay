@@ -2,6 +2,6 @@ EBUILD sonata-live-0.1.ebuild 760 RMD160 f1c1ced4a39c5c1ce749ffcbe57a91b2b4d06b6
 MD5 cfabd74d09a69aaa99f3d91af7cf206b sonata-live-0.1.ebuild 760
 RMD160 f1c1ced4a39c5c1ce749ffcbe57a91b2b4d06b6b sonata-live-0.1.ebuild 760
 SHA256 338ce5014cee6d4a6e0f8e5081b80d2a3fd657386e0c1ef5cb7c6f5f2a25b631 sonata-live-0.1.ebuild 760
-MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-sonata-live-0.1 1
-RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-sonata-live-0.1 1
-SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-sonata-live-0.1 1
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-sonata-live-0.1 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-sonata-live-0.1 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-sonata-live-0.1 0

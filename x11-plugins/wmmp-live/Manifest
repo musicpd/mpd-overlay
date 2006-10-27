@@ -2,6 +2,6 @@ EBUILD wmmp-live-0.1.ebuild 595 RMD160 5a5956dfca0e8f97726a010bb4b71f4d0d331b7a 
 MD5 60c7c162f6af9647d2637d15edcf4d60 wmmp-live-0.1.ebuild 595
 RMD160 5a5956dfca0e8f97726a010bb4b71f4d0d331b7a wmmp-live-0.1.ebuild 595
 SHA256 877b8c05266ef89bbfaa9e36aa80d171f22590e7b0286d33bb7dd1eb25178566 wmmp-live-0.1.ebuild 595
-MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-wmmp-live-0.1 1
-RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-wmmp-live-0.1 1
-SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-wmmp-live-0.1 1
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-wmmp-live-0.1 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-wmmp-live-0.1 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-wmmp-live-0.1 0

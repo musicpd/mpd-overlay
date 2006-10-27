@@ -2,6 +2,6 @@ EBUILD ajaxmp-live-0.1.ebuild 922 RMD160 87c1fddf2997c9d877300c68660a442782ba9db
 MD5 a180745fd826fe8e99cd20e167c273bb ajaxmp-live-0.1.ebuild 922
 RMD160 87c1fddf2997c9d877300c68660a442782ba9dbd ajaxmp-live-0.1.ebuild 922
 SHA256 4f1f13a65c86d592959f3c36b2270467a906259c2550c84c8dd0275f7a288018 ajaxmp-live-0.1.ebuild 922
-MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-ajaxmp-live-0.1 1
-RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-ajaxmp-live-0.1 1
-SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-ajaxmp-live-0.1 1
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-ajaxmp-live-0.1 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-ajaxmp-live-0.1 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-ajaxmp-live-0.1 0

@@ -2,6 +2,6 @@ EBUILD gmpc-stopbutton-live-0.1.2.ebuild 325 RMD160 9658f21c24f5d06bf99a879efe55
 MD5 1d79995e2d6643c860910279249bd7e3 gmpc-stopbutton-live-0.1.2.ebuild 325
 RMD160 9658f21c24f5d06bf99a879efe5549537477ae70 gmpc-stopbutton-live-0.1.2.ebuild 325
 SHA256 075c5ddd9a6fc9f9e0591935033e43aa9c762382e0d7907f30b7547add75e0e7 gmpc-stopbutton-live-0.1.2.ebuild 325
-MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-gmpc-stopbutton-live-0.1.2 1
-RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-gmpc-stopbutton-live-0.1.2 1
-SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-gmpc-stopbutton-live-0.1.2 1
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gmpc-stopbutton-live-0.1.2 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-gmpc-stopbutton-live-0.1.2 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-gmpc-stopbutton-live-0.1.2 0
