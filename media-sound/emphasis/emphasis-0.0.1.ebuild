@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/media-sound/kmp/kmp-0.5.ebuild,v 1.2 2006/02/09 13:54:08 caleb Exp $
 
-inherit eutils 
+inherit eutils eautogen-sh
 
 DESCRIPTION="An Etk Media Player Client for MPD"
 HOMEPAGE="http://emphasis.tuxfamily.org/"
