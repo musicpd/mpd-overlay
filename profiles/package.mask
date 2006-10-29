@@ -14,3 +14,8 @@ xfce-extra/xfce4-mpc-plugin-live
 # and testing
 media-sound/kanola
 media-sound/kanola-live
+
+# It's a development/alpha snapshot, and it's completely
+# untested. Please shoot me an email at avuton@gmail.com
+# if you find it works or with any problems.
+media-sound/emphasis
