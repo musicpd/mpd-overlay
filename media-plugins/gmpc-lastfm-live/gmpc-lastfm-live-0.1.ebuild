@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_REPO_URI="https://svn.qballcow.nl/gmpc-last.fm/trunk"
+GMPC_SVN_ROOT="last.fm"
 inherit gmpc-plugin eautogen-sh
 
 DESCRIPTION="A GMPC plugin to simply put a stop button in the main window"

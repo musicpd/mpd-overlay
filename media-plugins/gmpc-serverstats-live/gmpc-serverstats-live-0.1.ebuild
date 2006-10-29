@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_REPO_URI="https://svn.musicpd.org/gmpc/plugins/${P%-live-${PV}}/trunk"
 inherit gmpc-plugin eautogen-sh
 
 DESCRIPTION="A GMPC plugin to display server/database statistics"

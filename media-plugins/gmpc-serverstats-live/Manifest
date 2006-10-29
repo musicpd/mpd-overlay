@@ -1,7 +1,7 @@
-EBUILD gmpc-serverstats-live-0.1.ebuild 392 RMD160 f096fbafd05295a42f054f9b6a451960fbb10f5b SHA1 f0dc0f5e1fd23c4ecfd4e6596d7585a8206db390 SHA256 5565ad54421b05430b28a795e3816f815359115754de75d7f55c020ee8042288
-MD5 63240d87cfe5570926dbcbcfd8364070 gmpc-serverstats-live-0.1.ebuild 392
-RMD160 f096fbafd05295a42f054f9b6a451960fbb10f5b gmpc-serverstats-live-0.1.ebuild 392
-SHA256 5565ad54421b05430b28a795e3816f815359115754de75d7f55c020ee8042288 gmpc-serverstats-live-0.1.ebuild 392
+EBUILD gmpc-serverstats-live-0.1.ebuild 316 RMD160 c186f68e89bcc5a75391718f5f92b580f246cccc SHA1 3ec238b6e93ae200d8ef1ee434fb3a32aef9a97e SHA256 1b2d54070814485058fa874ab34327e0f6aff6307e7dc12f4849d7657d7bb985
+MD5 bd2a457e08329bc567e7823f17c9c5dc gmpc-serverstats-live-0.1.ebuild 316
+RMD160 c186f68e89bcc5a75391718f5f92b580f246cccc gmpc-serverstats-live-0.1.ebuild 316
+SHA256 1b2d54070814485058fa874ab34327e0f6aff6307e7dc12f4849d7657d7bb985 gmpc-serverstats-live-0.1.ebuild 316
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gmpc-serverstats-live-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-gmpc-serverstats-live-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-gmpc-serverstats-live-0.1 0
