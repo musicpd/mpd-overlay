@@ -22,6 +22,10 @@ DEPEND=">=sys-devel/autoconf-2.52
 	sys-devel/libtool"
 
 src_install() {
+	mv -v doc/m3u-handler.sh doc/mpd-m3u-handler
+	mv -v doc/pls-handler.sh doc/mpd-pls-handler
+	dobin doc/mpd-m3u-handler
+	dobin doc/mpd-pls-handler
         dobin src/mpc
         dodoc AUTHORS INSTALL README doc/m3u-handler.sh doc/pls-handler.sh doc/mppledit
 }
