@@ -41,4 +41,3 @@ src_install() {
 }
 
 DOCS="AUTHORS ChangeLog NEWS README"
-

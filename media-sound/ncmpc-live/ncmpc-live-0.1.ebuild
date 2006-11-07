@@ -1,17 +1,17 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:
 
 ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/trunk/"
 inherit subversion eautogen-sh
 
-IUSE="clock-screen debug mouse key-screen search-screen nls raw-mode"
+IUSE="clock-screen mouse search-screen key-screen raw-mode nls debug"
 DESCRIPTION="A ncurses client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~fbsd ~ppc ~sparc ~alpha ~hppa ~mips"
+KEYWORDS="~x86 ~amd64 ~fbsd ~ppc ~sparc ~alpha ~hppa ~mips ~x86-fbsd"
 PROVIDE="media-sound/ncmpc"
 
 DEPEND="virtual/libc
@@ -43,15 +43,4 @@ src_install() {
                || die "install failed"
 
        prepalldocs
-
-#	dobin src/ncmpc
-#	dodoc AUTHORS \
-#		ChangeLog \
-#		NEWS \
-#		README \
-#		TODO \
-#		doc/config.sample \
-#		doc/keys.sample \
-#		doc/ncmpc.lirc
-#	doman doc/ncmpc.1
 }
