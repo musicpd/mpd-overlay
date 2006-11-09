@@ -1,8 +1,8 @@
 DIST gmpc-stopbutton-0.1.2.tar.gz 292569 RMD160 137252735e8b422648074e9c577ba9e89aa8fcab SHA1 cd273c258499a56e09ad759b1604302b35d5f87a SHA256 28db65d53c19cfbb7655f6437de3209a2701b8d194d857efb9d2267e7ae74bdf
-EBUILD gmpc-stopbutton-0.1.2.ebuild 400 RMD160 276dc0bf7739b867ceca3295760cba2984e82dc0 SHA1 d241686afdc22c78f26333865978b5a1aae194b3 SHA256 d9862abcde61bae723a3a60c4493d9f9ea183ef8ead817499e5d3c9cc839d348
-MD5 90cc5b8318188f858f2dce3790f444d0 gmpc-stopbutton-0.1.2.ebuild 400
-RMD160 276dc0bf7739b867ceca3295760cba2984e82dc0 gmpc-stopbutton-0.1.2.ebuild 400
-SHA256 d9862abcde61bae723a3a60c4493d9f9ea183ef8ead817499e5d3c9cc839d348 gmpc-stopbutton-0.1.2.ebuild 400
+EBUILD gmpc-stopbutton-0.1.2.ebuild 400 RMD160 467f2039fe46e3eefee68e62cf6017ca099a9c31 SHA1 e4c4043c21b985234de63b9ad1dc53bf79ead08e SHA256 c73d801797e012451c7a1a18e2b5a0fa0baef2562f4f3b857cc465011b1a0271
+MD5 bdd7797397a9b7e1778cf4a3e1c408f9 gmpc-stopbutton-0.1.2.ebuild 400
+RMD160 467f2039fe46e3eefee68e62cf6017ca099a9c31 gmpc-stopbutton-0.1.2.ebuild 400
+SHA256 c73d801797e012451c7a1a18e2b5a0fa0baef2562f4f3b857cc465011b1a0271 gmpc-stopbutton-0.1.2.ebuild 400
 MD5 fbc317f0aba9926a658678eba690e802 files/digest-gmpc-stopbutton-0.1.2 265
 RMD160 ec7584b0aeb91e0643c922032b4da7aef6373e26 files/digest-gmpc-stopbutton-0.1.2 265
 SHA256 b2e2aecb3f9f8b55f6bec5c3f0eabbae4c2e5ecfe89d6d12763899f53f480719 files/digest-gmpc-stopbutton-0.1.2 265
