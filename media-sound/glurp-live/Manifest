@@ -1,7 +1,7 @@
-EBUILD glurp-live-0.1.ebuild 770 RMD160 bfe07ccffd36308e07223fc1ed60a95dc8106f05 SHA1 0e50d9500aa21cea745562af058d4efc0de6c640 SHA256 97c4913d0d99e49fffbfad2766c6afb6cf51be842df033cd5de264b9b976f246
-MD5 9b98493a1a87b362ba36de2d90a88087 glurp-live-0.1.ebuild 770
-RMD160 bfe07ccffd36308e07223fc1ed60a95dc8106f05 glurp-live-0.1.ebuild 770
-SHA256 97c4913d0d99e49fffbfad2766c6afb6cf51be842df033cd5de264b9b976f246 glurp-live-0.1.ebuild 770
+EBUILD glurp-live-0.1.ebuild 672 RMD160 cf11b2d4aa528cd4f0e395ddb542091dbbec4736 SHA1 8c1673be914d186ea1d7d088da62945b7a67b975 SHA256 85062de4fff6c8fe769c9bcbbf320c8c87c6bcfde5109d9f9971c6d16db243e7
+MD5 b1a2a83487d9a470287fc0d49860baf1 glurp-live-0.1.ebuild 672
+RMD160 cf11b2d4aa528cd4f0e395ddb542091dbbec4736 glurp-live-0.1.ebuild 672
+SHA256 85062de4fff6c8fe769c9bcbbf320c8c87c6bcfde5109d9f9971c6d16db243e7 glurp-live-0.1.ebuild 672
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-glurp-live-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-glurp-live-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-glurp-live-0.1 0

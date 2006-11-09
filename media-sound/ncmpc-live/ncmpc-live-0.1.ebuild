@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/trunk/"
 inherit subversion eautogen-sh

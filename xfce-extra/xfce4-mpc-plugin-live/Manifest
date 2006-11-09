@@ -1,7 +1,7 @@
-EBUILD xfce4-mpc-plugin-live-0.1.ebuild 747 RMD160 7d8abb455d1bfc49b5247c692adf716c8d459aed SHA1 1f4533ae7d09044402fa6c8b910a5cdf85a09430 SHA256 d58a46e413a5179a1170feef57fbdff53f463d1c218f149cc250d28b073dce3a
-MD5 784d29f2bac1d2c067e0f5f92deb1f08 xfce4-mpc-plugin-live-0.1.ebuild 747
-RMD160 7d8abb455d1bfc49b5247c692adf716c8d459aed xfce4-mpc-plugin-live-0.1.ebuild 747
-SHA256 d58a46e413a5179a1170feef57fbdff53f463d1c218f149cc250d28b073dce3a xfce4-mpc-plugin-live-0.1.ebuild 747
+EBUILD xfce4-mpc-plugin-live-0.1.ebuild 749 RMD160 c2fec40dbd569d6b5ab3ba136a8b37cf27a21d12 SHA1 83cd879d705bf9e194334def303d3e8428a0bc1d SHA256 004cd6378d1a7d57d09492fba024a35d00e2c8e63569b44966568b2417673557
+MD5 9cf4640cb6177b2dc5be1bdb6e7a473e xfce4-mpc-plugin-live-0.1.ebuild 749
+RMD160 c2fec40dbd569d6b5ab3ba136a8b37cf27a21d12 xfce4-mpc-plugin-live-0.1.ebuild 749
+SHA256 004cd6378d1a7d57d09492fba024a35d00e2c8e63569b44966568b2417673557 xfce4-mpc-plugin-live-0.1.ebuild 749
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-xfce4-mpc-plugin-live-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-xfce4-mpc-plugin-live-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-xfce4-mpc-plugin-live-0.1 0
