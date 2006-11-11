@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-SRC_URI="http://emphasis.tuxfamily.org/emphasis.tar.bz2"
+SRC_URI="http://emphasis.tuxfamily.org/emphasis-${PV}.tar.bz2"
 
 DEPEND="|| ( =dev-lib/libmpd-0.12.0 media-libs/libmpd-live)
 	=x11-libs/etk-9999"
