@@ -15,7 +15,6 @@ DEPEND="virtual/libc
 	!media-libs/libmpd
 	sys-devel/libtool"
 
-PROVIDES="media-libs/libmpd"
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"

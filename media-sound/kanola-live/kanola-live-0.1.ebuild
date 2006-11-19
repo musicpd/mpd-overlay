@@ -12,7 +12,6 @@ HOMEPAGE="http://dadexter.googlepages.com/kanola"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-PROVIDE="media-sound/kanola"
 
 RDEPEND=">=virtual/python-2.4
 	>=dev-python/PyQt4

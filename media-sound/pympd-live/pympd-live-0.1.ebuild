@@ -12,7 +12,6 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE=""
-PROVIDE="media-sound/pympd"
 
 DEPEND=">=virtual/python-2.4
 	>=dev-python/pygtk-2.6

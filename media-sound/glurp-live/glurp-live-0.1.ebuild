@@ -14,7 +14,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ~ppc sparc x86"
 
-PROVIDE="media-sound/glurp"
 
 DEPEND=">=x11-libs/gtk+-2.4.0
 	>=gnome-base/libglade-2.3.6

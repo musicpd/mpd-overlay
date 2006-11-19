@@ -12,7 +12,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-PROVIDE="media-sound/scmpc"
 
 DEPEND=">=net-misc/curl-7.10.0
 	dev-libs/libdaemon

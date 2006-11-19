@@ -12,7 +12,6 @@ HOMEPAGE="http://sonata.berlios.de/"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-PROVIDE="media-sound/sonata"
 IUSE="gnome"
 
 RDEPEND=">=virtual/python-2.4

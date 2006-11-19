@@ -10,7 +10,6 @@ inherit subversion eautogen-sh
 MY_P=${P/wm/WM}
 DESCRIPTION="A Window Maker dock app client for Music Player Daemon(media-sound/mpd)"
 HOMEPAGE="http://www.musicpd.org"
-PROVIDE="x11-plugins/wmmp"
 
 DEPEND="virtual/x11 \
 	!x11-plugins/wmmp"

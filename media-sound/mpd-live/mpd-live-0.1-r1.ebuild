@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE="aac alsa ao audiofile flac icecast ipv6 jack mp3 mikmod mp3 musepack oss
 pulseaudio unicode vorbis"
-PROVIDES="media-sound/mpd"
 
 DEPEND="${RDEPEND}
 	dev-util/gperf

@@ -19,7 +19,6 @@ DEPEND=">=x11-libs/gtk+-2.4
 	>dev-util/gob-2
 	net-misc/curl"
 
-PROVIDE="media-sound/gmpc"
 
 ## This is needed to extract the svn revision for the about window. The
 ## subversion.eclass doen't copy the .svn directories, so after the copy

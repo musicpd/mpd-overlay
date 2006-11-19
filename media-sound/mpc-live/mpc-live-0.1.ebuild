@@ -11,7 +11,6 @@ HOMEPAGE="http://musicpd.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~fbsd ~ppc ~sparc ~alpha ~hppa ~mips"
-PROVIDE="media-sound/mpc"
 IUSE="nls"
 
 DEPEND="virtual/libc

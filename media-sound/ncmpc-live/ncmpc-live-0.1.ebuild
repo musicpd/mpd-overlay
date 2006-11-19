@@ -12,7 +12,6 @@ HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~fbsd ~ppc ~sparc ~alpha ~hppa ~mips ~x86-fbsd"
-PROVIDE="media-sound/ncmpc"
 
 DEPEND="virtual/libc
         sys-libs/ncurses

@@ -14,7 +14,6 @@ KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE="aac alsa ao audiofile flac icecast ipv6 mp3 mikmod mp3 musepack 
 nonblock-update oss pulseaudio unicode vorbis"
 
-PROVIDE="media-sound/mpd"
 
 DEPEND="dev-util/gperf
 	!media-sound/mpd-svn
