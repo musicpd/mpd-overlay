@@ -63,6 +63,11 @@ eautogen-sh_eautogen-sh() {
 			"$@" \
 			${LOCAL_EXTRA_ECONF}
 
+		## Some sed magic, almost no autogen script traps as necessary.
+		grep '^trap.*$' autogen.sh&>/dev/null
+		if [[ $? -ne 0 ]]; then
+			sed -ie 's%#!/bin/\(.*\)$%#!/bin/\1\ntrap "exit 1" HUP INT QUIT ABRT KILL ALRM TERM%' autogen.sh
+		fi
 		./autogen.sh \
 			--prefix=/usr \
 			--host=${CHOST} \
