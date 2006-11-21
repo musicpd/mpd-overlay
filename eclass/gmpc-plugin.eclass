@@ -1,7 +1,7 @@
 DEPEND="media-sound/gmpc-live"
-inherit subversion
 
 if [[ "${PN##*-}" == "live" ]]; then
+	inherit subversion
 	if [[ -z ${ESVN_REPO_URI} ]]; then
 		if [[ -z ${GMPC_SVN_ROOT} ]]; then
 			GMPC_SVN_ROOT="${PN%-live}"
