@@ -6,7 +6,7 @@ ESVN_REPO_URI="http://svn.brokentrain.net/gmpc-alarm/trunk/"
 GMPC_DOCS="AUTHORS TODO README"
 inherit subversion eautogen-sh
 
-DESCRIPTION="A GMPC plugin to generate playlists based on rules"
+DESCRIPTION="A GMPC plugin for alarm timer action."
 HOMEPAGE="http://cms.qballcow.nl/"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"

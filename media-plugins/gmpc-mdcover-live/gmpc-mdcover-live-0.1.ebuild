@@ -4,7 +4,7 @@
 
 inherit gmpc-plugin eautogen-sh
 
-DESCRIPTION="A GMPC plugin to generate playlists based on rules"
+DESCRIPTION="A GMPC plugin to fetch cover art from a music directory's source."
 HOMEPAGE="http://cms.qballcow.nl/"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"

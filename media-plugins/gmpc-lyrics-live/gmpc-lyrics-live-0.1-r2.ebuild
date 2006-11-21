@@ -5,7 +5,7 @@
 ESVN_REPO_URI="https://ssl.bulix.org/svn/gmpc-lyrics/trunk/"
 inherit gmpc-plugin eautogen-sh
 
-DESCRIPTION="A GMPC plugin to generate playlists based on rules"
+DESCRIPTION="A GMPC plugin to show lyrics in the song information window."
 HOMEPAGE="http://bulix.org/"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
