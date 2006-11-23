@@ -9,7 +9,7 @@ HOMEPAGE="http://emphasis.tuxfamily.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE=""
 
 SRC_URI="http://emphasis.tuxfamily.org/emphasis-${PV}.tar.bz2"

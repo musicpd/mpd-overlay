@@ -4,9 +4,9 @@
 
 inherit gmpc-plugin eautogen-sh
 
-DESCRIPTION="A GMPC plugin to fetch cover art from a music directory's source."
-HOMEPAGE="http://cms.qballcow.nl/"
+DESCRIPTION="A GMPC plugin that fetches cover art, artist art, album and artist information from the file system."
+HOMEPAGE="http://sarine.nl/gmpc-plugins-mdcover"
 
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 LICENSE="GPL-2"

@@ -10,7 +10,7 @@ HOMEPAGE="http://www.musicpd.org"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="aac alsa ao audiofile flac icecast ipv6 mp3 mikmod mp3 musepack 
 nonblock-update oss pulseaudio unicode vorbis"
 

@@ -6,10 +6,10 @@ ESVN_REPO_URI="https://svn.musicpd.org/libmpd/trunk/"
 inherit subversion eautogen-sh
 
 DESCRIPTION="A library handling connection to a MPD server."
-HOMEPAGE="http://cms.qballcow.nl/"
+HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE=""
 DEPEND="virtual/libc
 	!media-libs/libmpd

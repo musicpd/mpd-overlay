@@ -1,7 +1,11 @@
-EBUILD ncmpc-tradiaz-live-0.1.ebuild 1302 RMD160 83ce9b5ea3315f50fbc76bac4be616f426342ea5 SHA1 74cf53a52dad075fd37efabec0ef6e1766c6f68e SHA256 d8b01cca125d0228f2de35f39c15f778a30cfcd0a244561dc9525f37cf5b7a97
-MD5 9df7ed75dc775f2ed348074316d95606 ncmpc-tradiaz-live-0.1.ebuild 1302
-RMD160 83ce9b5ea3315f50fbc76bac4be616f426342ea5 ncmpc-tradiaz-live-0.1.ebuild 1302
-SHA256 d8b01cca125d0228f2de35f39c15f778a30cfcd0a244561dc9525f37cf5b7a97 ncmpc-tradiaz-live-0.1.ebuild 1302
+EBUILD ncmpc-tradiaz-live-0.1.ebuild 1357 RMD160 cae0a3fa828d3163d314a3109f25b4ccb741177f SHA1 80f9fc1fa13408aebca252a7943832969e22bdc2 SHA256 51ed618bd0ea9c21b789ac503cd2bfb1667e4bdc25e0097dcae245a57a8c548c
+MD5 8b19a577e89cfc55c766f20a89872719 ncmpc-tradiaz-live-0.1.ebuild 1357
+RMD160 cae0a3fa828d3163d314a3109f25b4ccb741177f ncmpc-tradiaz-live-0.1.ebuild 1357
+SHA256 51ed618bd0ea9c21b789ac503cd2bfb1667e4bdc25e0097dcae245a57a8c548c ncmpc-tradiaz-live-0.1.ebuild 1357
+MISC ncmpc-tradiaz-live-0.1.ebuilde 1302 RMD160 83ce9b5ea3315f50fbc76bac4be616f426342ea5 SHA1 74cf53a52dad075fd37efabec0ef6e1766c6f68e SHA256 d8b01cca125d0228f2de35f39c15f778a30cfcd0a244561dc9525f37cf5b7a97
+MD5 9df7ed75dc775f2ed348074316d95606 ncmpc-tradiaz-live-0.1.ebuilde 1302
+RMD160 83ce9b5ea3315f50fbc76bac4be616f426342ea5 ncmpc-tradiaz-live-0.1.ebuilde 1302
+SHA256 d8b01cca125d0228f2de35f39c15f778a30cfcd0a244561dc9525f37cf5b7a97 ncmpc-tradiaz-live-0.1.ebuilde 1302
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-ncmpc-tradiaz-live-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-ncmpc-tradiaz-live-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-ncmpc-tradiaz-live-0.1 0

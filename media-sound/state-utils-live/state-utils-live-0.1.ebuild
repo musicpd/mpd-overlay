@@ -8,7 +8,7 @@ EGIT_REPO_URI="git://olricha.homelinux.net/var/git/state-utils.git"
 DESCRIPTION="A suite of utilities to transfer, restore, save state for the Music Player Daemon."
 HOMEPAGE="http://mpd.wikia.com/wiki/Client:State-utils"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 LICENSE="GPL-2"
 

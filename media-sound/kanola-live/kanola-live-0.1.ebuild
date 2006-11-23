@@ -10,7 +10,7 @@ DESCRIPTION="A lightweight client for MPD, in PyQt 4"
 HOMEPAGE="http://dadexter.googlepages.com/kanola"
 
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 
 RDEPEND=">=virtual/python-2.4

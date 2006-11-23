@@ -11,7 +11,7 @@ DESCRIPTION="phpMp2 is another web-based client for MPD"
 HOMEPAGE="http://musicpd.org/phpMp2.shtml"
 
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64 ~ppc ~ppc64"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
 IUSE="gd"
 

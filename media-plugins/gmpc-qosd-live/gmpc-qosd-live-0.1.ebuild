@@ -4,9 +4,9 @@
 
 inherit gmpc-plugin eautogen-sh
 
-DESCRIPTION="A GMPC plugin to show an on screen display of the currently playing song."
-HOMEPAGE="http://cms.qballcow.nl/"
+DESCRIPTION="A GMPC plugin to on-screen-display that looks a bit nicer than xosd."
+HOMEPAGE="http://sarine.nl/q-on-screen-display"
 
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 LICENSE="GPL-2"

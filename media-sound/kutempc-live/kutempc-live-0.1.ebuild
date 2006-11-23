@@ -9,7 +9,7 @@ inherit subversion
 DESCRIPTION="KuteMPC is a QT 4.1+ client heavily inspired by glurp"
 HOMEPAGE="http://etomite.qballcow.nl/qgmpc-0.12.html"
 
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 LICENSE="GPL-2"
 

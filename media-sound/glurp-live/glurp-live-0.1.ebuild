@@ -12,7 +12,7 @@ HOMEPAGE="http://sourceforge.net/projects/glurp/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
 
 DEPEND=">=x11-libs/gtk+-2.4.0

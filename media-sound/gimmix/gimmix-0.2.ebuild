@@ -8,7 +8,7 @@ DESCRIPTION="Gimmix is a graphical music player daemon (MPD) client written in C
 HOMEPAGE="http://priyank.one09.net/index.php?page=gimmix"
 SRC_URI="http://gimmix.berlios.de/releases/${P}.tar.bz2"
 
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 LICENSE="GPL-2"
 

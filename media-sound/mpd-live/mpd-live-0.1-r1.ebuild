@@ -11,7 +11,7 @@ HOMEPAGE="http://www.musicpd.org"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="aac alsa ao audiofile flac icecast ipv6 jack mp3 mikmod mp3 musepack oss
 pulseaudio unicode vorbis"
 
@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
-	flac? ( >=media-libs/flac-1.1.1 )
+	flac? ( ~media-libs/flac-1.1.2 )
 	icecast? ( media-libs/libshout )
 	mp3? ( media-libs/libmad
 	       media-libs/libid3tag )
@@ -33,7 +33,6 @@ DEPEND="${RDEPEND}
 	vorbis? ( media-libs/libvorbis )"
 
 RDEPEND="!media-sound/mpd
-	!media-sound/mpd-svn
 	!media-sound/mpd-ke"
 
 upgrade_warning() {
