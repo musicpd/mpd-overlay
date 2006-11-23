@@ -4,7 +4,8 @@
 
 inherit gmpc-plugin eautogen-sh
 
-ESVN_PATCHES="${FILESDIR}/gmpc-magnatune-warning-fixes.patch"
+## Due to upcoming magnatune plugin breakage
+ESVN_OPTIONS="-r 5080"
 DESCRIPTION="A GMPC plugin to interface magnatune.com streams."
 HOMEPAGE="http://sarine.nl/gmpc"
 
