@@ -1,11 +1,7 @@
-EBUILD kanola-live-0.1.ebuild 775 RMD160 03d33be64ca38da23c5405dbd410ac5e73ee57cc SHA1 c4b819a22aeb2da4337bf52409814bafb0be508b SHA256 fa60ff46d4008974d7d725ca643ddf322b8d46e751c184c7dbe20f2be62876fc
-MD5 9e01d6d56a844e15c00cb8c2e631430a kanola-live-0.1.ebuild 775
-RMD160 03d33be64ca38da23c5405dbd410ac5e73ee57cc kanola-live-0.1.ebuild 775
-SHA256 fa60ff46d4008974d7d725ca643ddf322b8d46e751c184c7dbe20f2be62876fc kanola-live-0.1.ebuild 775
-MISC kanola-live-0.1.ebuilde 683 RMD160 e723efcdcd5b0e6b48547532a36b9ad7d57557b1 SHA1 b242f0f1ecb552f160943db8dd8e87fa68bef9f5 SHA256 cf57d0d66ad32f1f7aea7012e7a9beaf3e15920a801da201b60adb9be9ea8a97
-MD5 ddb5349465b381deaba750a23b8b05b1 kanola-live-0.1.ebuilde 683
-RMD160 e723efcdcd5b0e6b48547532a36b9ad7d57557b1 kanola-live-0.1.ebuilde 683
-SHA256 cf57d0d66ad32f1f7aea7012e7a9beaf3e15920a801da201b60adb9be9ea8a97 kanola-live-0.1.ebuilde 683
+EBUILD kanola-live-0.1.ebuild 783 RMD160 12a5911cfc75ab9fe205ddbbbbb012179deaeb85 SHA1 35734851d94e49964171b0645db034ab2572e77c SHA256 1840016cb03745990f102ae9d18af1faae2abf4a4425d010636aee8753631df0
+MD5 b9e46a67db123e7d152e77dbc2aac9b3 kanola-live-0.1.ebuild 783
+RMD160 12a5911cfc75ab9fe205ddbbbbb012179deaeb85 kanola-live-0.1.ebuild 783
+SHA256 1840016cb03745990f102ae9d18af1faae2abf4a4425d010636aee8753631df0 kanola-live-0.1.ebuild 783
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-kanola-live-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-kanola-live-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-kanola-live-0.1 0

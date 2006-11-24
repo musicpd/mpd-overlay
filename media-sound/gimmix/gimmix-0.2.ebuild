@@ -10,6 +10,7 @@ SRC_URI="http://gimmix.berlios.de/releases/${P}.tar.bz2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
+IUSE=""
 LICENSE="GPL-2"
 
 DEPEND=">=x11-libs/gtk+-2.10

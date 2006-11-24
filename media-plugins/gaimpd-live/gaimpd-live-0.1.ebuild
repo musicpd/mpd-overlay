@@ -12,14 +12,22 @@ HOMEPAGE="http://sarine.nl"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
+IUSE="debug"
 LICENSE="GPL-2"
 
 DEPEND="=net-im/gaim-2*
 	|| ( media-libs/libmpd-live media-libs/libmpd )"
 
+src_compile() {
+	econf $(use_enable debug) || 'Configure failed.'
+	emake || 'Make failed.'
+}
+
 src_install() {
 	emake install DESTDIR=${D} || die
+}
 
+pkg_postinst() {
 	einfo "If you're installing this with gaim-1.x this"
 	einfo "plugin may not work as expected, please contact"
 	einfo "the author if something unexpected occurs"

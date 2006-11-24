@@ -9,6 +9,7 @@ HOMEPAGE="http://sarine.nl/xosd-on-screen-display"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
+IUSE=""
 LICENSE="GPL-2"
 
 DEPEND="x11-libs/xosd"

@@ -3,10 +3,6 @@ EBUILD emphasis-0.0.1.ebuild 584 RMD160 d332d6bdf4bad4d95d7a7d1605b1aca5b8b4ba57
 MD5 07c7da2e1acfb87a42d52f2cdecef243 emphasis-0.0.1.ebuild 584
 RMD160 d332d6bdf4bad4d95d7a7d1605b1aca5b8b4ba57 emphasis-0.0.1.ebuild 584
 SHA256 d5f4fb98c6d4ffa7dd114877f1c8743dfa5e0fdf01fc68c863c54c3789810142 emphasis-0.0.1.ebuild 584
-MISC emphasis-0.0.1.ebuilde 504 RMD160 33a865089283db570f3bb7ceb2b53bbf65bc1a72 SHA1 0d9b7368fbdadff82c460f4b6982df5695fb4832 SHA256 67e19100f80dff1bdec5e385a64e789d948e9a169719bee1bfe68a214d9ead7e
-MD5 b4bb6881e45fbab2e4182c089c751c61 emphasis-0.0.1.ebuilde 504
-RMD160 33a865089283db570f3bb7ceb2b53bbf65bc1a72 emphasis-0.0.1.ebuilde 504
-SHA256 67e19100f80dff1bdec5e385a64e789d948e9a169719bee1bfe68a214d9ead7e emphasis-0.0.1.ebuilde 504
 MD5 5a54d68f229a83d91b6df87e84e12e02 files/digest-emphasis-0.0.1 247
 RMD160 f12c51594e23f37bcec96a4a5cacc64153d05622 files/digest-emphasis-0.0.1 247
 SHA256 0a8a09274543f7469eb38b36deb672115a8b104ccfb2e93128555f3cfc592734 files/digest-emphasis-0.0.1 247

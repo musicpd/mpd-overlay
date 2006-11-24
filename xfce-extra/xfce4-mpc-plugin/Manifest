@@ -7,10 +7,6 @@ EBUILD xfce4-mpc-plugin-0.1.0.ebuild 931 RMD160 c9054b89f7e4819cccc15e98d2be616d
 MD5 7388396193295a1617c4d1406220ab97 xfce4-mpc-plugin-0.1.0.ebuild 931
 RMD160 c9054b89f7e4819cccc15e98d2be616dd4aa6965 xfce4-mpc-plugin-0.1.0.ebuild 931
 SHA256 750267f8230818067a35c2725fcdbabd61032d2810e42a5d6d90ff6a7d22ba4d xfce4-mpc-plugin-0.1.0.ebuild 931
-MISC xfce4-mpc-plugin-0.1.0.ebuilde 876 RMD160 885de67a205ac85ede527d55773e1b075914dfb7 SHA1 d0e63523b856057e55d72b4b93c7cbbf43d54ece SHA256 260be8ba98de2c8bc6f71bacba659fc2dca849842c350178cb3ca40018a0d6dc
-MD5 513cb36c121b793972c3492ca1da714f xfce4-mpc-plugin-0.1.0.ebuilde 876
-RMD160 885de67a205ac85ede527d55773e1b075914dfb7 xfce4-mpc-plugin-0.1.0.ebuilde 876
-SHA256 260be8ba98de2c8bc6f71bacba659fc2dca849842c350178cb3ca40018a0d6dc xfce4-mpc-plugin-0.1.0.ebuilde 876
 MD5 50cd22c86831531df0d9eec07ee7db5d files/digest-xfce4-mpc-plugin-0.1.0 268
 RMD160 fd1ae11d4163f6b59c57b6fdebaba5294936b632 files/digest-xfce4-mpc-plugin-0.1.0 268
 SHA256 341304ee043526b8dd6e0851bb4c9e2901fae5b1baa6b0b08cb9dcb3303a162d files/digest-xfce4-mpc-plugin-0.1.0 268

@@ -6,10 +6,6 @@ EBUILD mpd-live-0.1-r1.ebuild 3351 RMD160 599be194a24f6eb8e616a47a33f4bd7c14a3be
 MD5 297c47ce4d13790aac9249465b91bb9f mpd-live-0.1-r1.ebuild 3351
 RMD160 599be194a24f6eb8e616a47a33f4bd7c14a3bebb mpd-live-0.1-r1.ebuild 3351
 SHA256 9a7b79951a2606993e7473e0ba3631b47ab4ff03892369aa1e23867c83a4ed30 mpd-live-0.1-r1.ebuild 3351
-MISC mpd-live-0.1-r1.ebuilde 3287 RMD160 76b40b05f56b6ecbef89fe64ecc59fba6dab5d3c SHA1 b15dc3263ac147cb67b05f85217a5fef40a597ef SHA256 1a9cf63a737ecafa16eb7ee35499762deb8e2b1a7cf793f86632c92fb13123a3
-MD5 cb03cf4c3c437a0df5e53f17f0282447 mpd-live-0.1-r1.ebuilde 3287
-RMD160 76b40b05f56b6ecbef89fe64ecc59fba6dab5d3c mpd-live-0.1-r1.ebuilde 3287
-SHA256 1a9cf63a737ecafa16eb7ee35499762deb8e2b1a7cf793f86632c92fb13123a3 mpd-live-0.1-r1.ebuilde 3287
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-mpd-live-0.1-r1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-mpd-live-0.1-r1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-mpd-live-0.1-r1 0
