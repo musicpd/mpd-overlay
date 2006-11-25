@@ -1,7 +1,7 @@
-EBUILD gmpc-magnatune-live-0.1.ebuild 468 RMD160 a4f69a8626b102c08cd0f37c49ca261648d472e0 SHA1 b6518a49ab10acba2ade4b8959722069f5473502 SHA256 4fa9d15965c63eab79524d6681f61c8c7e20dac153b81e1f43e0e65176be51a0
-MD5 2003cad51f2f59887ba853fa9e075177 gmpc-magnatune-live-0.1.ebuild 468
-RMD160 a4f69a8626b102c08cd0f37c49ca261648d472e0 gmpc-magnatune-live-0.1.ebuild 468
-SHA256 4fa9d15965c63eab79524d6681f61c8c7e20dac153b81e1f43e0e65176be51a0 gmpc-magnatune-live-0.1.ebuild 468
+EBUILD gmpc-magnatune-live-0.1.ebuild 400 RMD160 9b0fd8e74ca2cb9d260b2a608f2f3d9c1103f2a9 SHA1 821745551aa4958d98afa2bd76fa1c9a02bb9402 SHA256 d629a29bf1e8060a3d96ff4dd44f008f0350718e08a0178f9050161997f8502e
+MD5 873a3b5c490c44a4facc6ca79f4145d6 gmpc-magnatune-live-0.1.ebuild 400
+RMD160 9b0fd8e74ca2cb9d260b2a608f2f3d9c1103f2a9 gmpc-magnatune-live-0.1.ebuild 400
+SHA256 d629a29bf1e8060a3d96ff4dd44f008f0350718e08a0178f9050161997f8502e gmpc-magnatune-live-0.1.ebuild 400
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gmpc-magnatune-live-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-gmpc-magnatune-live-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-gmpc-magnatune-live-0.1 0
