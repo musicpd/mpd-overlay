@@ -12,3 +12,10 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 LICENSE="GPL-2"
+
+pkg_setup() {
+	if ! built_with_use '=gtk+-2*' jpeg; then
+		eerror "You must build gtk+-2.x with jpeg USE flag."
+		die "Please re-emerge gtk+-2.x with jpeg USE flag."
+	fi
+}
