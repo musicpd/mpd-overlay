@@ -20,7 +20,7 @@ RDEPEND=">=virtual/python-2.4
 	gnome? ( dev-python/gnome-python-extras )"
 
 pkg_setup() {
-	if !built_with_use =gtk+-2* jpeg; then
+	if ! built_with_use =gtk+-2* jpeg; then
 		eerror "You must build gtk+-2.x with jpeg USE flag."
 		die "Please re-emerge gtk+-2.x with jpeg USE flag."
 	fi
