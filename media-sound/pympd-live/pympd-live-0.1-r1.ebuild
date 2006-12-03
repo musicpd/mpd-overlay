@@ -17,6 +17,13 @@ DEPEND=">=virtual/python-2.4
 	>=dev-python/pygtk-2.6
 	!media-sound/pympd"
 
+pkg_setup() {
+	if ! built_with_use =gtk+-2* jpeg; then
+		eerror "You must build gtk+-2.x with jpeg USE flag."
+		die "Please re-emerge gtk+-2.x with jpeg USE flag."
+	fi
+}
+
 src_compile() {
 	# Honor CFLAGS in make.conf
 	export BUILDFLAGS="${CFLAGS}"
