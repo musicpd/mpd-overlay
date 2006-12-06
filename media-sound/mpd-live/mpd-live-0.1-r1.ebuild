@@ -4,6 +4,7 @@
 
 
 ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
+ESVN_PATCHES="mpd-svn5125-avahi.patch"
 inherit subversion eautogen-sh
 
 DESCRIPTION="The Music Player Daemon (mpd)"
@@ -12,7 +13,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile flac icecast ipv6 jack mp3 mikmod mp3 musepack oss
+IUSE="aac alsa ao audiofile avahi flac icecast ipv6 jack mp3 mikmod mp3 musepack oss
 pulseaudio unicode vorbis"
 
 DEPEND="${RDEPEND}
@@ -23,7 +24,8 @@ DEPEND="${RDEPEND}
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
-	flac? ( ~media-libs/flac-1.1.2 )
+	avahi? ( >=net-dns/avahi-0.6 )
+	flac? ( >=media-libs/flac-1.1.2 )
 	icecast? ( media-libs/libshout )
 	mp3? ( media-libs/libmad
 	       media-libs/libid3tag )
@@ -56,6 +58,7 @@ src_compile() {
 	eautogen-sh \
 		$(use_enable alsa) \
 		$(use_enable alsa alsatest) \
+		$(use_enable avahi) \
 		$(use_enable oss) \
 		$(use_enable mp3) \
 		$(use_enable aac) \
