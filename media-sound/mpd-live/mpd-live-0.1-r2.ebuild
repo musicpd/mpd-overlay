@@ -55,10 +55,12 @@ pkg_setup() {
 }
 
 src_compile() {
+	local myconf
+	use avahi && myconf='--with-zeroconf=avahi' || myconf='--with-zeroconf=no'
 	eautogen-sh \
+		${myconf} \
 		$(use_enable alsa) \
 		$(use_enable alsa alsatest) \
-		$(use_enable avahi) \
 		$(use_enable oss) \
 		$(use_enable mp3) \
 		$(use_enable aac) \
