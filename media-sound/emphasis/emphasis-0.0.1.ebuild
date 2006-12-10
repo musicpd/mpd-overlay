@@ -12,9 +12,9 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE=""
 
-SRC_URI="http://emphasis.tuxfamily.org/emphasis-${PV}.tar.bz2"
+SRC_URI="http://emphasis.tuxfamily.org/${P}.tar.bz2"
 
-DEPEND="|| ( =dev-lib/libmpd-0.12.0 media-libs/libmpd-live)
+DEPEND="media-libs/libmpd-live
 	=x11-libs/etk-9999"
 
 src_install() {
