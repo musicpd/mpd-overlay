@@ -13,7 +13,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 
 ## I'm not sure this is the dependency this ebuild needs, if anyone knows
 ## please shoot me an email at avuton@gmail.com
-DEPEND="=xfce-base/xfce4-4.3.90.2
+DEPEND=">=xfce-base/xfce4-4.3.90.0
 	xfce-base/xfce4-dev-tools
 	!xfce-extra/xfce4-mpc-plugin-live
 	(|| (media-libs/libmpd media-libs/libmpd-live))"
