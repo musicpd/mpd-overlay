@@ -14,12 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
-# Need to figure out how to do this correctly, later.
-#DEPEND="media-sound/mpd ||
-#	media-sound/mpd-svn ||
-#	media-sound/mpd-live ||
-#	media-sound/mpd-ke"
-
+DEPEND="||(media-sound/mpd media-sound/mpd-live media-sound/mpd-ke)"
 RDEPEND=""
 
 src_compile() {
@@ -27,7 +22,6 @@ src_compile() {
 }
 
 src_install() {
-	      mv -v main mpd_inotify
 	      dobin mpd_inotify
 }
 
