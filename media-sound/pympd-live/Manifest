@@ -2,10 +2,6 @@ EBUILD pympd-live-0.1-r1.ebuild 1386 RMD160 70aa3bcdcf388c9df082590f61b73f6794ca
 MD5 2091905bb1c58015f11d0e3cb711596e pympd-live-0.1-r1.ebuild 1386
 RMD160 70aa3bcdcf388c9df082590f61b73f6794caf299 pympd-live-0.1-r1.ebuild 1386
 SHA256 378e696a4cd84bb7ea838b49ce17042923c86c6d3d6e349ad3cda565ae9f191b pympd-live-0.1-r1.ebuild 1386
-MISC pympd-live-0.1.ebuild~ 1386 RMD160 70aa3bcdcf388c9df082590f61b73f6794caf299 SHA1 9b1ae6a4f5713df43e84b3d6b0a08d178ad920c0 SHA256 378e696a4cd84bb7ea838b49ce17042923c86c6d3d6e349ad3cda565ae9f191b
-MD5 2091905bb1c58015f11d0e3cb711596e pympd-live-0.1.ebuild~ 1386
-RMD160 70aa3bcdcf388c9df082590f61b73f6794caf299 pympd-live-0.1.ebuild~ 1386
-SHA256 378e696a4cd84bb7ea838b49ce17042923c86c6d3d6e349ad3cda565ae9f191b pympd-live-0.1.ebuild~ 1386
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-pympd-live-0.1-r1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-pympd-live-0.1-r1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-pympd-live-0.1-r1 0
