@@ -13,9 +13,11 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="nls"
 
-DEPEND="virtual/libc
+DEPEND="${RDEPEND}
+	virtual/libc
 	dev-util/gperf
 	nls? ( || ( sys-libs/glibc dev-libs/libiconv ) )"
+RDEPEND="!media-sound/mpc"
 
 src_install() {
 	mv -v doc/m3u-handler.sh doc/mpd-m3u-handler

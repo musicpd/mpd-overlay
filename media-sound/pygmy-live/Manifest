@@ -1,7 +1,7 @@
-EBUILD pygmy-live-0.1.ebuild 578 RMD160 64e06db1c339c31f8d2bc188a1ce50d3c8b984bb SHA1 dc84bb4744d2bb9d669d99d5a50e54de0aeabf42 SHA256 d7881bf5d75878df8846ca6272954bfd274fc083ccb2fd63ad2d88ab48912ba6
-MD5 ca740b66b993734255b9bc7f0615cb30 pygmy-live-0.1.ebuild 578
-RMD160 64e06db1c339c31f8d2bc188a1ce50d3c8b984bb pygmy-live-0.1.ebuild 578
-SHA256 d7881bf5d75878df8846ca6272954bfd274fc083ccb2fd63ad2d88ab48912ba6 pygmy-live-0.1.ebuild 578
+EBUILD pygmy-live-0.1.ebuild 671 RMD160 cf07783ddeecc5aa80bc7d543218248b2a7041bb SHA1 0ae3a2da89dde0becaeb1fe9fd10ae2521cbbb73 SHA256 9392f43c5c29ffbb9f7ca5ff91c0b5fcd7f0aec6feef900e87c8d9f819f40f09
+MD5 52db9f5fe54212fa8672e9ff0391a006 pygmy-live-0.1.ebuild 671
+RMD160 cf07783ddeecc5aa80bc7d543218248b2a7041bb pygmy-live-0.1.ebuild 671
+SHA256 9392f43c5c29ffbb9f7ca5ff91c0b5fcd7f0aec6feef900e87c8d9f819f40f09 pygmy-live-0.1.ebuild 671
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-pygmy-live-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-pygmy-live-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-pygmy-live-0.1 0
