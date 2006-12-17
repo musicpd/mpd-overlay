@@ -1,3 +1,4 @@
 media-sound/ncmpc-tradiaz-live:artist-screen - Add support for an artist screen display
 media-sound/ncmpc-tradiaz-live:lyrics-screen - Add support for an lyrics screen display
+media-sound/mpd-live:largefile - Add support for sound files over 4GiB
 media-sound/mpd-ke-live:nonblock-update - Don't block during database update

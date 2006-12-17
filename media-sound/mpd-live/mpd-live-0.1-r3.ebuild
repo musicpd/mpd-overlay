@@ -2,10 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-
 ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
 ESVN_PATCHES="mpd-svn5125-avahi.patch mpd-0.12-conf.patch"
-inherit subversion eautogen-sh
+inherit subversion eautogen-sh flag-o-matic
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
@@ -13,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi flac icecast ipv6 jack mp3 mikmod mp3 musepack oss
+IUSE="aac alsa ao audiofile avahi flac icecast ipv6 jack largefile mikmod mp3 musepack oss
 pulseaudio unicode vorbis"
 
 DEPEND="${RDEPEND}
@@ -38,17 +37,7 @@ DEPEND="${RDEPEND}
 RDEPEND="!media-sound/mpd
 	!media-sound/mpd-ke"
 
-upgrade_warning() {
-	echo
-	ewarn "Home directory of user mpd, as well as default locations in mpd.conf have"
-	ewarn "been changed to /var/lib/mpd, please bear that in mind while updating"
-	ewarn "your mpd.conf file."
-	echo
-	epause 5
-}
-
 pkg_setup() {
-	upgrade_warning
 	enewuser mpd '' '' "/var/lib/mpd" audio || die "problem adding user mpd"
 
 	# also change the homedir if the user has existed before
@@ -56,12 +45,12 @@ pkg_setup() {
 }
 
 src_compile() {
-	local myconf
-	use avahi && myconf='--with-zeroconf=avahi' || myconf='--with-zeroconf=no'
+	use largefile && append-flags '-D_FILE_OFFSET_BITS=64'
 	eautogen-sh \
 		${myconf} \
 		$(use_enable alsa) \
 		$(use_enable alsa alsatest) \
+		$(use avahi && echo '--with-zeroconf=avahi' || echo '--with-zeroconf=no') \
 		$(use_enable oss) \
 		$(use_enable mp3) \
 		$(use_enable aac) \
