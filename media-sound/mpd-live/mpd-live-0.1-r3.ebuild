@@ -27,6 +27,7 @@ DEPEND="${RDEPEND}
 	avahi? ( >=net-dns/avahi-0.6 )
 	flac? ( >=media-libs/flac-1.1.2 )
 	icecast? ( media-libs/libshout )
+	jack? ( media-sound/jack-audio-connection-kit )
 	mp3? ( media-libs/libmad
 	       media-libs/libid3tag )
 	mikmod? ( media-libs/libmikmod )
