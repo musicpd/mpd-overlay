@@ -4,7 +4,7 @@
 
 
 ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
-ESVN_PATCHES="mpd-svn5125-avahi.patch"
+ESVN_PATCHES="mpd-svn5125-avahi.patch mpd-0.12-conf.patch"
 inherit subversion eautogen-sh
 
 DESCRIPTION="The Music Player Daemon (mpd)"
