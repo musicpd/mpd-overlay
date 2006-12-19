@@ -14,6 +14,8 @@ IUSE=""
 
 SRC_URI="http://emphasis.tuxfamily.org/${P}.tar.bz2"
 
+S="${WORKDIR}/${PN}"
+
 DEPEND="media-libs/libmpd-live
 	=x11-libs/etk-9999"
 
