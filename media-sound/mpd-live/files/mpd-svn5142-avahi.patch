@@ -1,6 +1,6 @@
 Index: configure.ac
 ===================================================================
---- configure.ac	(revision 5125)
+--- configure.ac	(revision 5142)
 +++ configure.ac	(working copy)
 @@ -101,6 +101,7 @@
  AC_ARG_WITH(faad,[  --with-faad=PFX             Prefix where faad2 is installed], faad_prefix="$withval", faad_prefix="")
@@ -10,7 +10,7 @@ Index: configure.ac
  
  AC_C_BIGENDIAN
  
-@@ -585,6 +586,33 @@
+@@ -587,6 +588,36 @@
  	fi
  fi
  
@@ -21,10 +21,13 @@ Index: configure.ac
 +fi
 +
 +if test x$with_zeroconf != xno; then
-+	if test x$with_zeroconf = xavahi -o x$with_zeroconf = xauto; then
++	if test x$with_zeroconf = xauto; then
 +		PKG_CHECK_MODULES([AVAHI], [avahi-client],
 +	                  [with_zeroconf=avahi;AC_DEFINE([HAVE_AVAHI], 1, [Define to enable Avahi Zeroconf support])] MPD_LIBS="$MPD_LIBS $AVAHI_LIBS" MPD_CFLAGS="$MPD_CFLAGS $AVAHI_CFLAGS",
-+	                  [])
++	                  [with_zeroconf=auto])
++	elif test x$with_zeroconf = xavahi; then
++		PKG_CHECK_MODULES([AVAHI], [avahi-client],
++	                  [with_zeroconf=avahi;AC_DEFINE([HAVE_AVAHI], 1, [Define to enable Avahi Zeroconf support])] MPD_LIBS="$MPD_LIBS $AVAHI_LIBS" MPD_CFLAGS="$MPD_CFLAGS $AVAHI_CFLAGS")
 +	fi
 +
 +	# In the future, should add bonjour support (for OSX) and check at autodetect
@@ -44,7 +47,7 @@ Index: configure.ac
  AC_OUTPUT(src/mp4ff/Makefile doc/Makefile src/Makefile Makefile )
  
  echo ""
-@@ -734,6 +762,15 @@
+@@ -736,6 +767,15 @@
  fi
  
  echo ""
@@ -62,7 +65,7 @@ Index: configure.ac
  echo "You are now ready to compile MPD"
 Index: doc/mpdconf.example
 ===================================================================
---- doc/mpdconf.example	(revision 5125)
+--- doc/mpdconf.example	(revision 5142)
 +++ doc/mpdconf.example	(working copy)
 @@ -45,6 +45,12 @@
  #
@@ -79,7 +82,7 @@ Index: doc/mpdconf.example
  
 Index: src/interface.c
 ===================================================================
---- src/interface.c	(revision 5125)
+--- src/interface.c	(revision 5142)
 +++ src/interface.c	(working copy)
 @@ -26,6 +26,7 @@
  #include "permission.h"
@@ -183,7 +186,7 @@ Index: src/interface.c
 +}
 Index: src/conf.c
 ===================================================================
---- src/conf.c	(revision 5125)
+--- src/conf.c	(revision 5142)
 +++ src/conf.c	(working copy)
 @@ -146,6 +146,7 @@
  	registerConfigParam(CONF_BIND_TO_ADDRESS,               1,     0);
@@ -693,7 +696,7 @@ Index: src/zeroconf.c
 +}
 Index: src/conf.h
 ===================================================================
---- src/conf.h	(revision 5125)
+--- src/conf.h	(revision 5142)
 +++ src/conf.h	(working copy)
 @@ -32,6 +32,7 @@
  #define CONF_BIND_TO_ADDRESS            "bind_to_address"
@@ -737,7 +740,7 @@ Index: src/zeroconf.h
 +#endif
 Index: src/listen.c
 ===================================================================
---- src/listen.c	(revision 5125)
+--- src/listen.c	(revision 5142)
 +++ src/listen.c	(working copy)
 @@ -47,6 +47,7 @@
  
@@ -819,7 +822,7 @@ Index: src/ioops.h
 +#endif
 Index: src/listen.h
 ===================================================================
---- src/listen.h	(revision 5125)
+--- src/listen.h	(revision 5142)
 +++ src/listen.h	(working copy)
 @@ -36,4 +36,6 @@
  /* fdmax should be initialized to something */
@@ -830,7 +833,7 @@ Index: src/listen.h
  #endif
 Index: src/main.c
 ===================================================================
---- src/main.c	(revision 5125)
+--- src/main.c	(revision 5142)
 +++ src/main.c	(working copy)
 @@ -42,6 +42,7 @@
  #include "../config.h"
@@ -858,7 +861,7 @@ Index: src/main.c
  	finishPlaylist();
 Index: src/Makefile.am
 ===================================================================
---- src/Makefile.am	(revision 5125)
+--- src/Makefile.am	(revision 5142)
 +++ src/Makefile.am	(working copy)
 @@ -72,7 +72,8 @@
  	tree.h \
