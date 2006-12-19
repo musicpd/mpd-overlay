@@ -1,0 +1,7 @@
+EBUILD librmpd-live-0.1.ebuild 1145 RMD160 b76aa6a0b79cca6bd2a1bb5e4a4740546b4e620c SHA1 d349ff4c0cbabe6994787e252589a39998d4c2a5 SHA256 feca79c25b45575808ba3e34ef3d85781cea5b9e526ec4afd8a72dc09c179727
+MD5 f14b9ec74470a5b5e19264344353b510 librmpd-live-0.1.ebuild 1145
+RMD160 b76aa6a0b79cca6bd2a1bb5e4a4740546b4e620c librmpd-live-0.1.ebuild 1145
+SHA256 feca79c25b45575808ba3e34ef3d85781cea5b9e526ec4afd8a72dc09c179727 librmpd-live-0.1.ebuild 1145
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-librmpd-live-0.1 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-librmpd-live-0.1 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-librmpd-live-0.1 0
