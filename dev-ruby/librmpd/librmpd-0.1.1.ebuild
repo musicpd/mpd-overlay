@@ -6,7 +6,7 @@ inherit ruby gems
 
 DESCRIPTION="Ruby library for communicating with an MPD server"
 HOMEPAGE="http://librmpd.rubyforge.org/"
-SRC_URI="http://rubyforge.org/frs/download.php/15722/librmpd-0.1.1.gem"
+SRC_URI="http://rubyforge.org/frs/download.php/15722/${P}.gem"
 
 LICENSE="GPL-2"
 SLOT="0"
