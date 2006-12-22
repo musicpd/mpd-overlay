@@ -5,6 +5,11 @@ media-sound/playgui
 www-apps/phpmp2
 www-apps/phpmp2-live
 
+# Abandoned, but people seem to be expressing
+# interest in this package
+www-apps/phpmpplus
+www-apps/phpmpplus-live
+
 # Need feedback on weather it works as advertised.
 # I couldn't even get xfce4 beta2 to start :/
 xfce-extra/xfce4-mpc-plugin

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_REPO_URI="https://svn.musicpd.org/phpMp/trunk/"
+ESVN_REPO_URI="https://svn.musicpd.org/phpMp+/trunk/"
 inherit mpd-www
 
 DESCRIPTION="phpMp is a client program for Music Player Daemon (mpd)"
@@ -16,12 +16,10 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 DEPEND="${RDEPEND}
 	virtual/httpd-php"
 
-DOCS="ChangeLog README TODO"
+DOCS="README"
 
 src_install() {
 	mpd-www_src_install
 
-	webapp_configfile ${MY_HTDOCSDIR}/config.php
-
-	webapp_postinst_txt en ${FILESDIR}/postinstall-en.txt
+	webapp_configfile ${MY_HTDOCSDIR}/config.inc.php
 }

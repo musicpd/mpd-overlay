@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit webapp
+inherit mpd-www
 
 MY_PN=${PN/m/M}
 DESCRIPTION="phpMp2 is another web-based client for MPD"
@@ -27,14 +27,10 @@ src_unpack() {
 	find . -type d -name '.svn' -print | xargs rm -rf
 }
 
+DOC="README TODO"
+
 src_install () {
-	webapp_src_preinst
-
-	dodoc README TODO
-	cp -R . ${D}/${MY_HTDOCSDIR}
-
 	webapp_serverowned "${MY_HTDOCSDIR}/config.php"
 	webapp_configfile "${MY_HTDOCSDIR}/config.php"
-
-	webapp_src_install
+	mpd-www_src_install
 }
