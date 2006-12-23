@@ -14,6 +14,7 @@ DEPEND="media-sound/gmpc-live \
 	media-plugins/gmpc-alarm-live \
 	media-plugins/gmpc-amazon-coverart-live \
 	media-plugins/gmpc-autoplaylist-live \
+	media-plugins/gmpc-extraplaylist-live \
 	media-plugins/gmpc-lastfm-live \
 	media-plugins/gmpc-lyrics-live \
 	media-plugins/gmpc-magnatune-live \
