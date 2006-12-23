@@ -1,0 +1,105 @@
+Index: src/decode.c
+===================================================================
+--- src/decode.c	(revision 5142)
++++ src/decode.c	(working copy)
+@@ -285,7 +285,6 @@
+ 		return;
+ 	}
+ 
+-	dc->seekable = inStream.seekable;
+ 	dc->state = DECODE_STATE_START;
+ 	dc->start = 0;
+ 
+@@ -295,6 +294,9 @@
+ 		my_usleep(1000);
+ 	}
+ 
++	/* for http streams, seekable is determined in bufferInputStream */
++	dc->seekable = inStream.seekable;
++        
+ 	if (dc->stop) {
+ 		dc->state = DECODE_STATE_STOP;
+ 		dc->stop = 0;
+Index: src/inputStream_http.c
+===================================================================
+--- src/inputStream_http.c	(revision 5142)
++++ src/inputStream_http.c	(working copy)
+@@ -480,11 +480,11 @@
+ 	snprintf(request, 2048, "GET %s HTTP/1.0\r\n" "Host: %s\r\n"
+ 		 /*"Connection: close\r\n" */
+ 		 "User-Agent: %s/%s\r\n"
+-		 /*"Range: bytes=%ld-\r\n" */
++		 "Range: bytes=%ld-\r\n"
+ 		 "%s"	/* authorization */
+ 		 "Icy-Metadata:1\r\n"
+ 		 "\r\n", data->path, data->host, PACKAGE_NAME, PACKAGE_VERSION,
+-		 /*inStream->offset, */
++                 inStream->offset,
+ 		 data->proxyAuth ? data->proxyAuth :
+ 		 (data->httpAuth ? data->httpAuth : "")
+ 	    );
+@@ -681,9 +681,6 @@
+ 
+ 	data->prebuffer = 1;
+ 
+-	/*mark as unseekable till we actually implement seeking */
+-	inStream->seekable = 0;
+-
+ 	return 0;
+ }
+ 
+@@ -691,6 +688,9 @@
+ {
+ 	InputStreamHTTPData *data = newInputStreamHTTPData();
+ 
++	inStream->seekable = 0;
++	inStream->offset = 0;
++	inStream->size = 0;
+ 	inStream->data = data;
+ 
+ 	if (parseUrl(data, url) < 0) {
+@@ -714,21 +714,32 @@
+ 
+ int inputStream_httpSeek(InputStream * inStream, long offset, int whence)
+ {
+-	/* hack to reopen an HTTP stream if we're trying to seek to
+-	 * the beginning */
+-	if ((whence == SEEK_SET) && (offset == 0)) {
+-		InputStreamHTTPData *data;
++	if(!inStream->seekable)
++	    return EBADF;
+ 
+-		data = (InputStreamHTTPData *) inStream->data;
+-		close(data->sock);
+-		data->connState = HTTP_CONN_STATE_REOPEN;
+-		data->buflen = 0;
+-		inStream->offset = 0;
+-		return 0;
++	long absolute_offset = offset;
++	switch(whence) {
++	case SEEK_SET:
++	    break;
++	case SEEK_CUR:
++	    absolute_offset += inStream->offset;
++	    break;
++	case SEEK_END:
++	    absolute_offset += inStream->size;
++	    break;
++	default:
++	    return EINVAL;
+ 	}
+ 
+-	/* otherwise, we don't know how to seek in HTTP yet */
+-	return -1;
++	InputStreamHTTPData * data = (InputStreamHTTPData *)inStream->data;
++	close(data->sock);
++	data->connState = HTTP_CONN_STATE_REOPEN;
++	data->buflen = 0;
++	inStream->offset = absolute_offset;
++
++	inputStream_httpBuffer(inStream);
++
++	return 0;
+ }
+ 
+ static void parseIcyMetadata(InputStream * inStream, char *metadata, int size)
