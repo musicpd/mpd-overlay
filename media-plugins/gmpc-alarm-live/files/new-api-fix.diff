@@ -1,0 +1,29 @@
+Index: src/plugin.c
+===================================================================
+--- src/plugin.c	(revision 10)
++++ src/plugin.c	(working copy)
+@@ -60,6 +60,8 @@
+ 	NULL, 
+ 	/* Initialize function */
+ 	&alarm_init, 
++        /* destroy function */
++        NULL,
+ 	/* Browser plugin */
+ 	NULL,
+ 	/* Status Changed signals */
+@@ -68,10 +70,12 @@
+ 	NULL, 
+ 	/* Preferences structure */
+ 	&alarm_gpp,
+-	/* Cover art plugin (deprecated) */
++	/* Metadata structure */
+ 	NULL,
+-	/* Metadata structure */
+-	NULL
++        /* Get enabled */
++        NULL,
++        /* set enabled */
++        NULL
+ };
+ 
+ /* Represents a time (for easy passing) */
