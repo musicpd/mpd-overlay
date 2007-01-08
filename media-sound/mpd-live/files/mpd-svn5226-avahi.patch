@@ -1,6 +1,6 @@
 Index: configure.ac
 ===================================================================
---- configure.ac	(revision 5142)
+--- configure.ac	(revision 5226)
 +++ configure.ac	(working copy)
 @@ -101,6 +101,7 @@
  AC_ARG_WITH(faad,[  --with-faad=PFX             Prefix where faad2 is installed], faad_prefix="$withval", faad_prefix="")
@@ -65,7 +65,7 @@ Index: configure.ac
  echo "You are now ready to compile MPD"
 Index: doc/mpdconf.example
 ===================================================================
---- doc/mpdconf.example	(revision 5142)
+--- doc/mpdconf.example	(revision 5226)
 +++ doc/mpdconf.example	(working copy)
 @@ -45,6 +45,12 @@
  #
@@ -82,7 +82,7 @@ Index: doc/mpdconf.example
  
 Index: src/interface.c
 ===================================================================
---- src/interface.c	(revision 5142)
+--- src/interface.c	(revision 5226)
 +++ src/interface.c	(working copy)
 @@ -26,6 +26,7 @@
  #include "permission.h"
@@ -186,7 +186,7 @@ Index: src/interface.c
 +}
 Index: src/conf.c
 ===================================================================
---- src/conf.c	(revision 5142)
+--- src/conf.c	(revision 5226)
 +++ src/conf.c	(working copy)
 @@ -146,6 +146,7 @@
  	registerConfigParam(CONF_BIND_TO_ADDRESS,               1,     0);
@@ -696,7 +696,7 @@ Index: src/zeroconf.c
 +}
 Index: src/conf.h
 ===================================================================
---- src/conf.h	(revision 5142)
+--- src/conf.h	(revision 5226)
 +++ src/conf.h	(working copy)
 @@ -32,6 +32,7 @@
  #define CONF_BIND_TO_ADDRESS            "bind_to_address"
@@ -740,7 +740,7 @@ Index: src/zeroconf.h
 +#endif
 Index: src/listen.c
 ===================================================================
---- src/listen.c	(revision 5142)
+--- src/listen.c	(revision 5226)
 +++ src/listen.c	(working copy)
 @@ -47,6 +47,7 @@
  
@@ -822,7 +822,7 @@ Index: src/ioops.h
 +#endif
 Index: src/listen.h
 ===================================================================
---- src/listen.h	(revision 5142)
+--- src/listen.h	(revision 5226)
 +++ src/listen.h	(working copy)
 @@ -36,4 +36,6 @@
  /* fdmax should be initialized to something */
@@ -833,17 +833,17 @@ Index: src/listen.h
  #endif
 Index: src/main.c
 ===================================================================
---- src/main.c	(revision 5142)
+--- src/main.c	(revision 5226)
 +++ src/main.c	(working copy)
-@@ -42,6 +42,7 @@
- #include "../config.h"
+@@ -43,6 +43,7 @@
  #include "utils.h"
  #include "normalize.h"
+ #include "localization.h"
 +#include "zeroconf.h"
  
  #include <stdio.h>
  #include <sys/select.h>
-@@ -450,6 +451,7 @@
+@@ -452,6 +453,7 @@
  	initAudioDriver();
  	initVolume();
  	initInterfaces();
@@ -851,7 +851,7 @@ Index: src/main.c
  	initReplayGainState();
  	initNormalization();
  	initInputStream();
-@@ -475,6 +477,7 @@
+@@ -477,6 +479,7 @@
  
  	write_state_file();
  	playerKill();
@@ -861,26 +861,28 @@ Index: src/main.c
  	finishPlaylist();
 Index: src/Makefile.am
 ===================================================================
---- src/Makefile.am	(revision 5142)
+--- src/Makefile.am	(revision 5226)
 +++ src/Makefile.am	(working copy)
-@@ -72,7 +72,8 @@
- 	tree.h \
+@@ -73,7 +73,8 @@
  	utf8.h \
  	utils.h \
--	volume.h
-+	volume.h \
+ 	volume.h \
+-	localization.h
++	localization.h \
 +	zeroconf.h
  
  
  mpd_SOURCES = \
-@@ -121,7 +122,8 @@
- 	tree.c \
+@@ -123,9 +124,11 @@
  	utils.c \
  	volume.c \
--	utf8.c
-+	utf8.c \
+ 	utf8.c \
+-	localization.c
++	localization.c \
 +	zeroconf.c
  
  
++
  mpd_CFLAGS = $(MPD_CFLAGS)
-
+ mpd_LDADD = $(MPD_LIBS) $(MP4FF_LIB)
+ 

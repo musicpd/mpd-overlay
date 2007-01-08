@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
-ESVN_PATCHES="mpd-svn5142-avahi.patch mpd-0.12.1-unpack.patch mpd-0.12-conf.patch"
+ESVN_PATCHES="mpd-svn5226-avahi.patch mpd-0.12.1-unpack.patch mpd-0.12-conf.patch"
 inherit subversion eautogen-sh flag-o-matic
 
 DESCRIPTION="The Music Player Daemon (mpd)"
