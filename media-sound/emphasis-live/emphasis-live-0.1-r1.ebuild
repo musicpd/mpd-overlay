@@ -8,7 +8,7 @@ DESCRIPTION="An Etk Media Player Client for MPD"
 HOMEPAGE="http://emphasis.tuxfamily.org/"
 
 ECVS_SERVER="anoncvs.enlightenment.org:/var/cvs/e"
-ECVS_MODULE="e17/proto/emphasis"
+ECVS_MODULE="e17/apps/emphasis"
 
 LICENSE="GPL-2"
 SLOT="0"

@@ -1,7 +1,7 @@
-EBUILD emphasis-live-0.1.ebuild 655 RMD160 542c4d067e7ff593b774d3c0392b375f1c903e37 SHA1 e4c55f9cf5d7f3b8c6b01d1f85cb57828041397c SHA256 dc82f891e81f5db3538fff6d9d810e6374e0907d6f50cbb715e4caa689afeb2f
-MD5 6728709ab7b3e669de48cafb1f0ff180 emphasis-live-0.1.ebuild 655
-RMD160 542c4d067e7ff593b774d3c0392b375f1c903e37 emphasis-live-0.1.ebuild 655
-SHA256 dc82f891e81f5db3538fff6d9d810e6374e0907d6f50cbb715e4caa689afeb2f emphasis-live-0.1.ebuild 655
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-emphasis-live-0.1 0
-RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-emphasis-live-0.1 0
-SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-emphasis-live-0.1 0
+EBUILD emphasis-live-0.1-r1.ebuild 654 RMD160 6dffab96348fbea68a75af37b5cfed3a75067a91 SHA1 24c5d34b231ea2cbb4d540c3546d1123e4c62997 SHA256 9c079cc176f7780655359a8a7065265f3f1a0af9b3cbd54ce92132f858af1c2a
+MD5 d8d37bab50d82c232ff036e54d16a977 emphasis-live-0.1-r1.ebuild 654
+RMD160 6dffab96348fbea68a75af37b5cfed3a75067a91 emphasis-live-0.1-r1.ebuild 654
+SHA256 9c079cc176f7780655359a8a7065265f3f1a0af9b3cbd54ce92132f858af1c2a emphasis-live-0.1-r1.ebuild 654
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-emphasis-live-0.1-r1 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-emphasis-live-0.1-r1 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-emphasis-live-0.1-r1 0
