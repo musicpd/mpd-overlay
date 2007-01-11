@@ -1,0 +1,48 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+WYMYPY="/usr/bin/wymypy"
+
+## This is necessary, else the mtime of the file changes, and it doesn't unmerge
+TMPFILE=`mktemp` || eerror "Couldn't create temporary file"
+
+configure() {
+	local conf="/etc/conf.d/wymypy"
+	if [[ -f "${conf}" ]]; then
+		source ${conf} || eerror "Couldn't source configuration file ${conf}"
+	else
+		eerror "Couldn't find configuration file ${conf}"
+	fi
+
+	if [[ $WEBPORT -lt 1024 ]]; then
+		eerror "Cannot set a port below 1024, wymypy must be able to run as nobody"
+	fi
+
+	cat ${WYMYPY} | \
+	sed -e "s/^MPDHOST\ \=.*/MPDHOST = \"$MPDHOST\"/" \
+		-e "s/^MPDPORT\ \=.*/MPDPORT = $MPDPORT/" \
+		-e "s/^WEBPORT\ \=.*/WEBPORT = $WEBPORT/" >> $TMPFILE
+	chown nobody:nogroup $TMPFILE
+}
+
+start() {
+	ebegin "Starting wymypy"
+	configure
+
+	start-stop-daemon --start --quiet --background \
+		--make-pidfile --pidfile /var/run/wymypy.pid \
+		--chuid nobody:nogroup \
+		--exec /usr/bin/python ${TMPFILE}
+	eend $?
+
+	## Go ahead and unlink the file, this won't effect the runtime
+	rm ${TMPFILE}
+}
+
+stop() {
+	ebegin "Shutting down wymypy"
+	start-stop-daemon --stop --quiet --pidfile /var/run/wymypy.pid
+	eend $?
+}
