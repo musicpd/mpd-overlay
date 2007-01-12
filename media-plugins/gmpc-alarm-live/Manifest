@@ -2,10 +2,10 @@ AUX new-api-fix.diff 644 RMD160 a2fc1813a5df1fed807dee1a06c2a568e68fbeb5 SHA1 5c
 MD5 0ea787635fc3c32b526ea784689f349f files/new-api-fix.diff 644
 RMD160 a2fc1813a5df1fed807dee1a06c2a568e68fbeb5 files/new-api-fix.diff 644
 SHA256 baa24d25d16bcd1337f8d99d880d5c97818a34d5bc37b17de809ab7537585d73 files/new-api-fix.diff 644
-EBUILD gmpc-alarm-live-0.1-r1.ebuild 672 RMD160 743f27ba1263dd376e70ab322448d8ceb4ac3075 SHA1 fa97ce058495a1362fccfbd649d195ab6df3c50a SHA256 d1ced776f5032f6440fea51bad7798a2201bba8c729b3cb5da7b9766bd74dfe7
-MD5 56daffee358917f90e1dc0d3d8e9ed9f gmpc-alarm-live-0.1-r1.ebuild 672
-RMD160 743f27ba1263dd376e70ab322448d8ceb4ac3075 gmpc-alarm-live-0.1-r1.ebuild 672
-SHA256 d1ced776f5032f6440fea51bad7798a2201bba8c729b3cb5da7b9766bd74dfe7 gmpc-alarm-live-0.1-r1.ebuild 672
+EBUILD gmpc-alarm-live-0.1-r1.ebuild 672 RMD160 b523caff9d88f140ebe53e8c2e6d9cdb6e36eca3 SHA1 aa564bf8b387522f1885d9a2e450004bdde94af0 SHA256 95ce451db30ce8cb4483ef387fcb54110a2b50dd644d06f4e3ef8f329e4bce98
+MD5 179646bea491001344f7e94b841d0c51 gmpc-alarm-live-0.1-r1.ebuild 672
+RMD160 b523caff9d88f140ebe53e8c2e6d9cdb6e36eca3 gmpc-alarm-live-0.1-r1.ebuild 672
+SHA256 95ce451db30ce8cb4483ef387fcb54110a2b50dd644d06f4e3ef8f329e4bce98 gmpc-alarm-live-0.1-r1.ebuild 672
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gmpc-alarm-live-0.1-r1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-gmpc-alarm-live-0.1-r1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-gmpc-alarm-live-0.1-r1 0

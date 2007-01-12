@@ -1,7 +1,7 @@
-EBUILD py-libmpdclient-live-0.1.ebuild 467 RMD160 b989a59a92c25ab17463f1b6fe51652bbfb0f42b SHA1 4c83c2c6c427e8745bbbbe3c9612a8969681063f SHA256 f1b5f81df88659ebeae0cb2803b757dd0b1f7ddfbb173acc2c17e2e062a2bc59
-MD5 1c31f5e68732802c4ba294b67ca7689b py-libmpdclient-live-0.1.ebuild 467
-RMD160 b989a59a92c25ab17463f1b6fe51652bbfb0f42b py-libmpdclient-live-0.1.ebuild 467
-SHA256 f1b5f81df88659ebeae0cb2803b757dd0b1f7ddfbb173acc2c17e2e062a2bc59 py-libmpdclient-live-0.1.ebuild 467
+EBUILD py-libmpdclient-live-0.1.ebuild 467 RMD160 d065f446dc07bce86b8e329956554e568dc70324 SHA1 e562af26b98bbcdabaf0c1bb8cb7e9338d69cca4 SHA256 c6ad457a89e57df09e46b26f63ef792da875266d9eb1fa76704df4ba32b45f60
+MD5 eb8c8f75ba2ed9f2b5d3377a8d584f52 py-libmpdclient-live-0.1.ebuild 467
+RMD160 d065f446dc07bce86b8e329956554e568dc70324 py-libmpdclient-live-0.1.ebuild 467
+SHA256 c6ad457a89e57df09e46b26f63ef792da875266d9eb1fa76704df4ba32b45f60 py-libmpdclient-live-0.1.ebuild 467
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-py-libmpdclient-live-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-py-libmpdclient-live-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-py-libmpdclient-live-0.1 0
