@@ -7,7 +7,6 @@ IUSE=""
 ESVN_REPO_URI="https://svn.musicpd.org/WMmp/trunk/"
 inherit subversion eautogen-sh
 
-MY_P=${P/wm/WM}
 DESCRIPTION="A Window Maker dock app client for Music Player Daemon(media-sound/mpd)"
 HOMEPAGE="http://www.musicpd.org"
 
@@ -18,7 +17,7 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/${P/wm/WM}
 
 src_install () {
 	emake install DESTDIR=${D} || die
