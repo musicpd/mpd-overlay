@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EDARCS_REPOSITORY="http://mroyer31.hd.free.fr/roy/ajaxmp"
+EDARCS_REPOSITORY="http://mroy31.dyndns.org/~roy/repository/ajaxmp/"
 inherit mpd-www
 
 DESCRIPTION="ajaxmp is a web client for MPD"
-HOMEPAGE="http://www.musicpd.org/"
+HOMEPAGE="http://mroy31.dyndns.org/~roy/wiki"
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
