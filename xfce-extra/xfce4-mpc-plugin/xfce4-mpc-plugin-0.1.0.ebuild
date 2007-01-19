@@ -10,6 +10,7 @@ SRC_URI="http://goodies.xfce.org/releases/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+RESTRICT="mirror"
 
 ## I'm not sure this is the dependency this ebuild needs, if anyone knows
 ## please shoot me an email at avuton@gmail.com
