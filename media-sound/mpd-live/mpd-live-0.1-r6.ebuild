@@ -12,8 +12,8 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi bzip2 flac icecast ipv6 jack largefile mikmod mp3 musepack oss
-pulseaudio unicode vorbis zlib"
+IUSE="aac alsa ao audiofile avahi flac icecast ipv6 jack largefile mikmod mp3 musepack oss
+pulseaudio unicode vorbis"
 
 DEPEND="${RDEPEND}
 	dev-util/gperf
@@ -24,7 +24,6 @@ DEPEND="${RDEPEND}
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
 	avahi? ( >=net-dns/avahi-0.6 )
-	bzip2? ( app-arch/bzip2 )
 	flac? ( >=media-libs/flac-1.1.2 )
 	icecast? ( media-libs/libshout )
 	jack? ( media-sound/jack-audio-connection-kit )
@@ -33,8 +32,7 @@ DEPEND="${RDEPEND}
 	mikmod? ( media-libs/libmikmod )
 	musepack? ( media-libs/libmpcdec )
 	pulseaudio? ( media-sound/pulseaudio )
-	vorbis? ( media-libs/libvorbis )
-	zlib? ( sys-libs/zlib )"
+	vorbis? ( media-libs/libvorbis )"
 
 RDEPEND="!media-sound/mpd
 	!media-sound/mpd-ke"
@@ -60,7 +58,6 @@ src_compile() {
 		$(use_enable ao aotest) \
 		$(use_enable audiofile) \
 		$(use_enable audiofile audiofiletest) \
-		$(use_enable bzip2 bzip2) \
 		$(use_enable flac libFLACtest) \
 		$(use_enable flac) \
 		$(use_enable flac oggflac) \
@@ -75,7 +72,6 @@ src_compile() {
 		$(use_enable pulseaudio pulse) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable vorbis vorbistest) \
-		$(use_enable zlib zlib) \
 		|| die "could not configure"
 
 	emake || die "emake failed"
