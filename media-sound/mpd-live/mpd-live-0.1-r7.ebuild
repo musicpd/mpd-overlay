@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi flac icecast ipv6 jack largefile mikmod mp3 musepack oss
+IUSE="aac alsa ao audiofile avahi flac icecast ipv6 jack largefile libsamplerate mikmod mp3 musepack oss
 pulseaudio unicode vorbis"
 
 DEPEND="${RDEPEND}
@@ -27,6 +27,7 @@ DEPEND="${RDEPEND}
 	flac? ( >=media-libs/flac-1.1.2 )
 	icecast? ( media-libs/libshout )
 	jack? ( media-sound/jack-audio-connection-kit )
+	libsamplerate? ( >=media-libs/libsamplerate-0.0.15 )
 	mp3? ( media-libs/libmad
 	       media-libs/libid3tag )
 	mikmod? ( media-libs/libmikmod )
@@ -64,6 +65,7 @@ src_compile() {
 		$(use_enable icecast shout) \
 		$(use_enable ipv6) \
 		$(use_enable jack) \
+		$(use_enable libsamplerate lsr) \
 		$(use_enable mp3) \
 		$(use_enable mp3 id3) \
 		$(use_enable mikmod libmikmodtest) \
