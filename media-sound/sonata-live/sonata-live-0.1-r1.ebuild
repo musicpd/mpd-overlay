@@ -20,9 +20,11 @@ RDEPEND=">=virtual/python-2.4
 	gnome? ( dev-python/gnome-python-extras )"
 
 pkg_setup() {
-	if ! built_with_use =gtk+-2* jpeg; then
-		eerror "You must build gtk+-2.x with jpeg USE flag."
-		die "Please re-emerge gtk+-2.x with jpeg USE flag."
+	if ! built_with_use '=x11-libs/gtk+-2*' jpeg; then
+		echo
+		ewarn "If you want album cover art displayed in Sonata,"
+		ewarn "you must build gtk+-2.x with \"jpeg\" USE flag."
+		die "enable jpeg use flag"
 	fi
 }
 
