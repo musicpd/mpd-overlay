@@ -1,5 +1,5 @@
 inherit eutils
-pkg_setup()
+gmpc-plugin_pkg_setup()
 {
         if [[ -n "${GTK_REQUIRES}" ]] && ! built_with_use '=x11-libs/gtk+-2*' "${GTK_REQUIRES}"; then
 		eerror "You must build =x11-libs/gtk+-2.x with ${GTK_REQUIRES} USE flag."
@@ -12,20 +12,21 @@ if [[ "${PN##*-}" == "live" ]]; then
 	DEPEND="${DEPEND}
 		media-sound/gmpc-live
 		!${CATEGORY}/${PN/-live}"
+	RDEPEND="${DEPEND}"
 	if [[ -z ${ESVN_REPO_URI} ]]; then
-		if [[ -z ${GMPC_SVN_ROOT} ]]; then
-			GMPC_SVN_ROOT="${PN%-live}"
-			GMPC_SVN_ROOT="${GMPC_SVN_ROOT#gmpc-}"
+		if [[ -z ${GMPC_PLUGIN} ]]; then
+			GMPC_PLUGIN="${PN%-live}"
+			GMPC_PLUGIN="${GMPC_PLUGIN#gmpc-}"
 		fi
 
-		ESVN_REPO_URI="https://svn.musicpd.org/gmpc/plugins/gmpc-${GMPC_SVN_ROOT}/trunk"
+		ESVN_REPO_URI="https://svn.musicpd.org/gmpc/plugins/gmpc-${GMPC_PLUGIN}/trunk"
 	fi
 else
 	## Depend against reverse dependency
 	DEPEND="${DEPEND}
 		>=media-sound/gmpc-0.14.0
-		!${CATEGORY}/${PN}-live"]
-
+		!${CATEGORY}/${PN}-live"
+	RDEPEND="${DEPEND}"
 	## In the case that it's given an odd name
 	if [[ -z "${GMPC_PLUGIN}" ]]; then
 		GMPC_PLUGIN="${P}"

@@ -3,7 +3,7 @@
 # $Header: $
 
 GTK_REQUIRES="jpeg"
-GMPC_SVN_ROOT="coveramazon"
+GMPC_PLUGIN="coveramazon"
 inherit gmpc-plugin eautogen-sh
 
 DESCRIPTION="A gmpc plugin that fetches cover art and album information from amazon."

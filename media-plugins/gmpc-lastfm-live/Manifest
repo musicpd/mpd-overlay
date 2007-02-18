@@ -1,7 +1,7 @@
-EBUILD gmpc-lastfm-live-0.1-r1.ebuild 431 RMD160 f3bf43b1c3da9e096b14bc8585f51f5ac4f28fe3 SHA1 bde3d1b6295954c415dc3f39690eabcb0fb94adc SHA256 f370dd5529a31202ca6ece05474d7d0234641d9bd7f5b12810bc80fbd9d3272a
-MD5 3767ba986f9b54fa4d4a19b997d4acee gmpc-lastfm-live-0.1-r1.ebuild 431
-RMD160 f3bf43b1c3da9e096b14bc8585f51f5ac4f28fe3 gmpc-lastfm-live-0.1-r1.ebuild 431
-SHA256 f370dd5529a31202ca6ece05474d7d0234641d9bd7f5b12810bc80fbd9d3272a gmpc-lastfm-live-0.1-r1.ebuild 431
+EBUILD gmpc-lastfm-live-0.1-r1.ebuild 454 RMD160 f59e5465e484863601aaa39722fc7e54ed980709 SHA1 d6837b66e137bb05039862ccb79f5f6667e28425 SHA256 dfc60ac20a2f9e6ee2f011029edbb6b593b02bf42affe2f339d962148e3c776c
+MD5 1b286e1596c16570d5e46cffe03a3a28 gmpc-lastfm-live-0.1-r1.ebuild 454
+RMD160 f59e5465e484863601aaa39722fc7e54ed980709 gmpc-lastfm-live-0.1-r1.ebuild 454
+SHA256 dfc60ac20a2f9e6ee2f011029edbb6b593b02bf42affe2f339d962148e3c776c gmpc-lastfm-live-0.1-r1.ebuild 454
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gmpc-lastfm-live-0.1-r1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-gmpc-lastfm-live-0.1-r1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-gmpc-lastfm-live-0.1-r1 0

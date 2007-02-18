@@ -2,7 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+GMPC_PLUGIN="last.fm"
 GTK_REQUIRES="jpeg"
+
 inherit gmpc-plugin eautogen-sh
 
 DESCRIPTION="A GMPC plugin to simply put a stop button in the main window"
