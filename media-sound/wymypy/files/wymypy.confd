@@ -1,8 +1,0 @@
-# conf.d file for wymypy
-#
-# wymypy uses it's own daemon for it's dynamic web content.
-# see the HOMEPAGE for more details.
-#
-MPDHOST="localhost"
-MPDPORT=6600
-WEBPORT=8080
