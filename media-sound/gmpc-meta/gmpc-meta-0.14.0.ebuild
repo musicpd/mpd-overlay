@@ -8,7 +8,7 @@ HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="amazon"
+IUSE="amazon xosd"
 
 DEPEND="amazon? ( media-plugins/gmpc-amazon-coverart )
 	media-plugins/gmpc-autoplaylist
@@ -16,7 +16,7 @@ DEPEND="amazon? ( media-plugins/gmpc-amazon-coverart )
 	media-plugins/gmpc-lyrics
 	media-plugins/gmpc-magnatune
 	media-plugins/gmpc-mdcover
-	media-plugins/gmpc-osd
+	xosd? ( media-plugins/gmpc-osd )
 	media-plugins/gmpc-qosd
 	media-plugins/gmpc-serverstats
 	media-plugins/gmpc-stopbutton"
