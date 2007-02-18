@@ -8,6 +8,7 @@ LICENSE="GPL-2"
 SRC_URI="http://download.sarine.nl/gmpc-0.14.0/${P}.tar.gz"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
 IUSE=""
 DEPEND="virtual/libc
 	!media-libs/libmpd-live
