@@ -8,11 +8,11 @@ HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE=""
+IUSE="amazon"
 
 DEPEND="media-sound/gmpc-live \
 	media-plugins/gmpc-alarm-live \
-	media-plugins/gmpc-amazon-coverart-live \
+	amazon? ( media-plugins/gmpc-amazon-coverart-live ) \
 	media-plugins/gmpc-autoplaylist-live \
 	media-plugins/gmpc-extraplaylist-live \
 	media-plugins/gmpc-lastfm-live \
