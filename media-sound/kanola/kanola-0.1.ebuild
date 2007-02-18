@@ -15,7 +15,7 @@ IUSE=""
 
 DEPEND="${RDEPEND}
 	>=virtual/python-2.4
-	>=dev-python/PyQt4
+	dev-python/PyQt4
 	kde-base/pykde"
 RDEPEND="!media-sound/kanola-live"
 

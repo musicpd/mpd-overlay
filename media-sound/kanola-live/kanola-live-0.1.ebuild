@@ -15,7 +15,7 @@ SLOT="0"
 IUSE=""
 
 RDEPEND=">=virtual/python-2.4
-	>=dev-python/PyQt4
+	dev-python/PyQt4
 	!media-sound/kanola
 	kde-base/pykde"
 

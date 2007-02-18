@@ -1,3 +1,12 @@
+inherit eutils
+pkg_setup()
+{
+        if [[ -n "${GTK_REQUIRES}" ]] && ! built_with_use '=x11-libs/gtk+-2*' "${GTK_REQUIRES}"; then
+		eerror "You must build =x11-libs/gtk+-2.x with ${GTK_REQUIRES} USE flag."
+		die "Please re-emerge =x11-libs/gtk+-2.x with ${GTK_REQUIRES} USE flag."
+	fi
+}
+
 if [[ "${PN##*-}" == "live" ]]; then
 	inherit subversion
 	DEPEND="${DEPEND}
@@ -30,4 +39,4 @@ gmpc-plugin_src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 }
 
-EXPORT_FUNCTIONS src_install
+EXPORT_FUNCTIONS src_install pkg_setup
