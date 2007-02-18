@@ -1,4 +1,4 @@
-eautogen-sh_eautogen-sh() {
+eautogen-sh() {
 	local x
 	local LOCAL_EXTRA_ECONF="${EXTRA_ECONF}"
 
@@ -8,7 +8,7 @@ eautogen-sh_eautogen-sh() {
 	if [ -x "${ECONF_SOURCE}/autogen.sh" ]; then
 		if [ -e /usr/share/gnuconfig/ ]; then
 			for x in $(find "${WORKDIR}" -type f '(' -name config.guess -o -name config.sub ')') ; do
-				vecho " * econf: updating ${x/${WORKDIR}\/} with /usr/share/gnuconfig/${x##*/}"
+				echo " * econf: updating ${x/${WORKDIR}\/} with /usr/share/gnuconfig/${x##*/}"
 				cp -f /usr/share/gnuconfig/${x##*/} ${x}
 			done
 		fi
@@ -52,7 +52,7 @@ eautogen-sh_eautogen-sh() {
 
 		## confcache unsupported
 
-		vecho ./autogen.sh \
+		echo ./autogen.sh \
 			--prefix=/usr \
 			--host=${CHOST} \
 			--mandir=/usr/share/man \
@@ -84,10 +84,9 @@ eautogen-sh_eautogen-sh() {
 }
 
 eautogen-sh_src_compile() {
-
 	cd ${S}
 	eautogen-sh || die "died running eautogen-sh, $FUNCNAME:autogen-sh"
 	emake || die "died running emake, $FUNCNAME:emake"
 }
 
-EXPORT_FUNCTIONS eautogen-sh src_compile
+EXPORT_FUNCTIONS src_compile
