@@ -16,6 +16,7 @@ IUSE="debug"
 LICENSE="GPL-2"
 
 DEPEND="=net-im/gaim-2*
+	|| ( media-sound/gmpc-live >=media-sound/gmpc-0.14.0 )
 	|| ( media-libs/libmpd-live media-libs/libmpd )"
 
 src_compile() {
