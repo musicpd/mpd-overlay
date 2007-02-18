@@ -18,6 +18,7 @@ DEPEND=">=x11-libs/gtk+-2.4
 	dev-perl/XML-Parser
 	media-libs/libmpd-live
 	>dev-util/gob-2
+	!media-sound/gmpc
 	net-misc/curl"
 
 
