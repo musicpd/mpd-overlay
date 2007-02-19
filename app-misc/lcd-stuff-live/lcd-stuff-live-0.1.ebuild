@@ -15,7 +15,7 @@ LICENSE="GPL-2" # and GPL-2 only
 DEPEND="app-misc/lcdproc
 	net-misc/curl
 	imap? ( net-libs/libetpan )
-	mpd? ( media-libs/libmpd )
+	mpd? ( media-libs/libmpd-live )
 	mp3? ( media-libs/taglib )
 	xml? ( net-libs/libnxml )
 	rss? ( net-libs/libmrss net-libs/libnxml )"
