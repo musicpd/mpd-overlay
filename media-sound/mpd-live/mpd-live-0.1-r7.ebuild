@@ -46,7 +46,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	use largefile && append-flags '-D_FILE_OFFSET_BITS=64'
+	use largefile && append-flags '-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE'
 	eautogen-sh \
 		${myconf} \
 		$(use_enable alsa) \
