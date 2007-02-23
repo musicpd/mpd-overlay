@@ -14,6 +14,7 @@ DEPEND="media-plugins/gmpc-alarm-live
 	amazon? ( media-plugins/gmpc-amazon-coverart-live )
 	media-plugins/gmpc-autoplaylist-live
 	media-plugins/gmpc-extraplaylist-live
+	media-plugins/gmpc-favorites-live
 	media-plugins/gmpc-lastfm-live
 	media-plugins/gmpc-lyrics-live
 	media-plugins/gmpc-magnatune-live
