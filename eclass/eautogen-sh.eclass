@@ -5,7 +5,8 @@ eautogen-sh() {
 	if [ -z "${ECONF_SOURCE}" ]; then
 		ECONF_SOURCE="."
 	fi
-	if [ -x "${ECONF_SOURCE}/autogen.sh" ]; then
+
+	if [ -f "${ECONF_SOURCE}/autogen.sh" ]; then
 		if [ -e /usr/share/gnuconfig/ ]; then
 			for x in $(find "${WORKDIR}" -type f '(' -name config.guess -o -name config.sub ')') ; do
 				echo " * econf: updating ${x/${WORKDIR}\/} with /usr/share/gnuconfig/${x##*/}"
@@ -68,7 +69,7 @@ eautogen-sh() {
 		if [[ $? -ne 0 ]]; then
 			sed -ie 's%#!/bin/\(.*\)$%#!/bin/\1\ntrap "exit 1" HUP INT QUIT ABRT KILL ALRM TERM%' autogen.sh
 		fi
-		./autogen.sh \
+		bash autogen.sh \
 			--prefix=/usr \
 			--host=${CHOST} \
 			--mandir=/usr/share/man \
@@ -85,7 +86,12 @@ eautogen-sh() {
 
 eautogen-sh_src_compile() {
 	cd ${S}
-	eautogen-sh || die "died running eautogen-sh, $FUNCNAME:autogen-sh"
+	if [[ ! -f configure ]]; then
+		eautogen-sh || die "died running eautogen-sh, $FUNCNAME:autogen-sh"
+	fi
+	if [[ ! -f Makefile ]]; then
+		econf || die "diesd running econf, $FUNCNAME: econf"
+	fi
 	emake || die "died running emake, $FUNCNAME:emake"
 }
 
