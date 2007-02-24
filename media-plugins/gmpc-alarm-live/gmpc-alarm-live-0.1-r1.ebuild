@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_REPO_URI="http://svn.brokentrain.net/gmpc-alarm/trunk/"
-ESVN_PATCHES="${FILESDIR}/build-fix.diff"
 GMPC_DOCS="AUTHORS TODO README"
 inherit gmpc-plugin eautogen-sh
 
