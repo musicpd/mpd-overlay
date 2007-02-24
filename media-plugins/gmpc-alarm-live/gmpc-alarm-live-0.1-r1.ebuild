@@ -3,6 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="http://svn.brokentrain.net/gmpc-alarm/trunk/"
+ESVN_PATCHES="${FILESDIR}/build-fix.diff"
 GMPC_DOCS="AUTHORS TODO README"
 inherit gmpc-plugin eautogen-sh
 
@@ -13,12 +14,3 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 LICENSE="GPL-2"
-
-src_install() {
-	insinto "/usr/share/gmpc/plugins"
-	doins "src/.libs/alarmplugin.so"
-
-	if [[ -n ${GMPC_DOCS} ]]; then
-		dodoc ${GMPC_DOCS}
-	fi
-}

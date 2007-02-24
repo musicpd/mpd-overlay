@@ -1,0 +1,12 @@
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 3a25bcb..b0e8401 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -11,5 +11,5 @@ EXTRA_DIST= gmpc-alarm.h
+ 
+ install:
+ 	@$(MAKE)
+-	mkdir -p ${libdir}
+-	cp .libs/alarmplugin.so ${libdir}
++	mkdir -p ${DESTDIR}${libdir}
++	if test -f .libs/alarmplugin.so; then cp .libs/alarmplugin.so ${DESTDIR}${libdir}; fi
