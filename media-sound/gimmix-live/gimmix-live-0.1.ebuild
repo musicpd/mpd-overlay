@@ -3,8 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="svn://svn.berlios.de/gimmix/trunk/src"
-ESVN_PROJECT="src"
-inherit subversion flag-o-matic
+inherit subversion eautogen-sh flag-o-matic
 
 DESCRIPTION="Gimmix is a graphical music player daemon (MPD) client written in C using GTK+2."
 HOMEPAGE="http://priyank.one09.net/index.php?page=gimmix"
