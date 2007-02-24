@@ -1,7 +1,1 @@
 EBUILD glurp-libmpd-live-0.1.ebuild 809 RMD160 3b38685c2aaf840a9b5b9630bce9b7d06b74383c SHA1 c5ff285ab4bb41a4497d829c4ba7860de7460ab4 SHA256 aaafcca5d9a3982005daddeffa2bec30029bb986bb7b964d1630f710d01ef812
-MD5 25a7f8dc2e6a5b2a79fd4d4f2f0a6813 glurp-libmpd-live-0.1.ebuild 809
-RMD160 3b38685c2aaf840a9b5b9630bce9b7d06b74383c glurp-libmpd-live-0.1.ebuild 809
-SHA256 aaafcca5d9a3982005daddeffa2bec30029bb986bb7b964d1630f710d01ef812 glurp-libmpd-live-0.1.ebuild 809
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-glurp-libmpd-live-0.1 0
-RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-glurp-libmpd-live-0.1 0
-SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-glurp-libmpd-live-0.1 0

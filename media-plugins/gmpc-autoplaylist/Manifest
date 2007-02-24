@@ -1,8 +1,2 @@
 DIST gmpc-autoplaylist-0.14.0.tar.gz 309673 RMD160 1f7480a11a57cf012bcbb2b39d0d5fafb1642cc2 SHA1 c587c641377141af4e84753146605d17e3aecc62 SHA256 c942c4266e94b7a6e6611a637b283b88dce11ac9876a367fd6eaaca6582f2b92
 EBUILD gmpc-autoplaylist-0.14.0.ebuild 410 RMD160 78f95a5eb90476ac91e01495a644476338052a0e SHA1 327be035e6eccc8933c5e82b9d9d31e106c63e0e SHA256 a4908511f7efea8ef3ceda254ffc2fc679bafa4dd1defd4d2b0ae7ab2a8da168
-MD5 6cde4da4c87f4dcf2f8e45e5c2374ef2 gmpc-autoplaylist-0.14.0.ebuild 410
-RMD160 78f95a5eb90476ac91e01495a644476338052a0e gmpc-autoplaylist-0.14.0.ebuild 410
-SHA256 a4908511f7efea8ef3ceda254ffc2fc679bafa4dd1defd4d2b0ae7ab2a8da168 gmpc-autoplaylist-0.14.0.ebuild 410
-MD5 acdd1ecf8e8469b3a63cfae055914fa0 files/digest-gmpc-autoplaylist-0.14.0 274
-RMD160 9cdb90d50dd0a563a28d3e91a8cb24b59233bb93 files/digest-gmpc-autoplaylist-0.14.0 274
-SHA256 2d478b086843a6086f04145d42511332c93daaddd82009d5b1c131bf064ee402 files/digest-gmpc-autoplaylist-0.14.0 274

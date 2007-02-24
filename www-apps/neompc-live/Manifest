@@ -1,7 +1,1 @@
 EBUILD neompc-live-0.1.ebuild 447 RMD160 54a770e07fdb17d36f201ad4fed67fb871e4f1e6 SHA1 e3c9b46ca00b2f88d8fce28e6d484b025865b323 SHA256 5d5beca6151bdfb2aaa4a8955ad2777b9e4a842998cbab40c37d7607bc79cdb5
-MD5 60aa4f9bf261b20152f2ff5c43f2a214 neompc-live-0.1.ebuild 447
-RMD160 54a770e07fdb17d36f201ad4fed67fb871e4f1e6 neompc-live-0.1.ebuild 447
-SHA256 5d5beca6151bdfb2aaa4a8955ad2777b9e4a842998cbab40c37d7607bc79cdb5 neompc-live-0.1.ebuild 447
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-neompc-live-0.1 0
-RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-neompc-live-0.1 0
-SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-neompc-live-0.1 0
