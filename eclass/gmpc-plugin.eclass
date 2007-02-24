@@ -24,16 +24,30 @@ if [[ "${PN##*-}" == "live" ]]; then
 else
 	## Depend against reverse dependency
 	DEPEND="${DEPEND}
-		>=media-sound/gmpc-0.14.0
+		>=media-sound/gmpc-${PV}
 		!${CATEGORY}/${PN}-live"
 	RDEPEND="${DEPEND}"
+	
 	## In the case that it's given an odd name
-	if [[ -z "${GMPC_PLUGIN}" ]]; then
-		GMPC_PLUGIN="${P}"
-	else
+	if [[ -n "${GMPC_PLUGIN}" ]]; then
 		GMPC_PLUGIN="gmpc-${GMPC_PLUGIN}-${PV}"
+	else
+		GMPC_PLUGIN="${P}"
 	fi
-	SRC_URI="http://download.sarine.nl/gmpc-0.14.0/plugins/${GMPC_PLUGIN}.tar.gz"
+
+	SRC_URI="http://download.sarine.nl/gmpc-${PV}/plugins/${GMPC_PLUGIN}.tar.gz"
+	S="${WORKDIR}/${GMPC_PLUGIN}"
+
+	## Without this, portage keeps appending to $GMPC_PLUGIN
+	unset GMPC_PLUGIN
+
+	gmpc-plugin_src_compile() {
+		cd "${S}"
+		econf || die "died configuring gmpc plugin"
+		emake || die "died running emake"
+	}
+
+	EXPORT_FUNCTIONS src_compile
 fi
 
 gmpc-plugin_src_install() {
