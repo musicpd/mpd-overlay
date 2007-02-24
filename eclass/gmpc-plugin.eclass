@@ -44,7 +44,7 @@ else
 	gmpc-plugin_src_compile() {
 		cd "${S}"
 		econf || die "died configuring gmpc plugin"
-		emake || die "died running emake"
+		emake || die "died making gmpc plugin"
 	}
 
 	EXPORT_FUNCTIONS src_compile
