@@ -1,3 +1,14 @@
+## For compatibility with paludis
+_strip_duplicate_slashes() {
+        if [[ -n $1 ]] ; then
+                local removed=$1
+                while [[ ${removed} == *//* ]] ; do
+                        removed=${removed//\/\///}
+                done
+                echo ${removed}
+        fi
+}
+
 eautogen-sh() {
 	local x
 	local LOCAL_EXTRA_ECONF="${EXTRA_ECONF}"
@@ -46,7 +57,7 @@ eautogen-sh() {
 			export CONF_PREFIX
 			[ "${CONF_LIBDIR:0:1}" != "/" ] && CONF_LIBDIR="/${CONF_LIBDIR}"
 
-			CONF_LIBDIR_RESULT="$(strip_duplicate_slashes ${CONF_PREFIX}${CONF_LIBDIR})"
+			CONF_LIBDIR_RESULT="$(_strip_duplicate_slashes ${CONF_PREFIX}${CONF_LIBDIR})"
 
 			LOCAL_EXTRA_ECONF="--libdir=${CONF_LIBDIR_RESULT} ${LOCAL_EXTRA_ECONF}"
 		fi
