@@ -8,6 +8,7 @@ inherit subversion eautogen-sh
 DESCRIPTION="A library handling connection to a MPD server."
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
+SLOT="0"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE=""
