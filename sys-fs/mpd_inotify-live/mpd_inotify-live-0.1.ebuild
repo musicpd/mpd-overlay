@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
-DEPEND="||(media-sound/mpd media-sound/mpd-live media-sound/mpd-ke)"
+DEPEND="|| ( media-sound/mpd media-sound/mpd-live media-sound/mpd-ke ) "
 RDEPEND=""
 
 src_compile() {

@@ -17,7 +17,7 @@ RESTRICT="mirror"
 DEPEND=">=xfce-base/xfce4-4.3.90.0
 	xfce-base/xfce4-dev-tools
 	!xfce-extra/xfce4-mpc-plugin-live
-	(|| (media-libs/libmpd media-libs/libmpd-live))"
+	|| ( media-libs/libmpd media-libs/libmpd-live )"
 
 src_unpack() {
 	unpack ${A}

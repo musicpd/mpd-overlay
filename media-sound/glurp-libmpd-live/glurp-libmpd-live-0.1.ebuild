@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 IUSE="debug"
 
 DEPEND="${RDEPEND}
-	|| (media-libs/libmpd media-libs/libmpd-live)
+	|| ( media-libs/libmpd media-libs/libmpd-live )
 	>=x11-libs/gtk+-2.4.0
 	>=gnome-base/libglade-2.3.6"
 RDEPEND="!media-sound/glurp"

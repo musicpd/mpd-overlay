@@ -16,7 +16,7 @@ LICENSE="GPL-2"
 DEPEND=">=x11-libs/gtk+-2.10
 	>=gnome-base/libglade-2.6
 	x11-libs/libnotify
-	|| (media-libs/libmpd-live >=media-libs/libmpd-0.12.0)
+	|| ( media-libs/libmpd-live >=media-libs/libmpd-0.12.0 )
 	dev-libs/confuse"
 
 ## This fixes a bad bad bug.
