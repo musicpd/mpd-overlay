@@ -3,10 +3,10 @@
 # $Header: $
 
 ESVN_REPO_URI="svn://svn.berlios.de/gimmix/trunk/src"
-inherit subversion eautogen-sh flag-o-matic
+inherit subversion eautogen-sh
 
 DESCRIPTION="Gimmix is a graphical music player daemon (MPD) client written in C using GTK+2."
-HOMEPAGE="http://priyank.one09.net/index.php?page=gimmix"
+HOMEPAGE="http://gimmix.berlios.de/"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
@@ -19,10 +19,6 @@ DEPEND=">=x11-libs/gtk+-2.10
 	!media-sound/gimmix
 	|| ( media-libs/libmpd-live >=media-libs/libmpd-0.12.0 )
 	dev-libs/confuse"
-
-
-## This fixes a bad bad bug.
-replace-flags "-O*" "-O1"
 
 src_install() {
 	make DESTDIR=${D} install || die "make install failed"
