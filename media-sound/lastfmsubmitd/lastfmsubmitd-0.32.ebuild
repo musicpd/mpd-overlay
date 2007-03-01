@@ -6,10 +6,10 @@ inherit distutils
 DESCRIPTION="a Last.fm 'plugin' client for MPD, implemented in Python."
 SRC_URI="http://www.red-bean.com/~decklin/software/${PN}/${P}.tar.bz2"
 HOMEPAGE="http://www.red-bean.com/~decklin/software/lastfmsubmitd/"
-
 LICENSE="GPL-2"
-SLOT="0"
+
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
 IUSE=""
 RDEPEND="dev-python/py-libmpdclient-live"
 

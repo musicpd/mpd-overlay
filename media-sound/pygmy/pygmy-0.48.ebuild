@@ -4,15 +4,15 @@
 
 inherit distutils
 
-S="${WORKDIR}/${P}"
 DESCRIPTION="A GTK2 client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://pygmy.berlios.de/"
 SRC_URI="http://pygmy.berlios.de/files/${P}.tar.bz2"
-
 LICENSE="GPL-2"
+
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 IUSE=""
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+S="${WORKDIR}/${P}"
 
 DEPEND="${RDEPEND} 
 	dev-python/py-libmpdclient-live

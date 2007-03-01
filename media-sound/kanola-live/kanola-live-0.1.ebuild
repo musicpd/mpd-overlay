@@ -8,8 +8,8 @@ ESVN_REPO_URI="http://kanola.googlecode.com/svn/trunk/"
 
 DESCRIPTION="A lightweight client for MPD, in PyQt 4"
 HOMEPAGE="http://dadexter.googlepages.com/kanola"
-
 LICENSE="GPL-2"
+
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 IUSE=""

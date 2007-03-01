@@ -5,11 +5,11 @@
 DESCRIPTION="A Gnome client for the Music Player Daemon."
 HOMEPAGE="http://sarine.nl/gmpc"
 SRC_URI="http://download.sarine.nl/${P}/${P}.tar.gz"
+LICENSE="GPL-2"
 
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 IUSE=""
-LICENSE="GPL-2"
 
 DEPEND=">=x11-libs/gtk+-2.4
 	>=gnome-base/libglade-2.3

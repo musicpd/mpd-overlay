@@ -7,13 +7,11 @@ EGIT_REPO_URI="git://mpd.bogomips.org/mpd-uclinux.git/"
 
 DESCRIPTION="Music Player Daemon- Kill Eric branch"
 HOMEPAGE="http://www.musicpd.org"
-
 LICENSE="GPL-2"
-SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile flac icecast ipv6 mp3 mikmod mp3 musepack 
-nonblock-update oss pulseaudio unicode vorbis"
 
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
+IUSE="aac alsa ao audiofile flac icecast ipv6 mp3 mikmod mp3 musepack nonblock-update oss pulseaudio unicode vorbis"
 
 DEPEND="dev-util/gperf
 	!media-sound/mpd-svn

@@ -5,16 +5,18 @@
 inherit mpd-www
 
 DESCRIPTION="ajaxmp is a web client for MPD"
-HOMEPAGE="http://mroy31.dyndns.org/~roy/wiki"
+HOMEPAGE="http://mroy31.dyndns.org/~roy/wiki/doku.php?id=ajaxmp"
 SRC_URI="http://mroy31.dyndns.org/~roy/archives/ajaxmp/ajaxmp-0.6.1.tar.gz"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
 IUSE=""
+S=${WORKDIR}/${MY_PN}
+MY_PN="ajaxmp"
+
 DEPEND="virtual/httpd-php"
 
-MY_PN="ajaxmp"
-S=${WORKDIR}/${MY_PN}
 
 pkg_postinst() {
 	mpd-www_pkg_postinst

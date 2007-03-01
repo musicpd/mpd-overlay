@@ -4,10 +4,10 @@
 
 DESCRIPTION="gmpc - a meta ebuild to pull in gmpc and all plugins"
 HOMEPAGE="http://sarine.nl/gmpc"
-
 LICENSE="GPL-2"
-SLOT="0"
+
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
 IUSE="amazon xosd"
 
 DEPEND="media-plugins/gmpc-alarm-live

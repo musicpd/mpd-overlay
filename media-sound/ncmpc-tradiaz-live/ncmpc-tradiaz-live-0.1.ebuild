@@ -5,13 +5,13 @@
 ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/branches/tradiaz/"
 inherit subversion eautogen-sh
 
-IUSE="artist-screen clock-screen debug mouse key-screen lyrics-screen search-screen nls raw-mode"
 DESCRIPTION="A branch for fixes and enhancements to ncmpc, a client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
-
 LICENSE="GPL-2"
-SLOT="0"
+
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
+IUSE="artist-screen clock-screen debug mouse key-screen lyrics-screen search-screen nls raw-mode"
 
 DEPEND="virtual/libc
         sys-libs/ncurses

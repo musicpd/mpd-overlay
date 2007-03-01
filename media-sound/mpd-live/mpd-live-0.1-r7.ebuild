@@ -8,10 +8,10 @@ inherit subversion eautogen-sh flag-o-matic
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
-
 LICENSE="GPL-2"
-SLOT="0"
+
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
 IUSE="aac alsa ao audiofile avahi flac icecast ipv6 jack largefile libsamplerate mikmod mp3 musepack oss
 pulseaudio unicode vorbis"
 

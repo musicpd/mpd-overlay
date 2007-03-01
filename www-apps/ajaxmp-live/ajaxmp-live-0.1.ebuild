@@ -6,14 +6,14 @@ EDARCS_REPOSITORY="http://mroy31.dyndns.org/~roy/repository/ajaxmp/"
 inherit mpd-www
 
 DESCRIPTION="ajaxmp is a web client for MPD"
-HOMEPAGE="http://mroy31.dyndns.org/~roy/wiki"
+HOMEPAGE="http://mroy31.dyndns.org/~roy/wiki/doku.php?id=ajaxmp"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
 IUSE=""
 
 DEPEND="virtual/httpd-php"
-
 DOCS="CHANGELOG README"
 
 pkg_postinst() {

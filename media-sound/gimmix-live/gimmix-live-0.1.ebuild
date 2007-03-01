@@ -7,11 +7,11 @@ inherit subversion eautogen-sh
 
 DESCRIPTION="Gimmix is a graphical music player daemon (MPD) client written in C using GTK+2."
 HOMEPAGE="http://gimmix.berlios.de/"
+LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 IUSE=""
-LICENSE="GPL-2"
 
 DEPEND=">=x11-libs/gtk+-2.10
 	>=gnome-base/libglade-2.6

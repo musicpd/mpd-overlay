@@ -7,11 +7,11 @@ inherit subversion eautogen-sh
 
 DESCRIPTION="A Gnome client for the Music Player Daemon."
 HOMEPAGE="http://sarine.nl/gmpc"
+LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 IUSE=""
-LICENSE="GPL-2"
 
 DEPEND=">=x11-libs/gtk+-2.4
 	>=gnome-base/libglade-2.3

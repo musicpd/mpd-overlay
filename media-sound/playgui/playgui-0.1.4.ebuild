@@ -5,11 +5,13 @@
 DESCRIPTION="A java client for mpd"
 HOMEPAGE="http://sccs.swarthmore.edu/~cbr/PlayGUI/"
 SRC_URI="http://sccs.swarthmore.edu/~cbr/PlayGUI/${PF}.tar.gz"
-SLOT="0"
-RDEPEND=">=virtual/jre-1.4"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE=""
 LICENSE="GPL-2"
+
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
+IUSE=""
+
+RDEPEND=">=virtual/jre-1.4"
 
 src_install()
 {

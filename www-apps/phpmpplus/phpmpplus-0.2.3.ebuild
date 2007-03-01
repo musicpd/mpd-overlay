@@ -6,17 +6,16 @@ inherit mpd-www
 
 DESCRIPTION="phpMp is a client program for Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org/"
-
-IUSE=""
-
-LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SRC_URI="http://dev.kd2.org/phpmpplus/${P}.tar.bz2"
+LICENSE="GPL-2"
+
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT="0"
+IUSE=""
+S="${WORKDIR}/${PN/plus}"
 
 DEPEND="${RDEPEND}
 	virtual/httpd-php"
-
-S="${WORKDIR}/${PN/plus}"
 
 src_install() {
 	mpd-www_src_install
