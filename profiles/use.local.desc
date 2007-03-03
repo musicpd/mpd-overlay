@@ -1,3 +1,5 @@
+media-sound/gmpc-live:mmkeys - Add support for multimedia keys
+media-sound/gmpc-live:trayicon - Add support for the trayicon in GMPC
 media-sound/ncmpc-tradiaz-live:artist-screen - Add support for an artist screen display
 media-sound/ncmpc-tradiaz-live:lyrics-screen - Add support for an lyrics screen display
 media-sound/mpd-live:largefile - Add support for sound files over 4GiB
