@@ -13,14 +13,17 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 
-DEPEND=">=x11-libs/gtk+-2.4
+RDEPEND=">=x11-libs/gtk+-2.8
+	>=dev-libs/glib-2.10
 	>=gnome-base/libglade-2.3
+	session? ( x11-libs/libSM )
 	dev-perl/XML-Parser
 	media-libs/libmpd-live
 	>dev-util/gob-2
 	!media-sound/gmpc
 	net-misc/curl"
-
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 ## This is needed to extract the svn revision for the about window. The
 ## subversion.eclass doen't copy the .svn directories, so after the copy
@@ -34,7 +37,10 @@ pkg_setup() {
 src_compile() {
        	sed -ie "s%REVISION=.*%REVISION=$REV%" ${WORKDIR}/${PF}/src/Makefile.am
 
-	eautogen-sh || die "autogen.sh failed!"
+	eautogen-sh \
+		$(use_enable mmkeys) \
+		$(use_enable session sm) \
+		$(use_enable trayicon) || die "autogen.sh failed!"
 	emake || die "Make failed!"
 }
 src_install() {
