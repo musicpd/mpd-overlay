@@ -20,5 +20,6 @@ src_install() {
 	insinto /etc
 	doins update-live-ebuilds.conf
 	dobin update-live-ebuilds
+	doman doc/update-live-ebuilds.8
 	dodoc README
 }
