@@ -14,8 +14,9 @@ SLOT="0"
 IUSE=""
 S="${WORKDIR}/${P/wm/WM}"
 
-DEPEND="virtual/x11 \
-	!x11-plugins/wmmp"
+DEPEND="|| (
+                ( x11-libs/libXext x11-libs/libXpm )
+                <virtual/x11-7 )"
 
 src_install () {
 	emake install DESTDIR=${D} || die
