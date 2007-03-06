@@ -13,12 +13,13 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 
-DEPEND=">=virtual/python-2.4
+RDEPEND=">=virtual/python-2.4
 	>=dev-python/pygtk-2.6
+	x11-themes/gnome-icon-theme
 	!media-sound/pympd"
 
 pkg_setup() {
-	if ! built_with_use =gtk+-2* jpeg; then
+	if ! built_with_use =x11-libs/gtk+-2* jpeg; then
 		eerror "You must build gtk+-2.x with jpeg USE flag."
 		die "Please re-emerge gtk+-2.x with jpeg USE flag."
 	fi
@@ -32,8 +33,8 @@ src_compile() {
 }
 
 src_install() {
-        # Fix for 'src//glade/../pympd.svg': No such file or directory
-        sed -i -e 's:\..\/py:/usr/share/pympd/py:g' src/glade/pympd.glade
+	# Fix for 'src//glade/../pympd.svg': No such file or directory
+	sed -i -e 's:\..\/py:/usr/share/pympd/py:g' src/glade/pympd.glade
 
 	emake PREFIX="/usr" DESTDIR="${D}" install || die "emake install failed."
 	dodoc README
