@@ -10,9 +10,8 @@ www-apps/phpmp2-live
 www-apps/phpmpplus
 www-apps/phpmpplus-live
 
-# Need feedback on weather it works as advertised.
-# I couldn't even get xfce4 beta2 to start :/
-xfce-extra/xfce4-mpc-plugin
+# This package requires xfce4-dev-tools, which
+# isn't carried here.
 xfce-extra/xfce4-mpc-plugin-live
 
 # It's broken and mostly unusable, here for testers
