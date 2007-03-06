@@ -16,7 +16,7 @@ IUSE=""
 DEPEND=">=xfce-base/xfce4-4.4.0
 	xfce-base/xfce4-dev-tools
 	!xfce-extra/xfce4-mpc-plugin
-	|| (media-libs/libmpd media-libs/libmpd-live)"
+	|| ( media-libs/libmpd media-libs/libmpd-live )"
 
 src_install() {
 	emake install DESTDIR=${D}
