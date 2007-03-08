@@ -19,6 +19,12 @@ DEPEND="${RDEPEND}
 	nls? ( || ( sys-libs/glibc dev-libs/libiconv ) )"
 RDEPEND="!media-sound/mpc"
 
+src_compile() {
+	eautogen-sh --disable-dependency-tracking \
+		$(use_enable nls iconv) || die "eautogen-sh failed"
+		emake || die "emake failed"
+}
+
 src_install() {
 	mv -v doc/m3u-handler.sh doc/mpd-m3u-handler
 	mv -v doc/pls-handler.sh doc/mpd-pls-handler
