@@ -72,6 +72,7 @@ eautogen-sh() {
 			--datadir=/usr/share \
 			--sysconfdir=/etc \
 			--localstatedir=/var/lib \
+			--disable-dependency-tracking \
 			"$@" \
 			${LOCAL_EXTRA_ECONF}
 
@@ -88,6 +89,7 @@ eautogen-sh() {
 			--datadir=/usr/share \
 			--sysconfdir=/etc \
 			--localstatedir=/var/lib \
+			--disable-dependency-tracking \
 			"$@"  \
 			${LOCAL_EXTRA_ECONF} || die "eautogen-sh failed"
 	else
