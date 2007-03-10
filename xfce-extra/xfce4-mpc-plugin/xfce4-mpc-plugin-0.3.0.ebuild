@@ -9,13 +9,19 @@ LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE=""
+IUSE="debug"
 RESTRICT="mirror"
 
 DEPEND=">=xfce-base/xfce4-4.4.0
-	xfce-base/xfce4-dev-tools
+	xfce-extra/xfce4-dev-tools
 	!xfce-extra/xfce4-mpc-plugin-live
 	|| ( media-libs/libmpd media-libs/libmpd-live )"
+
+src_compile() {
+	econf	--disable-dependency-tracking \
+		$(use debug && echo '--enable-debug=full' || echo '--disable-debug') || 'configure failed'
+	emake
+}
 
 src_install() {
 	emake install DESTDIR=${D}
