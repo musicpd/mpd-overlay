@@ -10,10 +10,6 @@ www-apps/phpmp2-live
 www-apps/phpmpplus
 www-apps/phpmpplus-live
 
-# This package requires xfce4-dev-tools, which
-# isn't carried here.
-xfce-extra/xfce4-mpc-plugin-live
-
 # It's broken and mostly unusable, here for testers
 # and testing
 media-sound/kanola
