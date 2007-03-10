@@ -17,6 +17,11 @@ DEPEND=">=x11-libs/gtk+-2.10
 	|| ( media-libs/libmpd-live >=media-libs/libmpd-0.12.0 )
 	dev-libs/confuse"
 
+src_compile() {
+	econf --disable-dependency-tracking || eerror 'eautogen-sh failed'
+	emake || eerror 'emake failed'
+}
+
 src_install() {
 	make DESTDIR=${D} install || die "make install failed"
 }
