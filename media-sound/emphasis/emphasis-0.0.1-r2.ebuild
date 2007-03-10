@@ -6,7 +6,7 @@ inherit eutils eautogen-sh
 
 DESCRIPTION="An Etk Media Player Client for MPD"
 HOMEPAGE="http://emphasis.tuxfamily.org/"
-SRC_URI="http://emphasis.tuxfamily.org/${P}.tar.bz2"
+SRC_URI="http://download.tuxfamily.org/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
