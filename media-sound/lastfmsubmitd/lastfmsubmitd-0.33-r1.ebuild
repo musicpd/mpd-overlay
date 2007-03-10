@@ -4,7 +4,9 @@
 inherit distutils
 
 DESCRIPTION="a Last.fm 'plugin' client for MPD, implemented in Python."
-SRC_URI="http://www.red-bean.com/~decklin/software/${PN}/${P}.tar.bz2"
+#SRC_URI="http://www.red-bean.com/~decklin/software/${PN}/${P}.tar.bz2"
+## Hosting at my musicpd.org address
+SRC_URI="http://musicpd.org/~avuton/mirror/${P}.tar.bz2"
 HOMEPAGE="http://www.red-bean.com/~decklin/software/lastfmsubmitd/"
 LICENSE="GPL-2"
 
