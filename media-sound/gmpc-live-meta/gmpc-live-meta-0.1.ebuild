@@ -8,9 +8,10 @@ LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="amazon xosd"
+IUSE="amazon avahi xosd"
 
 DEPEND="media-plugins/gmpc-alarm-live
+	avahi? ( media-plugins/gmpc-avahi-live )
 	amazon? ( media-plugins/gmpc-amazon-coverart-live )
 	media-plugins/gmpc-autoplaylist-live
 	media-plugins/gmpc-extraplaylist-live
