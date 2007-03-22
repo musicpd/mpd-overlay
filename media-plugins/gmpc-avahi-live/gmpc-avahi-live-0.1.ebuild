@@ -4,7 +4,7 @@
 
 inherit gmpc-plugin eautogen-sh
 
-DESCRIPTION="A GMPC plugin to display server/database statistics"
+DESCRIPTION="A GMPC plugin to find MPD servers and automatically make a profile for it."
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 
