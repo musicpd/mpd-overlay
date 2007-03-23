@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/mpc/trunk/"
-inherit subversion eautogen-sh bash-completion
+inherit subversion autotools bash-completion
 
 DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
 HOMEPAGE="http://musicpd.org/"
@@ -19,8 +19,13 @@ DEPEND="${RDEPEND}
 	nls? ( || ( sys-libs/glibc dev-libs/libiconv ) )"
 RDEPEND="!media-sound/mpc"
 
+src_unpack() {
+	subversion_src_unpack
+	eautoreconf
+}
+
 src_compile() {
-	eautogen-sh --disable-dependency-tracking \
+	econf --disable-dependency-tracking \
 		$(use_enable nls iconv) || die "eautogen-sh failed"
 		emake || die "emake failed"
 }
