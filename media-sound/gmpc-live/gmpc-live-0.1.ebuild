@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/gmpc/trunk/"
-inherit subversion eautogen-sh
+inherit subversion autotools
 
 DESCRIPTION="A Gnome client for the Music Player Daemon."
 HOMEPAGE="http://sarine.nl/gmpc"
@@ -34,10 +34,16 @@ pkg_setup() {
 	REV=`svn info ${repo} | grep "Last Changed Rev" | awk -F ': ' '{ print $2}'`
 }
 
+src_unpack() {
+	subversion_src_unpack
+#	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
+}
+
 src_compile() {
        	sed -ie "s%REVISION=.*%REVISION=$REV%" ${WORKDIR}/${PF}/src/Makefile.am
 
-	eautogen-sh \
+	econf \
 		$(use_enable mmkeys) \
 		$(use_enable session sm) \
 		$(use_enable trayicon) || die "autogen.sh failed!"
