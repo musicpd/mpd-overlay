@@ -14,5 +14,6 @@ media-sound/ncmpc-tradiaz-live:raw-mode - Add raw terminal support
 media-sound/ncmpc-tradiaz-live:search-screen - Add support for a search screen display
 media-sound/mpd-live:icecast - Enable support for Icecast2
 media-sound/mpd-ke-live:icecast - Enable support for Icecast2
-media-sound/mpd-live:largefile - Add support for sound files over 4GiB
+media-sound/mpd-live:largefile - Add support for sound files over 4GiB on 32-bit machines
+media-sound/mpd-ke-live:largefile - Add support for sound files over 4GiB on 32-bit machines
 media-sound/mpd-ke-live:nonblock-update - Don't block during database update
