@@ -4,7 +4,7 @@
 
 ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
 ESVN_PATCHES="mpd-0.12-conf.patch"
-inherit subversion eautogen-sh flag-o-matic
+inherit subversion autotools flag-o-matic
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
@@ -45,9 +45,14 @@ pkg_setup() {
 	usermod -d "/var/lib/mpd" mpd
 }
 
+src_unpack() {
+        subversion_src_unpack
+	AT_NOELIBTOOLIZE="yes" AT_M4DIR="${PWD}/m4" eautoreconf
+}
+
 src_compile() {
 	use largefile && append-flags '-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE'
-	eautogen-sh \
+	econf \
 		${myconf} \
 		$(use_enable alsa) \
 		$(use_enable alsa alsatest) \
