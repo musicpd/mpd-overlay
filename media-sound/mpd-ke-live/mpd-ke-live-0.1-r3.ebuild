@@ -2,57 +2,60 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git eautogen-sh
-EGIT_REPO_URI="git://mpd.bogomips.org/mpd-uclinux.git/"
+ESVN_PATCHES="mpd-0.12-conf.patch"
+inherit git autotools flag-o-matic
+EGIT_REPO_URI="http://musicpd.org/~normalperson/mpd-ke/mpd-ke.git/"
 
-DESCRIPTION="Music Player Daemon- Kill Eric branch"
+DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="aac alsa ao audiofile flac icecast ipv6 mp3 mikmod mp3 musepack nonblock-update oss pulseaudio unicode vorbis"
+IUSE="aac alsa ao audiofile flac icecast ipv6 jack largefile mikmod mp3 musepack nonblock-update oss pulseaudio unicode vorbis"
 
-DEPEND="dev-util/gperf
-	!media-sound/mpd-svn
+DEPEND="${RDEPEND}
+	dev-util/gperf
 	!sys-cluster/mpich2
 	sys-libs/zlib
 	aac? ( >=media-libs/faad2-2.0_rc2 )
+	audiofile? ( media-libs/audiofile )
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
-	audiofile? ( media-libs/audiofile )
-	flac? ( >=media-libs/flac-1.1.0 )
+	flac? ( >=media-libs/flac-1.1.2 )
 	icecast? ( media-libs/libshout )
+	jack? ( media-sound/jack-audio-connection-kit )
+	mikmod? ( media-libs/libmikmod )
 	mp3? ( media-libs/libmad
 	       media-libs/libid3tag )
-	mikmod? ( media-libs/libmikmod )
 	musepack? ( media-libs/libmpcdec )
+	nls? ( || ( sys-libs/glibc dev-libs/libiconv ) )
 	pulseaudio? ( media-sound/pulseaudio )
 	vorbis? ( media-libs/libvorbis )"
 
-RDEPEND="!media-sound/mpd \
-	!media-sound/mpd-svn \
+##	avahi? ( >=net-dns/avahi-0.6 )
+##	libsamplerate? ( >=media-libs/libsamplerate-0.0.15 )
+
+RDEPEND="!media-sound/mpd
 	!media-sound/mpd-live"
 
-upgrade_warning() {
-	echo
-	ewarn "Home directory of user mpd, as well as default locations in mpd.conf have"
-	ewarn "been changed to /var/lib/mpd, please bear that in mind while updating"
-	ewarn "your mpd.conf file."
-	echo
-	epause 5
-}
-
 pkg_setup() {
-	upgrade_warning
 	enewuser mpd '' '' "/var/lib/mpd" audio || die "problem adding user mpd"
 
 	# also change the homedir if the user has existed before
 	usermod -d "/var/lib/mpd" mpd
 }
 
+src_unpack() {
+	git_src_unpack
+	epatch ${FILESDIR}/mpd-0.12-conf.patch || die "epatch for config file"
+	AT_NOELIBTOOLIZE="yes" AT_M4DIR="${PWD}/m4" eautoreconf
+}
+
 src_compile() {
-	eautogen-sh \
+	use largefile && append-flags '-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE'
+	econf \
+		${myconf} \
 		$(use_enable alsa) \
 		$(use_enable alsa alsatest) \
 		$(use_enable oss) \
@@ -67,15 +70,16 @@ src_compile() {
 		$(use_enable flac oggflac) \
 		$(use_enable icecast shout) \
 		$(use_enable ipv6) \
+		$(use_enable jack) \
 		$(use_enable mp3) \
 		$(use_enable mp3 id3) \
 		$(use_enable mikmod libmikmodtest) \
 		$(use_enable mikmod mod) \
 		$(use_enable musepack mpc) \
+		$(use_enable nonblock-update nonblock-update) \
 		$(use_enable pulseaudio pulse) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable vorbis vorbistest) \
-		$(use_enable nonblock-update nonblock-update) \
 		|| die "could not configure"
 
 	emake || die "emake failed"
@@ -111,15 +115,4 @@ src_install() {
 
 	use alsa && \
 		dosed 's:need :need alsasound :' /etc/init.d/mpd
-}
-
-pkg_postinst() {
-	upgrade_warning
-	elog "If you are upgrading from 0.11.x, check the configuration file carefully,"
-	elog "the format has changed. See the example config file installed as"
-	elog "/usr/share/doc/${PF}/mpdconf.example.gz, and mpd.conf manual page."
-	elog ""
-	elog "Please make sure that MPD's pid_file is set to /var/run/mpd/mpd.pid."
-	elog ""
-	ewarn "This branch is not supported by anyone but Eric Wong <normalperson@yhbt.net>"
 }
