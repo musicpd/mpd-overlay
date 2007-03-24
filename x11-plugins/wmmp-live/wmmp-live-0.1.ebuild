@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/WMmp/trunk/"
-inherit subversion eautogen-sh
+inherit subversion autotools
 
 DESCRIPTION="A Window Maker dock app client for Music Player Daemon(media-sound/mpd)"
 HOMEPAGE="http://www.musicpd.org"
@@ -17,6 +17,11 @@ S="${WORKDIR}/${P/wm/WM}"
 DEPEND="|| (
                 ( x11-libs/libXext x11-libs/libXpm )
                 <virtual/x11-7 )"
+
+src_unpack() {
+	subversion_src_unpack
+	AT_NOELIBTOOLIZE="yes" eautoreconf
+}
 
 src_install () {
 	emake install DESTDIR=${D} || die

@@ -18,7 +18,7 @@ DEPEND=">=x11-libs/gtk+-2.10
 	dev-libs/confuse"
 
 src_compile() {
-	econf --disable-dependency-tracking || eerror 'eautogen-sh failed'
+	econf --disable-dependency-tracking || eerror 'econf failed'
 	emake || eerror 'emake failed'
 }
 

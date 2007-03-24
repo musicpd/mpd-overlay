@@ -5,7 +5,7 @@
 GMPC_PLUGIN="last.fm"
 GTK_REQUIRES="jpeg"
 
-inherit gmpc-plugin eautogen-sh
+inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to simply put a stop button in the main window"
 HOMEPAGE="http://sarine.nl/gmpc"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit gmpc-plugin eautogen-sh
+inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to show lyrics in the song information window."
 HOMEPAGE="http://sarine.nl/gmpc-plugins"

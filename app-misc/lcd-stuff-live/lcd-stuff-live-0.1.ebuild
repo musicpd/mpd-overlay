@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-misc/lcd-stuff/lcd-stuff-0.1.2.ebuild,v 1.2 2007/01/16 00:36:36 rbu Exp $
 
-inherit subversion eautogen-sh
+inherit subversion autotools
 
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/lcd-stuff/trunk"
 DESCRIPTION="lcd-stuff is a client for lcdproc that displays RSS, Weather, MPD and new mail."
@@ -26,6 +26,12 @@ DEPEND="${DEPEND}
 
 IUSE="imap mpd mp3 xml rss"
 
+src_unpack() {
+        subversion_src_unpack
+#       AT_NOELIBTOOLIZE="yes" eautoreconf
+        eautoreconf
+}
+
 src_compile() {
 	local XMLRSSLIB="$(use_enable rss mrss)"
 	if use rss ; then
@@ -35,7 +41,7 @@ src_compile() {
 		XMLRSSLIB="${XMLRSSLIB} $(use_enable xml nxml)"
 	fi
 
-	eautogen-sh \
+	econf \
 		$(use_enable imap libetpan) \
 		$(use_enable mpd libmpd) \
 		$(use_enable mp3 taglib_c) \

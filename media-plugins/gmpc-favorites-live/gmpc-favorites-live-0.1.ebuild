@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit gmpc-plugin eautogen-sh
+inherit gmpc-plugin
 
 DESCRIPTION="A gmpc brower plugin to show your favorite songs."
 HOMEPAGE="http://sarine.nl/gmpc"

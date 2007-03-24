@@ -4,7 +4,7 @@
 
 GTK_REQUIRES="jpeg"
 GMPC_PLUGIN="coveramazon"
-inherit gmpc-plugin eautogen-sh
+inherit gmpc-plugin
 
 DESCRIPTION="A gmpc plugin that fetches cover art and album information from amazon."
 HOMEPAGE="http://sarine.nl/amazon-provider"

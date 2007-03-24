@@ -3,7 +3,7 @@
 # $Header: $
 
 GTK_REQUIRES="jpeg"
-inherit gmpc-plugin eautogen-sh
+inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to retrieve coverart from amazon.com"
 HOMEPAGE="http://sarine.nl/gmpc"

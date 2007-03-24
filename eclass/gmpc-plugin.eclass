@@ -8,7 +8,7 @@ gmpc-plugin_pkg_setup()
 }
 
 if [[ "${PN##*-}" == "live" ]]; then
-	inherit subversion
+	inherit subversion autotools
 	DEPEND="${DEPEND}
 		media-sound/gmpc-live
 		!${CATEGORY}/${PN/-live}"
@@ -21,6 +21,12 @@ if [[ "${PN##*-}" == "live" ]]; then
 
 		ESVN_REPO_URI="https://svn.musicpd.org/gmpc/plugins/gmpc-${GMPC_PLUGIN}/trunk"
 	fi
+
+	gmpc-plugin_src_unpack() {
+		subversion_src_unpack
+		AT_NOELIBTOOLIZE="yes" eautoreconf
+	}
+	EXPORT_FUNCTIONS src_unpack
 else
 	## Depend against reverse dependency
 	DEPEND="${DEPEND}

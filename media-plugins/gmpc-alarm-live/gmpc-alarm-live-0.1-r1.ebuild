@@ -4,7 +4,7 @@
 
 ESVN_REPO_URI="http://svn.brokentrain.net/gmpc-alarm/trunk/"
 GMPC_DOCS="AUTHORS TODO README"
-inherit gmpc-plugin eautogen-sh
+inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin for alarm timer action."
 HOMEPAGE="http://cms.qballcow.nl/"

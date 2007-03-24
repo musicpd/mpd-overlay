@@ -36,8 +36,7 @@ pkg_setup() {
 
 src_unpack() {
 	subversion_src_unpack
-#	AT_NOELIBTOOLIZE="yes" eautoreconf
-	eautoreconf
+	AT_NOELIBTOOLIZE="yes" eautoreconf
 }
 
 src_compile() {

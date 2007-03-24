@@ -3,7 +3,7 @@
 # $Header: $
 
 GTK_REQUIRES="jpeg"
-inherit gmpc-plugin eautogen-sh
+inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin that fetches cover art, artist art, album and artist information from the file system."
 HOMEPAGE="http://sarine.nl/gmpc-plugins-mdcover"

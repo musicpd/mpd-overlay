@@ -19,7 +19,7 @@ DEPEND=">=xfce-base/xfce4-4.4.0
 	|| ( media-libs/libmpd media-libs/libmpd-live )"
 
 src_compile() {
-	econf   --disable-dependency-tracking \
+	eautogen-sh   --disable-dependency-tracking \
 		$(use debug && echo '--enable-debug=full' || echo '--disable-debug') || 'econf failed'
 	emake || 'emake failed'
 }

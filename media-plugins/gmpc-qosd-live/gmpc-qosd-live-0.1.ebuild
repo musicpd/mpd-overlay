@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit gmpc-plugin eautogen-sh
+inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to on-screen-display that looks a bit nicer than xosd."
 HOMEPAGE="http://sarine.nl/q-on-screen-display"

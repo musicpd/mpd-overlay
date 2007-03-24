@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/scmpc/trunk"
-inherit subversion eautogen-sh
+inherit subversion autotools
 
 DESCRIPTION="A multithreaded MPD client for Audioscrobbler"
 HOMEPAGE="http://scmpc.berlios.de"
@@ -19,6 +19,11 @@ DEPEND=">=net-misc/curl-7.10.0
 	dev-libs/argtable
 	!media-sound/scmpc"	
 RDEPEND=""
+
+src_unpack() {
+        subversion_src_unpack
+        eautoreconf
+}
 
 src_install() {
    make DESTDIR="${D}" install || die "Install failed!"

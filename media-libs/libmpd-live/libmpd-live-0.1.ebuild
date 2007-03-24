@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/libmpd/trunk/"
-inherit subversion eautogen-sh
+inherit subversion autotools
 
 DESCRIPTION="A library handling connection to a MPD server."
 HOMEPAGE="http://sarine.nl/libmpd"
@@ -15,6 +15,12 @@ IUSE=""
 DEPEND="virtual/libc
 	!media-libs/libmpd
 	sys-devel/libtool"
+RDEPEND="!media-libs/libmpd"
+
+src_unpack() {
+        subversion_src_unpack
+        AT_NOELIBTOOLIZE="yes" eautoreconf
+}
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"

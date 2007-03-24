@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/glurp/branches/glurp-libmpd"
-inherit subversion eautogen-sh
+inherit subversion autotools
 
 DESCRIPTION="Glurp is a GTK2 based graphical client for the Music Player Daemon"
 HOMEPAGE="http://sourceforge.net/projects/glurp/"
@@ -16,11 +16,17 @@ IUSE="debug"
 DEPEND="${RDEPEND}
 	|| ( media-libs/libmpd media-libs/libmpd-live )
 	>=x11-libs/gtk+-2.4.0
+	!media-sound/glurp
+	!media-sound/glurp-live
 	>=gnome-base/libglade-2.3.6"
-RDEPEND="!media-sound/glurp"
+
+src_unpack() {
+        subversion_src_unpack
+        eautoreconf
+}
 
 src_compile() {
-	eautogen-sh $(use_enable debug) || die
+	econf $(use_enable debug) || die
 	emake || die
 }
 

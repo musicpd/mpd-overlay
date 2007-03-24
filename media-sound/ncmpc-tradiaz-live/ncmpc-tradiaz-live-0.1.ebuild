@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/branches/tradiaz/"
-inherit subversion eautogen-sh
+inherit subversion autotools
 
 DESCRIPTION="A branch for fixes and enhancements to ncmpc, a client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
@@ -26,8 +26,13 @@ pkg_setup() {
 			experimental"
 }
 
+src_unpack() {
+	subversion_src_unpack
+	AT_NOELIBTOOLIZE="yes" eautoreconf
+}
+
 src_compile() {
-	eautogen-sh \
+	econf \
 		$(use_enable artist-screen) \
 		$(use_enable clock-screen) \
 		$(use_enable debug) \
