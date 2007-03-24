@@ -6,8 +6,6 @@ eclass
 media-libs
 media-plugins
 media-sound
-perl-gcpan
-sys-fs
 www-apps
 x11-plugins
 xfce-extra
