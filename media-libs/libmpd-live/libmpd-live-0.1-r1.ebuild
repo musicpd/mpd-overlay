@@ -11,17 +11,25 @@ LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE=""
+IUSE="doc"
 DEPEND="virtual/libc
 	!media-libs/libmpd
 	sys-devel/libtool"
-RDEPEND="!media-libs/libmpd"
+RDEPEND="doc? ( >=app-doc/doxygen-1.4.6 )"
 
 src_unpack() {
-        subversion_src_unpack
-        AT_NOELIBTOOLIZE="yes" eautoreconf
+	subversion_src_unpack
+	AT_NOELIBTOOLIZE="yes" eautoreconf
+}
+
+src_compile() {
+	econf || die "econf failed"
+	emake || die "emake failed"
+
+	use doc && make doc
 }
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
+	use doc && dohtml -r doc/html
 }
