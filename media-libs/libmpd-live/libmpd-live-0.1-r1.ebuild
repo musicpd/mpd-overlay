@@ -26,7 +26,7 @@ src_compile() {
 	econf || die "econf failed"
 	emake || die "emake failed"
 
-	use doc && make doc
+	use doc && cd doc && make doc
 }
 
 src_install() {
