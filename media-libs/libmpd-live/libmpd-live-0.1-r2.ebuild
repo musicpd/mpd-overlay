@@ -26,10 +26,10 @@ src_compile() {
 	econf || die "econf failed"
 	emake || die "emake failed"
 
-	use doc && cd doc && make doc
+	use doc && make doc
 }
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
-	use doc && dohtml -r doc/html
+	use doc && dohtml -r doc/html/*
 }
