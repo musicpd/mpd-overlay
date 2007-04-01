@@ -26,7 +26,7 @@ src_unpack() {
 
 src_compile() {
 	econf --disable-dependency-tracking \
-		$(use_enable nls iconv) || die "eautogen-sh failed"
+		$(use_enable nls iconv) || die "econf failed"
 		emake || die "emake failed"
 }
 
