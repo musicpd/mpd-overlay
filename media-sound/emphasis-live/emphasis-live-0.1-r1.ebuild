@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils eautogen-sh cvs
+inherit eutils cvs autotools
 
 ECVS_SERVER="anoncvs.enlightenment.org:/var/cvs/e"
 ECVS_MODULE="e17/apps/emphasis"
@@ -20,6 +20,17 @@ DEPEND="${RDEPEND}
 	|| ( media-libs/libmpd-live media-libs/libmpd )
 	=x11-libs/etk-9999"
 RDEPEND="!media-sound/emphasis"
+
+src_unpack() {
+	cvs_src_unpack
+	cd "${S}"
+	eautoreconf	
+}
+
+src_compile() {
+	econf || die "econf failed"
+	emake || die "emake failed"
+}
 
 src_install() {
 	emake DESTDIR="${D}" install
