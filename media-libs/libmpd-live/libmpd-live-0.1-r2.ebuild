@@ -31,5 +31,5 @@ src_compile() {
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
-	use doc && dohtml -r doc/html/*
+	use doc && dohtml -r doc/html/
 }
