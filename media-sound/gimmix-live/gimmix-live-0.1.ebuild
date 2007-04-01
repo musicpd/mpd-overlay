@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="svn://svn.berlios.de/gimmix/trunk/src"
-inherit subversion eautogen-sh
+inherit subversion autotools
 
 DESCRIPTION="Gimmix is a graphical music player daemon (MPD) client written in C using GTK+2."
 HOMEPAGE="http://gimmix.berlios.de/"
@@ -19,6 +19,14 @@ DEPEND=">=x11-libs/gtk+-2.10
 	!media-sound/gimmix
 	|| ( media-libs/libmpd-live >=media-libs/libmpd-0.12.0 )
 	dev-libs/confuse"
+
+src_unpack() {
+	subversion_src_unpack
+	cd "${S}"
+	epatch "${FILESDIR}/add-mkinstalldirs.patch"
+	chmod +x mkinstalldirs
+	AT_NOELIBTOOLIZE="yes" eautoreconf
+}
 
 src_install() {
 	make DESTDIR=${D} install || die "make install failed"
