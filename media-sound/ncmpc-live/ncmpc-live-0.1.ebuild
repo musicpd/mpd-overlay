@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/trunk/"
-inherit subversion eautogen-sh
+inherit subversion autotools
 
 DESCRIPTION="A ncurses client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
@@ -24,16 +24,22 @@ pkg_setup() {
 	use search-screen && einfo "Please note that the search-screen is experimental"
 }
 
+src_unpack() {
+	subversion_src_unpack
+	cd "${S}"
+	AT_M4DIR="${S}/m4" eautoreconf
+}
+
 src_compile() {
-	eautogen-sh $(use_enable clock-screen) \
+	econf $(use_enable clock-screen) \
 		$(use_enable debug) \
 		$(use_enable mouse) \
 		$(use_enable key-screen) \
 		$(use_enable search-screen) \
 		$(use_with nls) \
-		$(use_with raw-mode)
+		$(use_with raw-mode) || die "econf failed"
 
-		emake || die "make failed"
+		emake || die "emake failed"
 }
 
 src_install() {
