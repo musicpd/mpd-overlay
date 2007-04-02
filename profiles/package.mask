@@ -1,7 +1,3 @@
-# Requires an ebuild that cannot be pulled directly in. To
-# use this ebuild, get the e overlay and unmask.
-media-sound/emphasis-live
-
 # Doesn't work, says incorrect protocol
 media-sound/playgui
 
