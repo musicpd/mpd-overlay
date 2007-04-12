@@ -6,7 +6,7 @@ inherit git
 
 DESCRIPTION="This is a program to update all files from various live repositories in portage"
 HOMEPAGE="http://avuton.googlepages.com"
-EGIT_REPO_URI="git://olricha.homelinux.net/var/git/update-live-ebuilds.git"
+EGIT_REPO_URI="git://repo.or.cz/ule.git"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
