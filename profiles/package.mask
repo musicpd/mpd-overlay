@@ -1,3 +1,6 @@
+# Move
+media-plugin/gmpc-amazon-coverart-live
+
 # Doesn't work, says incorrect protocol
 media-sound/playgui
 
