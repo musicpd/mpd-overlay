@@ -3,7 +3,7 @@
 # $Header: $
 
 inherit git autotools
-EGIT_REPO_URI="git://olricha.homelinux.net/var/git/state-utils.git"
+EGIT_REPO_URI="git://repo.or.cz/state-utils.git"
 
 DESCRIPTION="A suite of utilities to transfer, restore, save state for the Music Player Daemon."
 HOMEPAGE="http://mpd.wikia.com/wiki/Client:State-utils"
