@@ -6,7 +6,7 @@ GTK_REQUIRES="jpeg"
 inherit gmpc-plugin
 
 DESCRIPTION="The plugin allows you to browse, and preview available albums on www.magnatune.com."
-HOMEPAGE="http://sarine.nl/gmpc"
+HOMEPAGE="http://sarine.nl/gmpc-plugins-magnatune"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"

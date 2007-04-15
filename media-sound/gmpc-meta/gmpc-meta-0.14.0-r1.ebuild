@@ -11,6 +11,7 @@ SLOT="0"
 IUSE="amazon xosd"
 
 DEPEND="amazon? ( media-plugins/gmpc-coveramazon )
+	!media-plugins/gmpc-amazon-coverart
 	media-plugins/gmpc-autoplaylist
 	media-plugins/gmpc-lastfm
 	media-plugins/gmpc-lyrics

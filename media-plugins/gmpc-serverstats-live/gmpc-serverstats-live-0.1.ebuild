@@ -5,7 +5,7 @@
 inherit gmpc-plugin
 
 DESCRIPTION="This plugin shows more detailed information about MPD's database."
-HOMEPAGE="http://sarine.nl/gmpc"
+HOMEPAGE="http://sarine.nl/gmpc-plugins-serverstats"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"

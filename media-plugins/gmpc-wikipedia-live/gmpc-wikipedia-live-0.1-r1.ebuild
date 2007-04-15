@@ -5,7 +5,7 @@
 GTK_REQUIRES="jpeg"
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin to retrieve coverart from amazon.com"
+DESCRIPTION="A GMPC plugin to fetch the wikipedia information for an artist/album."
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 
