@@ -11,6 +11,7 @@ if [[ "${PN##*-}" == "live" ]]; then
 	inherit subversion autotools
 	DEPEND="${DEPEND}
 		media-sound/gmpc-live
+		dev-libs/libxml2
 		!${CATEGORY}/${PN/-live}"
 	RDEPEND="${DEPEND}"
 	if [[ -z ${ESVN_REPO_URI} ]]; then

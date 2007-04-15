@@ -12,7 +12,7 @@ IUSE="amazon avahi xosd"
 
 DEPEND="media-plugins/gmpc-alarm-live
 	avahi? ( media-plugins/gmpc-avahi-live )
-	amazon? ( media-plugins/gmpc-amazon-coverart-live )
+	amazon? ( media-plugins/gmpc-coveramazon-live )
 	media-plugins/gmpc-autoplaylist-live
 	media-plugins/gmpc-extraplaylist-live
 	media-plugins/gmpc-favorites-live
@@ -27,4 +27,5 @@ DEPEND="media-plugins/gmpc-alarm-live
 	media-plugins/gmpc-serverstats-live
 	media-plugins/gmpc-stopbutton-live
 	media-plugins/gmpc-wikipedia-live"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	!media-plugin/gmpc-amazon-coverart-live"

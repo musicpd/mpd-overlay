@@ -4,7 +4,7 @@
 
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin to display server/database statistics"
+DESCRIPTION="This plugin shows more detailed information about MPD's database."
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 

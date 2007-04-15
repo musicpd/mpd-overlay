@@ -10,7 +10,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE="amazon xosd"
 
-DEPEND="amazon? ( media-plugins/gmpc-amazon-coverart )
+DEPEND="amazon? ( media-plugins/gmpc-coveramazon )
 	media-plugins/gmpc-autoplaylist
 	media-plugins/gmpc-lastfm
 	media-plugins/gmpc-lyrics

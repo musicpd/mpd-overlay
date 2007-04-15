@@ -4,7 +4,7 @@
 
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin that provies an on-screen-display by xosd."
+DESCRIPTION="This plugin provides an on-screen-display by xosd."
 HOMEPAGE="http://sarine.nl/xosd-on-screen-display"
 LICENSE="GPL-2"
 

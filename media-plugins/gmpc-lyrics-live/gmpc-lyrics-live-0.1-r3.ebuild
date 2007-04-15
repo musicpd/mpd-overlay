@@ -4,7 +4,7 @@
 
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin to show lyrics in the song information window."
+DESCRIPTION="This plugin fetches lyrics from the internet and shows them in the song information window."
 HOMEPAGE="http://sarine.nl/gmpc-plugins"
 LICENSE="GPL-2"
 

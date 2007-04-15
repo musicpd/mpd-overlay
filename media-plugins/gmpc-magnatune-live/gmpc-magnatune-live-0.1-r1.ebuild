@@ -5,7 +5,7 @@
 GTK_REQUIRES="jpeg"
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin to interface magnatune.com streams."
+DESCRIPTION="The plugin allows you to browse, and preview available albums on www.magnatune.com."
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 

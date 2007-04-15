@@ -4,7 +4,7 @@
 
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin to generate playlists based on rules"
+DESCRIPTION="A GMPC plugin to generate playlists based on rules."
 HOMEPAGE="http://sarine.nl/gmpc-plugins-autoplaylist"
 LICENSE="GPL-2"
 

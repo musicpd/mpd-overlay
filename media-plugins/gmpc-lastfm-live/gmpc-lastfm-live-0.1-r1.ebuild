@@ -7,7 +7,7 @@ GTK_REQUIRES="jpeg"
 
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin to simply put a stop button in the main window"
+DESCRIPTION="The last.fm plugin can fetch artist images, from last.fm. This plugin doesn't scrobble your music, use a dedicated client like mpdscribble for this."
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 

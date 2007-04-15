@@ -4,7 +4,7 @@
 
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin to simply put a stop button in the main window"
+DESCRIPTION="This plugin adds a stop button to the controls in the main window."
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 
