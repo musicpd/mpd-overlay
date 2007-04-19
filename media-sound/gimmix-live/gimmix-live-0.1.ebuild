@@ -23,8 +23,6 @@ DEPEND=">=x11-libs/gtk+-2.10
 src_unpack() {
 	subversion_src_unpack
 	cd "${S}"
-	epatch "${FILESDIR}/add-mkinstalldirs.patch"
-	chmod +x mkinstalldirs
 	AT_NOELIBTOOLIZE="yes" eautoreconf
 }
 
