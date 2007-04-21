@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+
 
 ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
 ESVN_PATCHES="mpd-0.12-conf.patch"

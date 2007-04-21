@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+
 
 DESCRIPTION="A java client for mpd"
 HOMEPAGE="http://sccs.swarthmore.edu/~cbr/PlayGUI/"
