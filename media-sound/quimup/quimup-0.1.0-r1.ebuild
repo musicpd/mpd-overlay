@@ -26,5 +26,7 @@ src_compile() {
 }
 
 src_install() {
+	make_desktop_entry "${PN}" "Quimup"
+	newicon images/mn_icon.png ${PN}.png
 	emake DESTDIR="${D}" install || die "emake install failed"
 }
