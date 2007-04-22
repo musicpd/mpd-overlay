@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}"
 
 src_compile() {
-	ac_prefix="${D}" econf || die "econf failed"
+	econf || die "econf failed"
 	sed -ie 's%^prefix.*=.*%prefix = ${D}%' Makefile
 	emake || die "emake failed"
 }
