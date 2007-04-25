@@ -33,4 +33,3 @@ mpd-www_src_install() {
 }
 
 EXPORT_FUNCTIONS src_install pkg_postinst
-
