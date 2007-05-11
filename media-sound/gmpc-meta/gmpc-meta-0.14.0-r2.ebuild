@@ -10,15 +10,15 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE="amazon xosd"
 
-DEPEND="amazon? ( media-plugins/gmpc-coveramazon )
-	media-plugins/gmpc-autoplaylist
-	media-plugins/gmpc-lastfm
-	media-plugins/gmpc-lyrics
-	media-plugins/gmpc-magnatune
-	media-plugins/gmpc-mdcover
-	xosd? ( media-plugins/gmpc-osd )
-	media-plugins/gmpc-qosd
-	media-plugins/gmpc-serverstats
-	media-plugins/gmpc-stopbutton"
+DEPEND="amazon? ( =media-plugins/gmpc-coveramazon-0.14.0 )
+	=media-plugins/gmpc-autoplaylist-0.14.0
+	=media-plugins/gmpc-lastfm-0.14.0
+	=media-plugins/gmpc-lyrics-0.14.0
+	=media-plugins/gmpc-magnatune-0.14.0
+	=media-plugins/gmpc-mdcover-0.14.0
+	xosd? ( =media-plugins/gmpc-osd-0.14.0 )
+	=media-plugins/gmpc-qosd-0.14.0
+	=media-plugins/gmpc-serverstats-0.14.0
+	=media-plugins/gmpc-stopbutton-0.14.0"
 RDEPEND="${DEPEND}
 	!media-plugins/gmpc-amazon-coverart"

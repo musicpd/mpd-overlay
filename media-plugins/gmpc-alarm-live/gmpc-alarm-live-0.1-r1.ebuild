@@ -1,7 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-
 ESVN_REPO_URI="http://svn.brokentrain.net/gmpc-alarm/trunk/"
 GMPC_DOCS="AUTHORS TODO README"
 inherit gmpc-plugin

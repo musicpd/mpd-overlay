@@ -42,8 +42,8 @@ else
 		GMPC_PLUGIN="${P}"
 	fi
 
-	SRC_URI="http://download.sarine.nl/gmpc-${PV}/plugins/${GMPC_PLUGIN}.tar.gz"
-	S="${WORKDIR}/${GMPC_PLUGIN}"
+	[[ -z "${SRC_URI}" ]] && SRC_URI="http://download.sarine.nl/gmpc-${PV}/plugins/${GMPC_PLUGIN}.tar.gz"
+	[[ -z "${S}" ]] && S="${WORKDIR}/${GMPC_PLUGIN}"
 
 	## Without this, portage keeps appending to $GMPC_PLUGIN
 	unset GMPC_PLUGIN
