@@ -18,7 +18,7 @@ RDEPEND=">=x11-libs/gtk+-2.8
 	gnome? ( >=gnome-base/gnome-vfs-2.6 )
 	session? ( x11-libs/libSM )
 	dev-perl/XML-Parser
-	>=media-libs/libmpd-0.13.1.2
+	|| ( >=media-libs/libmpd-0.13.1.3 media-libs/libmpd-live )
 	net-misc/curl"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
