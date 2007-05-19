@@ -16,7 +16,7 @@ IUSE=""
 DEPEND="app-misc/lcdproc
 	net-misc/curl
 	imap? ( net-libs/libetpan )
-	mpd? || ( media-libs/libmpd-live media-libs/libmpd )
+	mpd? ( || ( media-libs/libmpd-live media-libs/libmpd ) )
 	mp3? ( media-libs/taglib )
 	xml? ( net-libs/libnxml )
 	rss? ( net-libs/libmrss net-libs/libnxml )"
