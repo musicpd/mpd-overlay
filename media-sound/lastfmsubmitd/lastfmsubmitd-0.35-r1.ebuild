@@ -9,7 +9,7 @@ HOMEPAGE="http://www.red-bean.com/~decklin/software/lastfmsubmitd/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE=""
 RDEPEND="|| ( dev-python/py-libmpdclient-live dev-python/py-libmpdclient )"
 
