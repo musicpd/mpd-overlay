@@ -22,14 +22,19 @@ DEPEND=">=net-misc/curl-7.10.0
 RDEPEND=""
 
 src_install() {
-   make DESTDIR="${D}" install || die "Install failed!"
+	make DESTDIR="${D}" install || die "Install failed!"
+
+	insinto /etc
+	newins examples/scmpc.conf.in scmpc.conf
+
+	exeinto /etc/init.d
+	newexe ${FILESDIR}/scmpc-0.2.2.init scmpc
 }
 
 pkg_postinst() {
    echo
    einfo "You will need to set up your scmpc.conf file before running scmpc"
    einfo "for the first time. An example has been installed in"
-   einfo "${ROOT}usr/share/scmpc/scmpc.conf, which can be copied to"
    einfo "${ROOT}etc/scmpc.conf. For more details, please see the scmpc(1)"
    einfo "manual page."
    echo
