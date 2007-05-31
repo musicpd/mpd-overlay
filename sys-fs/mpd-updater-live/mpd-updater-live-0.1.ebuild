@@ -12,8 +12,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86"
 IUSE=""
 
-DEPEND="dev-libs/glib
-	|| ( media-libs/libmpd-live media-libs/libmpd )
+DEPEND="|| ( media-libs/libmpd-live media-libs/libmpd )
 	|| ( media-sound/mpd-live media-sound/mpd )"
 RDEPEND="${DEPEND}"
 
