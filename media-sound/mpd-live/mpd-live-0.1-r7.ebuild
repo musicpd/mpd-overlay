@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi bonjour fifo flac icecast iconv ipv6 jack largefile libsamplerate mp3 mikmod musepack ogg oss pulseaudio unicode vorbis"
+IUSE="aac alsa ao audiofile avahi bonjour fifo flac icecast iconv ipv6 jack largefile libsamplerate mp3 mikmod musepack ogg oss pulseaudio unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
 	!media-sound/mpd
@@ -34,7 +34,8 @@ DEPEND="!sys-cluster/mpich2
 	musepack? ( media-libs/libmpcdec )
 	ogg? ( media-libs/libogg )
 	pulseaudio? ( media-sound/pulseaudio )
-	vorbis? ( media-libs/libvorbis )"
+	vorbis? ( media-libs/libvorbis )
+	wavpack? ( media-sound/wavpack )"
 
 pkg_setup() {
 	if use avahi && use bonjour; then
@@ -103,6 +104,7 @@ src_compile() {
 		$(use_enable pulseaudio pulse) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable vorbis vorbistest) \
+		$(use_enable wavpack) \
 		${myconf} || die "could not configure"
 
 	emake || die "emake failed"

@@ -14,6 +14,7 @@ media-sound/ncmpc-tradiaz-live:raw-mode - Add raw terminal support
 media-sound/ncmpc-tradiaz-live:search-screen - Add support for a search screen display
 media-sound/mpd-live:bonjour - Enable bonjour support
 media-sound/mpd-live:fifo - Enable First-In First-Out plugin for MPD
+media-sound/mpd-live:wavpack - Enable support for WavPack
 media-sound/mpd-live:icecast - Enable support for Icecast2
 media-sound/mpd-ke-live:icecast - Enable support for Icecast2
 media-sound/mpd-live:largefile - Add support for sound files over 4GiB on 32-bit machines
