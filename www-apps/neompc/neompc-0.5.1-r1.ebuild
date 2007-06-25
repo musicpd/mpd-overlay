@@ -1,7 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit mpd-www
+inherit webapp eutils
 
 DESCRIPTION="neompc is a php client specifically geared toward small screens"
 HOMEPAGE="http://www.pixelhum.com/neompc/"
@@ -13,3 +13,14 @@ IUSE=""
 
 DEPEND="${RDEPEND}
 	virtual/httpd-php"
+
+src_install() {
+        webapp_src_preinst
+
+        cp -r . "${D}/${MY_HTDOCSDIR}"
+
+	webapp_serverowned -R "${MY_HTDOCSDIR}/smarty/templates_c"
+
+        webapp_src_install
+}
+
