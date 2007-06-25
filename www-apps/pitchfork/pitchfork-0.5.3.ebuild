@@ -27,7 +27,6 @@ src_install() {
 
 	cp -r . "${D}/${MY_HTDOCSDIR}"
 
-	webapp_configfile ${MY_HTDOCSDIR}/config
 	webapp_serverowned -R ${MY_HTDOCSDIR}/config
 
 	webapp_src_install
