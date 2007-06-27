@@ -14,7 +14,7 @@ IUSE="lighttpd"
 RDEPEND=">=dev-lang/php-5.0.0
 	dev-php/PEAR-PEAR
 	lighttpd? ( www-servers/lighttpd )
-	!lighttpd? ( =net-www/apache-2 )"
+	!lighttpd? ( =net-www/apache-2* )"
 
 S="${WORKDIR}/${P}"
 
