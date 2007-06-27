@@ -9,17 +9,22 @@ SRC_URI="http://pitchfork.remiss.org/files/${P}.tar.bz2"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE=""
+IUSE="lighttpd"
 
 RDEPEND=">=dev-lang/php-5.0.0
 	dev-php/PEAR-PEAR
-	net-www/apache"
+	lighttpd? ( www-servers/lighttpd )
+	!lighttpd? ( =net-www/apache-2 )"
 
 S="${WORKDIR}/${P}"
 
 pkg_setup() {
 	webapp_pkg_setup
 	require_php_with_use simplexml json
+
+	if use lighthttpd && ! built_with_use www-serverslighttpd php; then
+		die "www-servers/lighttpd must be built with php support for ${P}"
+	fi
 }
 
 src_install() {
