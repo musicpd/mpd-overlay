@@ -17,7 +17,8 @@ RDEPEND=">=virtual/python-2.4
 	>=dev-python/pygtk-2.10
 	taglib? ( >=dev-python/tagpy-0.91 )
 	dbus? ( dev-python/dbus-python )
-	lyrics? ( dev-python/soappy )"
+	lyrics? ( dev-python/soappy )
+	dev-python/elementtree"
 
 pkg_setup() {
 	if ! built_with_use '=x11-libs/gtk+-2*' jpeg; then
