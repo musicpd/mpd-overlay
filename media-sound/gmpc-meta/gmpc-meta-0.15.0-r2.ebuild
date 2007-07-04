@@ -6,11 +6,16 @@ DESCRIPTION="gmpc - a meta ebuild to pull in gmpc and all plugins"
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+## If you want more keywords; file bugs against b.g.o against the specific
+## plugin that needs keyworded against your arch. Will add to this as they
+## are available in portage.
+
+KEYWORDS="~sparc ~x86"
 SLOT="0"
 IUSE="amazon xosd"
 
-DEPEND="amazon? ( =media-plugins/gmpc-coveramazon-${PV} )
+DEPEND="=media-sound/gmpc-0.15.1
+	amazon? ( =media-plugins/gmpc-coveramazon-${PV} )
 	=media-plugins/gmpc-autoplaylist-${PV}
 	=media-plugins/gmpc-avahi-${PV}
 	=media-plugins/gmpc-coveramazon-${PV}
@@ -23,5 +28,4 @@ DEPEND="amazon? ( =media-plugins/gmpc-coveramazon-${PV} )
 	=media-plugins/gmpc-serverstats-${PV}
 	=media-plugins/gmpc-shout-${PV}
 	=media-plugins/gmpc-stopbutton-${PV}"
-RDEPEND="${DEPEND}
-	!media-plugins/gmpc-amazon-coverart"
+RDEPEND="${DEPEND}"
