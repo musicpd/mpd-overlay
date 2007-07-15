@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 
-ESVN_REPO_URI="https://svn.sourceforge.net/svnroot/pympd/trunk/pympd/"
+ESVN_REPO_URI="https://pympd.svn.sourceforge.net/svnroot/pympd"
 inherit subversion toolchain-funcs python
 
 DESCRIPTION="a Rhythmbox-like PyGTK+ client for Music Player Daemon"
