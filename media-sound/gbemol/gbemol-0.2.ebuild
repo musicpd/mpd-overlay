@@ -10,11 +10,9 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="id3lib"
 
-## Yes, for some reason this client requires MPD
 DEPEND="id3lib? ( media-libs/id3lib )
 	>=x11-libs/gtk+-2.10
 	>=dev-libs/glib-2.10
-	|| ( media-sound/mpd-live media-sound/mpd )
 	!media-sound/gbemol-live"
 RDEPEND="${DEPEND}"
 

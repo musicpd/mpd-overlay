@@ -24,5 +24,4 @@ sys-fs/mpd-updater
 
 # Author contacted about things that need fixing,
 # hard-masking until fixed.
-media-sound/gbemol
 media-sound/gbemol-live
