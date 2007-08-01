@@ -13,8 +13,8 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 IUSE="gd"
 
 RDEPEND="virtual/php
-	gd? ( media-libs/gd )
-	net-www/apache"
+	virtual/httpd-php
+	gd? ( media-libs/gd )"
 
 src_install () {
 	webapp_serverowned "${MY_HTDOCSDIR}/config.php"

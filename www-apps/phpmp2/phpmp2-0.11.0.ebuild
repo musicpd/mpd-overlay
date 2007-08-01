@@ -17,8 +17,8 @@ DOC="README TODO"
 
 RDEPEND="
 	virtual/php
-	gd? ( media-libs/gd )
-	net-www/apache"
+	virtual/httpd-php
+	gd? ( media-libs/gd )"
 
 src_unpack() {
 	unpack ${A}
