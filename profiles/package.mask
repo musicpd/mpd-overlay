@@ -21,7 +21,3 @@ media-sound/kanola-live
 # It's not necessarily broken, but it's not finished
 # and who knows how good the security is?
 sys-fs/mpd-updater
-
-# Author contacted about things that need fixing,
-# hard-masking until fixed.
-media-sound/gbemol-live
