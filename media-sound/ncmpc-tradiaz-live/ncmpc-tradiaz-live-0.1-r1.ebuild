@@ -41,7 +41,9 @@ src_compile() {
 		$(use_enable lyrics-screen) \
 		$(use_enable search-screen) \
 		$(use_with nls) \
-		$(use_with raw-mode)
+		$(use_with raw-mode) \
+		--with-lyrics-hd=fixed \
+		--with-lyrics-leoslyrics=fixed
 
 		emake || die "make failed"
 }																																	
