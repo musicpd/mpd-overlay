@@ -1,7 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit subversion python distutils
+inherit python distutils subversion
 
 DESCRIPTION="A text based/ncurses client heavily inspired by ncmpc"
 HOMEPAGE="http://www.evadmusic.com"
