@@ -20,6 +20,7 @@ DEPEND="media-plugins/gmpc-alarm-live
 	media-plugins/gmpc-lyrics-live
 	media-plugins/gmpc-magnatune-live
 	media-plugins/gmpc-mdcover-live
+	media-plugins/gmpc-mserver-live
 	xosd? ( media-plugins/gmpc-osd-live )
 	media-plugins/gmpc-playlistsort-live
 	media-plugins/gmpc-qosd-live
