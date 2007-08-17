@@ -21,3 +21,6 @@ media-sound/kanola-live
 # It's not necessarily broken, but it's not finished
 # and who knows how good the security is?
 sys-fs/mpd-updater
+
+# This one has svn problems
+media-sound/pympd-live
