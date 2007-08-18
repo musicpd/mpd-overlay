@@ -3,7 +3,7 @@
 
 inherit gnome2
 
-DESCRIPTION="This is a sample skeleton ebuild file"
+DESCRIPTION="A MPD client with an Rhythmbox inspired interface."
 HOMEPAGE="http://ario-player.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}-player/${P}.tar.gz"
 LICENSE="GPL-2"
@@ -24,8 +24,3 @@ src_compile() {
 	econf || die "econf failed"
 	emake || die "emake failed"
 }
-
-#src_install() {
-#	emake DESTDIR="${D}" install || die "emake install failed"
-#	einstall
-#}
