@@ -18,6 +18,7 @@ IUSE=""
 DEPEND="gnome-base/libgnomeui
 	gnome-base/libglade
 	gnome-base/eel
+	net-misc/curl
 	!media-sound/ario
 	|| ( media-libs/libmpd media-libs/libmpd-live )"
 RDEPEND="${DEPEND}"
