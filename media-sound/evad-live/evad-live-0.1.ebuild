@@ -22,6 +22,11 @@ pkg_setup() {
 	fi
 }
 
+src_unpack() {
+	subversion_src_unpack
+	epatch "${FILESDIR}/fix-exec.patch"
+}
+
 src_compile() {
         distutils_src_compile
 }
