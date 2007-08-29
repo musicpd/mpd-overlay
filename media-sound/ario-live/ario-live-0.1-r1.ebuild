@@ -8,7 +8,7 @@ unset SRC_URI
 
 DESCRIPTION="A MPD client with an Rhythmbox inspired interface."
 HOMEPAGE="http://ario-player.sourceforge.net/"
-ESVN_REPO_URI="https://ario-player.svn.sourceforge.net/svnroot/ario-player/ario"
+ESVN_REPO_URI="https://ario-player.svn.sourceforge.net/svnroot/ario-player/trunk"
 LICENSE="GPL-2"
 
 SLOT="0"
