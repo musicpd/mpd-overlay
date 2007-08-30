@@ -27,6 +27,7 @@ DEPEND="media-plugins/gmpc-alarm-live
 	media-plugins/gmpc-random-playlist-live
 	media-plugins/gmpc-serverstats-live
 	media-plugins/gmpc-stopbutton-live
+	media-plugins/gmpc-tag2-live
 	media-plugins/gmpc-wikipedia-live"
 RDEPEND="${DEPEND}
 	!media-plugin/gmpc-amazon-coverart-live"
