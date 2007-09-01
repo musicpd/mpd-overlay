@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-
+# $Header: $
 
 inherit git
 
@@ -17,8 +17,8 @@ DEPENDS=">=app-shells/bash-3*
 	sys-apps/findutils"
 
 src_install() {
-	insinto /etc
-	doins update-live-ebuilds.conf
+	insinto /etc/ule
+	doins ule.conf
 	dobin update-live-ebuilds
 	doman doc/update-live-ebuilds.8
 }
