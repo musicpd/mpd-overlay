@@ -14,6 +14,7 @@ SLOT="0"
 IUSE=""
 
 DEPENDS=">=app-shells/bash-3*
+	app-admin/sudo
 	sys-apps/findutils"
 
 src_install() {
