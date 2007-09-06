@@ -21,7 +21,8 @@ RDEPEND=">=x11-libs/gtk+-2.8
 	media-libs/libmpd-live
 	>dev-util/gob-2
 	!media-sound/gmpc
-	net-misc/curl"
+	net-misc/curl
+	dev-util/intltool"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
@@ -36,6 +37,10 @@ pkg_setup() {
 
 src_unpack() {
 	subversion_src_unpack
+
+	einfo "Running intltoolize --automake"
+	intltoolize --automake || die "intltoolize failed"
+
 	AT_NOELIBTOOLIZE="yes" eautoreconf
 }
 
