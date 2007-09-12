@@ -24,3 +24,6 @@ sys-fs/mpd-updater
 
 # This one has svn problems
 media-sound/pympd-live
+
+# In gmpc now
+media-plugins/gmpc-tag2-live
