@@ -17,6 +17,7 @@ DEPEND="media-plugins/gmpc-alarm-live
 	media-plugins/gmpc-extraplaylist-live
 	media-plugins/gmpc-favorites-live
 	media-plugins/gmpc-lastfm-live
+	libnotify? ( media-plugins/gmpc-libnotify-live )
 	media-plugins/gmpc-lyrics-live
 	media-plugins/gmpc-magnatune-live
 	media-plugins/gmpc-mdcover-live
