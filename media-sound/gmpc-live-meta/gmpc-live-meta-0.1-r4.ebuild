@@ -8,7 +8,7 @@ LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="amazon avahi xosd"
+IUSE="amazon avahi libnotify xosd"
 
 DEPEND="media-plugins/gmpc-alarm-live
 	avahi? ( media-plugins/gmpc-avahi-live )
