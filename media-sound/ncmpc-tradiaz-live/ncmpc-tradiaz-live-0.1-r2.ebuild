@@ -42,15 +42,13 @@ src_compile() {
 		$(use_enable search-screen) \
 		$(use_with nls) \
 		$(use_with raw-mode) \
-		--with-lyrics-hd=fixed \
-		--with-lyrics-leoslyrics=fixed
 
 		emake || die "make failed"
 }																																	
 
 src_install() {
-       make install DESTDIR=${D} docdir=/usr/share/doc/${PF} \
-               || die "install failed"
+	make install DESTDIR=${D} docdir=/usr/share/doc/${PF} \
+	|| die "install failed"
 
-       prepalldocs
+	prepalldocs
 }
