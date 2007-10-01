@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 
 KEYWORDS="~sparc ~x86"
 SLOT="0"
-IUSE="amazon xosd"
+IUSE="amazon lirc xosd"
 
 DEPEND="=media-sound/gmpc-0.15.1
 	amazon? ( =media-plugins/gmpc-coveramazon-${PV} )
@@ -20,6 +20,7 @@ DEPEND="=media-sound/gmpc-0.15.1
 	=media-plugins/gmpc-avahi-${PV}
 	=media-plugins/gmpc-coveramazon-${PV}
 	=media-plugins/gmpc-lastfm-${PV}
+	lirc? ( =media-plugins/gmpc-lirc-0.9 )
 	=media-plugins/gmpc-lyrics-${PV}
 	=media-plugins/gmpc-magnatune-${PV}
 	=media-plugins/gmpc-mdcover-${PV}
