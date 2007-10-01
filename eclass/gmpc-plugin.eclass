@@ -1,7 +1,7 @@
 inherit eutils
 gmpc-plugin_pkg_setup()
 {
-        if [[ -n "${GTK_REQUIRES}" ]] && ! built_with_use '=x11-libs/gtk+-2*' "${GTK_REQUIRES}"; then
+        if [ -n "${GTK_REQUIRES}" ] && ! built_with_use '=x11-libs/gtk+-2*' "${GTK_REQUIRES}"; then
 		eerror "You must build =x11-libs/gtk+-2.x with ${GTK_REQUIRES} USE flag."
 		die "Please re-emerge =x11-libs/gtk+-2.x with ${GTK_REQUIRES} USE flag."
 	fi
@@ -14,8 +14,8 @@ if [[ "${PN##*-}" == "live" ]]; then
 		dev-libs/libxml2
 		!${CATEGORY}/${PN/-live}"
 	RDEPEND="${DEPEND}"
-	if [[ -z ${ESVN_REPO_URI} ]]; then
-		if [[ -z ${GMPC_PLUGIN} ]]; then
+	if [ -z ${ESVN_REPO_URI} ]; then
+		if [ -z ${GMPC_PLUGIN} ]; then
 			GMPC_PLUGIN="${PN%-live}"
 			GMPC_PLUGIN="${GMPC_PLUGIN#gmpc-}"
 		fi
@@ -36,14 +36,14 @@ else
 	RDEPEND="${DEPEND}"
 	
 	## In the case that it's given an odd name
-	if [[ -n "${GMPC_PLUGIN}" ]]; then
+	if [ -n "${GMPC_PLUGIN}" ]; then
 		GMPC_PLUGIN="gmpc-${GMPC_PLUGIN}-${PV}"
 	else
 		GMPC_PLUGIN="${P}"
 	fi
 
-	[[ -z "${SRC_URI}" ]] && SRC_URI="http://download.sarine.nl/gmpc-${PV}/plugins/${GMPC_PLUGIN}.tar.gz"
-	[[ -z "${S}" ]] && S="${WORKDIR}/${GMPC_PLUGIN}"
+	[ -z "${SRC_URI}" ] && SRC_URI="http://download.sarine.nl/gmpc-${PV}/plugins/${GMPC_PLUGIN}.tar.gz"
+	[ -z "${S}" ] && S="${WORKDIR}/${GMPC_PLUGIN}"
 
 	## Without this, portage keeps appending to $GMPC_PLUGIN
 	unset GMPC_PLUGIN
