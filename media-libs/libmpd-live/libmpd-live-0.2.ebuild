@@ -13,6 +13,7 @@ SLOT="0"
 IUSE="doc"
 DEPEND="virtual/libc
 	!media-libs/libmpd
+	>=dev-libs/glib-2
 	sys-devel/libtool"
 RDEPEND="doc? ( >=app-doc/doxygen-1.4.6 )"
 
