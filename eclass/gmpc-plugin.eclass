@@ -8,23 +8,23 @@ gmpc-plugin_pkg_setup()
 }
 
 if [[ "${PN##*-}" == "live" ]]; then
-	inherit subversion autotools
+	inherit git autotools
 	DEPEND="${DEPEND}
 		media-sound/gmpc-live
 		dev-libs/libxml2
 		!${CATEGORY}/${PN/-live}"
 	RDEPEND="${DEPEND}"
-	if [ -z ${ESVN_REPO_URI} ]; then
+	if [ -z ${EGIT_REPO_URI} ]; then
+		DEPEND="!<${CATEGORY}/${PN}-0.2
+			${DEPEND}"
 		if [ -z ${GMPC_PLUGIN} ]; then
 			GMPC_PLUGIN="${PN%-live}"
 			GMPC_PLUGIN="${GMPC_PLUGIN#gmpc-}"
 		fi
-
-		ESVN_REPO_URI="https://svn.musicpd.org/gmpc/plugins/gmpc-${GMPC_PLUGIN}/trunk"
+		EGIT_REPO_URI="git://git.sarine.nl/gmpc-${GMPC_PLUGIN}.git"
 	fi
-
 	gmpc-plugin_src_unpack() {
-		subversion_src_unpack
+		git_src_unpack
 		AT_NOELIBTOOLIZE="yes" eautoreconf
 	}
 	EXPORT_FUNCTIONS src_unpack
