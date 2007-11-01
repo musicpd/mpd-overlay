@@ -3,8 +3,8 @@
 
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin for alarm timer action."
-HOMEPAGE="http://sarine.nl"
+DESCRIPTION="This plugin adds a stop button to the controls in the main window."
+HOMEPAGE="http://sarine.nl/gmpc-plugins-stopbutton"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"

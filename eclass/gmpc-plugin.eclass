@@ -29,6 +29,7 @@ if [[ "${PN##*-}" == "live" ]]; then
 	}
 	EXPORT_FUNCTIONS src_unpack
 else
+	RESTRICT="primaryuri"
 	## Depend against reverse dependency
 	DEPEND="${DEPEND}
 		>=media-sound/gmpc-${PV}
@@ -42,7 +43,7 @@ else
 		GMPC_PLUGIN="${P}"
 	fi
 
-	[ -z "${SRC_URI}" ] && SRC_URI="http://download.sarine.nl/gmpc-${PV}/plugins/${GMPC_PLUGIN}.tar.gz"
+	[ -z "${SRC_URI}" ] && SRC_URI="http://download.sarine.nl/gmpc-0.15.5-rc1/${GMPC_PLUGIN}.tar.gz"
 	[ -z "${S}" ] && S="${WORKDIR}/${GMPC_PLUGIN}"
 
 	## Without this, portage keeps appending to $GMPC_PLUGIN
@@ -58,6 +59,7 @@ else
 fi
 
 gmpc-plugin_src_install() {
+	cd "${S}"
 	emake DESTDIR="${D}" install || die "Install failed"
 }
 

@@ -3,8 +3,8 @@
 
 inherit gmpc-plugin
 
-DESCRIPTION="A GMPC plugin for alarm timer action."
-HOMEPAGE="http://sarine.nl"
+DESCRIPTION="A GMPC plugin to create a random playlist of 20% of your songs"
+HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
