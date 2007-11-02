@@ -15,7 +15,7 @@ RDEPEND=">=x11-libs/gtk+-2.8
 	>=gnome-base/libglade-2.3
 	session? ( x11-libs/libSM )
 	dev-perl/XML-Parser
-	media-libs/libmpd-live
+	|| ( =media-libs/libmpd-0.14.99 media-libs/libmpd-live )
 	>dev-util/gob-2
 	!media-sound/gmpc
 	net-misc/curl
