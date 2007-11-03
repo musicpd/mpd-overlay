@@ -43,7 +43,7 @@ else
 		GMPC_PLUGIN="${P}"
 	fi
 
-	[ -z "${SRC_URI}" ] && SRC_URI="http://download.sarine.nl/gmpc-0.15.5-rc1/${GMPC_PLUGIN}.tar.gz"
+	[ -z "${SRC_URI}" ] && SRC_URI="http://download.sarine.nl/gmpc-0.15.5-rc2/${GMPC_PLUGIN}.tar.gz"
 	[ -z "${S}" ] && S="${WORKDIR}/${GMPC_PLUGIN}"
 
 	## Without this, portage keeps appending to $GMPC_PLUGIN

@@ -4,7 +4,7 @@
 DESCRIPTION="A Gnome client for the Music Player Daemon."
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"
-SRC_URI="http://download.sarine.nl/gmpc-0.15.5-rc1/gmpc-0.15.4.99.tar.gz"
+SRC_URI="http://download.sarine.nl/gmpc-0.15.5-rc2/${P}.tar.gz"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
