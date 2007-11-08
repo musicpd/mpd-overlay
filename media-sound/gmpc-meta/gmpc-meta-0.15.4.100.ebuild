@@ -11,7 +11,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE="amazon lirc xosd"
 
-DEPEND="=media-sound/gmpc-0.15.4.100
+DEPEND="=media-sound/gmpc-0.15.4.101
 	amazon? ( =media-plugins/gmpc-coveramazon-${PV} )
 	=media-plugins/gmpc-autoplaylist-${PV}
 	=media-plugins/gmpc-avahi-${PV}
