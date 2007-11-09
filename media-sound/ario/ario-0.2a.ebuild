@@ -1,7 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit gnome2
+inherit gnome2 autotools
 
 DESCRIPTION="A MPD client with an Rhythmbox inspired interface."
 HOMEPAGE="http://ario-player.sourceforge.net/"
@@ -21,6 +21,17 @@ DEPEND="gnome-base/libgnomeui
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+
+	epatch "${FILESDIR}/build-fix.patch"
+
+	gnome2_omf_fix
+
+	AT_NOELIBTOOLIZE="yes" AT_M4DIR="${PWD}/m4" eautoreconf
+}
 
 src_compile() {
 	econf || die "econf failed"
