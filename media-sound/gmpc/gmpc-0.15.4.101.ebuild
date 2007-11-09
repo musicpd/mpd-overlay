@@ -23,6 +23,8 @@ RDEPEND=">=x11-libs/gtk+-2.8
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
+RESTRICT="primaryuri"
+
 src_compile() {
 	econf \
 		$(use_enable mmkeys) \
