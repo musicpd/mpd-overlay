@@ -10,7 +10,7 @@ inherit gmpc-plugin
 DESCRIPTION="The last.fm plugin can fetch artist images, from last.fm. This plugin doesn't scrobble your music, use a dedicated client like mpdscribble for this."
 HOMEPAGE="http://sarine.nl/gmpc-plugins-lastfm"
 LICENSE="GPL-2"
-SRC_URI="http://download.sarine.nl/gmpc-0.15.5-rc2/gmpc-last.fm-0.15.4.100.tar.gz"
+SRC_URI="http://download.sarine.nl/gmpc-0.15.5-rc4/gmpc-last.fm-0.15.4.102.tar.gz"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"

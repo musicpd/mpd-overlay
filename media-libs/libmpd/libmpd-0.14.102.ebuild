@@ -4,7 +4,7 @@
 DESCRIPTION="A library handling connection to a MPD server."
 HOMEPAGE="http://sarine.nl/libmpd"
 LICENSE="GPL-2"
-SRC_URI="http://download.sarine.nl/gmpc-0.15.5-rc1/${P}.tar.gz"
+SRC_URI="http://download.sarine.nl/gmpc-0.15.5-rc4/${P}.tar.gz"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
