@@ -5,15 +5,15 @@ inherit subversion
 
 DESCRIPTION="An auto-updater daemon for the Music Player Daemon"
 HOMEPAGE="http://sarine.nl/"
-ESVN_REPO_URI="https://svn.musicpd.org/${PN/-live}/trunk"
+ESVN_REPO_URI="https://svn.musicpd.org/${PN}/trunk"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86"
 IUSE=""
 
-DEPEND="|| ( media-libs/libmpd-live media-libs/libmpd )
-	|| ( media-sound/mpd-live media-sound/mpd )"
+DEPEND="media-libs/libmpd
+	media-sound/mpd"
 RDEPEND="${DEPEND}"
 
 src_compile() {
