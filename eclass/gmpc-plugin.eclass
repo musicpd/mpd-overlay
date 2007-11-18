@@ -7,18 +7,16 @@ gmpc-plugin_pkg_setup()
 	fi
 }
 
-if [[ "${PN##*-}" == "live" ]]; then
+if [ "${PV}" == "9999" ]; then
 	inherit git autotools
 	DEPEND="${DEPEND}
-		media-sound/gmpc-live
-		dev-libs/libxml2
-		!${CATEGORY}/${PN/-live}"
+		=media-sound/gmpc-9999
+		dev-libs/libxml2"
 	RDEPEND="${DEPEND}"
 	if [ -z ${EGIT_REPO_URI} ]; then
-		DEPEND="!<${CATEGORY}/${PN}-0.2
-			${DEPEND}"
+		DEPEND="${DEPEND}"
 		if [ -z ${GMPC_PLUGIN} ]; then
-			GMPC_PLUGIN="${PN%-live}"
+			GMPC_PLUGIN="${PN}"
 			GMPC_PLUGIN="${GMPC_PLUGIN#gmpc-}"
 		fi
 		EGIT_REPO_URI="git://git.sarine.nl/gmpc-${GMPC_PLUGIN}.git"
@@ -32,8 +30,7 @@ else
 	RESTRICT="primaryuri"
 	## Depend against reverse dependency
 	DEPEND="${DEPEND}
-		>=media-sound/gmpc-${PV}
-		!${CATEGORY}/${PN}-live"
+		>=media-sound/gmpc-${PV}"
 	RDEPEND="${DEPEND}"
 	
 	## In the case that it's given an odd name
