@@ -19,11 +19,10 @@ DEPEND="gnome-base/libgnomeui
 	gnome-base/libglade
 	gnome-base/eel
 	net-misc/curl
-	!media-sound/ario
-	|| ( media-libs/libmpd media-libs/libmpd-live )"
+	media-libs/libmpd"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN/-live}-player"
+S="${WORKDIR}/${PN}-player"
 
 src_unpack() {
 	subversion_src_unpack

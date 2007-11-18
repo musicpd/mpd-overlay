@@ -17,8 +17,7 @@ DEPEND="virtual/libc
         sys-libs/ncurses
         dev-libs/popt
         >=dev-libs/glib-2.4
-	!media-sound/ncmpc
-	!media-sound/ncmpc-tradiaz-live"
+	!media-sound/ncmpc-tradiaz"
 
 pkg_setup() {
 	use search-screen && einfo "Please note that the search-screen is experimental"

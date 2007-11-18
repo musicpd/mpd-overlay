@@ -16,8 +16,7 @@ DEPEND="gnome-base/libgnomeui
 	gnome-base/libglade
 	gnome-base/eel
 	net-misc/curl
-	!media-sound/ario-live
-	|| ( media-libs/libmpd media-libs/libmpd-live )"
+	media-libs/libmpd"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"

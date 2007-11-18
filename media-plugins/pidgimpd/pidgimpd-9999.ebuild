@@ -12,8 +12,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE="debug"
 
-DEPEND="net-im/pidgin
-	|| ( media-libs/libmpd-live media-libs/libmpd )"
+DEPEND="net-im/pidgin"
 
 src_unpack() {
 	subversion_src_unpack

@@ -1,6 +1,6 @@
 inherit webapp mpd-docs
 
-if [[ "${PN##*-}" == "live" ]]; then
+if [[ "${PV}" == "9999" ]]; then
 	if [[ -n "${ESVN_REPO_URI}" ]]; then
 		inherit subversion
 	elif [[ -n "${EDARCS_REPOSITORY}" ]]; then
@@ -8,19 +8,6 @@ if [[ "${PN##*-}" == "live" ]]; then
 	else
 		die "Could not use $0 for this ebuild"
 	fi
-
-	mpd-www_pkg_postinst() {
-		webapp_pkg_postinst
-		
-		einfo ""
-		einfo "${PN} is installed in your webroot under ${PN}/,"
-		einfo "you may want to symlink to it from ${PN/-live}."
-		einfo ""		
-	}
-else
-	mpd-www_pkg_postinst() {
-		webapp_pkg_postinst
-	}
 fi
 
 mpd-www_src_install() {

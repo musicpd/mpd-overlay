@@ -15,8 +15,7 @@ IUSE=""
 S="${WORKDIR}/${P}"
 
 DEPEND="${RDEPEND} 
-	dev-python/py-libmpdclient-live
+	dev-python/py-libmpdclient
 	dev-python/empy
 	>=dev-python/pygtk-2.4.0
 	gnome-base/libglade"
-RDEPEND="!media-sound/pygmy-live"

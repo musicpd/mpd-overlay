@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 
-ESVN_REPO_URI="http://${PN/-live}.googlecode.com/svn/trunk"
+ESVN_REPO_URI="http://${PN}.googlecode.com/svn/trunk"
 inherit subversion
 
 DESCRIPTION="An MPD client that submits information to audioscrobbler."

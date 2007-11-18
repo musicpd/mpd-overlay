@@ -36,8 +36,7 @@ DEPEND="${RDEPEND}
 ##	avahi? ( >=net-dns/avahi-0.6 )
 ##	libsamplerate? ( >=media-libs/libsamplerate-0.0.15 )
 
-RDEPEND="!media-sound/mpd
-	!media-sound/mpd-live"
+RDEPEND="!media-sound/mpd"
 
 pkg_setup() {
 	enewuser mpd '' '' "/var/lib/mpd" audio || die "problem adding user mpd"

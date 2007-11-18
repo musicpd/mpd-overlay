@@ -17,7 +17,6 @@ DEPEND="${RDEPEND}
 	>=virtual/python-2.4
 	dev-python/PyQt4
 	kde-base/pykde"
-RDEPEND="!media-sound/kanola-live"
 
 src_compile() {
 	distutils_src_compile

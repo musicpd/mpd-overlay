@@ -10,25 +10,24 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE="amazon avahi libnotify lirc xosd"
 
-DEPEND="media-plugins/gmpc-alarm-live
-	avahi? ( media-plugins/gmpc-avahi-live )
-	amazon? ( media-plugins/gmpc-coveramazon-live )
-	media-plugins/gmpc-autoplaylist-live
-	media-plugins/gmpc-extraplaylist-live
-	media-plugins/gmpc-favorites-live
-	media-plugins/gmpc-lastfm-live
-	libnotify? ( media-plugins/gmpc-libnotify-live )
-	lirc? ( media-plugins/gmpc-lirc-live )
-	media-plugins/gmpc-lyrics-live
-	media-plugins/gmpc-magnatune-live
-	media-plugins/gmpc-mdcover-live
-	media-plugins/gmpc-mserver-live
-	xosd? ( media-plugins/gmpc-osd-live )
-	media-plugins/gmpc-playlistsort-live
-	media-plugins/gmpc-qosd-live
-	media-plugins/gmpc-random-playlist-live
-	media-plugins/gmpc-serverstats-live
-	media-plugins/gmpc-stopbutton-live
-	media-plugins/gmpc-wikipedia-live"
-RDEPEND="${DEPEND}
-	!media-plugin/gmpc-amazon-coverart-live"
+DEPEND="=media-plugins/gmpc-alarm-9999
+	avahi? ( =media-plugins/gmpc-avahi-9999 )
+	amazon? ( =media-plugins/gmpc-coveramazon-9999 )
+	=media-plugins/gmpc-autoplaylist-9999
+	=media-plugins/gmpc-extraplaylist-9999
+	=media-plugins/gmpc-favorites-9999
+	=media-plugins/gmpc-lastfm-9999
+	libnotify? ( =media-plugins/gmpc-libnotify-9999 )
+	lirc? ( =media-plugins/gmpc-lirc-9999 )
+	=media-plugins/gmpc-lyrics-9999
+	=media-plugins/gmpc-magnatune-9999
+	=media-plugins/gmpc-mdcover-9999
+	=media-plugins/gmpc-mserver-9999
+	xosd? ( =media-plugins/gmpc-osd-9999 )
+	=media-plugins/gmpc-playlistsort-9999
+	=media-plugins/gmpc-qosd-9999
+	=media-plugins/gmpc-random-playlist-9999
+	=media-plugins/gmpc-serverstats-9999
+	=media-plugins/gmpc-stopbutton-9999
+	=media-plugins/gmpc-wikipedia-9999"
+RDEPEND="${DEPEND}"

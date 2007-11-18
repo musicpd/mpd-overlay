@@ -1,6 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=1
+
 inherit autotools git
 
 DESCRIPTION="A Gnome client for the Music Player Daemon."
@@ -10,16 +12,15 @@ EGIT_REPO_URI='git://repo.or.cz/gmpc.git'
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="mmkeys session trayicon"
+IUSE="+mmkeys +session +trayicon"
 
 RDEPEND=">=x11-libs/gtk+-2.8
 	>=dev-libs/glib-2.10
 	>=gnome-base/libglade-2.3
 	session? ( x11-libs/libSM )
 	dev-perl/XML-Parser
-	media-libs/libmpd-live
+	media-libs/libmpd
 	>dev-util/gob-2
-	!media-sound/gmpc
 	net-misc/curl
 	dev-util/intltool"
 DEPEND="${RDEPEND}

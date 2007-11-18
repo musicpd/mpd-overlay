@@ -5,7 +5,7 @@ inherit autotools subversion
 
 DESCRIPTION="gbemol, a different gtk+/C MPD client"
 HOMEPAGE="http://gbemol.sourceforge.net/"
-ESVN_REPO_URI="https://${PN/-live}.svn.sourceforge.net/svnroot/${PN/-live}/trunk"
+ESVN_REPO_URI="https://${PN}.svn.sourceforge.net/svnroot/${PN}/trunk"
 LICENSE="GPL-2"
 
 SLOT="0"
@@ -14,8 +14,7 @@ IUSE="id3lib"
 
 DEPEND="id3lib? ( media-libs/id3lib )
 	>=x11-libs/gtk+-2.10
-	>=dev-libs/glib-2.10
-	!media-sound/gbemol"
+	>=dev-libs/glib-2.10"
 RDEPEND="${DEPEND}"
 
 src_unpack() {

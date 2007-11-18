@@ -15,8 +15,7 @@ IUSE="debug"
 
 DEPEND=">=x11-libs/gtk+-2.4.0
 	>=gnome-base/libglade-2.3.6
-	!media-sound/glurp
-	!media-sound/glurp-libmpd-live"
+	!media-sound/glurp-libmpd"
 
 src_unpack() {
         subversion_src_unpack

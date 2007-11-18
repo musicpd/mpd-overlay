@@ -14,10 +14,9 @@ SLOT="0"
 IUSE="debug"
 
 DEPEND="${RDEPEND}
-	|| ( media-libs/libmpd media-libs/libmpd-live )
+	media-libs/libmpd
 	>=x11-libs/gtk+-2.4.0
 	!media-sound/glurp
-	!media-sound/glurp-live
 	>=gnome-base/libglade-2.3.6"
 
 src_unpack() {

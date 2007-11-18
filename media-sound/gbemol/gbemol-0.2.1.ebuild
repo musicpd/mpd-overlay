@@ -12,8 +12,7 @@ IUSE="id3lib"
 
 DEPEND="id3lib? ( media-libs/id3lib )
 	>=x11-libs/gtk+-2.10
-	>=dev-libs/glib-2.10
-	!media-sound/gbemol-live"
+	>=dev-libs/glib-2.10"
 RDEPEND="${DEPEND}"
 
 src_compile() {

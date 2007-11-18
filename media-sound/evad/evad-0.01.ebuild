@@ -12,8 +12,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 
-DEPEND="dev-lang/python
-	!media-sound/evad-live"
+DEPEND="dev-lang/python"
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
