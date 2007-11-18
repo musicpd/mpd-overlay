@@ -1,23 +1,23 @@
-media-sound/gmpc-live:mmkeys - Add support for multimedia keys
-media-sound/gmpc-live:trayicon - Add support for the trayicon in GMPC
-media-sound/ncmpc-live:clock-screen - Add support for showing a clock in the client
-media-sound/ncmpc-live:key-screen - Add support for a key binding screen display
-media-sound/ncmpc-live:mouse - Add support for using the mouse
-media-sound/ncmpc-live:raw-mode - Add raw terminal support
-media-sound/ncmpc-live:search-screen - Add support for a search screen display
-media-sound/ncmpc-tradiaz-live:artist-screen - Add support for a artist screen display
-media-sound/ncmpc-tradiaz-live:clock-screen - Add support for showing a clock in the client
-media-sound/ncmpc-tradiaz-live:key-screen - Add support for a key binding screen display
-media-sound/ncmpc-tradiaz-live:lyrics-screen - Add support for a lyrics screen display
-media-sound/ncmpc-tradiaz-live:mouse - Add support for using the mouse
-media-sound/ncmpc-tradiaz-live:raw-mode - Add raw terminal support
-media-sound/ncmpc-tradiaz-live:search-screen - Add support for a search screen display
-media-sound/mpd-live:bonjour - Enable bonjour support
-media-sound/mpd-live:fifo - Enable First-In First-Out plugin for MPD
-media-sound/mpd-live:wavpack - Enable support for WavPack
-media-sound/mpd-live:icecast - Enable support for Icecast2
-media-sound/mpd-ke-live:icecast - Enable support for Icecast2
-media-sound/mpd-live:largefile - Add support for sound files over 4GiB on 32-bit machines
-media-sound/mpd-ke-live:largefile - Add support for sound files over 4GiB on 32-bit machines
-media-sound/mpd-ke-live:nonblock-update - Don't block during database update
-media-sound/sonata-live:scrobbler - Enable support for AudioScrobbler
+media-sound/gmpc:mmkeys - Add support for multimedia keys
+media-sound/gmpc:trayicon - Add support for the trayicon in GMPC
+media-sound/ncmpc:clock-screen - Add support for showing a clock in the client
+media-sound/ncmpc:key-screen - Add support for a key binding screen display
+media-sound/ncmpc:mouse - Add support for using the mouse
+media-sound/ncmpc:raw-mode - Add raw terminal support
+media-sound/ncmpc:search-screen - Add support for a search screen display
+media-sound/ncmpc-tradiaz:artist-screen - Add support for a artist screen display
+media-sound/ncmpc-tradiaz:clock-screen - Add support for showing a clock in the client
+media-sound/ncmpc-tradiaz:key-screen - Add support for a key binding screen display
+media-sound/ncmpc-tradiaz:lyrics-screen - Add support for a lyrics screen display
+media-sound/ncmpc-tradiaz:mouse - Add support for using the mouse
+media-sound/ncmpc-tradiaz:raw-mode - Add raw terminal support
+media-sound/ncmpc-tradiaz:search-screen - Add support for a search screen display
+media-sound/mpd:bonjour - Enable bonjour support
+media-sound/mpd:fifo - Enable First-In First-Out plugin for MPD
+media-sound/mpd:wavpack - Enable support for WavPack
+media-sound/mpd:icecast - Enable support for Icecast2
+media-sound/mpd-ke:icecast - Enable support for Icecast2
+media-sound/mpd:largefile - Add support for sound files over 4GiB on 32-bit machines
+media-sound/mpd-ke:largefile - Add support for sound files over 4GiB on 32-bit machines
+media-sound/mpd-ke:nonblock-update - Don't block during database update
+media-sound/sonata:scrobbler - Enable support for AudioScrobbler
