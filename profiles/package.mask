@@ -1,29 +1,17 @@
-# Move
-media-plugin/gmpc-amazon-coverart-live
-
 # Doesn't work, says incorrect protocol
 media-sound/playgui
 
 # Known security issues, see Gentoo bugzilla
 www-apps/phpmp2
-www-apps/phpmp2-live
 
 # Abandoned, but people seem to be expressing
 # interest in this package
 www-apps/phpmpplus
-www-apps/phpmpplus-live
 
 # It's broken and mostly unusable, here for testers
 # and testing
 media-sound/kanola
-media-sound/kanola-live
 
 # It's not necessarily broken, but it's not finished
 # and who knows how good the security is?
 sys-fs/mpd-updater
-
-# This one has svn problems
-media-sound/pympd-live
-
-# In gmpc now
-media-plugins/gmpc-tag2-live
