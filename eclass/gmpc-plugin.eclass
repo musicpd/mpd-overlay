@@ -19,7 +19,7 @@ if [ "${PV}" == "9999" ]; then
 			GMPC_PLUGIN="${PN}"
 			GMPC_PLUGIN="${GMPC_PLUGIN#gmpc-}"
 		fi
-		EGIT_REPO_URI="git://git.sarine.nl/gmpc-${GMPC_PLUGIN}.git"
+		EGIT_REPO_URI="git://repo.or.cz/gmpc-${GMPC_PLUGIN}.git"
 	fi
 	gmpc-plugin_src_unpack() {
 		git_src_unpack
