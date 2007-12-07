@@ -14,7 +14,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE="+mmkeys +session +trayicon"
 
-RDEPEND=">=x11-libs/gtk+-2.8
+RDEPEND=">=x11-libs/gtk+-2.12
 	>=dev-libs/glib-2.10
 	>=gnome-base/libglade-2.3
 	session? ( x11-libs/libSM )
