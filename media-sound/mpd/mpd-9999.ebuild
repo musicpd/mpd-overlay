@@ -15,8 +15,8 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 IUSE="aac alsa ao audiofile avahi bonjour fifo flac icecast iconv ipv6 jack largefile libsamplerate mp3 mikmod musepack ogg oss pulseaudio unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
-	!media-sound/mpd
 	!media-sound/mpd-ke
+	!media-sound/mpd-ew
 	aac? ( >=media-libs/faad2-2.0_rc2 )
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
