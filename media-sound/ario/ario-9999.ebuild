@@ -1,7 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit gnome2 subversion autotools
+EAPI=1
+inherit gnome2 subversion autotools flag-o-matic
 
 ## Because gnome2 is dumb
 unset SRC_URI
@@ -13,7 +14,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE=""
+IUSE="debug +inet-stream +search +playlist"
 
 DEPEND="gnome-base/libgnomeui
 	gnome-base/libglade
@@ -30,6 +31,11 @@ src_unpack() {
 }
 
 src_compile() {
-	econf || die "econf failed"
+	## For some reason compilation fails when without optimization
+	replace-flags -O0 -O1
+	econf	$(use_enable debug) \
+		$(use_enable inet-stream) \
+		$(use_enable playlist) \
+		$(use_enable search) || die "econf failed"
 	emake || die "emake failed"
 }
