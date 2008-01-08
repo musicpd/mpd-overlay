@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=1
-inherit gnome2 subversion autotools flag-o-matic
+inherit gnome2 subversion autotools
 
 ## Because gnome2 is dumb
 unset SRC_URI
@@ -31,8 +31,6 @@ src_unpack() {
 }
 
 src_compile() {
-	## For some reason compilation fails when without optimization
-	replace-flags -O0 -O1
 	econf	$(use_enable debug) \
 		$(use_enable inet-stream) \
 		$(use_enable playlist) \

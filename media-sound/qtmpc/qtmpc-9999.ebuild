@@ -6,7 +6,7 @@ EAPI=1
 inherit qt4 eutils subversion
 
 DESCRIPTION="Another QT4 client with Amarok-like tree view music library interface."
-HOMEPAGE="http://lowblog.nl/category/qtmpc/"
+HOMEPAGE="http://qtmpc.lowblog.nl"
 LICENSE="GPL-2"
 ESVN_REPO_URI="http://qtmpc.lowblog.nl/svn"
 
@@ -23,9 +23,9 @@ src_compile() {
 }
 
 src_install() {
-##	Doesn't have an icon yet, waiting for it to
-#	make_desktop_entry "${PN}" "QtMPC"
-#	newicon images/mn_icon.png ${PN}.png
+#	There's a problem with this, will find out and fix it later.
+#	make_desktop_entry "${PN}"
+#	newicon images/icon.svg ${PN}.svg
 
 	dobin QtMPC || die
 }
