@@ -14,7 +14,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 DEPEND="${RDEPEND}
-	$(qt4_min_version 4.0.0)"
+	$(qt4_min_version 4.3.0)"
 RDEPEND="${DEPEND}"
 
 src_compile() {
