@@ -23,8 +23,6 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-	pwd
-	ls -la
 	eqmake4 QtMPC.pro || die "eqmake failed"
 	emake || die "emake failed"
 }
