@@ -3,6 +3,9 @@
 
 EAPI=1
 
+MY_PN="QtMPC"
+MY_P="${MY_PN}-${PV}"
+
 inherit qt4 eutils subversion
 
 DESCRIPTION="Another QT4 client with Amarok-like tree view music library interface."
@@ -23,9 +26,8 @@ src_compile() {
 }
 
 src_install() {
-#	There's a problem with this, will find out and fix it later.
-#	make_desktop_entry "${PN}"
-#	newicon images/icon.svg ${PN}.svg
+	newicon images/icon.svg "${MY_PN}.svg"
+	make_desktop_entry "${MY_PN}" "${MY_PN}" "${MY_PN}"
 
 	dobin QtMPC || die
 }

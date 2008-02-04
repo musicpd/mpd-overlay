@@ -28,10 +28,8 @@ src_compile() {
 }
 
 src_install() {
-##	There's a problem with this, they aren't seen in kde3/4; will fix
-#			later.
-#	make_desktop_entry "${PN}"
-#	newicon images/icon.svg ${PN}.svg
+	newicon images/icon.svg "${MY_PN}.svg"
+	make_desktop_entry "${MY_PN}" "${MY_PN}" "${MY_PN}"
 
 	dobin QtMPC || die
 }
