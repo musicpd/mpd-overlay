@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-ESVN_REPO_URI="https://svn.musicpd.org/mpd/branches/ew"
-ESVN_PATCHES="mpdconf.patch"
+EGIT_REPO_URI="git://repo.or.cz/mpd-mk.git"
+EGIT_PATCHES="mpdconf.patch"
 
-inherit subversion autotools flag-o-matic
+inherit git autotools flag-o-matic
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org/"
@@ -15,8 +15,9 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 IUSE="aac alsa ao audiofile avahi bonjour fifo flac icecast iconv ipv6 jack largefile libsamplerate mp3 mikmod musepack ogg oss pulseaudio unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
-	!media-sound/mpd
 	!media-sound/mpd-ke
+	!media-sound/mpd-ew
+	!media-sound/mpd
 	aac? ( >=media-libs/faad2-2.0_rc2 )
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
@@ -53,7 +54,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	subversion_src_unpack
+	git_src_unpack
 	AT_NOELIBTOOLIZE="yes" AT_M4DIR="${PWD}/m4" eautoreconf
 }
 
