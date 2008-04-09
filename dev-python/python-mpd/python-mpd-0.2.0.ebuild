@@ -5,7 +5,7 @@ inherit distutils
 
 DESCRIPTION="A python mpd library build for speed and simplicity."
 HOMEPAGE="http://www.musicpd.org/~jat/python-mpd/"
-SRC_URI="http://pypi.python.org/packages/source/p/python-mpd/python-mpd-0.2.0.tar.bz2"
+SRC_URI="http://pypi.python.org/packages/source/p/${PN}/${P}.tar.bz2"
 LICENSE="GPL-3"
 
 SLOT="0"
