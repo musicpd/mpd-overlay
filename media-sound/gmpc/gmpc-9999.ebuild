@@ -22,6 +22,7 @@ RDEPEND=">=dev-libs/glib-2.10
 	x11-themes/hicolor-icon-theme
 	gnome? ( >=gnome-base/gnome-vfs-2.6 )
 	session? ( x11-libs/libSM )
+	>=dev-util/gob-2
 	dev-util/intltool" ## Required for live repo only
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
