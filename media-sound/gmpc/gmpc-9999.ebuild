@@ -18,7 +18,7 @@ RDEPEND=">=dev-libs/glib-2.10
 	>=gnome-base/libglade-2.3
 	>=media-libs/libmpd-0.15.0
 	net-misc/curl
-	>=x11-libs/gtk+-2.8
+	>=x11-libs/gtk+-2.12
 	x11-themes/hicolor-icon-theme
 	gnome? ( >=gnome-base/gnome-vfs-2.6 )
 	session? ( x11-libs/libSM )
