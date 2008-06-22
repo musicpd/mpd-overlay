@@ -20,6 +20,7 @@ DEPEND="=media-plugins/gmpc-alarm-9999
 	libnotify? ( =media-plugins/gmpc-libnotify-9999 )
 	lirc? ( =media-plugins/gmpc-lirc-9999 )
 	=media-plugins/gmpc-lyrics-9999
+	=media-plugins/gmpc-lyricwiki-9999
 	=media-plugins/gmpc-magnatune-9999
 	=media-plugins/gmpc-mdcover-9999
 	=media-plugins/gmpc-mserver-9999
