@@ -21,7 +21,7 @@ S="${WORKDIR}/${PN/q/Q}${PV}src/${PN/q/Q}${PV}"
 
 src_compile() {
 	econf || die "econf failed"
-	eqmake3 || die "eqmake failed"
+	QMAKESPEC=linux-g++ eqmake3 ${S}/${PN}.pro || die "eqmake failed"
 	sed -ie 's%^prefix.*=.*%prefix = ${D}%' Makefile || die "sed failed"
 	emake || die "emake failed"
 }
