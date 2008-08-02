@@ -16,6 +16,7 @@ DEPEND="=media-plugins/gmpc-alarm-9999
 	=media-plugins/gmpc-autoplaylist-9999
 	=media-plugins/gmpc-extraplaylist-9999
 	=media-plugins/gmpc-favorites-9999
+	=media-plugins/gmpc-jamendo-9999
 	=media-plugins/gmpc-lastfm-9999
 	libnotify? ( =media-plugins/gmpc-libnotify-9999 )
 	lirc? ( =media-plugins/gmpc-lirc-9999 )
@@ -29,6 +30,5 @@ DEPEND="=media-plugins/gmpc-alarm-9999
 	=media-plugins/gmpc-qosd-9999
 	=media-plugins/gmpc-random-playlist-9999
 	=media-plugins/gmpc-serverstats-9999
-	=media-plugins/gmpc-stopbutton-9999
 	=media-plugins/gmpc-wikipedia-9999"
 RDEPEND="${DEPEND}"
