@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 
 RDEPEND="sys-libs/ncurses
 	=media-libs/libmpd-9999
-	media-libs/taglib"
+	taglib? ( media-libs/taglib )"
 DEPEND="${RDEPEND}"
 
 pkg_setup() {
@@ -28,10 +28,11 @@ pkg_setup() {
 src_compile() {
 	local myconf=""
 	if use unicode ; then
-		myconf="--enable-unicode"
+		myconf="--with-taglib"
 	fi
 
-	econf $(use_enable unicode) || die "configure failed"
+	econf $(use_enable unicode) \
+		${myconf} || die "configure failed"
 	emake || die "make failed"
 }
 
@@ -40,7 +41,6 @@ src_install() {
 		|| die "install failed"
 	
 	insinto usr/share/ncmpcpp
-	mv examples/.ncmpcpprc examples/ncmpcpprc
 	doins examples/ncmpcpprc
 }
 
