@@ -8,7 +8,7 @@ DESCRIPTION="A ncurses mpd client, clone of ncmpc with some new useful features 
 HOMEPAGE="http://unkart.ovh.org/ncmpcpp"
 SRC_URI="http://unkart.ovh.org/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
-IUSE="unicode"
+IUSE="taglib unicode"
 
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
