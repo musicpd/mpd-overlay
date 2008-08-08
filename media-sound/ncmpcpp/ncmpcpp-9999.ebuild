@@ -32,13 +32,8 @@ src_unpack() {
 }
 
 src_compile() {
-	localconf=""
-	if use taglib; then
-		localconf="--with-taglib"
-	fi
-	
 	econf $(use_enable unicode) \
-		${localconf} || die "configure failed"
+		$(use_with taglib) || die "configure failed"
 	emake || die "make failed"
 }
 

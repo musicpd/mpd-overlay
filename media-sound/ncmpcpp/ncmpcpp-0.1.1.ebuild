@@ -26,13 +26,8 @@ pkg_setup() {
 }
 
 src_compile() {
-	local myconf=""
-	if use unicode ; then
-		myconf="--with-taglib"
-	fi
-
 	econf $(use_enable unicode) \
-		${myconf} || die "configure failed"
+		$(use_with taglib) || die "configure failed"
 	emake || die "make failed"
 }
 
