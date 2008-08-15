@@ -60,4 +60,10 @@ gmpc-plugin_src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 }
 
+## A few sane defaults
+HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/${PN/gmpc-}"
+LICENSE="GPL-2"
+SLOT="0"
+IUSE=""
+
 EXPORT_FUNCTIONS src_install pkg_setup

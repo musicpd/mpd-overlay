@@ -13,7 +13,6 @@ IUSE="amazon avahi libnotify lirc xosd"
 DEPEND="=media-plugins/gmpc-alarm-9999
 	avahi? ( =media-plugins/gmpc-avahi-9999 )
 	amazon? ( =media-plugins/gmpc-coveramazon-9999 )
-	=media-plugins/gmpc-autoplaylist-9999
 	=media-plugins/gmpc-extraplaylist-9999
 	=media-plugins/gmpc-favorites-9999
 	=media-plugins/gmpc-jamendo-9999
@@ -28,7 +27,5 @@ DEPEND="=media-plugins/gmpc-alarm-9999
 	xosd? ( =media-plugins/gmpc-osd-9999 )
 	=media-plugins/gmpc-playlistsort-9999
 	=media-plugins/gmpc-qosd-9999
-	=media-plugins/gmpc-random-playlist-9999
-	=media-plugins/gmpc-serverstats-9999
-	=media-plugins/gmpc-wikipedia-9999"
+	=media-plugins/gmpc-serverstats-9999"
 RDEPEND="${DEPEND}"

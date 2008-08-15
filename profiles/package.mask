@@ -16,6 +16,10 @@ media-sound/kanola
 # and who knows how good the security is?
 sys-fs/mpd-updater
 
+## No longer maintained
+media-plugins/gmpc-autoplaylist
+media-plugins/gmpc-wikipedia
+
 ## Sorry, folks. Due to bad design when I first started this
 ## overlay, and due to the fact that there is no portage compatible
 ## implementation that can deal with overlays rejecting main repository

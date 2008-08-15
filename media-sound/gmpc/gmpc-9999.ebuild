@@ -5,7 +5,7 @@ EAPI=1
 inherit autotools git
 
 DESCRIPTION="A Gnome client for the Music Player Daemon."
-HOMEPAGE="http://sarine.nl/gmpc"
+HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/GMPC"
 EGIT_REPO_URI="git://repo.or.cz/gmpc.git"
 
 LICENSE="GPL-2"

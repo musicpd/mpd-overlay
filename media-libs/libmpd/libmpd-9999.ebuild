@@ -4,7 +4,7 @@
 inherit autotools git
 
 DESCRIPTION="A library handling connection to a MPD server."
-HOMEPAGE="http://sarine.nl/libmpd"
+HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/Libmpd"
 LICENSE="GPL-2"
 EGIT_REPO_URI='git://repo.or.cz/libmpd.git'
 
