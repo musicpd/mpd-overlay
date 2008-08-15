@@ -9,7 +9,7 @@ DESCRIPTION="A QT3 user interface for the music player daemon"
 HOMEPAGE="http://www.coonsden.com/main.htm"
 LICENSE="GPL-2"
 ## Homepage doesn't allow wget downloads; I personally host the same tarball
-SRC_URI="http://musicpd.org/~avuton/${PN/q/Q}${PV}src.tar.gz"
+SRC_URI="http://anpmech.com/~sbh/${PN/q/Q}${PV}src.tar.gz"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
