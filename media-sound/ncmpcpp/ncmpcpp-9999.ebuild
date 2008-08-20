@@ -8,14 +8,15 @@ DESCRIPTION="A ncurses mpd client, clone of ncmpc with some new useful features 
 HOMEPAGE="http://unkart.ovh.org/ncmpcpp"
 EGIT_REPO_URI="git://repo.or.cz/ncmpcpp.git"
 LICENSE="GPL-2"
-IUSE="taglib unicode"
+IUSE="curl taglib unicode"
 
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
 RDEPEND="sys-libs/ncurses
 	=media-libs/libmpd-9999
-	taglib? ( media-libs/taglib )"
+	taglib? ( media-libs/taglib )
+	curl? ( net-misc/curl )"
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.9"
 
@@ -33,6 +34,7 @@ src_unpack() {
 
 src_compile() {
 	econf $(use_enable unicode) \
+		$(use_with curl) \
 		$(use_with taglib) || die "configure failed"
 	emake || die "make failed"
 }
