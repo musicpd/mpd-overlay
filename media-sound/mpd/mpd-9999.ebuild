@@ -1,28 +1,28 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/mpd-0.14.0_pre20080630.ebuild,v 1.1 2008/06/30 14:46:38 angelos Exp $
 
-ESVN_REPO_URI="https://svn.musicpd.org/mpd/trunk/"
-ESVN_PATCHES="mpdconf.patch"
+inherit eutils git flag-o-matic autotools
 
-inherit subversion autotools flag-o-matic
+EGIT_REPO_URI="git://git.musicpd.org/normalperson/mpd.git"
 
 DESCRIPTION="The Music Player Daemon (mpd)"
-HOMEPAGE="http://www.musicpd.org/"
+HOMEPAGE="http://www.musicpd.org"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi bonjour fifo flac icecast iconv ipv6 jack largefile libsamplerate mp3 mikmod musepack ogg oss pulseaudio unicode vorbis wavpack"
+IUSE="aac alsa ao audiofile avahi flac icecast iconv ipv6 jack largefile libsamplerate mp3 mikmod musepack ogg oss pulseaudio unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
 	!media-sound/mpd-ke
 	!media-sound/mpd-ew
+	!media-sound/mpd-mk
 	aac? ( >=media-libs/faad2-2.0_rc2 )
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
 	avahi? ( net-dns/avahi )
-	bonjour? ( net-misc/mDNSResponder )
 	flac? ( media-libs/flac )
 	icecast? ( media-libs/libshout )
 	iconv? ( virtual/libiconv )
@@ -38,11 +38,6 @@ DEPEND="!sys-cluster/mpich2
 	wavpack? ( media-sound/wavpack )"
 
 pkg_setup() {
-	if use avahi && use bonjour; then
-		eerror "MPD can only be built with Avahi OR Bonjour support, not both."
-		die "Both avahi and bonjour in USE."
-	fi
-
 	if use ogg && use flac && ! built_with_use media-libs/flac ogg; then
 		eerror "To be able to play OggFlac files you need to build"
 		eerror "media-libs/flac with +ogg, to build libOggFLAC."
@@ -53,21 +48,18 @@ pkg_setup() {
 }
 
 src_unpack() {
-	subversion_src_unpack
+	git_src_unpack
 	AT_NOELIBTOOLIZE="yes" AT_M4DIR="${PWD}/m4" eautoreconf
+	epatch "${FILESDIR}"/mpdconf.patch || die "epatch for config file failed"
 }
 
 src_compile() {
-	use largefile && append-flags '-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE'
-
 	local myconf
 
 	myconf=""
 
 	if use avahi; then
 		myconf="${myconf} --with-zeroconf=avahi"
-	elif use bonjour; then
-		myconf="${myconf} --with-zeroconf=bonjour"
 	else
 		myconf="${myconf} --with-zeroconf=no"
 	fi
@@ -77,6 +69,8 @@ src_compile() {
 	else
 		myconf="${myconf} --disable-oggflac --disable-libOggFLACtest"
 	fi
+
+	use largefile && append-flags '-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE'
 
 	econf \
 		$(use_enable aac) \
