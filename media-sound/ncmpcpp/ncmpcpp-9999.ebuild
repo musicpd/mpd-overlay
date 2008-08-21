@@ -14,15 +14,13 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
 RDEPEND="sys-libs/ncurses
-	=media-libs/libmpd-9999
-	taglib? ( media-libs/taglib )
-	curl? ( net-misc/curl )"
-DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9"
+	curl? ( net-misc/curl )
+	taglib? ( media-libs/taglib )"
+DEPEND="${RDEPEND}"
 
 pkg_setup() {
 	if ! built_with_use sys-libs/ncurses unicode && use unicode ; then
-		eerror "recompile sys-libs/ncurses with USE unicode"
+		eerror " recompile sys-libs/ncurses with USE unicode"
 		die
 	fi
 }
@@ -48,7 +46,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog " Example configuration file has been installed at ${ROOT}usr/share/ncmpcpp/ncmpcpprc"
-        elog
-        elog " Copy it to your home folder as .ncmpcpprc and set up your preferences."
+	elog " Example configuration file has been installed at"
+	elog " ${ROOT}usr/share/ncmpcpp/ncmpcpprc"
+	elog " Copy it to ~/.ncmpcpprc and set up your preferences."
 }
