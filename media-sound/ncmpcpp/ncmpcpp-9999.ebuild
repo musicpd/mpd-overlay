@@ -42,11 +42,11 @@ src_install() {
 		|| die "install failed"
 
 	insinto usr/share/ncmpcpp
+	doins examples/ncmpcpp_keys
 	doins examples/ncmpcpprc
 }
 
 pkg_postinst() {
-	elog " Example configuration file has been installed at"
+	elog " Example configuration files have been installed at"
 	elog " ${ROOT}usr/share/ncmpcpp/ncmpcpprc"
-	elog " Copy it to ~/.ncmpcpprc and set up your preferences."
 }
