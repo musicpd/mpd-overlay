@@ -38,15 +38,13 @@ src_compile() {
 }
 
 src_install() {
-	make install DESTDIR=${D} \
+	make install DESTDIR=${D} docdir=${ROOT}/usr/share/doc/${PF} \
 		|| die "install failed"
 
-	insinto usr/share/ncmpcpp
-	doins examples/ncmpcpp_keys
-	doins examples/ncmpcpprc
+	prepalldocs
 }
 
 pkg_postinst() {
 	elog " Example configuration files have been installed at"
-	elog " ${ROOT}usr/share/ncmpcpp/ncmpcpprc"
+	elog " ${ROOT}usr/share/doc/${PF}"
 }
