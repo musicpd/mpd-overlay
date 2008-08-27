@@ -33,15 +33,13 @@ src_compile() {
 }
 
 src_install() {
-	make install DESTDIR=${D} \
+	make install DESTDIR=${D} docdir=${ROOT}/usr/share/doc/${PF} \
 		|| die "install failed"
 
-	insinto usr/share/ncmpcpp
-	doins examples/ncmpcpprc
+	prepalldocs
 }
 
 pkg_postinst() {
-	elog " Example configuration file has been installed at"
-	elog " ${ROOT}usr/share/ncmpcpp/ncmpcpprc"
-	elog " Copy it to ~/.ncmpcpprc and set up your preferences."
+	elog " Example configuration files have been installed at"
+	elog " ${ROOT}usr/share/doc/${PF}"
 }
