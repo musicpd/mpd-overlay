@@ -7,6 +7,7 @@ inherit subversion autotools
 DESCRIPTION="A gaim plugin for MPD"
 HOMEPAGE="http://svn.ayeon.org/pidgimpd/"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+SLOT=0
 
 IUSE="debug"
 
