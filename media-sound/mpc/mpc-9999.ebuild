@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 
-ESVN_REPO_URI="https://svn.musicpd.org/mpc/trunk/"
-inherit subversion autotools bash-completion
+EGIT_REPO_URI="git://git.musicpd.org/jat/mpc.git"
+inherit git autotools bash-completion
 
 DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
 HOMEPAGE="http://musicpd.org/"
@@ -20,7 +20,7 @@ DEPEND="${RDEPEND}
 RDEPEND="!media-sound/mpc"
 
 src_unpack() {
-	subversion_src_unpack
+	git_src_unpack
 	eautoreconf
 }
 
