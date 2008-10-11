@@ -1,6 +1,7 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=2
 inherit git autotools
 EGIT_REPO_URI="git://repo.or.cz/state-utils.git"
 
@@ -12,8 +13,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 
-src_unpack() {
-	git_src_unpack
+src_prepare() {
 	eautoreconf
 }
 
