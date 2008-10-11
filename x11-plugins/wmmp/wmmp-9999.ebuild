@@ -1,6 +1,7 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=2
 inherit subversion autotools
 
 DESCRIPTION="A Window Maker dock app client for Music Player Daemon(media-sound/mpd)"
@@ -16,8 +17,7 @@ S="${WORKDIR}/${P/wm/WM}"
 DEPEND="x11-libs/libXext
 	x11-libs/libXpm"
 
-src_unpack() {
-	subversion_src_unpack
+src_prepare() {
 	AT_NOELIBTOOLIZE="yes" eautoreconf
 }
 
