@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi flac icecast iconv ipv6 jack largefile libsamplerate mp3 mikmod musepack ogg oss pulseaudio unicode vorbis wavpack"
+IUSE="aac alsa ao audiofile avahi flac icecast iconv ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
 	!media-sound/mpd-ke
@@ -70,7 +70,7 @@ src_compile() {
 		myconf="${myconf} --disable-oggflac --disable-libOggFLACtest"
 	fi
 
-	use largefile && append-flags '-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE'
+	append-flags '-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE'
 
 	econf \
 		$(use_enable aac) \
