@@ -1,7 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-
+EAPI=2
 EGIT_REPO_URI="git://git.musicpd.org/jat/mpc.git"
 inherit git autotools bash-completion
 
@@ -13,21 +13,17 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE="nls"
 
-DEPEND="${RDEPEND}
-	virtual/libc
+DEPEND="virtual/libc
 	dev-util/gperf
 	nls? ( || ( sys-libs/glibc dev-libs/libiconv ) )"
-RDEPEND="!media-sound/mpc"
 
-src_unpack() {
-	git_src_unpack
+src_prepare() {
 	eautoreconf
 }
 
 src_compile() {
 	econf --disable-dependency-tracking \
 		$(use_enable nls iconv) || die "econf failed"
-		emake || die "emake failed"
 }
 
 src_install() {
