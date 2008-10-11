@@ -1,6 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=2
 inherit autotools git
 
 DESCRIPTION="A library handling connection to a MPD server."
@@ -17,13 +18,11 @@ DEPEND="virtual/libc
 	sys-devel/libtool"
 RDEPEND="doc? ( >=app-doc/doxygen-1.4.6 )"
 
-src_unpack() {
-	git_src_unpack
+src_prepare() {
 	AT_NOELIBTOOLIZE="yes" eautoreconf
 }
 
 src_compile() {
-	econf || die "econf failed"
 	emake || die "emake failed"
 
 	use doc && make doc
