@@ -1,7 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/mpd-0.14.0_pre20080630.ebuild,v 1.1 2008/06/30 14:46:38 angelos Exp $
 
+EAPI=2
 inherit eutils git flag-o-matic autotools
 
 EGIT_REPO_URI="git://git.musicpd.org/normalperson/mpd.git"
@@ -12,11 +12,9 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi flac icecast iconv ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio unicode vorbis wavpack"
+IUSE="aac alsa ao audiofile avahi fifo flac icecast iconv ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
-	!media-sound/mpd-ke
-	!media-sound/mpd-ew
 	!media-sound/mpd-mk
 	aac? ( >=media-libs/faad2-2.0_rc2 )
 	alsa? ( media-sound/alsa-utils )
@@ -47,13 +45,12 @@ pkg_setup() {
 	enewuser mpd "" "" "/var/lib/mpd" audio || die "problem adding user mpd"
 }
 
-src_unpack() {
-	git_src_unpack
+src_prepare() {
 	AT_NOELIBTOOLIZE="yes" AT_M4DIR="${PWD}/m4" eautoreconf
 	epatch "${FILESDIR}"/mpdconf.patch || die "epatch for config file failed"
 }
 
-src_compile() {
+src_configure() {
 	local myconf
 
 	myconf=""
@@ -70,7 +67,7 @@ src_compile() {
 		myconf="${myconf} --disable-oggflac --disable-libOggFLACtest"
 	fi
 
-	append-flags '-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE'
+	append-lfs-flags
 
 	econf \
 		$(use_enable aac) \
@@ -96,12 +93,11 @@ src_compile() {
 		$(use_enable oss) \
 		$(use_enable ogg oggtest) \
 		$(use_enable pulseaudio pulse) \
+		$(use_enable sysvipc un) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable vorbis vorbistest) \
 		$(use_enable wavpack) \
 		${myconf} || die "could not configure"
-
-	emake || die "emake failed"
 }
 
 src_install() {
