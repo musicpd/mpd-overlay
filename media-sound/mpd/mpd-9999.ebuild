@@ -4,7 +4,7 @@
 EAPI=2
 inherit eutils git flag-o-matic autotools
 
-EGIT_REPO_URI="git://git.musicpd.org/normalperson/mpd.git"
+EGIT_REPO_URI="git://repo.or.cz/mpd-mk.git"
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
@@ -15,7 +15,6 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 IUSE="aac alsa ao audiofile avahi fifo flac icecast iconv ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
-	!media-sound/mpd-mk
 	aac? ( >=media-libs/faad2-2.0_rc2 )
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
@@ -67,6 +66,18 @@ src_configure() {
 		myconf="${myconf} --disable-oggflac --disable-libOggFLACtest"
 	fi
 
+	if use icecast && use mp3; then
+		myconf="${myconf} --enable-shout_mp3"
+	else
+		myconf="${myconf} --disable-shout_mp3"
+	fi
+
+	if use icecast && use ogg; then
+		myconf="${myconf} --enable-shout_ogg"
+	else
+		myconf="${myconf} --disable-shout_ogg"
+	fi
+
 	append-lfs-flags
 
 	econf \
@@ -80,7 +91,6 @@ src_configure() {
 		$(use_enable fifo) \
 		$(use_enable flac) \
 		$(use_enable flac libFLACtest) \
-		$(use_enable icecast shout) \
 		$(use_enable iconv) \
 		$(use_enable ipv6) \
 		$(use_enable jack) \

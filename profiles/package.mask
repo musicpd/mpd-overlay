@@ -85,3 +85,6 @@ www-apps/phpmp2-live
 www-apps/phpmpplus-live
 www-apps/pitchfork-live
 x11-plugins/wmmp-live
+
+## mpd-mk is now merged with the master branch and Max is the new maintainer. Will remove in a week.
+media-sound/mpd-mk
