@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi fifo flac icecast iconv ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc unicode vorbis wavpack"
+IUSE="aac alsa ao audiofile avahi ffmpeg fifo flac icecast iconv ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
 	aac? ( >=media-libs/faad2-2.0_rc2 )
@@ -20,6 +20,7 @@ DEPEND="!sys-cluster/mpich2
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
 	avahi? ( net-dns/avahi )
+	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac )
 	icecast? ( media-libs/libshout )
 	iconv? ( virtual/libiconv )
@@ -89,6 +90,7 @@ src_configure() {
 		$(use_enable audiofile) \
 		$(use_enable audiofile audiofiletest) \
 		$(use_enable fifo) \
+		$(use_enable ffmpeg) \
 		$(use_enable flac) \
 		$(use_enable flac libFLACtest) \
 		$(use_enable iconv) \
