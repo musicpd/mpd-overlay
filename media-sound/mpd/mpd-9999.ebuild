@@ -15,6 +15,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 IUSE="aac alsa ao audiofile avahi ffmpeg fifo flac icecast ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
+	>=sys-devel/automake-1.9
 	>=dev-libs/glib-2.4:2
 	aac? ( >=media-libs/faad2-2.0_rc2 )
 	alsa? ( media-sound/alsa-utils )
