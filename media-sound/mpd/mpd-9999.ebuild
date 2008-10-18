@@ -12,9 +12,10 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi ffmpeg fifo flac icecast iconv ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc unicode vorbis wavpack"
+IUSE="aac alsa ao audiofile avahi ffmpeg fifo flac icecast ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
+	>=dev-libs/glib-2.4:2
 	aac? ( >=media-libs/faad2-2.0_rc2 )
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
@@ -23,7 +24,6 @@ DEPEND="!sys-cluster/mpich2
 	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac )
 	icecast? ( media-libs/libshout )
-	iconv? ( virtual/libiconv )
 	jack? ( media-sound/jack-audio-connection-kit )
 	libsamplerate? ( media-libs/libsamplerate )
 	mp3? ( media-libs/libmad
@@ -46,7 +46,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	AT_NOELIBTOOLIZE="yes" AT_M4DIR="${PWD}/m4" eautoreconf
+	AT_NOELIBTOOLIZE="yes" eautoreconf
 	epatch "${FILESDIR}"/mpdconf.patch || die "epatch for config file failed"
 }
 
@@ -84,30 +84,22 @@ src_configure() {
 	econf \
 		$(use_enable aac) \
 		$(use_enable alsa) \
-		$(use_enable alsa alsatest) \
 		$(use_enable ao) \
-		$(use_enable ao aotest) \
 		$(use_enable audiofile) \
-		$(use_enable audiofile audiofiletest) \
 		$(use_enable fifo) \
 		$(use_enable ffmpeg) \
 		$(use_enable flac) \
-		$(use_enable flac libFLACtest) \
-		$(use_enable iconv) \
 		$(use_enable ipv6) \
 		$(use_enable jack) \
 		$(use_enable libsamplerate lsr) \
 		$(use_enable mp3) \
 		$(use_enable mp3 id3) \
 		$(use_enable mikmod mod) \
-		$(use_enable mikmod libmikmodtest) \
 		$(use_enable musepack mpc) \
 		$(use_enable oss) \
-		$(use_enable ogg oggtest) \
 		$(use_enable pulseaudio pulse) \
 		$(use_enable sysvipc un) \
 		$(use_enable vorbis oggvorbis) \
-		$(use_enable vorbis vorbistest) \
 		$(use_enable wavpack) \
 		${myconf} || die "could not configure"
 }
