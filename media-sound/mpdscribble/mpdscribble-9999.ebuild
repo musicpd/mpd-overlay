@@ -1,7 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-
+EAPI=2
 ESVN_REPO_URI="http://${PN}.googlecode.com/svn/trunk"
 inherit subversion
 
@@ -13,7 +13,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 
-DEPEND=">=net-libs/libsoup-2.2"
+DEPEND="net-libs/libsoup:2.2"
 
 src_install() {
 	make DESTDIR=${D} install || die
