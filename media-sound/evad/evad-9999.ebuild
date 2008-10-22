@@ -19,14 +19,6 @@ src_prepare() {
 	epatch "${FILESDIR}/fix-exec.patch"
 }
 
-#src_compile() {
-#        distutils_src_compile
-#}
-
-#src_install() {
-#        distutils_src_install
-#}
-
 pkg_postinst() {
         python_version
         python_mod_optimize /usr/lib/python${PYVER}/site-packages
