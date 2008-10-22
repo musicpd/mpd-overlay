@@ -1,7 +1,7 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-
+EAPI=2
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/scmpc/trunk"
 inherit subversion autotools
 
@@ -16,12 +16,10 @@ IUSE=""
 DEPEND=">=net-misc/curl-7.10.0
 	dev-libs/libdaemon
 	dev-libs/confuse
-	dev-libs/argtable
-	!media-sound/scmpc"	
+	dev-libs/argtable"
 RDEPEND=""
 
-src_unpack() {
-        subversion_src_unpack
+src_prepare() {
         eautoreconf
 }
 
@@ -32,7 +30,7 @@ src_install() {
 	newins examples/scmpc.conf.in scmpc.conf
 
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/scmpc.init scmpc
+	newexe "${FILESDIR}/scmpc.init" scmpc
 }
 
 pkg_postinst() {
