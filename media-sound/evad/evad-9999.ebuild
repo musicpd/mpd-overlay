@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 inherit python distutils subversion
@@ -12,28 +12,20 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 
-DEPEND="dev-lang/python"
+DEPEND="dev-lang/python[ncurses]"
 RDEPEND="${DEPEND}"
 
-pkg_setup() {
-	if ! built_with_use 'dev-lang/python' ncurses; then
-		eerror "You must build =dev-lang/python with ncurses USE flag."
-		die "Please re-emerge =dev-lang/python with ncurses USE flag."
-	fi
-}
-
-src_unpack() {
-	subversion_src_unpack
+src_prepare() {
 	epatch "${FILESDIR}/fix-exec.patch"
 }
 
-src_compile() {
-        distutils_src_compile
-}
+#src_compile() {
+#        distutils_src_compile
+#}
 
-src_install() {
-        distutils_src_install
-}
+#src_install() {
+#        distutils_src_install
+#}
 
 pkg_postinst() {
         python_version
