@@ -1,7 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-
+EAPI=2
 ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/branches/tradiaz/"
 inherit subversion autotools
 
@@ -25,12 +25,11 @@ pkg_setup() {
 			experimental"
 }
 
-src_unpack() {
-	subversion_src_unpack
+src_prepare() {
 	AT_NOELIBTOOLIZE="yes" eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	econf \
 		$(use_enable artist-screen) \
 		$(use_enable clock-screen) \
@@ -40,10 +39,8 @@ src_compile() {
 		$(use_enable lyrics-screen) \
 		$(use_enable search-screen) \
 		$(use_with nls) \
-		$(use_with raw-mode) \
-
-		emake || die "make failed"
-}																																	
+		$(use_with raw-mode)
+}
 
 src_install() {
 	make install DESTDIR=${D} docdir=/usr/share/doc/${PF} \
