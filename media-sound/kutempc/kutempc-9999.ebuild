@@ -1,9 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-
+EAPI=2
 ESVN_REPO_URI="https://www.schleifi.com/svn/florian/kutempc/"
-ESVN_BOOTSTRAP="qmake"
 inherit subversion
 
 DESCRIPTION="KuteMPC is a QT 4.1+ client heavily inspired by glurp"
@@ -15,6 +14,10 @@ SLOT="0"
 IUSE=""
 
 DEPEND=">x11-libs/qt-4.1.0"
+
+src_prepare() {
+	qmake
+}
 
 src_install() {
 	dobin kutempc
