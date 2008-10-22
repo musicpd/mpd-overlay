@@ -26,7 +26,8 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_enable clock-screen) \
+	econf \
+		$(use_enable clock-screen) \
 		$(use_enable debug) \
 		$(use_enable mouse) \
 		$(use_enable key-screen) \
@@ -36,6 +37,6 @@ src_configure() {
 }
 
 src_install() {
-       make install DESTDIR=${D} docdir=/usr/share/doc/${PF} \
-               || die "install failed"
+	make install DESTDIR="${D}" docdir="/usr/share/doc/${PF}" \
+		|| die "install failed"
 }

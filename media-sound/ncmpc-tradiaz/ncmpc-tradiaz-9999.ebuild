@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=2
@@ -13,16 +13,14 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE="artist-screen clock-screen debug mouse key-screen lyrics-screen search-screen nls raw-mode"
 
-DEPEND="virtual/libc
-        sys-libs/ncurses
-        dev-libs/popt
-        >=dev-libs/glib-2.4
+DEPEND="sys-libs/ncurses
+	dev-libs/popt
+	>=dev-libs/glib-2.4
 	net-misc/curl
 	!media-sound/ncmpc"
 
 pkg_setup() {
-	        use search-screen && einfo "Please note that the search-screen is
-			experimental"
+	use search-screen && elog "Please note that the search-screen is experimental"
 }
 
 src_prepare() {
@@ -39,12 +37,10 @@ src_configure() {
 		$(use_enable lyrics-screen) \
 		$(use_enable search-screen) \
 		$(use_with nls) \
-		$(use_with raw-mode)
+		$(use_with raw-mode) || die "econf failed"
 }
 
 src_install() {
-	make install DESTDIR=${D} docdir=/usr/share/doc/${PF} \
-	|| die "install failed"
-
-	prepalldocs
+	make install DESTDIR="${D}" docdir="/usr/share/doc/${PF}" \
+		|| die "install failed"
 }
