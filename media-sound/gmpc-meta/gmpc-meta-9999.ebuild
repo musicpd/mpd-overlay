@@ -1,6 +1,5 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-
 
 DESCRIPTION="gmpc - a meta ebuild to pull in gmpc and all plugins"
 HOMEPAGE="http://sarine.nl/gmpc"
