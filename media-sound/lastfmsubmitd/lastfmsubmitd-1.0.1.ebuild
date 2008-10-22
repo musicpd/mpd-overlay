@@ -1,10 +1,10 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 inherit distutils eutils
 
 DESCRIPTION="a Last.fm 'plugin' client for MPD, implemented in Python."
-SRC_URI="http://www.red-bean.com/~decklin/software/lastfmsubmitd/${P}.tar.bz2"
+SRC_URI="http://www.red-bean.com/~decklin/software/lastfmsubmitd/${P}.tar.gz"
 HOMEPAGE="http://www.red-bean.com/~decklin/software/lastfmsubmitd/"
 
 LICENSE="GPL-2"
@@ -31,12 +31,6 @@ src_install() {
 	touch ${D}/var/log/lastfm/lastfm.log
 	fowners lastfm /var/log/lastfm/lastfm.log
 
-	# Change ownership and make these setuid
-	for x in lastcd lastmp ; do
-		fowners lastfm /usr/bin/$x
-		fperms u+s /usr/bin/$x
-	done
-
 	# Configuration files.
 	insinto /etc
 	doins ${FILESDIR}/lastfmsubmitd.conf
@@ -56,4 +50,3 @@ pkg_postinst () {
 pkg_setup () {
 	enewuser lastfm -1 "/bin/sh"
 }
-
