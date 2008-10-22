@@ -1,7 +1,7 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-
+EAPI=2
 ESVN_REPO_URI="https://svn.musicpd.org/glurp/branches/glurp-libmpd"
 inherit subversion autotools
 
@@ -19,14 +19,12 @@ DEPEND="${RDEPEND}
 	!media-sound/glurp
 	>=gnome-base/libglade-2.3.6"
 
-src_unpack() {
-        subversion_src_unpack
+src_prepare() {
         eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	econf $(use_enable debug) || die
-	emake || die
 }
 
 src_install() {
