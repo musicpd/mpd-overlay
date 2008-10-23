@@ -1,6 +1,5 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-
 
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/pygmy/trunk/"
 ESVN_STORE_DIR="${DISTDIR}/svn-src"
