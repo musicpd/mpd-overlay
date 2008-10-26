@@ -22,6 +22,7 @@ DEPEND="!sys-cluster/mpich2
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
 	avahi? ( net-dns/avahi )
+	curl? ( net-misc/curl )
 	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac )
 	icecast? ( media-libs/libshout )
@@ -87,6 +88,7 @@ src_configure() {
 		$(use_enable alsa) \
 		$(use_enable ao) \
 		$(use_enable audiofile) \
+		$(use_enable curl) \
 		$(use_enable fifo) \
 		$(use_enable ffmpeg) \
 		$(use_enable flac) \
