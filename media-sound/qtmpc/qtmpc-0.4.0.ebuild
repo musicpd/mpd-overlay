@@ -1,7 +1,7 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=1
+EAPI=2
 
 MY_PN="QtMPC"
 MY_P="${MY_PN}-${PV}"
@@ -17,7 +17,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 DEPEND="${RDEPEND}
-	$(qt4_min_version 4.3.0)"
+	>=x11-libs/qt-4.3.0:4"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
