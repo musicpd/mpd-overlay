@@ -1,0 +1,20 @@
+#!/sbin/runscript
+
+depend() {
+	need net
+	use mpd
+}
+
+start () {
+	
+	ebegin "Starting Music Player Daemon Audioscrobbler client"
+	start-stop-daemon --start -p /var/run/mpdscribble.pid -b -m --exec /usr/bin/mpdscribble
+	eend $?
+}
+
+stop () {
+	ebegin "Stopping Music Player Daemon Audioscrobbler client"
+	start-stop-daemon --stop --quiet -p /var/run/mpdscribble.pid -m --exec /usr/bin/mpdscribble || eerror "mpdscribble is not running"
+	rm -f /var/run/mpdscribble.pid
+	eend $?
+}
