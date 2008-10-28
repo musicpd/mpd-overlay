@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi curl ffmpeg fifo flac icecast ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc uds unicode vorbis wavpack"
+IUSE="aac alsa ao audiofile avahi curl ffmpeg fifo flac icecast ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
 	>=sys-devel/automake-1.9
