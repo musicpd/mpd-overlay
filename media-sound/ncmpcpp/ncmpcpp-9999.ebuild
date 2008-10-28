@@ -13,9 +13,10 @@ IUSE="curl taglib unicode"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
-DEPEND="sys-libs/ncurses[unicode]
+DEPEND="sys-libs/ncurses
 	curl? ( net-misc/curl )
-	taglib? ( media-libs/taglib )"
+	taglib? ( media-libs/taglib )
+	unicode? ( sys-libs/ncurses[unicode] )"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
@@ -31,6 +32,7 @@ src_configure() {
 src_install() {
 	make install DESTDIR="${D}" docdir="${ROOT}/usr/share/doc/${PF}" \
 		|| die "install failed"
+	prepalldocs
 }
 
 pkg_postinst() {
