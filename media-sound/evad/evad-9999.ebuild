@@ -1,6 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=2
+
 inherit python distutils subversion
 
 DESCRIPTION="A text based/ncurses client heavily inspired by ncmpc"
@@ -20,11 +22,11 @@ src_prepare() {
 }
 
 pkg_postinst() {
-        python_version
-        python_mod_optimize /usr/lib/python${PYVER}/site-packages
+	python_version
+	python_mod_optimize /usr/lib/python${PYVER}/site-packages
 }
 
 pkg_postrm() {
-        python_version
-        python_mod_cleanup
+	python_version
+	python_mod_cleanup
 }
