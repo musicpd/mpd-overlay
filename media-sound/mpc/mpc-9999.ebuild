@@ -21,7 +21,7 @@ src_prepare() {
 	eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	econf --disable-dependency-tracking \
 		$(use_enable nls iconv) || die "econf failed"
 }
