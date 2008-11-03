@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=2
-inherit eutils git flag-o-matic autotools
+inherit git flag-o-matic autotools
 
 EGIT_REPO_URI="git://repo.or.cz/mpd-mk.git"
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi curl ffmpeg fifo flac icecast ipv6 jack libsamplerate mp3 mikmod musepack ogg oss pulseaudio sysvipc unicode vorbis wavpack"
+IUSE="aac alsa ao audiofile avahi curl ffmpeg fifo flac icecast ipv6 jack lame libsamplerate mp3 mikmod musepack ogg oggflac oss pulseaudio sysvipc unicode vorbis wavpack"
 
 DEPEND="!sys-cluster/mpich2
 	>=sys-devel/automake-1.9
@@ -25,23 +25,25 @@ DEPEND="!sys-cluster/mpich2
 	curl? ( net-misc/curl )
 	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac )
-	icecast? ( media-libs/libshout )
 	jack? ( media-sound/jack-audio-connection-kit )
+	icecast? ( lame? ( media-sound/lame ) )
+	lame? ( icecast? ( media-libs/libshout ) )
 	libsamplerate? ( media-libs/libsamplerate )
 	mp3? ( media-libs/libmad
 	       media-libs/libid3tag )
 	mikmod? ( media-libs/libmikmod )
 	musepack? ( media-libs/libmpcdec )
-	ogg? ( media-libs/libogg )
+	oggflac? ( media-libs/flac[ogg] )
+	ogg? ( media-libs/libogg
+	       icecast? ( media-libs/libshout ) )
 	pulseaudio? ( media-sound/pulseaudio )
 	vorbis? ( media-libs/libvorbis )
 	wavpack? ( media-sound/wavpack )"
 
 pkg_setup() {
-	if use ogg && use flac && ! built_with_use media-libs/flac ogg; then
-		eerror "To be able to play OggFlac files you need to build"
-		eerror "media-libs/flac with +ogg, to build libOggFLAC."
-		die "Missing libOggFLAC library."
+	if ! use lame && ! use ogg && ! use icecast; then
+		ewarn "Asking to build without icecast, but also asked to build"
+		ewarn "without an encoder. Building without icecast support".
 	fi
 
 	enewuser mpd "" "" "/var/lib/mpd" audio || die "problem adding user mpd"
@@ -63,22 +65,18 @@ src_configure() {
 		myconf="${myconf} --with-zeroconf=no"
 	fi
 
-	if use ogg && use flac; then
-		myconf="${myconf} --enable-oggflac --enable-libOggFLACtest"
-	else
-		myconf="${myconf} --disable-oggflac --disable-libOggFLACtest"
-	fi
+	if use icecast; then
+		if use lame; then
+			myconf="${myconf} --enable-shout_mp3"
+		else
+			myconf="${myconf} --disable-shout_mp3"
+		fi
 
-	if use icecast && use mp3; then
-		myconf="${myconf} --enable-shout_mp3"
-	else
-		myconf="${myconf} --disable-shout_mp3"
-	fi
-
-	if use icecast && use ogg; then
-		myconf="${myconf} --enable-shout_ogg"
-	else
-		myconf="${myconf} --disable-shout_ogg"
+		if use icecast; then
+			myconf="${myconf} --enable-shout_ogg"
+		else
+			myconf="${myconf} --disable-shout_ogg"
+		fi
 	fi
 
 	append-lfs-flags
@@ -99,6 +97,7 @@ src_configure() {
 		$(use_enable mp3 id3) \
 		$(use_enable mikmod mod) \
 		$(use_enable musepack mpc) \
+		$(use_enable oggflac) \
 		$(use_enable oss) \
 		$(use_enable pulseaudio pulse) \
 		$(use_enable sysvipc un) \

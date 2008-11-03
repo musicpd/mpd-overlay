@@ -1,5 +1,7 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+
+EAPI=2
 
 ESVN_REPO_URI="https://svn.ayeon.org/pidgimpd/trunk/"
 inherit subversion autotools
@@ -13,14 +15,12 @@ IUSE="debug"
 
 DEPEND="net-im/pidgin"
 
-src_unpack() {
-	subversion_src_unpack
+src_prepare() {
 	AT_NOELIBTOOLIZE="yes" eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	econf $(use_enable debug) || 'Configure failed.'
-	emake || 'Make failed.'
 }
 
 src_install() {

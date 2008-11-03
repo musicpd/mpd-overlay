@@ -14,10 +14,6 @@ media-sound/ncmpc-tradiaz:raw-mode - Add raw terminal support
 media-sound/ncmpc-tradiaz:search-screen - Add support for a search screen display
 media-sound/mpd:bonjour - Enable bonjour support
 media-sound/mpd:fifo - Enable First-In First-Out plugin for MPD
-media-sound/mpd:wavpack - Enable support for WavPack
 media-sound/mpd:icecast - Enable support for Icecast2
-media-sound/mpd-ke:icecast - Enable support for Icecast2
-media-sound/mpd:largefile - Add support for sound files over 4GiB on 32-bit machines
-media-sound/mpd-ke:largefile - Add support for sound files over 4GiB on 32-bit machines
-media-sound/mpd-ke:nonblock-update - Don't block during database update
+media-sound/mpd:oggflac - Add support for OggFLAC files
 media-sound/sonata:scrobbler - Enable support for AudioScrobbler
