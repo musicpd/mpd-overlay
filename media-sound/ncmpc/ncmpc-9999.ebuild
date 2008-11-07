@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=2
-ESVN_REPO_URI="https://svn.musicpd.org/ncmpc/trunk/"
-inherit subversion autotools
+
+inherit git autotools
 
 DESCRIPTION="A ncurses client for the Music Player Daemon (MPD)"
-HOMEPAGE="http://www.musicpd.org/?page=ncmpc"
+HOMEPAGE="http://mpd.wikia.com/index.php?title=Client:Ncmpc&oldid=5100"
 LICENSE="GPL-2"
+EGIT_REPO_URI="git://git.musicpd.org/cirrus/ncmpc.git"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
