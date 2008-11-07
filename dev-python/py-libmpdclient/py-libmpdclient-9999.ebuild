@@ -4,7 +4,7 @@
 inherit distutils subversion
 
 DESCRIPTION="Python module for interfacing MPD"
-HOMEPAGE="http://www.musicpd.org/py-libmpdclient.shtml"
+HOMEPAGE="http://mpd.wikia.com/index.php?title=ClientLib:py-libmpdclient&oldid=4599"
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/pygmy/py-libmpdclient/"
 LICENSE="GPL-2"
 

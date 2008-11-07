@@ -1,11 +1,11 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 inherit distutils
 
 DESCRIPTION="Python module for interfacing MPD"
 SRC_URI="http://pygmy.berlios.de/files/${PN}-${PV}.tar.bz2"
-HOMEPAGE="http://www.musicpd.org/py-libmpdclient.shtml"
+HOMEPAGE="http://mpd.wikia.com/index.php?title=ClientLib:py-libmpdclient&oldid=4599"
 
 LICENSE="GPL-2"
 SLOT="0"

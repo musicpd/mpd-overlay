@@ -1,11 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-
 
 inherit mpd-www
 
 DESCRIPTION="phpMp is a client program for Music Player Daemon (mpd)"
-HOMEPAGE="http://www.musicpd.org/"
+HOMEPAGE="http://mpd.wikia.com"
 SRC_URI="http://dev.kd2.org/phpmpplus/${P}.tar.bz2"
 LICENSE="GPL-2"
 

@@ -5,7 +5,7 @@ EAPI=2
 inherit subversion autotools
 
 DESCRIPTION="A Window Maker dock app client for Music Player Daemon(media-sound/mpd)"
-HOMEPAGE="http://www.musicpd.org"
+HOMEPAGE="http://mpd.wikia.com/index.php?title=Client:WMmp&oldid=941"
 LICENSE="GPL-2"
 
 ESVN_REPO_URI="https://svn.musicpd.org/WMmp/trunk/"

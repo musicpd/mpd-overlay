@@ -1,12 +1,11 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-
 
 MY_PN=${PN/m/M}
 inherit mpd-www
 
 DESCRIPTION="phpMp2 is another web-based client for MPD"
-HOMEPAGE="http://musicpd.org/phpMp2.shtml"
+HOMEPAGE="http://mpd.wikia.com"
 SRC_URI="http://mercury.chem.pitt.edu/~shank/${MY_PN}-${PV}.tar.bz2"
 LICENSE="GPL-2"
 
