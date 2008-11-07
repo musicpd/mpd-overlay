@@ -5,7 +5,7 @@
 
 depend() {
 	need localmount
-	use netmount nfsmount esound
+	use netmount nfsmount esound pulseaudio
 } 
 
 checkconfig() {
