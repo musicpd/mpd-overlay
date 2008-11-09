@@ -5,6 +5,8 @@ if [[ "${PV}" == "9999" ]]; then
 		inherit subversion
 	elif [[ -n "${EDARCS_REPOSITORY}" ]]; then
 		inherit darcs
+	elif [[ -n "${EGIT_REPO_URI}" ]]; then
+		inherit git
 	else
 		die "Could not use $0 for this ebuild"
 	fi
