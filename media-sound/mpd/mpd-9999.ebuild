@@ -82,11 +82,11 @@ src_configure() {
 		$(use_enable fifo) \
 		$(use_enable ffmpeg) \
 		$(use_enable flac) \
+		$(use_enable id3) \
 		$(use_enable ipv6) \
 		$(use_enable jack) \
 		$(use_enable libsamplerate lsr) \
 		$(use_enable mad mp3) \
-		$(use_enable id3) \
 		$(use_enable mikmod mod) \
 		$(use_enable musepack mpc) \
 		$(use_enable oggflac) \
