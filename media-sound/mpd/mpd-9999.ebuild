@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile avahi curl ffmpeg fifo flac icecast ipv6 jack lame libsamplerate mp3 mikmod musepack ogg oggflac oss pulseaudio sysvipc unicode vorbis wavpack"
+IUSE="aac alsa ao audiofile curl ffmpeg fifo flac icecast id3 ipv6 jack lame libsamplerate mad mikmod musepack ogg oggflac oss pulseaudio sysvipc unicode vorbis wavpack zeroconf"
 
 DEPEND="!sys-cluster/mpich2
 	>=sys-devel/automake-1.9
@@ -21,23 +21,23 @@ DEPEND="!sys-cluster/mpich2
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
-	avahi? ( net-dns/avahi )
+	zeroconf? ( net-dns/avahi )
 	curl? ( net-misc/curl )
 	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac )
 	jack? ( media-sound/jack-audio-connection-kit )
 	icecast? ( lame? ( media-sound/lame ) )
+	id3? ( media-libs/libid3tag )
 	lame? ( icecast? ( media-libs/libshout ) )
 	libsamplerate? ( media-libs/libsamplerate )
-	mp3? ( media-libs/libmad
-	       media-libs/libid3tag )
+	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
 	musepack? ( media-libs/libmpcdec )
 	oggflac? ( media-libs/flac[ogg] )
-	ogg? ( media-libs/libogg
-	       icecast? ( media-libs/libshout ) )
+	ogg? ( media-libs/libogg )
 	pulseaudio? ( media-sound/pulseaudio )
-	vorbis? ( media-libs/libvorbis )
+	vorbis? ( media-libs/libvorbis 
+		  icecast? ( media-libs/libshout ) )
 	wavpack? ( media-sound/wavpack )"
 
 pkg_setup() {
@@ -46,7 +46,7 @@ pkg_setup() {
 		ewarn "without an encoder. Building without icecast support".
 	fi
 
-	enewuser mpd "" "" "/var/lib/mpd" audio || die "problem adding user mpd"
+	enewuser mpd "" "" "/var/lib/mpd" audio
 }
 
 src_prepare() {
@@ -59,24 +59,16 @@ src_configure() {
 
 	myconf=""
 
-	if use avahi; then
-		myconf="${myconf} --with-zeroconf=avahi"
+	if use zeroconf; then
+		myconf+=" --with-zeroconf=avahi"
 	else
-		myconf="${myconf} --with-zeroconf=no"
+		myconf+=" --with-zeroconf=no"
 	fi
 
 	if use icecast; then
-		if use lame; then
-			myconf="${myconf} --enable-shout_mp3"
-		else
-			myconf="${myconf} --disable-shout_mp3"
-		fi
-
-		if use icecast; then
-			myconf="${myconf} --enable-shout_ogg"
-		else
-			myconf="${myconf} --disable-shout_ogg"
-		fi
+		myconf+=" $(use_enable vorbis shout_ogg) $(use_enable lame shout_mp3)"
+	else
+		myconf+=" --disable-shout_ogg --disable-shout_mp3"
 	fi
 
 	append-lfs-flags
@@ -93,8 +85,8 @@ src_configure() {
 		$(use_enable ipv6) \
 		$(use_enable jack) \
 		$(use_enable libsamplerate lsr) \
-		$(use_enable mp3) \
-		$(use_enable mp3 id3) \
+		$(use_enable mad mp3) \
+		$(use_enable id3) \
 		$(use_enable mikmod mod) \
 		$(use_enable musepack mpc) \
 		$(use_enable oggflac) \
