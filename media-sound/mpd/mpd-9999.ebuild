@@ -50,7 +50,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
 	epatch "${FILESDIR}"/mpdconf.patch || die "epatch for config file failed"
 }
 
