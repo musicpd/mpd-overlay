@@ -11,7 +11,7 @@ EGIT_REPO_URI="git://repo.or.cz/gmpc.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="+mmkeys +session +trayicon"
+IUSE="+mmkeys +session"
 
 RDEPEND=">=dev-libs/glib-2.10:2
 	dev-perl/XML-Parser
@@ -28,7 +28,7 @@ src_prepare() {
 	einfo "Running intltoolize --automake"
 	intltoolize --automake || die "intltoolize failed"
 
-	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
 }
 
 src_configure() {
@@ -37,8 +37,7 @@ src_configure() {
 		${WORKDIR}/${PF}/src/Makefile.am
 
 	econf $(use_enable mmkeys) \
-		$(use_enable session sm) \
-		$(use_enable trayicon) || die "econf failed"
+		$(use_enable session sm) || die "econf failed"
 }
 
 src_install() {

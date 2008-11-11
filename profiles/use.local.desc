@@ -1,5 +1,4 @@
 media-sound/gmpc:mmkeys - Add support for multimedia keys
-media-sound/gmpc:trayicon - Add support for the trayicon in GMPC
 media-sound/ncmpc:clock-screen - Add support for showing a clock in the client
 media-sound/ncmpc:key-screen - Add support for a key binding screen display
 media-sound/ncmpc:mouse - Add support for using the mouse
