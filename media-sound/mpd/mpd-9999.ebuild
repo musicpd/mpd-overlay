@@ -106,7 +106,7 @@ src_install() {
 
 	emake install DESTDIR="${D}" || die
 	rm -rf "${D}"/usr/share/doc/mpd/
-	dodoc AUTHORS INSTALL NEWS README TODO UPGRADING
+	dodoc AUTHORS NEWS README TODO UPGRADING
 	dodoc doc/COMMANDS doc/mpdconf.example
 
 	insinto /etc
