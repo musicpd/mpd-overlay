@@ -1,7 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-
+EAPI=2
 ESVN_REPO_URI="svn://svn.berlios.de/gimmix/trunk/src"
 inherit subversion autotools
 
@@ -19,10 +19,9 @@ DEPEND=">=x11-libs/gtk+-2.10
 	media-libs/libmpd
 	dev-libs/confuse"
 
-src_unpack() {
-	subversion_src_unpack
+src_prepare() {
 	cd "${S}"
-	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
 }
 
 src_install() {

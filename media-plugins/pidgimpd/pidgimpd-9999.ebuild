@@ -16,7 +16,7 @@ IUSE="debug"
 DEPEND="net-im/pidgin"
 
 src_prepare() {
-	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
 }
 
 src_configure() {

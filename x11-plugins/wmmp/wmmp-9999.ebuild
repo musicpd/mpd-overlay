@@ -18,7 +18,7 @@ DEPEND="x11-libs/libXext
 	x11-libs/libXpm"
 
 src_prepare() {
-	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
 }
 
 src_install () {

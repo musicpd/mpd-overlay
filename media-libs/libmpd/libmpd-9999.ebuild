@@ -19,7 +19,7 @@ DEPEND="virtual/libc
 RDEPEND="doc? ( >=app-doc/doxygen-1.4.6 )"
 
 src_prepare() {
-	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
 }
 
 src_compile() {

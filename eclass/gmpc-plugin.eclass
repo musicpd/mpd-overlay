@@ -16,7 +16,7 @@ if [ -z ${EGIT_REPO_URI} ]; then
 fi
 
 gmpc-plugin_src_prepare() {
-	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
 }
 
 gmpc-plugin_src_install() {

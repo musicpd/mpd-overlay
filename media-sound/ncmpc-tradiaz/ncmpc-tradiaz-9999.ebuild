@@ -24,7 +24,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
 }
 
 src_configure() {

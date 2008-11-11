@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 	dev-util/pkgconfig"
 
 src_prepare() {
-	AT_NOELIBTOOLIZE="yes" eautoreconf
+	eautoreconf
 }
 
 src_install() {
