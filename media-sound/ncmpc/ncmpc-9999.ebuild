@@ -12,29 +12,30 @@ EGIT_REPO_URI="git://git.musicpd.org/cirrus/ncmpc.git"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="clock-screen mouse search-screen key-screen raw-mode nls debug"
+IUSE="artist-screen +colors debug key-screen lirc lyrics-screen minimal mouse nls search-screen"
 
 DEPEND="sys-libs/ncurses
 	dev-libs/popt
 	>=dev-libs/glib-2.4"
 
-pkg_setup() {
-	use search-screen && elog "Please note that the search-screen is experimental"
-}
-
 src_prepare() {
-	AT_M4DIR="${S}/m4" eautoreconf
+	eautoreconf
 }
 
 src_configure() {
 	econf \
-		$(use_enable clock-screen) \
+		$(use_enable artist-screen) \
+		$(use_enable colors) \
 		$(use_enable debug) \
-		$(use_enable mouse) \
+		$(use_enable help-screen) \
 		$(use_enable key-screen) \
+		$(use_enable lirc) \
+		$(use_enable lyrics-screen) \
+		$(use_enable minimal mini) \
+		$(use_enable mouse) \
+		$(use_enable nls) \
 		$(use_enable search-screen) \
-		$(use_with nls) \
-		$(use_with raw-mode) || die "econf failed"
+		$(use_enable wcwidth wide) || die "econf failed"
 }
 
 src_install() {

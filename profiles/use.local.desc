@@ -1,9 +1,14 @@
 media-sound/gmpc:mmkeys - Add support for multimedia keys
-media-sound/ncmpc:clock-screen - Add support for showing a clock in the client
+
+media-sound/ncmpc:artist-screen - Add support for an artist browser screen
+media-sound/ncmpc:colors - Add support for terminal colors
+media-sound/ncmpc:help-screen - Add support for a help screen
 media-sound/ncmpc:key-screen - Add support for a key binding screen display
+media-sound/ncmpc:lyrics - Add support for lyrics fetching and display
 media-sound/ncmpc:mouse - Add support for using the mouse
-media-sound/ncmpc:raw-mode - Add raw terminal support
 media-sound/ncmpc:search-screen - Add support for a search screen display
+media-sound/ncmpc:wcwidth - Enable wide char width support
+
 media-sound/ncmpc-tradiaz:artist-screen - Add support for a artist screen display
 media-sound/ncmpc-tradiaz:clock-screen - Add support for showing a clock in the client
 media-sound/ncmpc-tradiaz:key-screen - Add support for a key binding screen display
