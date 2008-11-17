@@ -1,9 +1,6 @@
 # Doesn't work, says incorrect protocol
 media-sound/playgui
 
-# Known security issues, see Gentoo bugzilla
-www-apps/phpmp2
-
 # Abandoned, but people seem to be expressing
 # interest in this package
 www-apps/phpmpplus
@@ -19,72 +16,3 @@ sys-fs/mpd-updater
 ## No longer maintained
 media-plugins/gmpc-autoplaylist
 media-plugins/gmpc-wikipedia
-
-## Sorry, folks. Due to bad design when I first started this
-## overlay, and due to the fact that there is no portage compatible
-## implementation that can deal with overlays rejecting main repository
-## ebuilds this is necessary. Will try to keep this kind of thing to a
-## minimum in the future.
-#
-## Could not do moves due to dependencies, so all these need to be
-## manually uninstalled and the appropriate -9999 ebuild need to be
-## installed, sorry for the inconvience. 
-app-misc/lcd-stuff-live
-app-portage/update-live-ebuilds-live
-dev-python/py-libmpdclient-live
-dev-ruby/librmpd-live
-media-libs/libmpd-live
-media-plugins/gmpc-alarm-live
-media-plugins/gmpc-autoplaylist-live
-media-plugins/gmpc-avahi-live
-media-plugins/gmpc-coveramazon-live
-media-plugins/gmpc-extraplaylist-live
-media-plugins/gmpc-favorites-live
-media-plugins/gmpc-lastfm-live
-media-plugins/gmpc-libnotify-live
-media-plugins/gmpc-lirc-live
-media-plugins/gmpc-lyrics-live
-media-plugins/gmpc-magnatune-live
-media-plugins/gmpc-mdcover-live
-media-plugins/gmpc-mserver-live
-media-plugins/gmpc-osd-live
-media-plugins/gmpc-playlistsort-live
-media-plugins/gmpc-qosd-live
-media-plugins/gmpc-random-playlist-live
-media-plugins/gmpc-serverstats-live
-media-plugins/gmpc-shout-live
-media-plugins/gmpc-stopbutton-live
-media-plugins/gmpc-wikipedia-live
-media-plugins/pidgimpd-live
-media-sound/ario-live
-media-sound/evad-live
-media-sound/gbemol-live
-media-sound/gimmix-live
-media-sound/glurp-libmpd-live
-media-sound/glurp-live
-media-sound/gmpc-live
-media-sound/kanola-live
-media-sound/kmp-live
-media-sound/kutempc-live
-media-sound/mpc-live
-media-sound/mpd-ke-live
-media-sound/mpd-live
-media-sound/mpdscribble-live
-media-sound/ncmpc-live
-media-sound/ncmpc-tradiaz-live
-media-sound/pygmy-live
-media-sound/pympd-live
-media-sound/scmpc-live
-media-sound/sonata-live
-media-sound/state-utils-live
-sys-fs/mpd-updater-live
-www-apps/ajaxmp-live
-www-apps/neompc-live
-www-apps/phpmp-live
-www-apps/phpmp2-live
-www-apps/phpmpplus-live
-www-apps/pitchfork-live
-x11-plugins/wmmp-live
-
-## mpd-mk is now merged with the master branch and Max is the new maintainer. Will remove in a week.
-media-sound/mpd-mk
