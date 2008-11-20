@@ -16,8 +16,10 @@ DEPEND="=media-plugins/gmpc-alarm-9999
 	=media-plugins/gmpc-favorites-9999
 	=media-plugins/gmpc-jamendo-9999
 	=media-plugins/gmpc-lastfm-9999
+	=media-plugins/gmpc-lastfmradio-9999
 	libnotify? ( =media-plugins/gmpc-libnotify-9999 )
 	lirc? ( =media-plugins/gmpc-lirc-9999 )
+	=media-plugins/gmpc-lyrdb-9999
 	=media-plugins/gmpc-lyrics-9999
 	=media-plugins/gmpc-lyricwiki-9999
 	=media-plugins/gmpc-magnatune-9999
