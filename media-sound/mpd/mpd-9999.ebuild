@@ -21,8 +21,8 @@ DEPEND="!sys-cluster/mpich2
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
-	zeroconf? ( net-dns/avahi )
 	curl? ( net-misc/curl )
+	doc? ( app-text/xmlto )
 	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac )
 	jack? ( media-sound/jack-audio-connection-kit )
@@ -38,7 +38,8 @@ DEPEND="!sys-cluster/mpich2
 	pulseaudio? ( media-sound/pulseaudio )
 	vorbis? ( media-libs/libvorbis 
 		  icecast? ( media-libs/libshout ) )
-	wavpack? ( media-sound/wavpack )"
+	wavpack? ( media-sound/wavpack )
+	zeroconf? ( net-dns/avahi )"
 
 pkg_setup() {
 	if ! use lame && ! use ogg && ! use icecast; then
