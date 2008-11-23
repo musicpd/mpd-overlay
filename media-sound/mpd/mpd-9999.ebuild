@@ -109,7 +109,7 @@ src_install() {
 	emake install DESTDIR="${D}" || die
 	rm -rf "${D}"/usr/share/doc/mpd/
 	dodoc AUTHORS NEWS README TODO UPGRADING
-	dodoc doc/COMMANDS doc/mpdconf.example
+	dodoc doc/protocol.html doc/mpdconf.example
 
 	insinto /etc
 	newins doc/mpdconf.example mpd.conf
@@ -119,6 +119,7 @@ src_install() {
 	if use unicode; then
 		dosed 's:^#filesystem_charset.*$:filesystem_charset "UTF-8":' /etc/mpd.conf
 	fi
+
 	diropts -m0755 -o mpd -g audio
 	dodir /var/lib/mpd/music
 	keepdir /var/lib/mpd/music
