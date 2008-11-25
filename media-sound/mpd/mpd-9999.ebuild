@@ -106,10 +106,17 @@ src_install() {
 	fperms 750 /var/run/mpd
 	keepdir /var/run/mpd
 
+	if [ ! use doc ]; then
+		rm -v doc/protocol.html
+	fi
+
 	emake install DESTDIR="${D}" || die
 	rm -rf "${D}"/usr/share/doc/mpd/
-	dodoc AUTHORS NEWS README TODO UPGRADING
-	dodoc doc/protocol.html doc/mpdconf.example
+
+	if [ use doc ]; then
+		dodoc AUTHORS NEWS README TODO UPGRADING
+		dodoc doc/protocol.html doc/mpdconf.example
+	fi
 
 	insinto /etc
 	newins doc/mpdconf.example mpd.conf
