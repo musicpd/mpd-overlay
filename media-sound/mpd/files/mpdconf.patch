@@ -1,5 +1,7 @@
---- doc/mpdconf.example	2006-09-15 03:39:30.000000000 +0200
-+++ doc/mpdconf.example.gentoo	2006-09-16 19:57:42.000000000 +0200
+diff --git a/doc/mpdconf.example b/doc/mpdconf.example
+index 151c946..64ce228 100644
+--- a/doc/mpdconf.example
++++ b/doc/mpdconf.example
 @@ -1,12 +1,12 @@
 -# An example configuration file for MPD
 +# A default Gentoo configuration file for MPD
@@ -16,10 +18,10 @@
 +db_file                         "/var/lib/mpd/database"
 +log_file                        "/var/log/mpd/mpd.log"
 +error_file                      "/var/log/mpd/mpd.error.log"
+ #follow_outside_symlinks         "no"
+ #follow_inside_symlinks          "yes"
  ################################################################
- 
- 
-@@ -15,13 +15,13 @@
+@@ -17,13 +17,13 @@ error_file                      "~/.mpd/mpd.error"
  # If you wish to use mpd --kill to stop MPD, then you must
  # specify a file here in which to store MPD's process ID.
  #
@@ -35,7 +37,7 @@
  #
  ################################################################
  
-@@ -33,11 +33,11 @@
+@@ -35,11 +35,11 @@ error_file                      "~/.mpd/mpd.error"
  # started by.  If left unspecified, MPD will not drop root
  # privileges at all (not recommended).
  #
