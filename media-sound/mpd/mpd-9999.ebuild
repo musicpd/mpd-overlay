@@ -14,8 +14,8 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="aac alsa ao audiofile curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame libsamplerate mad mikmod musepack ogg oggflac oss pulseaudio sysvipc unicode vorbis wavpack zeroconf"
 
+WANT_AUTOMAKE="1.10"
 DEPEND="!sys-cluster/mpich2
-	>=sys-devel/automake-1.9
 	>=dev-libs/glib-2.4:2
 	aac? ( >=media-libs/faad2-2.0_rc2 )
 	alsa? ( media-sound/alsa-utils )
@@ -42,7 +42,7 @@ DEPEND="!sys-cluster/mpich2
 	zeroconf? ( net-dns/avahi )"
 
 pkg_setup() {
-	if ! use lame && ! use ogg && ! use icecast; then
+	if ! use lame && ! use ogg && use icecast; then
 		ewarn "Asking to build without icecast, but also asked to build"
 		ewarn "without an encoder. Building without icecast support".
 	fi
@@ -52,7 +52,7 @@ pkg_setup() {
 
 src_prepare() {
 	eautoreconf
-	epatch "${FILESDIR}"/mpdconf.patch || die "epatch for config file failed"
+	epatch "${FILESDIR}"/mpdconf.patch
 }
 
 src_configure() {
@@ -97,7 +97,7 @@ src_configure() {
 		$(use_enable sysvipc un) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable wavpack) \
-		${myconf} || die "could not configure"
+		${myconf}
 }
 
 src_install() {
@@ -106,17 +106,11 @@ src_install() {
 	fperms 750 /var/run/mpd
 	keepdir /var/run/mpd
 
-	if [ ! use doc ]; then
-		rm -v doc/protocol.html
-	fi
-
 	emake install DESTDIR="${D}" || die
 	rm -rf "${D}"/usr/share/doc/mpd/
 
-	if [ use doc ]; then
-		dodoc AUTHORS NEWS README TODO UPGRADING
-		dodoc doc/protocol.html doc/mpdconf.example
-	fi
+	dodoc AUTHORS NEWS README TODO UPGRADING
+	dodoc doc/protocol.html doc/mpdconf.example
 
 	insinto /etc
 	newins doc/mpdconf.example mpd.conf
