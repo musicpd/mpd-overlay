@@ -42,7 +42,7 @@ DEPEND="!sys-cluster/mpich2
 	zeroconf? ( net-dns/avahi )"
 
 pkg_setup() {
-	if ! use lame && ! use ogg && use icecast; then
+	if ! use lame && ! use vorbis && use icecast; then
 		ewarn "Asking to build without icecast, but also asked to build"
 		ewarn "without an encoder. Building without icecast support".
 	fi
