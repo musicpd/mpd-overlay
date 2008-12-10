@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=2
-EGIT_REPO_URI="git://git.musicpd.org/jat/mpc.git"
+EGIT_REPO_URI="git://git.musicpd.org/master/mpc.git"
 inherit git autotools bash-completion
 
 DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
