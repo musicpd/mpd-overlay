@@ -110,7 +110,7 @@ src_install() {
 	rm -rf "${D}"/usr/share/doc/mpd/
 
 	dodoc AUTHORS NEWS README TODO UPGRADING
-	dodoc doc/protocol.html doc/mpdconf.example
+	use doc && dodoc doc/protocol.html
 
 	insinto /etc
 	newins doc/mpdconf.example mpd.conf
