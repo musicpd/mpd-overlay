@@ -19,6 +19,7 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	>=gnome-base/libglade-2.3
 	>=media-libs/libmpd-0.16.0
 	net-misc/curl
+	x11-libs/libsexy
 	>=x11-libs/gtk+-2.12:2
 	session? ( x11-libs/libSM )"
 DEPEND="${RDEPEND}
@@ -37,7 +38,8 @@ src_configure() {
 		${WORKDIR}/${PF}/src/Makefile.am
 
 	econf $(use_enable mmkeys) \
-		$(use_enable session sm) || die "econf failed"
+		$(use_enable session sm) \
+		--enable-system-libsexy || die "econf failed"
 }
 
 src_install() {
