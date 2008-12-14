@@ -1,9 +1,9 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=2
-ESVN_REPO_URI="http://${PN}.googlecode.com/svn/trunk"
-inherit subversion
+EGIT_REPO_URI="git://git.musicpd.org/master/mpdscribble.git"
+inherit git
 
 DESCRIPTION="An MPD client that submits information to audioscrobbler."
 HOMEPAGE="http://www.frob.nl/scribble.html"
