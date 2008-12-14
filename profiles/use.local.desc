@@ -6,6 +6,7 @@ media-sound/ncmpc:help-screen - Add support for a help screen
 media-sound/ncmpc:key-screen - Add support for a key binding screen display
 media-sound/ncmpc:lyrics - Add support for lyrics fetching and display
 media-sound/ncmpc:mouse - Add support for using the mouse
+media-sound/ncmpc:output-screen - Add support for a output screen controller
 media-sound/ncmpc:search-screen - Add support for a search screen display
 media-sound/ncmpc:wcwidth - Enable wide char width support
 
