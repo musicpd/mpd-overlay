@@ -12,6 +12,7 @@ IUSE="amazon avahi libnotify lirc taglib xosd"
 DEPEND="=media-plugins/gmpc-alarm-9999
 	avahi? ( =media-plugins/gmpc-avahi-9999 )
 	amazon? ( =media-plugins/gmpc-coveramazon-9999 )
+	=media-plugins/gmpc-discogs-9999
 	=media-plugins/gmpc-extraplaylist-9999
 	=media-plugins/gmpc-favorites-9999
 	=media-plugins/gmpc-jamendo-9999
