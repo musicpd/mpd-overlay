@@ -1,22 +1,25 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=2
+EAPI="2"
 
 inherit git autotools
 
 DESCRIPTION="A ncurses client for the Music Player Daemon (MPD)"
-HOMEPAGE="http://mpd.wikia.com/index.php?title=Client:Ncmpc&oldid=5100"
+HOMEPAGE="http://mpd.wikia.com/wiki/Client:Ncmpc"
 LICENSE="GPL-2"
 EGIT_REPO_URI="git://git.musicpd.org/cirrus/ncmpc.git"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="artist-screen +colors debug key-screen lirc lyrics-screen minimal mouse nls output-screen search-screen"
+IUSE="artist-screen +colors debug key-screen lirc lyrics-screen minimal mouse nls output-screen search-screen -wide"
 
-DEPEND="sys-libs/ncurses
+RDEPEND=">=dev-libs/glib-2.4
 	dev-libs/popt
-	>=dev-libs/glib-2.4"
+	sys-libs/ncurses
+	lirc? ( app-misc/lirc )"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 src_prepare() {
 	eautoreconf
@@ -40,6 +43,5 @@ src_configure() {
 }
 
 src_install() {
-	make install DESTDIR="${D}" docdir="/usr/share/doc/${PF}" \
-		|| die "install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 }
