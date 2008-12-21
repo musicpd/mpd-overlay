@@ -27,11 +27,9 @@ src_configure() {
 }
 
 src_install() {
+	dobin doc/mpd-m3u-handler.sh
+	dobin doc/mpd-pls-handler.sh
 	emake DESTDIR="${D}" install || die
-	dobin doc/mpd-m3u-handler
-	dobin doc/mpd-pls-handler
-	dobin src/mpc
-	dodoc AUTHORS INSTALL README doc/mppledit
 
 	dobashcompletion doc/mpc-bashrc
 }
