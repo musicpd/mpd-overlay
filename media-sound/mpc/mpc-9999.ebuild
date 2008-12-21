@@ -28,8 +28,6 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	mv -v doc/m3u-handler.sh doc/mpd-m3u-handler
-	mv -v doc/pls-handler.sh doc/mpd-pls-handler
 	dobin doc/mpd-m3u-handler
 	dobin doc/mpd-pls-handler
 	dobin src/mpc
