@@ -1,53 +1,72 @@
 diff --git a/doc/mpdconf.example b/doc/mpdconf.example
-index 151c946..64ce228 100644
+index ccbb003..422ca04 100644
 --- a/doc/mpdconf.example
 +++ b/doc/mpdconf.example
-@@ -1,12 +1,12 @@
+@@ -1,4 +1,4 @@
 -# An example configuration file for MPD
 +# A default Gentoo configuration file for MPD
  # See the mpd.conf man page for a more detailed description of each parameter.
  
- ######################## REQUIRED PATHS ########################
--music_directory                 "~/music"
--playlist_directory              "~/.mpd/playlists"
--db_file                         "~/.mpd/mpd.db"
--log_file                        "~/.mpd/mpd.log"
--error_file                      "~/.mpd/mpd.error"
-+music_directory                 "/var/lib/mpd/music"
-+playlist_directory              "/var/lib/mpd/playlists"
-+db_file                         "/var/lib/mpd/database"
-+log_file                        "/var/log/mpd/mpd.log"
-+error_file                      "/var/log/mpd/mpd.error.log"
- #follow_outside_symlinks         "yes"
- #follow_inside_symlinks          "yes"
- ################################################################
-@@ -17,13 +17,13 @@ error_file                      "~/.mpd/mpd.error"
- # If you wish to use mpd --kill to stop MPD, then you must
- # specify a file here in which to store MPD's process ID.
+ # Required files and directories ##############################################
+@@ -6,23 +6,23 @@
+ # From this directory MPD will discover the available audio files and add them 
+ # to the daemon's online database.
  #
--#pid_file                        "~/.mpd/mpd.pid"
-+pid_file                        "/var/run/mpd/mpd.pid"
+-music_directory			"~/music"
++music_directory			"/var/lib/mpd/music"
  #
- # If specified, MPD will save its current state (playlist,
- # current song, playing/paused, etc.) at exit.  This will be
- # used to restore the session the next time it is run.
+ # This is the MPD internal playlist directory. This directory is not intended
+ # for preexisting playlists which were not created by MPD. 
  #
--#state_file                      "~/.mpd/mpdstate"
-+state_file                      "/var/lib/mpd/state"
+-playlist_directory		"~/.mpd/playlists"
++playlist_directory		"/var/lib/mpd/playlists"
  #
- ################################################################
+ # This is the database file. This holds MPDs audio file locations when the
+ # daemon is down.
+ #
+-db_file				"~/.mpd/database"
++db_file				"/var/lib/mpd/database"
+ # 
+ # The log files for the daemon. Great for troubleshooting, depending on your
+ # log_level.
+ #
+-log_file			"~/.mpd/log"
+-error_file			"~/.mpd/error-log"
++log_file			"/var/log/mpd/mpd.log"
++error_file			"/var/log/mpd/mpd.error.log"
+ ###############################################################################
  
-@@ -35,11 +35,11 @@ error_file                      "~/.mpd/mpd.error"
- # started by.  If left unspecified, MPD will not drop root
- # privileges at all (not recommended).
+ 
+@@ -30,13 +30,13 @@ error_file			"~/.mpd/error-log"
  #
--#user                            "nobody"
-+user                            "mpd"
+ # This file is required for mpd --kill, and some init script, usage.
  #
- # The address and port to listen on.
+-#pid_file			"~/.mpd/pid"
++pid_file			"/var/run/mpd/mpd.pid"
  #
--#bind_to_address                 "any"
-+bind_to_address                 "localhost"
- #port                            "6600"
+ # This file contains information about most variables to get MPD back into the
+ # same general shape it was in before it was brought down. This file must be 
+ # specified to utilize this feature.
  #
- # Controls the amount of information that is logged.  Can be
+-#state_file			"~/.mpd/state"
++state_file			"/var/lib/mpd/state"
+ #
+ ###############################################################################
+ 
+@@ -48,14 +48,14 @@ error_file			"~/.mpd/error-log"
+ # its user id after initialization.  Do not use this option if you
+ # start MPD as an unprivileged user.
+ #
+-#user				"nobody"
++user				"mpd"
+ #
+ # The address for the daemon to listen on. Careful attention should be paid 
+ # if this is assigned to anything other then the default, any. This option can
+ # deny access to control of the daemon.
+ #
+ # For network
+-#bind_to_address		"any"
++bind_to_address			"localhost"
+ #
+ # And for Unix Socket
+ #bind_to_address		"~/.mpd/socket"
