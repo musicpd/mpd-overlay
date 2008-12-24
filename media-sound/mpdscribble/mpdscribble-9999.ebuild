@@ -3,10 +3,10 @@
 
 EAPI=2
 EGIT_REPO_URI="git://git.musicpd.org/master/mpdscribble.git"
-inherit git
+inherit git autotools
 
 DESCRIPTION="An MPD client that submits information to audioscrobbler."
-HOMEPAGE="http://www.frob.nl/scribble.html"
+HOMEPAGE="http://mpd.wikia.com/wiki/Client:Mpdscribble"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
@@ -14,6 +14,10 @@ SLOT="0"
 IUSE=""
 
 DEPEND="net-libs/libsoup:2.2"
+
+src_prepare() {
+	eautoreconf
+}
 
 src_install() {
 	make DESTDIR=${D} install || die
