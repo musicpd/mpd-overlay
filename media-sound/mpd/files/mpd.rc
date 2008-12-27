@@ -4,7 +4,7 @@
 
 depend() {
 	need localmount
-	use netmount nfsmount esound pulseaudio jack alsasound
+	use net.lo netmount nfsmount esound pulseaudio alsasound jack
 } 
 
 checkconfig() {
@@ -20,12 +20,12 @@ start() {
 	checkconfig || return 1
 
 	ebegin "Starting Music Player Daemon" 
-	/usr/bin/mpd --no-create-db /etc/mpd.conf
+	/usr/bin/mpd /etc/mpd.conf
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping Music Player Daemon"
-	/usr/bin/mpd --kill
+	/usr/bin/mpd --kill /etc/mpd.conf
 	eend $? 
 }
