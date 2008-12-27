@@ -4,7 +4,7 @@
 EAPI=2
 inherit git flag-o-matic autotools
 
-EGIT_REPO_URI="git://repo.or.cz/mpd-mk.git"
+EGIT_REPO_URI="git://git.musicpd.org/master/mpd.git"
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame libsamplerate mad mikmod musepack ogg oggflac oss pulseaudio sysvipc unicode vorbis wavpack zeroconf"
+IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame libsamplerate mad mikmod musepack ogg oggflac oss pulseaudio sysvipc unicode vorbis wavpack zeroconf zip"
 
 WANT_AUTOMAKE="1.10"
 DEPEND="!sys-cluster/mpich2
@@ -21,6 +21,8 @@ DEPEND="!sys-cluster/mpich2
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4 )
 	audiofile? ( media-libs/audiofile )
+	bzip2? ( app-arch/bzip2 )
+	cdio? ( dev-libs/libcdio )
 	curl? ( net-misc/curl )
 	doc? ( app-text/xmlto )
 	ffmpeg? ( media-video/ffmpeg )
@@ -39,7 +41,8 @@ DEPEND="!sys-cluster/mpich2
 	vorbis? ( media-libs/libvorbis 
 		  icecast? ( media-libs/libshout ) )
 	wavpack? ( media-sound/wavpack )
-	zeroconf? ( net-dns/avahi )"
+	zeroconf? ( net-dns/avahi )
+	zip? ( dev-libs/zziplib )"
 
 pkg_setup() {
 	if ! use lame && ! use vorbis && use icecast; then
@@ -79,7 +82,9 @@ src_configure() {
 		$(use_enable alsa) \
 		$(use_enable ao) \
 		$(use_enable audiofile) \
+		$(use_enable bzip2 bz2) \
 		$(use_enable curl) \
+		$(use_enable cdio iso9660) \
 		$(use_enable debug) \
 		$(use_enable fifo) \
 		$(use_enable ffmpeg) \
@@ -97,6 +102,7 @@ src_configure() {
 		$(use_enable sysvipc un) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable wavpack) \
+		$(use_enable zip) \
 		${myconf}
 }
 
