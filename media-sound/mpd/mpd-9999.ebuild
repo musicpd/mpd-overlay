@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame libsamplerate mad mikmod musepack ogg oggflac oss pulseaudio sysvipc unicode vorbis wavpack zeroconf zip"
 
 WANT_AUTOMAKE="1.10"
-DEPEND="!sys-cluster/mpich2
+RDEPEND="!sys-cluster/mpich2
 	>=dev-libs/glib-2.4:2
 	aac? ( >=media-libs/faad2-2.0_rc2 )
 	alsa? ( media-sound/alsa-utils )
@@ -24,13 +24,13 @@ DEPEND="!sys-cluster/mpich2
 	bzip2? ( app-arch/bzip2 )
 	cdio? ( dev-libs/libcdio )
 	curl? ( net-misc/curl )
-	doc? ( app-text/xmlto )
 	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac )
-	jack? ( media-sound/jack-audio-connection-kit )
-	icecast? ( lame? ( media-sound/lame ) )
+	icecast? ( lame? ( media-libs/libshout )
+		vorbis? ( media-libs/libshout ) )
 	id3? ( media-libs/libid3tag )
-	lame? ( icecast? ( media-libs/libshout ) )
+	jack? ( media-sound/jack-audio-connection-kit )
+	lame? ( icecast? ( media-sound/lame ) )
 	libsamplerate? ( media-libs/libsamplerate )
 	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
@@ -38,16 +38,18 @@ DEPEND="!sys-cluster/mpich2
 	oggflac? ( media-libs/flac[ogg] )
 	ogg? ( media-libs/libogg )
 	pulseaudio? ( media-sound/pulseaudio )
-	vorbis? ( media-libs/libvorbis 
-		  icecast? ( media-libs/libshout ) )
+	vorbis? ( media-libs/libvorbis )
 	wavpack? ( media-sound/wavpack )
 	zeroconf? ( net-dns/avahi )
 	zip? ( dev-libs/zziplib )"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig
+	doc? ( app-text/xmlto )"
 
 pkg_setup() {
-	if ! use lame && ! use vorbis && use icecast; then
-		ewarn "Asking to build with icecast, but also asked to build"
-		ewarn "without an encoder. Building without icecast support".
+	if use icecast && ! use lame && ! use vorbis; then
+		ewarn "USE=icecast enabled but lame and vorbis disabled,"
+		ewarn "disabling icecast"
 	fi
 
 	enewuser mpd "" "" "/var/lib/mpd" audio
@@ -59,15 +61,9 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf
+	local myconf=""
 
 	myconf=""
-
-	if use zeroconf; then
-		myconf+=" --with-zeroconf=avahi"
-	else
-		myconf+=" --with-zeroconf=no"
-	fi
 
 	if use icecast; then
 		myconf+=" $(use_enable vorbis shout_ogg) $(use_enable lame shout_mp3)"
@@ -103,6 +99,7 @@ src_configure() {
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable wavpack) \
 		$(use_enable zip) \
+		$(use_with zeroconf zeroconf avahi) \
 		${myconf}
 }
 
@@ -112,7 +109,7 @@ src_install() {
 	fperms 750 /var/run/mpd
 	keepdir /var/run/mpd
 
-	emake install DESTDIR="${D}" || die
+	emake DESTDIR="${D}" install || die "emake install failed"
 	rm -rf "${D}"/usr/share/doc/mpd/
 
 	dodoc AUTHORS NEWS README TODO UPGRADING
@@ -124,7 +121,8 @@ src_install() {
 	newinitd "${FILESDIR}"/mpd.rc mpd
 
 	if use unicode; then
-		dosed 's:^#filesystem_charset.*$:filesystem_charset "UTF-8":' /etc/mpd.conf
+		dosed 's:^#filesystem_charset.*$:filesystem_charset "UTF-8":' \
+			/etc/mpd.conf || die "dosed failed"
 	fi
 
 	diropts -m0755 -o mpd -g audio
@@ -135,12 +133,13 @@ src_install() {
 	dodir /var/log/mpd
 	keepdir /var/log/mpd
 
-	use alsa && \
-		dosed 's:need :need alsasound :' /etc/init.d/mpd
+	if use alsa; then
+		dosed 's:need :need alsasound :' /etc/init.d/mpd || die "dosed failed"
+	fi
 }
 
 pkg_postinst() {
-	elog "If you will be starting mpd via /etc/init.d/mpd initscript, please make"
+	elog "If you will be starting mpd via /etc/init.d/mpd, please make"
 	elog "sure that MPD's pid_file is set to /var/run/mpd/mpd.pid."
 
 	# also change the homedir if the user has existed before
