@@ -82,7 +82,7 @@ src_configure() {
 		$(use_enable alsa) \
 		$(use_enable ao) \
 		$(use_enable audiofile) \
-		$(use_enable bzip2 bz2) \
+		$(use_enable bzip2) \
 		$(use_enable curl) \
 		$(use_enable cdio iso9660) \
 		$(use_enable debug) \
