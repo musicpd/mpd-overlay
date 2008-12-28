@@ -1,5 +1,5 @@
 diff --git a/doc/mpdconf.example b/doc/mpdconf.example
-index d2d1409..b83152c 100644
+index 2de2e05..4285fb1 100644
 --- a/doc/mpdconf.example
 +++ b/doc/mpdconf.example
 @@ -1,4 +1,4 @@
@@ -8,7 +8,7 @@ index d2d1409..b83152c 100644
  # See the mpd.conf man page for a more detailed description of each parameter.
  
  # Required files and directories ##############################################
-@@ -6,27 +6,27 @@
+@@ -6,20 +6,20 @@
  # This setting controls the top directory which MPD will search to discover the
  # available audio files and add them to the daemon's online database.
  #
@@ -32,16 +32,16 @@ index d2d1409..b83152c 100644
  # 
  # These settings are the locations for the daemon log files for the daemon.
  # These logs are great for troubleshooting, depending on your log_level
- # settings.
+@@ -29,7 +29,7 @@ db_file				"~/.mpd/database"
+ # On most systems, log messages will appear in /var/log/daemon.log
+ # then.
  #
 -log_file			"~/.mpd/log"
--error_file			"~/.mpd/error-log"
-+log_file			"/var/log/mpd/mpd.log"
-+error_file			"/var/log/mpd/mpd.error.log"
++log_file			"/var/log/mpd.log"
  ###############################################################################
  
  
-@@ -36,13 +36,13 @@ error_file			"~/.mpd/error-log"
+@@ -39,13 +39,13 @@ log_file			"~/.mpd/log"
  # for use of mpd --kill and some init scripts. This setting is disabled by
  # default.
  #
@@ -57,7 +57,7 @@ index d2d1409..b83152c 100644
  #
  ###############################################################################
  
-@@ -55,14 +55,14 @@ error_file			"~/.mpd/error-log"
+@@ -58,14 +58,14 @@ log_file			"~/.mpd/log"
  # unprivileged user. This setting is disabled by default, and the server will
  # run as root.
  #
