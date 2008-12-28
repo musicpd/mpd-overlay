@@ -64,8 +64,6 @@ src_prepare() {
 src_configure() {
 	local myconf=""
 
-	myconf=""
-
 	if use icecast; then
 		myconf+=" $(use_enable vorbis shout_ogg) $(use_enable lame shout_mp3)"
 	else
