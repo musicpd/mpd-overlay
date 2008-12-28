@@ -22,8 +22,8 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_prepare() {
-	glib-gettextize --force --copy
 	eautoreconf
+	glib-gettextize --force --copy
 }
 
 src_configure() {
