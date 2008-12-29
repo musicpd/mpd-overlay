@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=2
-inherit autotools git
+inherit autotools git gnome2-utils
 
 DESCRIPTION="A GTK+2 client for the Music Player Daemon."
 HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/GMPC"
@@ -17,13 +17,15 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	dev-perl/XML-Parser
 	dev-util/gob
 	>=gnome-base/libglade-2.3
-	>=media-libs/libmpd-0.16.0
+	>=media-libs/libmpd-0.17
 	net-misc/curl
-	x11-libs/libsexy
 	>=x11-libs/gtk+-2.12:2
+	x11-libs/libsexy
 	session? ( x11-libs/libSM )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/intltool
+	dev-util/pkgconfig
+	sys-devel/gettext"
 
 src_prepare() {
 	einfo "Running intltoolize --automake"
@@ -39,10 +41,22 @@ src_configure() {
 
 	econf $(use_enable mmkeys) \
 		$(use_enable session sm) \
-		--enable-system-libsexy || die "econf failed"
+		--enable-system-libsexy
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README TODO
+}
+
+pkg_preinst() {
+	gnome2_icon_savelist
+}
+
+pkg_postinst() {
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
 }
