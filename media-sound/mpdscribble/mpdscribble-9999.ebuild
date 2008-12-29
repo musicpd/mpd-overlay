@@ -13,35 +13,25 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 
-DEPEND="net-libs/libsoup:2.2"
+RDEPEND="dev-libs/glib:2
+	net-libs/libsoup:2.4"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 src_prepare() {
 	eautoreconf
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
-
-	exeinto /usr/share/mpdscribble
-	doexe setup.sh
-
-	doman mpdscribble.1
-	newinitd ${FILESDIR}/mpdscribble.rc mpdscribble
-
-	dodoc AUTHORS ChangeLog NEWS README TODO
-
+	emake DESTDIR="${D}" install || die "emake install failed"
+	newinitd "${FILESDIR}/mpdscribble.rc" mpdscribble
+	dodoc AUTHORS NEWS README
+	rm -r -f "${D}"/usr/share/doc/${PN}
 	dodir /var/cache/mpdscribble
 }
 
 pkg_postinst() {
-	einfo ""
-	einfo "Please run:"
-	einfo "  /usr/share/mpdscribble/setup.sh"
-	einfo "in order to configure mpdscribble. If you do this as root, a"
-	einfo "system-wide configuration will be created. Otherwise, a per-user"
-	einfo "configuration file will be created."
-	einfo ""
-	einfo "To start mpdscribble:"
-	einfo "  /etc/init.d/mpdscribble start"
-	einfo ""
+	elog "If you are going to use the init script shipped with this script, you"
+	elog "will have to create a config file (/etc/${PN}.conf), see the man page"
+	elog "for instructions on how to write one."
 }
