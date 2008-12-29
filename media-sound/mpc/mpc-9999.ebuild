@@ -13,9 +13,8 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE="nls"
 
-DEPEND="virtual/libc
-	dev-util/gperf
-	nls? ( || ( sys-libs/glibc dev-libs/libiconv ) )"
+DEPEND="nls? ( || ( sys-libs/glibc dev-libs/libiconv ) )
+	dev-util/gperf"
 
 src_prepare() {
 	eautoreconf
@@ -23,13 +22,14 @@ src_prepare() {
 
 src_configure() {
 	econf --disable-dependency-tracking \
-		$(use_enable nls iconv) || die "econf failed"
+		$(use_enable nls iconv)
 }
 
 src_install() {
 	dobin doc/mpd-m3u-handler.sh
 	dobin doc/mpd-pls-handler.sh
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc AUTHORS ChangeLog README
 
 	dobashcompletion doc/mpc-bashrc
 }
