@@ -12,11 +12,11 @@ EGIT_REPO_URI='git://repo.or.cz/libmpd.git'
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 IUSE="doc"
-DEPEND="virtual/libc
-	!media-libs/libmpd
-	>=dev-libs/glib-2
+RDEPEND=">=dev-libs/glib-2.16:2
 	sys-devel/libtool"
-RDEPEND="doc? ( >=app-doc/doxygen-1.4.6 )"
+DEPEND="${REDEPEND}
+	doc? ( >=app-doc/doxygen-1.4.6 )
+	dev-util/pkgconfig"
 
 src_prepare() {
 	eautoreconf
@@ -29,6 +29,7 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed."
 	use doc && dohtml -r doc/html/
+	dodoc AUTHORS ChangeLog NEWS README
 }
