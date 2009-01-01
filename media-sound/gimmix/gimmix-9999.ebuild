@@ -13,17 +13,18 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 SLOT="0"
 IUSE=""
 
-DEPEND=">=x11-libs/gtk+-2.10
+RDEPEND=">=x11-libs/gtk+-2.10
 	>=gnome-base/libglade-2.6
 	x11-libs/libnotify
 	media-libs/libmpd
-	dev-libs/confuse"
+	dev-libs/confuse
+	net-libs/libnxml"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
-	cd "${S}"
 	eautoreconf
 }
 
 src_install() {
-	make DESTDIR=${D} install || die "make install failed"
+	emake DESTDIR="${D}" install || die "make install failed"
 }
