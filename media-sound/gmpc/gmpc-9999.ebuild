@@ -31,7 +31,8 @@ src_prepare() {
 	einfo "Running intltoolize --automake"
 	intltoolize --automake || die "intltoolize failed"
 
-	sed -ie "s%REVISION=.*%REVISION=${GIT_DIR}%" \
+	## This changes the "about" screen to show the current revision
+	sed -ie "s%REVISION=.*%REVISION=${newhash:0:8}%" \
 		${WORKDIR}/${PF}/src/Makefile.am
 
 	eautoreconf
