@@ -6,12 +6,12 @@ EAPI=2
 MY_PN="QtMPC"
 MY_P="${MY_PN}-${PV}"
 
-inherit qt4 eutils subversion cmake-utils
+inherit qt4 eutils cmake-utils
 
 DESCRIPTION="Another QT4 client with Amarok-like tree view music library interface."
 HOMEPAGE="http://qtmpc.lowblog.nl"
 LICENSE="GPL-2"
-ESVN_REPO_URI="http://qtmpc.lowblog.nl/svn"
+SRC_URI="http://files.lowblog.nl/${PN}/${MY_P}.tar.bz2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
