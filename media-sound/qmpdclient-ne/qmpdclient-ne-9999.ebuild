@@ -13,7 +13,8 @@ SLOT="0"
 KEYWORDS="amd64 ~hppa ppc ~sparc x86"
 IUSE=""
 
-DEPEND="|| ( x11-libs/qt-gui:4 =x11-libs/qt-4.3* )"
+RDEPEND="x11-libs/qt-gui:4
+	x11-libs/qt-dbus:4"
 
 src_prepare() {
 	# Fix the install path
