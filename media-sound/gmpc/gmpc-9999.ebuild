@@ -31,14 +31,13 @@ src_prepare() {
 	einfo "Running intltoolize --automake"
 	intltoolize --automake || die "intltoolize failed"
 
+	sed -ie "s%REVISION=.*%REVISION=${GIT_DIR}%" \
+		${WORKDIR}/${PF}/src/Makefile.am
+
 	eautoreconf
 }
 
 src_configure() {
-	sed -ie \
-		"s%REVISION=.*%REVISION=`git --git-dir="${EGIT_STORE_DIR}/${EGIT_PROJECT}" rev-parse ${EGIT_BRANCH}`%" \
-		${WORKDIR}/${PF}/src/Makefile.am
-
 	econf $(use_enable mmkeys) \
 		$(use_enable session sm) \
 		--enable-system-libsexy
