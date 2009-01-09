@@ -41,7 +41,8 @@ src_prepare() {
 src_configure() {
 	econf $(use_enable mmkeys) \
 		$(use_enable session sm) \
-		--enable-system-libsexy
+		--enable-system-libsexy \
+		--disable-libunique
 }
 
 src_install() {
