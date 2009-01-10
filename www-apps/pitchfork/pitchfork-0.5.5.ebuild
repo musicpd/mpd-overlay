@@ -1,11 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit webapp eutils depend.php subversion
+inherit webapp eutils depend.php
 
 DESCRIPTION="A web client written in php/AJAX"
 HOMEPAGE="http://pitchfork.remiss.org"
-ESVN_REPO_URI="svn://pitchfork.remiss.org/pitchfork"
+SRC_URI="mirror://sourceforge/musicpd/${P}.tar.bz2"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
