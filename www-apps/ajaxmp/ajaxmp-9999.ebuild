@@ -1,7 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-
 EDARCS_REPOSITORY="http://mroy31.dyndns.org/~roy/repository/ajaxmp/"
 inherit mpd-www
 
