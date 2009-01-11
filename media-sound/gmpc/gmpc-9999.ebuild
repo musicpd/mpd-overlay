@@ -21,7 +21,6 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	net-misc/curl
 	>=x11-libs/gtk+-2.12:2
 	x11-libs/libsexy
-	dev-libs/unique
 	session? ( x11-libs/libSM )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
