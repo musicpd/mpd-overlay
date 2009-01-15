@@ -6,7 +6,7 @@ EAPI=2
 MY_PN="QtMPC"
 MY_P="${MY_PN}-${PV}"
 
-inherit qt4 eutils cmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Another QT4 client with Amarok-like tree view music library interface."
 HOMEPAGE="http://qtmpc.lowblog.nl"
