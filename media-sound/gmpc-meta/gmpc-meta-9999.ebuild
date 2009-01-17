@@ -29,6 +29,5 @@ DEPEND="=media-plugins/gmpc-alarm-9999
 	xosd? ( =media-plugins/gmpc-osd-9999 )
 	=media-plugins/gmpc-playlistsort-9999
 	=media-plugins/gmpc-qosd-9999
-	=media-plugins/gmpc-serverstats-9999
 	taglib? ( =media-plugins/gmpc-tagedit-9999 )"
 RDEPEND="${DEPEND}"
