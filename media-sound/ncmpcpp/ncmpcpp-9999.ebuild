@@ -8,7 +8,7 @@ DESCRIPTION="An ncurses mpd client, ncmpc clone with some new features, written 
 HOMEPAGE="http://unkart.ovh.org/ncmpcpp"
 EGIT_REPO_URI="git://repo.or.cz/ncmpcpp.git"
 LICENSE="GPL-2"
-IUSE="curl taglib unicode"
+IUSE="clock curl taglib unicode"
 
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
@@ -24,7 +24,8 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_enable unicode) \
+	econf   $(use_enable clock) \
+		$(use_enable unicode) \
 		$(use_with curl) \
 		$(use_with taglib) || die "configure failed"
 }
