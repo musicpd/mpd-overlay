@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://git.musicpd.org/cirrus/ncmpc.git"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="artist-screen +colors debug key-screen lirc lyrics-screen minimal mouse nls outputs-screen search-screen +wide"
+IUSE="artist-screen +colors debug help-screen key-screen lirc lyrics-screen minimal mouse nls outputs-screen search-screen +wcwidth"
 
 RDEPEND=">=dev-libs/glib-2.4
 	dev-libs/popt
