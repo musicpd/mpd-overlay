@@ -13,10 +13,9 @@ IUSE="clock curl taglib unicode"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
-DEPEND="sys-libs/ncurses
+DEPEND="sys-libs/ncurses[unicode?]
 	curl? ( net-misc/curl )
-	taglib? ( media-libs/taglib )
-	unicode? ( sys-libs/ncurses[unicode] )"
+	taglib? ( media-libs/taglib )"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
