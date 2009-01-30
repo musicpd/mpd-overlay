@@ -132,8 +132,6 @@ src_install() {
 	keepdir /var/lib/mpd/music
 	dodir /var/lib/mpd/playlists
 	keepdir /var/lib/mpd/playlists
-	dodir /var/log/mpd
-	keepdir /var/log/mpd
 
 	if use alsa; then
 		dosed 's:need :need alsasound :' /etc/init.d/mpd || die "dosed failed"
