@@ -82,6 +82,7 @@ src_configure() {
 		$(use_enable curl) \
 		$(use_enable cdio iso9660) \
 		$(use_enable debug) \
+		$(use_enable doc documentation) \
 		$(use_enable fifo) \
 		$(use_enable ffmpeg) \
 		$(use_enable flac) \
@@ -115,7 +116,7 @@ src_install() {
 	rm -rf "${D}"/usr/share/doc/mpd/
 
 	dodoc AUTHORS NEWS README TODO UPGRADING
-	use doc && dodoc doc/protocol.html
+	dodoc doc/protocol.html
 
 	insinto /etc
 	newins doc/mpdconf.example mpd.conf
