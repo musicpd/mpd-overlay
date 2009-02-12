@@ -1,12 +1,13 @@
 EAPI=2
-inherit git autotools
+
+[ -z "${SRC_URI}" ] || inherit git autotools
 
 DEPEND="${DEPEND}
 	=media-sound/gmpc-9999
 	dev-libs/libxml2"
 RDEPEND="${DEPEND}"
 
-if [ -z ${EGIT_REPO_URI} ]; then
+if [ -z ${EGIT_REPO_URI} ] || [ -z "${SRC_URI}" ]; then
 	DEPEND="${DEPEND}"
 	if [ -z ${GMPC_PLUGIN} ]; then
 		GMPC_PLUGIN="${PN}"
@@ -15,9 +16,11 @@ if [ -z ${EGIT_REPO_URI} ]; then
 	EGIT_REPO_URI="git://repo.or.cz/gmpc-${GMPC_PLUGIN}.git"
 fi
 
-gmpc-plugin_src_prepare() {
-	eautoreconf
-}
+if [ -z "${SRC_URI}" ]; then
+	gmpc-plugin_src_prepare() {
+		eautoreconf
+	}
+fi
 
 gmpc-plugin_src_install() {
 	cd "${S}"
