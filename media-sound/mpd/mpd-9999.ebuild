@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame libmms libsamplerate mad -mikmod modplug musepack ogg oggflac oss pulseaudio +sysvipc unicode vorbis wavpack zeroconf zip"
+IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame libmms libsamplerate mad -mikmod modplug musepack ogg oggflac oss pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
 
 WANT_AUTOMAKE="1.10"
 RDEPEND="!sys-cluster/mpich2
@@ -40,6 +40,7 @@ RDEPEND="!sys-cluster/mpich2
 	oggflac? ( media-libs/flac[ogg] )
 	ogg? ( media-libs/libogg )
 	pulseaudio? ( media-sound/pulseaudio )
+	sid? ( media-libs/libsidplay:2 )
 	vorbis? ( media-libs/libvorbis )
 	wavpack? ( media-sound/wavpack )
 	zeroconf? ( net-dns/avahi )
@@ -98,6 +99,7 @@ src_configure() {
 		$(use_enable oggflac) \
 		$(use_enable oss) \
 		$(use_enable pulseaudio pulse) \
+		$(use_enable sid sidplay) \
 		$(use_enable sysvipc un) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable wavpack) \
