@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame libmms libsamplerate mad -mikmod modplug musepack ogg oggflac oss pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
+IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame libmms libsamplerate mad midi -mikmod modplug musepack ogg oggflac oss pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
 
 WANT_AUTOMAKE="1.10"
 RDEPEND="!sys-cluster/mpich2
@@ -34,6 +34,7 @@ RDEPEND="!sys-cluster/mpich2
 	libmms? ( media-libs/libmms )
 	libsamplerate? ( media-libs/libsamplerate )
 	mad? ( media-libs/libmad )
+	midi? ( media-sound/fluidsynth )
 	mikmod? ( media-libs/libmikmod )
 	modplug? ( media-libs/libmodplug )
 	musepack? ( media-libs/libmpcdec )
@@ -90,6 +91,7 @@ src_configure() {
 		$(use_enable id3) \
 		$(use_enable ipv6) \
 		$(use_enable jack) \
+		$(use_enable midi fluidsynth) \
 		$(use_enable modplug) \
 		$(use_enable libmms mms) \
 		$(use_enable libsamplerate lsr) \
