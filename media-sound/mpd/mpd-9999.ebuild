@@ -34,7 +34,7 @@ RDEPEND="!sys-cluster/mpich2
 	libmms? ( media-libs/libmms )
 	libsamplerate? ( media-libs/libsamplerate )
 	mad? ( media-libs/libmad )
-	midi? ( media-sound/fluidsynth )
+	midi? ( media-libs/wildmidi )
 	mikmod? ( media-libs/libmikmod )
 	modplug? ( media-libs/libmodplug )
 	musepack? ( media-libs/libmpcdec )
@@ -91,7 +91,6 @@ src_configure() {
 		$(use_enable id3) \
 		$(use_enable ipv6) \
 		$(use_enable jack) \
-		$(use_enable midi fluidsynth) \
 		$(use_enable modplug) \
 		$(use_enable libmms mms) \
 		$(use_enable libsamplerate lsr) \
@@ -105,6 +104,7 @@ src_configure() {
 		$(use_enable sysvipc un) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable wavpack) \
+		$(use_enable midi wildmidi) \
 		$(use_enable zip) \
 		$(use_with zeroconf zeroconf avahi) \
 		${myconf}
