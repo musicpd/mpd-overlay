@@ -48,7 +48,8 @@ RDEPEND="!sys-cluster/mpich2
 	zip? ( dev-libs/zziplib )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	doc? ( app-text/xmlto )"
+        doc? ( app-doc/doxygen
+                app-text/xmlto )"
 
 pkg_setup() {
 	if use icecast && ! use lame && ! use vorbis; then
