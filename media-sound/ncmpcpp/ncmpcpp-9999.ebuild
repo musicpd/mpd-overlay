@@ -32,7 +32,6 @@ src_configure() {
 src_install() {
 	make install DESTDIR="${D}" docdir="${ROOT}/usr/share/doc/${PF}" \
 		|| die "install failed"
-	prepalldocs
 }
 
 pkg_postinst() {
