@@ -27,7 +27,6 @@ src_install() {
 	make install DESTDIR="${D}" docdir="${ROOT}/usr/share/doc/${PF}" \
 		|| die "install failed"
 	newinitd "${FILESDIR}"/scrobby.init scrobby
-	prepalldocs
 }
 
 pkg_postinst() {
