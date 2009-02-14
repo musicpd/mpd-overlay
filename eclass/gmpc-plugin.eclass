@@ -1,6 +1,7 @@
 EAPI=2
 
-[ -z "${SRC_URI}" ] || inherit git autotools
+[ -z "${SRC_URI}" ] && inherit git
+inherit autotools
 
 DEPEND="${DEPEND}
 	=media-sound/gmpc-9999
