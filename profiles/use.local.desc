@@ -29,3 +29,6 @@ media-sound/mpd:sid - Enable support for sid files through libsidplay.
 media-sound/mpd:zip - Enable support for audio in zip archive.
 
 media-sound/sonata:scrobbler - Enable support for AudioScrobbler.
+
+media-sound/gmpc-meta:awn - Enable plugin for gmpc which supports Avant Window Navigator.
+media-sound/gmpc-meta:amazon - Enable support for downloading covers from amazon.com
