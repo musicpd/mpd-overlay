@@ -5,7 +5,7 @@ inherit toolchain-funcs git
 
 DESCRIPTION="An AudioScrobbler client for MPD written in C++"
 HOMEPAGE="http://50hz.ws/mpdas/"
-EGIT_REPO_URI="git://github.com/hrkfrd/mpdas.git"
+EGIT_REPO_URI="git://github.com/hrkfdn/mpdas.git"
 
 LICENSE="BSD"
 SLOT="0"
