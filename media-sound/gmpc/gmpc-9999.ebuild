@@ -11,7 +11,7 @@ EGIT_REPO_URI="git://repo.or.cz/gmpc.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="+mmkeys +session"
+IUSE="+mmkeys +session xspf"
 
 RDEPEND=">=dev-libs/glib-2.10:2
 	dev-perl/XML-Parser
@@ -22,7 +22,8 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	sys-libs/zlib
 	>=x11-libs/gtk+-2.12:2
 	x11-libs/libsexy
-	session? ( x11-libs/libSM )"
+	session? ( x11-libs/libSM )
+	xspf? ( media-libs/libspiff )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	dev-util/pkgconfig
@@ -42,6 +43,7 @@ src_prepare() {
 src_configure() {
 	econf $(use_enable mmkeys) \
 		$(use_enable session sm) \
+		$(use_enable xspf libspiff) \
 		--enable-system-libsexy
 }
 
