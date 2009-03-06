@@ -15,7 +15,6 @@ sys-fs/mpd-updater
 
 ## No longer maintained
 media-plugins/gmpc-autoplaylist
-media-plugins/gmpc-wikipedia
 
 ## Masked due to no maintained version of py-libmpdclient
 media-sound/lastfmsubmitd

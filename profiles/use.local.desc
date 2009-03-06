@@ -23,6 +23,7 @@ media-sound/mpd:bzip2 - Enable support for audio in bzip2 archive.
 media-sound/mpd:cdio - Enable support for audio in iso9660 archive.
 media-sound/mpd:fifo - Enable First-In First-Out plugin for MPD.
 media-sound/mpd:icecast - Enable support for Icecast2.
+media-sound/mpd:lastfmradio - Enable support for the last.fm radio input plugin.
 media-sound/mpd:libmms - Enable support for mms streams.
 media-sound/mpd:midi - Enable midi support through fluidsynth.
 media-sound/mpd:oggflac - Enable support for OggFLAC files.
