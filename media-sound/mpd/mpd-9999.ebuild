@@ -11,7 +11,7 @@ EGIT_REPO_URI="git://git.musicpd.org/master/mpd.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame lastfmradio libmms libsamplerate mad midi -mikmod modplug musepack ogg oss pipe pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
+IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac gprof icecast id3 ipv6 jack lame lastfmradio libmms libsamplerate mad midi -mikmod modplug musepack ogg oss pipe pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
 
 WANT_AUTOMAKE="1.10"
 RDEPEND="!sys-cluster/mpich2
@@ -88,6 +88,7 @@ src_configure() {
 		$(use_enable fifo) \
 		$(use_enable ffmpeg) \
 		$(use_enable flac) \
+		$(use_enable gprof) \
 		$(use_enable id3) \
 		$(use_enable ipv6) \
 		$(use_enable jack) \
