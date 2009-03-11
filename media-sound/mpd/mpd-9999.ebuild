@@ -4,15 +4,14 @@
 EAPI=2
 inherit git flag-o-matic autotools
 
-EGIT_REPO_URI="git://git.musicpd.org/master/mpd.git"
-
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
+EGIT_REPO_URI="git://git.musicpd.org/master/mpd.git"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame lastfmradio libmms libsamplerate mad midi -mikmod modplug musepack ogg oggflac oss pipe pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
+IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac icecast id3 ipv6 jack lame lastfmradio libmms libsamplerate mad midi -mikmod modplug musepack ogg oss pipe pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
 
 WANT_AUTOMAKE="1.10"
 RDEPEND="!sys-cluster/mpich2
@@ -25,7 +24,8 @@ RDEPEND="!sys-cluster/mpich2
 	cdio? ( dev-libs/libcdio )
 	curl? ( net-misc/curl )
 	ffmpeg? ( media-video/ffmpeg )
-	flac? ( media-libs/flac )
+	flac? ( media-libs/flac
+		ogg? ( media-libs/flac[ogg] ) )
 	icecast? ( lame? ( media-libs/libshout )
 		vorbis? ( media-libs/libshout ) )
 	id3? ( media-libs/libid3tag )
@@ -38,7 +38,6 @@ RDEPEND="!sys-cluster/mpich2
 	mikmod? ( media-libs/libmikmod )
 	modplug? ( media-libs/libmodplug )
 	musepack? ( media-libs/libmpcdec )
-	oggflac? ( media-libs/flac[ogg] )
 	ogg? ( media-libs/libogg )
 	pulseaudio? ( media-sound/pulseaudio )
 	sid? ( media-libs/libsidplay:2 )
@@ -48,8 +47,8 @@ RDEPEND="!sys-cluster/mpich2
 	zip? ( dev-libs/zziplib )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-        doc? ( app-doc/doxygen
-                app-text/xmlto )"
+	doc? ( app-doc/doxygen
+		app-text/xmlto )"
 
 pkg_setup() {
 	if use icecast && ! use lame && ! use vorbis; then
@@ -99,7 +98,6 @@ src_configure() {
 		$(use_enable mad mp3) \
 		$(use_enable mikmod mod) \
 		$(use_enable musepack mpc) \
-		$(use_enable oggflac) \
 		$(use_enable oss) \
 		$(use_enable pipe pipe-output) \
 		$(use_enable pulseaudio pulse) \
@@ -136,6 +134,8 @@ src_install() {
 	fi
 
 	diropts -m0755 -o mpd -g audio
+	dodir /var/lib/mpd
+	keepdir /var/lib/mpd
 	dodir /var/lib/mpd/music
 	keepdir /var/lib/mpd/music
 	dodir /var/lib/mpd/playlists
