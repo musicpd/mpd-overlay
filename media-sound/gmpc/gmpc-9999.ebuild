@@ -18,7 +18,6 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	dev-util/gob
 	>=gnome-base/libglade-2.3
 	>=media-libs/libmpd-0.17
-	net-misc/curl
 	sys-libs/zlib
 	>=x11-libs/gtk+-2.12:2
 	x11-libs/libsexy
