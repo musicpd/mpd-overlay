@@ -11,7 +11,7 @@ EGIT_REPO_URI="git://git.musicpd.org/master/mpd.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac gprof icecast id3 ipv6 jack lame lastfmradio libmms libsamplerate mad midi -mikmod modplug musepack ogg oss pipe pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
+IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac gprof http icecast id3 ipv6 jack lame lastfmradio libmms libsamplerate mad midi -mikmod modplug musepack ogg oss pipe pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
 
 WANT_AUTOMAKE="1.10"
 RDEPEND="!sys-cluster/mpich2
@@ -26,11 +26,10 @@ RDEPEND="!sys-cluster/mpich2
 	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac
 		ogg? ( media-libs/flac[ogg] ) )
-	icecast? ( lame? ( media-libs/libshout )
-		vorbis? ( media-libs/libshout ) )
+	icecast? ( media-libs/libshout )
 	id3? ( media-libs/libid3tag )
 	jack? ( media-sound/jack-audio-connection-kit )
-	lame? ( icecast? ( media-sound/lame ) )
+	lame? ( media-sound/lame )
 	libmms? ( media-libs/libmms )
 	libsamplerate? ( media-libs/libsamplerate )
 	mad? ( media-libs/libmad )
@@ -51,9 +50,12 @@ DEPEND="${RDEPEND}
 		app-text/xmlto )"
 
 pkg_setup() {
-	if use icecast && ! use lame && ! use vorbis; then
-		ewarn "USE=icecast enabled but lame and vorbis disabled,"
-		ewarn "disabling icecast"
+	if use icecast || use http; then
+		if ! use lame && ! use vorbis; then
+			eerror "Icecast or http output streaming is enabled,"
+			eerror "but there is no encoding enabled (lame and"
+			eerror "vorbis are both disabled)."
+		fi
 	fi
 
 	enewuser mpd "" "" "/var/lib/mpd" audio
@@ -65,14 +67,6 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf=""
-
-	if use icecast; then
-		myconf+=" $(use_enable vorbis shout_ogg) $(use_enable lame shout_mp3)"
-	else
-		myconf+=" --disable-shout_ogg --disable-shout_mp3"
-	fi
-
 	append-lfs-flags
 
 	econf \
@@ -89,9 +83,11 @@ src_configure() {
 		$(use_enable ffmpeg) \
 		$(use_enable flac) \
 		$(use_enable gprof) \
+		$(use_enable http httpd-output) \
 		$(use_enable id3) \
 		$(use_enable ipv6) \
 		$(use_enable jack) \
+		$(use_enable lame) \
 		$(use_enable modplug) \
 		$(use_enable lastfmradio lastfm) \
 		$(use_enable libmms mms) \
@@ -105,6 +101,7 @@ src_configure() {
 		$(use_enable sid sidplay) \
 		$(use_enable sysvipc un) \
 		$(use_enable vorbis oggvorbis) \
+		$(use_enable vorbis oggvorbis-encoder) \
 		$(use_enable wavpack) \
 		$(use_enable midi wildmidi) \
 		$(use_enable zip) \
