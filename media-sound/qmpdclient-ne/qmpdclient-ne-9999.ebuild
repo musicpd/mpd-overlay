@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=2
-inherit git eutils multilib qt4 toolchain-funcs
+EGIT_REPO_URI="git://github.com/Voker57/qmpdclient-ne.git"
+inherit qt4 git eutils multilib toolchain-funcs
 
 DESCRIPTION="An easy-to-use Qt4 client for MPD"
 HOMEPAGE="http://github.com/Voker57/qmpdclient-ne/tree/master"
-EGIT_REPO_URI="git://github.com/Voker57/qmpdclient-ne.git"
 
 LICENSE="GPL-2"
 SLOT="0"
