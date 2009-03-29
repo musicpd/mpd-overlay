@@ -92,7 +92,7 @@ src_configure() {
 		$(use_enable lastfmradio lastfm) \
 		$(use_enable libmms mms) \
 		$(use_enable libsamplerate lsr) \
-		$(use_enable mad mp3) \
+		$(use_enable mad) \
 		$(use_enable mikmod mod) \
 		$(use_enable musepack mpc) \
 		$(use_enable oss) \
