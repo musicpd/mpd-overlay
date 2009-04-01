@@ -11,7 +11,7 @@ EGIT_REPO_URI="git://git.musicpd.org/master/mpd.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac gprof http icecast id3 ipv6 jack lame lastfmradio libmms libsamplerate mad midi -mikmod modplug musepack ogg oss pipe pulseaudio sid +sysvipc unicode vorbis wavpack zeroconf zip"
+IUSE="aac alsa ao audiofile bzip2 cdio curl debug doc ffmpeg fifo flac gprof http icecast id3 ipv6 jack lame lastfmradio libmms libsamplerate mad midi -mikmod modplug musepack ogg oss pipe pulseaudio sid sqlite +sysvipc unicode vorbis wavpack zeroconf zip"
 
 WANT_AUTOMAKE="1.10"
 RDEPEND="!sys-cluster/mpich2
@@ -40,6 +40,7 @@ RDEPEND="!sys-cluster/mpich2
 	ogg? ( media-libs/libogg )
 	pulseaudio? ( media-sound/pulseaudio )
 	sid? ( media-libs/libsidplay:2 )
+	sqlite? ( dev-db/sqlite:3 )
 	vorbis? ( media-libs/libvorbis )
 	wavpack? ( media-sound/wavpack )
 	zeroconf? ( net-dns/avahi )
@@ -99,6 +100,7 @@ src_configure() {
 		$(use_enable pipe pipe-output) \
 		$(use_enable pulseaudio pulse) \
 		$(use_enable sid sidplay) \
+		$(use_enable sqlite sqlite) \
 		$(use_enable sysvipc un) \
 		$(use_enable vorbis oggvorbis) \
 		$(use_enable vorbis oggvorbis-encoder) \
