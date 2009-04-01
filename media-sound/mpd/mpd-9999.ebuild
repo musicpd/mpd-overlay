@@ -59,6 +59,10 @@ pkg_setup() {
 		fi
 	fi
 
+	if use lastfmradio && ! use curl; then
+		eerror "Cannot enable lastfmradio without curl."
+	fi
+
 	enewuser mpd "" "" "/var/lib/mpd" audio
 }
 
@@ -89,8 +93,8 @@ src_configure() {
 		$(use_enable ipv6) \
 		$(use_enable jack) \
 		$(use_enable lame) \
-		$(use_enable modplug) \
 		$(use_enable lastfmradio lastfm) \
+		$(use_enable modplug) \
 		$(use_enable libmms mms) \
 		$(use_enable libsamplerate lsr) \
 		$(use_enable mad) \
