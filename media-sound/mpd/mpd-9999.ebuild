@@ -98,7 +98,7 @@ src_configure() {
 		$(use_enable libmms mms) \
 		$(use_enable libsamplerate lsr) \
 		$(use_enable mad) \
-		$(use_enable mikmod mod) \
+		$(use_enable mikmod) \
 		$(use_enable musepack mpc) \
 		$(use_enable oss) \
 		$(use_enable pipe pipe-output) \
