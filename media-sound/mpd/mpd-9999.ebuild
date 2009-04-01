@@ -109,7 +109,7 @@ src_configure() {
 		$(use_enable sqlite sqlite) \
 		$(use_enable sysvipc un) \
 		$(use_enable vorbis) \
-		$(use_enable vorbis oggvorbis-encoder) \
+		$(use_enable vorbis vorbis-encoder) \
 		$(use_enable wavpack) \
 		$(use_enable midi wildmidi) \
 		$(use_enable zip) \
