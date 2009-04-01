@@ -22,6 +22,7 @@ media-sound/ncmpc-tradiaz:search-screen - Enable support for a search screen dis
 media-sound/mpd:bzip2 - Enable support for audio in bzip2 archive.
 media-sound/mpd:cdio - Enable support for audio in iso9660 archive.
 media-sound/mpd:fifo - Enable First-In First-Out plugin for MPD.
+media-sound/mpd:fluidsynth - Enables Fluidsynth MIDI software synthesis plugin.
 media-sound/mpd:gprof - Build with profiling support.
 media-sound/mpd:http - Enable http streaming.
 media-sound/mpd:icecast - Enable support for Icecast2.
