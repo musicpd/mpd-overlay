@@ -32,12 +32,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	einfo "Running intltoolize --automake"
 	intltoolize --automake || die "intltoolize failed"
-
-	[ -z ${newhash} ] && echo unused && newhash="`git rev-parse ${EGIT_BRANCH}`"
-	## This changes the "about" screen to show the current revision
-	sed -ie "s%REVISION=.*%REVISION=${newhash:0:8}%" \
-		${WORKDIR}/${PF}/src/Makefile.am
-
 	eautoreconf
 }
 
@@ -45,7 +39,8 @@ src_configure() {
 	econf $(use_enable mmkeys) \
 		$(use_enable session sm) \
 		$(use_enable xspf libspiff) \
-		--enable-system-libsexy
+		--enable-system-libsexy \
+		--with-extra-version="`git rev-parse ${EGIT_BRANCH} | cut -c 1-8`"
 }
 
 src_install() {
