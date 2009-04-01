@@ -31,6 +31,7 @@ media-sound/mpd:libmms - Enable support for mms streams.
 media-sound/mpd:midi - Enable midi support through wildmidi.
 media-sound/mpd:pipe - Enable support for pipe-output plugin.
 media-sound/mpd:sid - Enable support for sid files through libsidplay.
+media-sound/mpd:tcp - Enable support for controlling MPD over TCP.
 media-sound/mpd:zip - Enable support for audio in zip archive.
 
 media-sound/sonata:scrobbler - Enable support for AudioScrobbler.
