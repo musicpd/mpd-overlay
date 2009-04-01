@@ -2,21 +2,21 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=2
-ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/scmpc/trunk"
-inherit subversion autotools
+EGIT_REPO_URI="git://ngls.zakx.de/scmpc.git"
+inherit git autotools
 
 DESCRIPTION="A multithreaded MPD client for Audioscrobbler"
-HOMEPAGE="http://scmpc.berlios.de"
+HOMEPAGE="http://ngls.zakx.de/scmpc/"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 IUSE=""
 
-DEPEND=">=net-misc/curl-7.10.0
+DEPEND=">=dev-libs/glib-2.16
+	>=net-misc/curl-7.15.4
 	dev-libs/libdaemon
-	dev-libs/confuse
-	dev-libs/argtable"
+	dev-libs/confuse"
 RDEPEND=""
 
 src_prepare() {
@@ -27,7 +27,7 @@ src_install() {
 	make DESTDIR="${D}" install || die "Install failed!"
 
 	insinto /etc
-	newins examples/scmpc.conf.in scmpc.conf
+	newins scmpc.conf.example scmpc.conf
 
 	exeinto /etc/init.d
 	newexe "${FILESDIR}/scmpc.init" scmpc
