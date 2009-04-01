@@ -94,7 +94,7 @@ src_configure() {
 		$(use_enable id3) \
 		$(use_enable ipv6) \
 		$(use_enable jack) \
-		$(use_enable lame) \
+		$(use_enable lame lame-encoder) \
 		$(use_enable lastfmradio lastfm) \
 		$(use_enable modplug) \
 		$(use_enable libmms mms) \
