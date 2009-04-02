@@ -64,7 +64,7 @@ pkg_setup() {
 		eerror "Cannot enable lastfmradio without curl."
 	fi
 
-	if !use tcp && use ipv6; then
+	if ! use tcp && use ipv6; then
 		eerror "Cannot use ipv6 without tcp support."
 	fi
 
