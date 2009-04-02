@@ -68,6 +68,11 @@ pkg_setup() {
 		eerror "Cannot use ipv6 without tcp support."
 	fi
 
+	if use fluidsynth; then
+		ewarn "Use of fluidsynth USE is highly discouraged by upstream."
+		ewarn "Use wildmidi unless you know better."
+	fi
+
 	enewuser mpd "" "" "/var/lib/mpd" audio
 }
 
