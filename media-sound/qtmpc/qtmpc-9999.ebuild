@@ -5,7 +5,7 @@ EAPI=2
 
 MY_PN="QtMPC"
 
-inherit subversion cmake-utils
+inherit cmake-utils subversion
 
 DESCRIPTION="Another QT4 client with Amarok-like tree view music library interface."
 HOMEPAGE="http://qtmpc.lowblog.nl"
@@ -15,13 +15,15 @@ ESVN_REPO_URI="http://qtmpc.lowblog.nl/svn/trunk"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 IUSE="kde"
-RDEPEND="x11-libs/qt-gui:4"
-#	kde? ( kde-base/kdelibs )"
+RDEPEND="x11-libs/qt-gui:4
+	kde? ( kde-base/kdelibs )"
 DEPEND="${RDEPEND}"
 
-#src_configure() {
-#	cmake-utils_src_configure $(cmake-utils_use_with kde WANT_KDE_SUPPORT)
-#}
+src_configure() {
+	local mycmakeargs="$(cmake-utils_use kde WANT_KDE_SUPPORT)"
+	eerror "cmakeargs: ${mycmakeargs}"
+	cmake-utils_src_configure
+}
 
 src_install() {
 	cmake-utils_src_install
