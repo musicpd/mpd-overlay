@@ -7,7 +7,7 @@ LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="amazon avahi awn libnotify lirc taglib xosd"
+IUSE="amazon avahi awn libnotify lirc taglib"
 
 DEPEND="=media-plugins/gmpc-alarm-9999
 	avahi? ( =media-plugins/gmpc-avahi-9999 )
@@ -25,7 +25,6 @@ DEPEND="=media-plugins/gmpc-alarm-9999
 	=media-plugins/gmpc-magnatune-9999
 	=media-plugins/gmpc-mdcover-9999
 	=media-plugins/gmpc-mserver-9999
-	xosd? ( =media-plugins/gmpc-osd-9999 )
 	=media-plugins/gmpc-playlistsort-9999
 	=media-plugins/gmpc-qosd-9999
 	taglib? ( =media-plugins/gmpc-tagedit-9999 )"
