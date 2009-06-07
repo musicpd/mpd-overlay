@@ -2,11 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=2
 
-inherit distutils git 
+inherit distutils git python
 
-DESCRIPTION="an elegant GTK+ music client for the Music Player Daemon (MPD)."
+DESCRIPTION="A lightweight console based MPD client"
 HOMEPAGE="http://hawking.nonlogic.org/projects/boogie"
 EGIT_REPO_URI="git://github.com/alip/boogie.git"
+IUSE="zsh-completion"
 
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
@@ -19,5 +20,21 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS README COPYING"
 
 src_install() {
+	dodoc ${DOCS} 
 	doman doc/boogie.1
+	if use zsh-completion ; then
+		insinto /usr/share/zsh/site-functions
+		doins zsh-completion/_boogie
+	fi
+	distutils_src_install
+}
+
+pkg_postinst() {
+	python_version
+	python_mod_optimize /usr/lib/python${PYVER}/site-packages/boogie
+}
+
+pkg_postrm() {
+	python_version
+	python_mod_cleanup
 }
