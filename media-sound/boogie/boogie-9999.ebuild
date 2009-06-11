@@ -5,7 +5,7 @@ EAPI=2
 inherit distutils git python
 
 DESCRIPTION="A lightweight console based MPD client"
-HOMEPAGE="http://hawking.nonlogic.org/projects/boogie"
+HOMEPAGE="http://github.com/alip/boogie/tree/master"
 EGIT_REPO_URI="git://github.com/alip/boogie.git"
 IUSE="zsh-completion"
 
@@ -20,7 +20,7 @@ RDEPEND=">=virtual/python-2.4
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-DOCS="AUTHORS README COPYING"
+DOCS="AUTHORS README"
 
 src_install() {
 	dodoc ${DOCS} 
@@ -30,14 +30,4 @@ src_install() {
 		doins zsh-completion/_boogie
 	fi
 	distutils_src_install
-}
-
-pkg_postinst() {
-	python_version
-	python_mod_optimize /usr/lib/python${PYVER}/site-packages/boogie
-}
-
-pkg_postrm() {
-	python_version
-	python_mod_cleanup
 }
