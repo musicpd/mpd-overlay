@@ -28,8 +28,11 @@ gmpc-plugin_src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 }
 
+#TODO Use ${var^^} when gentoo makes the switch to bash4
+local my_plugin="`echo ${PN/gmpc-} | tr '[a-z]' '[A-Z]'`"
+
 ## A few sane defaults
-HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/${PN/gmpc-}"
+HOMEPAGE="http://gmpc.wikia.com/wiki/GMPC_PLUGIN_${my_plugin}"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
