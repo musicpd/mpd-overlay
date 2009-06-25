@@ -15,7 +15,6 @@ IUSE="+mmkeys +session xspf"
 
 RDEPEND=">=dev-libs/glib-2.10:2
 	dev-perl/XML-Parser
-	dev-util/gob
 	>=gnome-base/libglade-2.3
 	>=media-libs/libmpd-0.17
 	net-libs/libsoup
@@ -23,8 +22,9 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	>=x11-libs/gtk+-2.12:2
 	x11-libs/libsexy
 	session? ( x11-libs/libSM )
-	xspf? ( media-libs/libspiff )"
+	xspf? ( >=media-libs/libxspf-1.2 )"
 DEPEND="${RDEPEND}
+	dev-util/gob
 	dev-util/intltool
 	dev-util/pkgconfig
 	sys-devel/gettext"
