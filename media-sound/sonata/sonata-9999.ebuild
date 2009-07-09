@@ -11,16 +11,17 @@ ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/sonata/trunk"
 LICENSE="GPL-3"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="dbus lyrics taglib scrobbler"
+KEYWORDS="amd64 ~ppc ~ppc64 sparc x86"
+IUSE="dbus lyrics taglib +trayicon"
 
-RDEPEND=">=virtual/python-2.4
-	>=dev-python/pygtk-2.10
-	>=dev-python/python-mpd-0.2.0
+RDEPEND=">=virtual/python-2.5
+	>=dev-python/pygtk-2.12
+	>=x11-libs/gtk+-2:2[jpeg]
+	>=dev-python/python-mpd-0.2.1
 	dbus? ( dev-python/dbus-python )
 	lyrics? ( dev-python/zsi )
-	scrobbler? ( dev-python/elementtree )
-	x11-libs/gtk+:2[jpeg]
-	taglib? ( >=dev-python/tagpy-0.93 )"
+	taglib? ( >=dev-python/tagpy-0.93 )
+	trayicon? ( dev-python/egg-python )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
