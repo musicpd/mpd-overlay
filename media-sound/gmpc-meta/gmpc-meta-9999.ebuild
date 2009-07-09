@@ -15,6 +15,7 @@ DEPEND="=media-plugins/gmpc-alarm-9999
 	awn? ( =media-plugins/gmpc-awn-9999 )
 	=media-plugins/gmpc-discogs-9999
 	=media-plugins/gmpc-albumview-999
+	=media-plugins/gmpc-fullscreeninfo-9999
 	=media-plugins/gmpc-extraplaylist-9999
 	=media-plugins/gmpc-jamendo-9999
 	=media-plugins/gmpc-last-fm-9999
