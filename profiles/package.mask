@@ -9,3 +9,6 @@ sys-fs/mpd-updater
 ## Masked due to no maintained version of py-libmpdclient
 ## TODO: This appears to be alive and kicking again, I'll fix this one up soon.
 media-sound/lastfmsubmitd
+
+#SVN_URI has been down for a while. Unless something changes in the next 30 days it will be removed.
+media-sound/kutempc
