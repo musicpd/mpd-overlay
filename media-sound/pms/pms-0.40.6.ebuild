@@ -19,9 +19,7 @@ DEPEND="dev-libs/boost
 	sys-libs/ncurses"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}"/pms-ncurses-fix.patch || die "epatch failed"
 }
 
