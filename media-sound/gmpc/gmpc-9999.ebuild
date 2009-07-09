@@ -11,14 +11,14 @@ EGIT_REPO_URI="git://repo.or.cz/gmpc.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="+mmkeys +session xspf"
+IUSE="nls +session xspf"
 
 RDEPEND=">=dev-libs/glib-2.10:2
 	dev-perl/XML-Parser
 	>=gnome-base/libglade-2.3
-	>=media-libs/libmpd-0.17
-	net-libs/libsoup
-	sys-libs/zlib
+	>=media-libs/libmpd-0.17.1
+	net-libs/libsoup:2.4
+	net-misc/curl
 	>=x11-libs/gtk+-2.12:2
 	x11-libs/libsexy
 	session? ( x11-libs/libSM )
@@ -36,10 +36,11 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_enable mmkeys) \
+	econf \
 		$(use_enable session sm) \
-		$(use_enable xspf libspiff) \
+		$(use_enable xspf libxspf) \
 		--enable-system-libsexy \
+		--disable-shave \
 		--with-extra-version="`git rev-parse ${EGIT_BRANCH} | cut -c 1-8`"
 }
 
