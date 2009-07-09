@@ -11,10 +11,10 @@ LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="nls"
+IUSE="+iconv"
 
-DEPEND="nls? ( || ( sys-libs/glibc dev-libs/libiconv ) )
-	dev-util/gperf"
+RDEPEND="iconv? ( virtual/libiconv )"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	eautoreconf
@@ -22,14 +22,15 @@ src_prepare() {
 
 src_configure() {
 	econf --disable-dependency-tracking \
-		$(use_enable nls iconv)
+		$(use_enable iconv) \
+
 }
 
 src_install() {
-	dobin doc/mpd-m3u-handler.sh
-	dobin doc/mpd-pls-handler.sh
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog README
+	emake install DESTDIR="${D}" || die "emake install failed"
+	dodoc AUTHORS NEWS README
+	dodoc doc/mpd-m3u-handler.sh doc/mppledit doc/mpd-pls-handler.sh
+	rm -rf "${D}"/usr/share/doc/${PN}
 
 	dobashcompletion doc/mpc-bashrc
 }
