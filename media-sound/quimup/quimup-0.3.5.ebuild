@@ -7,7 +7,7 @@ MY_PN="${PN/q/Q}"
 
 EAPI=2
 DESCRIPTION="A QT3 user interface for the music player daemon"
-HOMEPAGE="http://www.coonsden.com/main.htm"
+HOMEPAGE="http://www.coonsden.com/quimup/frames.htm"
 LICENSE="GPL-2"
 SRC_URI="mirror://sourceforge/musicpd/${MY_PN}-${PV}src.tar.gz"
 
@@ -31,4 +31,6 @@ src_install() {
 	make_desktop_entry "${PN}" "Quimup"
 	newicon images/mn_icon.png ${PN}.png
 	dobin quimup
+
+	dodoc Changelog COPYING FAQ.txt README
 }
