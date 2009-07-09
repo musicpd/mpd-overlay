@@ -3,10 +3,10 @@
 
 EAPI=2
 
-inherit eutils subversion autotools
+inherit eutils
 DESCRIPTION="PMS is an ncurses based client."
 HOMEPAGE="http://pms.sourceforge.net/"
-ESVN_REPO_URI="https://pms.svn.sourceforge.net/svnroot/pms"
+SRC_URI="mirror://sourceforge/pms/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,10 +19,10 @@ DEPEND="dev-libs/boost
 	sys-libs/ncurses"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}"/pms-ncurses-fix.patch || die "epatch failed"
-
-	eautoreconf
 }
 
 src_install() {
