@@ -6,7 +6,7 @@ ESVN_REPO_URI="https://www.schleifi.com/svn/florian/kutempc/"
 inherit subversion
 
 DESCRIPTION="KuteMPC is a QT 4.1+ client heavily inspired by glurp"
-HOMEPAGE="http://etomite.qballcow.nl/qgmpc-0.12.html"
+HOMEPAGE="https://www.schleifi.com/~florian/kutempc/doc/html/"
 LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
