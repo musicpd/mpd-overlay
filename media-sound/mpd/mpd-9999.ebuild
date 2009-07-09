@@ -87,9 +87,11 @@ src_configure() {
 		mpdconf+=" --disable-oggflac"
 	fi
 
+	filter-flags -fomit-frame-pointer
+
 	append-lfs-flags
 	append-ldflags "-L/usr/$(get_libdir)/sidplay/builders"
-
+	
 	econf \
 		$(use_enable ipv6) \
 		$(use_enable cue) \
