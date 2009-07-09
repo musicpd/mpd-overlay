@@ -30,7 +30,7 @@ src_configure() {
 		$(use_with curl) \
 		$(use_with iconv) \
 		$(use_with threads) \
-		$(use_with taglib) || die "configure failed"
+		$(use_with taglib) 
 }
 
 src_install() {
@@ -39,8 +39,10 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Example configuration files have been installed at"
 	echo
+	elog "Example configuration files have been installed at"
 	elog "${ROOT}usr/share/doc/${PF}"
+	elog "${P} uses ~/.ncmpcpp/config and ~/.ncmpcpp/keys"
+	elog "as user configuration files."
 	echo
 }
