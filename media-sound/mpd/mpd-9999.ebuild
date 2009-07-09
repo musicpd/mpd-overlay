@@ -71,7 +71,13 @@ src_prepare() {
 
 src_configure() {
 	local mpdconf="--enable-tcp --enable-un --disable-wildmidi
-		--disable-libOggFLACtest --disable-documentation"
+		--disable-libOggFLACtest"
+	
+	if use doc; then
+		mpdconf+="--enable-documentation"
+	else
+		mpdconf+="--disable-documentation"
+	fi
 
 	if use network; then
 		mpdconf+=" --enable-shout $(use_enable vorbis vorbis-encoder)
@@ -138,7 +144,7 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	rm -rf "${D}"/usr/share/doc/mpd/
 
-	dodoc AUTHORS NEWS README UPGRADING doc/mpdconf.dist
+	dodoc AUTHORS NEWS README UPGRADING doc/mpdconf.example 
 
 	insinto /etc
 	newins doc/mpdconf.example mpd.conf
