@@ -38,3 +38,4 @@ media-sound/sonata:scrobbler - Enable support for AudioScrobbler.
 
 media-sound/gmpc-meta:awn - Enable plugin for gmpc which supports Avant Window Navigator.
 media-sound/gmpc-meta:amazon - Enable support for downloading covers from amazon.com
+media-sound/gmpc-meta:guitartabs - Enable support for downloading guitar tabs from ultimate-guitar.com

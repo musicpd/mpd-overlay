@@ -7,7 +7,7 @@ LICENSE="GPL-2"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="amazon avahi awn libnotify lirc taglib"
+IUSE="amazon avahi awn libnotify lirc taglib guitartabs"
 
 DEPEND="=media-plugins/gmpc-alarm-9999
 	avahi? ( =media-plugins/gmpc-avahi-9999 )
@@ -19,6 +19,7 @@ DEPEND="=media-plugins/gmpc-alarm-9999
 	=media-plugins/gmpc-extraplaylist-9999
 	=media-plugins/gmpc-jamendo-9999
 	=media-plugins/gmpc-last-fm-9999
+	guitartabs? ( =media-plugins/gmpc-guitartabs-9999 )
 	libnotify? ( =media-plugins/gmpc-libnotify-9999 )
 	lirc? ( =media-plugins/gmpc-lirc-9999 )
 	=media-plugins/gmpc-lyrdb-9999
