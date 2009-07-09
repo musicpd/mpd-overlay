@@ -1,11 +1,9 @@
-app-misc
 app-portage
-dev-python
-dev-ruby
-eclass
-media-libs
 media-plugins
-media-sound
+net-libs
 www-apps
+dev-ruby
+media-libs
+media-sound
+sys-fs
 x11-plugins
-xfce-extra
