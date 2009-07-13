@@ -1,8 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-weather/xfce4-weather-0.6.4.ebuild,v 1.3 2009/07/09 22:10:57 ssuominen Exp $
 
-inherit autotools xfce4
+inherit xfce4
 COMPRESS=".tar.gz"
 xfce4_panel_plugin
 
