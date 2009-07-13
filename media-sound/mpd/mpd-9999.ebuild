@@ -72,7 +72,7 @@ src_prepare() {
 src_configure() {
 	local mpdconf="--enable-tcp --enable-un --disable-wildmidi
 		--disable-libOggFLACtest"
-	
+
 	if use doc; then
 		mpdconf+="--enable-documentation"
 	else
@@ -97,7 +97,7 @@ src_configure() {
 
 	append-lfs-flags
 	append-ldflags "-L/usr/$(get_libdir)/sidplay/builders"
-	
+
 	econf \
 		$(use_enable ipv6) \
 		$(use_enable cue) \
