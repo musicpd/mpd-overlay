@@ -6,7 +6,7 @@ EAPI=2
 ESVN_REPO_URI="https://svn.ayeon.org/pidgimpd/trunk/"
 inherit subversion autotools
 
-DESCRIPTION="A gaim plugin for MPD"
+DESCRIPTION="A pidgin plugin for MPD"
 HOMEPAGE="http://ayeon.org/projects/pidgimpd/"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT=0
