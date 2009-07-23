@@ -30,7 +30,8 @@ RDEPEND="!sys-cluster/mpich2
 	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac[ogg?] )
 	fluidsynth? ( media-sound/fluidsynth )
-	network? ( >=media-libs/libshout-2 )
+	network? ( >=media-libs/libshout-2
+		!lame? ( !vorbis? ( media-libs/libvorbis ) ) )
 	id3? ( media-libs/libid3tag )
 	jack? ( media-sound/jack-audio-connection-kit )
 	lame? ( network? ( media-sound/lame ) )
@@ -49,9 +50,7 @@ RDEPEND="!sys-cluster/mpich2
 	avahi? ( net-dns/avahi )
 	zip? ( dev-libs/zziplib )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
-	doc? ( app-doc/doxygen
-		app-text/xmlto )"
+	dev-util/pkgconfig"
 
 pkg_setup() {
 	use network || ewarn "Icecast and Shoutcast streaming needs networking."
@@ -66,22 +65,21 @@ pkg_setup() {
 
 src_prepare() {
 	eautoreconf
-	epatch "${FILESDIR}"/mpdconf.patch
+	cp -f doc/mpdconf.example doc/mpdconf.dist || die "cp failed"
+	epatch "${FILESDIR}"/mpdconf.patch || die "mpdconf patch failed"
 }
 
 src_configure() {
 	local mpdconf="--enable-tcp --enable-un --disable-wildmidi
-		--disable-libOggFLACtest"
-
-	if use doc; then
-		mpdconf+="--enable-documentation"
-	else
-		mpdconf+="--disable-documentation"
-	fi
-
+		--disable-libOggFLACtest --disable-documentation"
+	
 	if use network; then
 		mpdconf+=" --enable-shout $(use_enable vorbis vorbis-encoder)
 			--enable-httpd-output $(use_enable lame lame-encoder)"
+		if ! use lame && ! use vorbis; then
+			ewarn "At least one encoder is required, enabling vorbis for you."
+			mpdconf+=" --enable-vorbis-encoder"
+		fi
 	else
 		mpdconf+=" --disable-shout --disable-vorbis-encoder
 			--disable-httpd-output --disable-lame-encoder"
@@ -92,8 +90,6 @@ src_configure() {
 	else
 		mpdconf+=" --disable-oggflac"
 	fi
-
-	filter-flags -fomit-frame-pointer
 
 	append-lfs-flags
 	append-ldflags "-L/usr/$(get_libdir)/sidplay/builders"
@@ -142,9 +138,9 @@ src_install() {
 	keepdir /var/run/mpd
 
 	emake DESTDIR="${D}" install || die "emake install failed"
-	rm -rf "${D}"/usr/share/doc/mpd/
+	rm -rf "${D}"/usr/share/doc/mpd
 
-	dodoc AUTHORS NEWS README UPGRADING doc/mpdconf.example 
+	dodoc AUTHORS NEWS README UPGRADING doc/mpdconf.dist
 
 	insinto /etc
 	newins doc/mpdconf.example mpd.conf
