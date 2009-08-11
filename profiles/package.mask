@@ -16,8 +16,3 @@ media-sound/kutempc
 # Masked for removal.
 # http://gmpc.wikia.com/wiki/Plugins no longer maintained and is recommended not to be used.
 media-plugins/gmpc-mdcover2
-
-# Masked for removal
-# Needs services lyricwiki can no longer provide.
-# http://groups.google.com/group/lyricwiki-api/browse_thread/thread/733ccd919d654040?pli=1
-media-plugins/gmpc-lyricwiki
