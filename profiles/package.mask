@@ -16,3 +16,7 @@ media-sound/kutempc
 # Masked for removal.
 # http://gmpc.wikia.com/wiki/Plugins no longer maintained and is recommended not to be used.
 media-plugins/gmpc-mdcover2
+
+# Mask for testing
+# Mostly masked for PID file issues, needs more testing all around.
+media-sound/mpdhooker
