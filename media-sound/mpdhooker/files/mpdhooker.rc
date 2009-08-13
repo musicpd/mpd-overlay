@@ -1,0 +1,23 @@
+#!/sbin/runscript
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+	need net
+	use mpd
+}
+
+MPD_HOOKER_DIR=/etc/mpdhooker/
+
+start () {
+	ebegin "Starting Music Player Daemon Hooker"
+	start-stop-daemon --start --exec /usr/bin/mpdhooker -- --pidfile /var/run/mpdhooker.pid
+	eend $?
+}
+
+stop () {
+	ebegin "Stopping Music Player Daemon Hooker"
+	start-stop-daemon --stop --quiet -p /var/run/mpdhooker.pid --exec /usr/bin/mpdhooker || eerror "mpdhooker is not running"
+	rm -f /var/run/mpdhooker.pid
+	eend $?
+}
