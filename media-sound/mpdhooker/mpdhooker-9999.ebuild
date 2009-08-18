@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=2
 
-inherit git autotools
+inherit git autotools eutils
 
 DESCRIPTION="mpdhooker is a hooker daemon for mpd. It polls Mpd for information and runs hooks passing arguments on their command
 line."
@@ -41,6 +41,11 @@ src_install() {
 	insinto /etc/mpdhooker/
 	newins conf/mpdhooker.conf mpdhooker.conf || die "Failed copying config
 	file"
+
+	# Fix up config file. Just sets the pidfile option to use /var/run.
+	sed -i -e "s:^# pid:pid:" "${D}"/etc/mpdhooker/mpdhooker.conf \
+	|| die "Failed doing sed on config"
+
 
 	newinitd "${FILESDIR}"/mpdhooker.rc mpdhooker || die "Failed installing
 	newinitd"
