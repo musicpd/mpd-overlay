@@ -15,6 +15,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 
 DEPEND="sys-libs/ncurses[unicode?]
 	curl? ( net-misc/curl )
+	fftw? ( sci-libs/fftw:3.0 )
 	iconv? ( virtual/libiconv )
 	taglib? ( media-libs/taglib )
 	visualizer? ( sci-libs/fftw )"
@@ -26,10 +27,12 @@ src_prepare() {
 
 src_configure() {
 	econf	$(use_enable outputs) \
+		$(use_enable visualizer) \
 		$(use_enable clock) \
 		$(use_enable unicode) \
 		$(use_enable visualizer) \
 		$(use_with curl) \
+		$(use_with fftw) \
 		$(use_with iconv) \
 		$(use_with fftw) \
 		$(use_with threads) \
