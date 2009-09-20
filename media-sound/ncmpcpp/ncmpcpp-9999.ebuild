@@ -8,17 +8,17 @@ DESCRIPTION="An ncurses mpd client, ncmpc clone with some new features, written 
 HOMEPAGE="http://unkart.ovh.org/ncmpcpp"
 EGIT_REPO_URI="git://repo.or.cz/ncmpcpp.git"
 LICENSE="GPL-2"
-IUSE="clock curl iconv outputs taglib +threads unicode visualizer fftw"
+IUSE="clock curl fftw iconv outputs taglib +threads unicode visualizer"
 
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
 DEPEND="sys-libs/ncurses[unicode?]
 	curl? ( net-misc/curl )
-	fftw? ( sci-libs/fftw:3.0 )
+	fftw? ( media-sound/ncmpcpp[visualizer]
+	        sci-libs/fftw:3.0 )
 	iconv? ( virtual/libiconv )
-	taglib? ( media-libs/taglib )
-	visualizer? ( sci-libs/fftw )"
+	taglib? ( media-libs/taglib )"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
@@ -26,15 +26,13 @@ src_prepare() {
 }
 
 src_configure() {
-	econf	$(use_enable outputs) \
-		$(use_enable visualizer) \
-		$(use_enable clock) \
+	econf	$(use_enable clock) \
+		$(use_enable outputs) \
 		$(use_enable unicode) \
 		$(use_enable visualizer) \
 		$(use_with curl) \
 		$(use_with fftw) \
 		$(use_with iconv) \
-		$(use_with fftw) \
 		$(use_with threads) \
 		$(use_with taglib) || die "configure failed"
 }
