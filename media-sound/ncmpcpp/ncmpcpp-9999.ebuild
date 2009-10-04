@@ -13,13 +13,15 @@ IUSE="clock curl fftw iconv outputs taglib +threads unicode visualizer"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
-DEPEND="sys-libs/ncurses[unicode?]
+RDEPEND="sys-libs/ncurses[unicode?]
+	=media-libs/libmpdclient-9999
 	curl? ( net-misc/curl )
 	fftw? ( media-sound/ncmpcpp[visualizer]
 	        sci-libs/fftw:3.0 )
 	iconv? ( virtual/libiconv )
 	taglib? ( media-libs/taglib )"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 src_prepare() {
 	eautoreconf
