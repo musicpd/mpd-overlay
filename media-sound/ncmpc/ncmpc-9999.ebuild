@@ -16,6 +16,7 @@ IUSE="artist-screen +colors debug help-screen key-screen lirc lyrics-screen mini
 
 RDEPEND=">=dev-libs/glib-2.4
 	dev-libs/popt
+	=media-libs/libmpdclient-9999
 	sys-libs/ncurses
 	lirc? ( app-misc/lirc )"
 DEPEND="${RDEPEND}
