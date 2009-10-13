@@ -14,7 +14,8 @@ SLOT="0"
 IUSE="+iconv"
 
 RDEPEND="iconv? ( virtual/libiconv )"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	media-libs/libmpdclient-9999"
 
 src_prepare() {
 	eautoreconf
