@@ -40,8 +40,7 @@ RDEPEND="!sys-cluster/mpich2
 	mad? ( media-libs/libmad )
 	mikmod? ( media-libs/libmikmod )
 	modplug? ( media-libs/libmodplug )
-	musepack? ( || ( >=media-sound/musepack-tools-444
-		media-libs/libmpcdec ) )
+	musepack? ( >=media-sound/musepack-tools-444 )
 	ogg? ( media-libs/libogg )
 	pulseaudio? ( media-sound/pulseaudio )
 	sid? ( >=media-libs/libsidplay-2.1.1-r2:2 )
