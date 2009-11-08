@@ -22,8 +22,8 @@ RDEPEND="sys-libs/zlib
 	x11-libs/libsexy
 	>=gnome-base/libglade-2
 	>=media-libs/libmpd-0.18.1
-	>=dev-lang/vala-9999
 	net-libs/libsoup:2.4
+	>=dev-lang/vala-0.7.8
 	dev-db/sqlite:3
 	x11-libs/libSM
 	x11-libs/libICE
