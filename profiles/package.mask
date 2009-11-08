@@ -10,12 +10,8 @@ sys-fs/mpd-updater
 ## TODO: This appears to be alive and kicking again, I'll fix this one up soon.
 media-sound/lastfmsubmitd
 
-#SVN_URI has been down for a while. Unless something changes in the next 30 days it will be removed.
+# Appears ebuild is the only broking now, fix t his soon.
 media-sound/kutempc
-
-# Masked for removal.
-# http://gmpc.wikia.com/wiki/Plugins no longer maintained and is recommended not to be used.
-media-plugins/gmpc-mdcover2
 
 # Masked so 0.7.8 installs
 =dev-lang/vala-9999
