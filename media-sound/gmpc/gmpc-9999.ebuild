@@ -52,6 +52,7 @@ src_configure() {
 }
 
 src_install() {
+	MAKEOPTS=-j1
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README
 }
