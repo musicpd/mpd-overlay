@@ -1,9 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-WANT_AUTOMAKE=1.11
+WANT_AUTOMAKE="1.11"
 
 EAPI=2
+
 inherit autotools git gnome2-utils
 
 DESCRIPTION="A GTK+2 client for the Music Player Daemon."
@@ -46,18 +47,15 @@ src_configure() {
 		$(use_enable xspf libxspf) \
 		--disable-libspiff \
 		--enable-system-libsexy \
-		--disable-shave \
 		--with-extra-version="`git rev-parse ${EGIT_BRANCH} | cut -c 1-8`"
+
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README TODO
+	dodoc AUTHORS ChangeLog NEWS README
 }
 
 pkg_preinst() { gnome2_icon_savelist; }
 pkg_postinst() { gnome2_icon_cache_update; }
 pkg_postrm() { gnome2_icon_cache_update; }
-pkg_preinst() {
-	gnome2_icon_savelist
-}
