@@ -16,3 +16,6 @@ media-sound/kutempc
 # Masked for removal.
 # http://gmpc.wikia.com/wiki/Plugins no longer maintained and is recommended not to be used.
 media-plugins/gmpc-mdcover2
+
+# Masked so 0.7.8 installs
+=dev-lang/vala-9999
