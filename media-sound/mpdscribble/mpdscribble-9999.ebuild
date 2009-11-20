@@ -16,7 +16,8 @@ IUSE="debug"
 RDEPEND="dev-libs/glib:2
 	|| ( >=dev-libs/glib-2.16:2
 		dev-libs/libgcrypt )
-	net-libs/libsoup:2.4"
+	net-libs/libsoup:2.4
+	=media-libs/libmpdclient-9999"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
