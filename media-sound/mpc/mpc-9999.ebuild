@@ -33,5 +33,5 @@ src_install() {
 	dodoc doc/mpd-m3u-handler.sh doc/mppledit doc/mpd-pls-handler.sh
 	rm -rf "${D}"/usr/share/doc/${PN}
 
-	dobashcompletion doc/mpc-bashrc
+	dobashcompletion doc/mpc-completion.bash
 }
