@@ -1,7 +1,3 @@
-# It's broken and mostly unusable, here for testers
-# and testing
-media-sound/kanola
-
 # It's not necessarily broken, but it's not finished
 # and who knows how good the security is?
 sys-fs/mpd-updater
@@ -9,9 +5,3 @@ sys-fs/mpd-updater
 ## Masked due to no maintained version of py-libmpdclient
 ## TODO: This appears to be alive and kicking again, I'll fix this one up soon.
 media-sound/lastfmsubmitd
-
-# Appears ebuild is the only broking now, fix t his soon.
-media-sound/kutempc
-
-# Masked so 0.7.8 installs
-=dev-lang/vala-9999
