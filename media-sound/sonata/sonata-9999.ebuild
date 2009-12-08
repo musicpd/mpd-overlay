@@ -26,3 +26,8 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 DOCS="CHANGELOG README TODO TRANSLATORS"
+
+src_install() {
+	distutils_src_install
+	rm -rf "${D}"/usr/share/sonata
+}
