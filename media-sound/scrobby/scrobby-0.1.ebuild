@@ -12,8 +12,7 @@ IUSE=""
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
-DEPEND="dev-libs/openssl
-	net-misc/curl"
+DEPEND="net-misc/curl[ssl,-gnutls]"
 RDEPEND="${DEPEND}"
 
 src_install() {
