@@ -36,8 +36,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	einfo "Running intltoolize --automake"
-	intltoolize --automake || die "intltoolize failed"
-	eautoreconf
+	./autogen.sh || die "Autogen Failed"
 }
 
 src_configure() {
