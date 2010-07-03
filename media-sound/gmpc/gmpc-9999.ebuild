@@ -9,7 +9,7 @@ inherit autotools git gnome2-utils
 
 DESCRIPTION="A GTK+2 client for the Music Player Daemon."
 HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/GMPC"
-EGIT_REPO_URI="git://repo.or.cz/gmpc.git"
+EGIT_REPO_URI="git://git.musicpd.org/master/gmpc.git"
 
 LICENSE="GPL-2"
 SLOT="0"
