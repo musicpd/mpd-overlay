@@ -14,7 +14,7 @@ if [ -z ${EGIT_REPO_URI} ] || [ -z "${SRC_URI}" ]; then
 		GMPC_PLUGIN="${PN}"
 		GMPC_PLUGIN="${GMPC_PLUGIN#gmpc-}"
 	fi
-	EGIT_REPO_URI="git://repo.or.cz/gmpc-${GMPC_PLUGIN}.git"
+	EGIT_REPO_URI="git://git.musicpd.org/qball/${GMPC_PLUGIN}.git"
 fi
 
 if [ -z "${SRC_URI}" ]; then
