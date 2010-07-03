@@ -23,7 +23,7 @@ RDEPEND="sys-libs/zlib
 	>=gnome-base/libglade-2
 	=media-libs/libmpd-9999
 	net-libs/libsoup:2.4
-	>=dev-lang/vala-0.7.10
+	>=dev-lang/vala-0.9.1
 	dev-db/sqlite:3
 	x11-libs/libSM
 	x11-libs/libICE
