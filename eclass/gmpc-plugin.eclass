@@ -12,7 +12,7 @@ if [ -z ${EGIT_REPO_URI} ] || [ -z "${SRC_URI}" ]; then
 	DEPEND="${DEPEND}"
 	if [ -z ${GMPC_PLUGIN} ]; then
 		GMPC_PLUGIN="${PN}"
-		GMPC_PLUGIN="${GMPC_PLUGIN#gmpc-}"
+		GMPC_PLUGIN="${gmpc-${GMPC_PLUGIN}}"
 	fi
 	EGIT_REPO_URI="git://git.musicpd.org/qball/${GMPC_PLUGIN}.git"
 fi
