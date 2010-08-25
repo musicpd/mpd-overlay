@@ -1,6 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=2
+
 inherit eutils
 
 DESCRIPTION="An Audioscrobbler MPD client"
@@ -12,8 +14,7 @@ IUSE=""
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
-DEPEND="|| ( net-misc/curl[ssl,-gnutls]
-        net-misc/curl[openssl,-gnutls] )"
+DEPEND="net-misc/curl[ssl,-gnutls]"
 RDEPEND="${DEPEND}"
 
 src_install() {
