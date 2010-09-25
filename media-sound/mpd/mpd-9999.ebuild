@@ -37,7 +37,7 @@ RDEPEND="!sys-cluster/mpich2
 	libmms? ( >=media-libs/libmms-0.4 )
 	libsamplerate? ( media-libs/libsamplerate )
 	mad? ( media-libs/libmad )
-	!mad? ( media-sound/mpg123 )
+	mpg123? ( !mad? ( media-sound/mpg123 ) )
 	mikmod? ( media-libs/libmikmod )
 	modplug? ( media-libs/libmodplug )
 	musepack? ( >=media-sound/musepack-tools-444 )
