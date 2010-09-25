@@ -13,8 +13,8 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="aac +alsa ao audiofile avahi bzip2 cdio cue +curl debug +fifo +ffmpeg flac
 fluidsynth profile +id3 ipv6 jack lame lastfmradio libmms libsamplerate +mad
-mikmod modplug musepack +network ogg oss pipe pulseaudio sid sqlite unicode
-vorbis wavpack zip doc"
+mikmod modplug mpg123 musepack +network ogg oss pipe pulseaudio sid sndfile sqlite
+tcpd twolame unicode vorbis wavpack zip doc"
 
 WANT_AUTOMAKE="1.10"
 RDEPEND="!sys-cluster/mpich2
@@ -23,6 +23,7 @@ RDEPEND="!sys-cluster/mpich2
 	alsa? ( media-sound/alsa-utils )
 	ao? ( >=media-libs/libao-0.8.4[alsa?,pulseaudio?] )
 	audiofile? ( media-libs/audiofile )
+	avahi? ( net-dns/avahi )
 	bzip2? ( app-arch/bzip2 )
 	cdio? ( dev-libs/libcdio )
 	cue? ( >=media-libs/libcue-0.13 )
@@ -30,24 +31,27 @@ RDEPEND="!sys-cluster/mpich2
 	ffmpeg? ( media-video/ffmpeg )
 	flac? ( media-libs/flac[ogg?] )
 	fluidsynth? ( media-sound/fluidsynth )
-	network? ( >=media-libs/libshout-2
-		!lame? ( !vorbis? ( media-libs/libvorbis ) ) )
 	id3? ( media-libs/libid3tag )
 	jack? ( media-sound/jack-audio-connection-kit )
 	lame? ( network? ( media-sound/lame ) )
 	libmms? ( >=media-libs/libmms-0.4 )
 	libsamplerate? ( media-libs/libsamplerate )
 	mad? ( media-libs/libmad )
+	!mad? ( media-sound/mpg123 )
 	mikmod? ( media-libs/libmikmod )
 	modplug? ( media-libs/libmodplug )
 	musepack? ( >=media-sound/musepack-tools-444 )
+	network? ( >=media-libs/libshout-2
+		tcpd? ( sys-apps/tcp-wrappers ) 
+		!lame? ( !vorbis? ( media-libs/libvorbis ) ) )
 	ogg? ( media-libs/libogg )
 	pulseaudio? ( media-sound/pulseaudio )
 	sid? ( >=media-libs/libsidplay-2.1.1-r2:2 )
+	sndfile? ( !modplug? ( media-libs/libsndfile ) )
 	sqlite? ( dev-db/sqlite:3 )
+	twolame? ( media-sound/twolame )
 	vorbis? ( media-libs/libvorbis )
 	wavpack? ( media-sound/wavpack )
-	avahi? ( net-dns/avahi )
 	zip? ( dev-libs/zziplib )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
@@ -70,11 +74,14 @@ src_prepare() {
 }
 
 src_configure() {
-	local mpdconf="--enable-tcp --enable-un --disable-wildmidi
-		--disable-libOggFLACtest --disable-documentation"
+	local mpdconf="--enable-tcp
+		--enable-un
+		--disable-wildmidi
+		--disable-gme
+		--disable-documentation"
 	
 	if use network; then
-		mpdconf+=" --enable-shout $(use_enable vorbis vorbis-encoder)
+		mpdconf+=" --enable-libwrap --enable-shout $(use_enable vorbis vorbis-encoder)
 			--enable-httpd-output $(use_enable lame lame-encoder)"
 		if ! use lame && ! use vorbis; then
 			ewarn "At least one encoder is required, enabling vorbis for you."
@@ -91,6 +98,20 @@ src_configure() {
 		mpdconf+=" --disable-oggflac"
 	fi
 
+	if use mad; then
+		use mpg123 && \
+		ewarn "libmad and libmpg123 are mutually exclusive, use libmad"
+		mpdconf+=" --enable-mad --disable-mpg123"
+	else
+		mpdconf+=" $(use_enable mpg123) --disable-mad"
+	fi
+
+	if use modplug; then
+		mpdconf+=" --disable-sndfile"
+	else
+		mpdconf+=" $(use_enable sndfile)"
+	fi
+
 	append-lfs-flags
 	append-ldflags "-L/usr/$(get_libdir)/sidplay/builders"
 
@@ -102,13 +123,12 @@ src_configure() {
 		$(use_enable lastfmradio lastfm) \
 		$(use_enable libmms mms) \
 		$(use_enable bzip2) \
-		$(use_enable zip) \
+		$(use_enable zip zzip) \
 		$(use_enable cdio iso9660) \
 		$(use_enable id3) \
 		$(use_enable audiofile) \
 		$(use_enable ffmpeg) \
 		$(use_enable flac) \
-		$(use_enable mad) \
 		$(use_enable mikmod) \
 		$(use_enable modplug) \
 		$(use_enable musepack mpc) \
@@ -117,6 +137,7 @@ src_configure() {
 		$(use_enable fluidsynth) \
 		$(use_enable wavpack) \
 		$(use_enable libsamplerate lsr) \
+		$(use_enable twolame twolame-encoder) \
 		$(use_enable alsa) \
 		$(use_enable ao) \
 		$(use_enable fifo) \
