@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=2
+WANT_AUTOMAKE="1.10"
+
 inherit git flag-o-matic autotools multilib
 
 DESCRIPTION="The Music Player Daemon (mpd)"
@@ -16,7 +18,6 @@ fluidsynth profile +id3 ipv6 jack lame lastfmradio libmms libsamplerate +mad
 mikmod modplug mpg123 musepack +network ogg oss pipe pulseaudio sid sndfile sqlite
 tcpd twolame unicode vorbis wavpack zip doc"
 
-WANT_AUTOMAKE="1.10"
 RDEPEND="!sys-cluster/mpich2
 	>=dev-libs/glib-2.4:2
 	aac? ( >=media-libs/faad2-2 )
