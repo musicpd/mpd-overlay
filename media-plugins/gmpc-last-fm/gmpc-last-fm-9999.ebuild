@@ -1,7 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-GMPC_PLUGIN="last.fm"
+GMPC_PLUGIN="gmpc-last.fm"
 inherit gmpc-plugin
 
 DESCRIPTION="The last.fm plugin can fetch artist images, from last.fm. This plugin doesn't scrobble your music, use a dedicated client like mpdscribble for this."
