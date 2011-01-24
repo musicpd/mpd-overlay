@@ -19,7 +19,6 @@ IUSE="nls xspf"
 RDEPEND="sys-libs/zlib
 	>=dev-libs/glib-2.16:2
 	>=x11-libs/gtk+-2.12:2
-	x11-libs/libsexy
 	>=gnome-base/libglade-2
 	=media-libs/libmpd-9999
 	net-libs/libsoup:2.4
@@ -29,7 +28,7 @@ RDEPEND="sys-libs/zlib
 	x11-libs/libICE
 	xspf? ( >=media-libs/libxspf-1.2 )"
 DEPEND="${RDEPEND}
-	dev-util/gob
+	>=dev-util/gob-2.0.17
 	dev-util/pkgconfig
 	nls? ( dev-util/intltool
 		sys-devel/gettext )"
@@ -48,7 +47,6 @@ src_configure() {
 		--disable-dependency-tracking \
 		$(use_enable xspf libxspf) \
 		--disable-libspiff \
-		--enable-system-libsexy \
 		--with-extra-version="`git rev-parse ${EGIT_BRANCH} | cut -c 1-8`"
 
 }
