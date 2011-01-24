@@ -23,7 +23,7 @@ RDEPEND="sys-libs/zlib
 	>=gnome-base/libglade-2
 	=media-libs/libmpd-9999
 	net-libs/libsoup:2.4
-	dev-lang/vala:0
+	dev-lang/vala:0.12
 	dev-db/sqlite:3
 	x11-libs/libSM
 	x11-libs/libICE
@@ -34,9 +34,12 @@ DEPEND="${RDEPEND}
 	nls? ( dev-util/intltool
 		sys-devel/gettext )"
 
+export VALAC=$(type -p valac-0.12)
+
 src_prepare() {
 	einfo "Running intltoolize --automake"
-	./autogen.sh || die "Autogen Failed"
+	intltoolize --force --copy --automake || die "intltoolize failed"
+	eautoreconf || die "eautoreconf Failed"
 }
 
 src_configure() {
