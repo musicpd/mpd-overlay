@@ -1,11 +1,9 @@
 app-portage
-media-plugins
-net-libs
-www-apps
+dev-perl
 dev-ruby
 media-libs
+media-plugins
 media-sound
 sys-fs
+www-apps
 x11-plugins
-dev-perl
-dev-lang
