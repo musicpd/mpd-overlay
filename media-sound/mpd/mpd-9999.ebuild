@@ -29,7 +29,7 @@ RDEPEND="!sys-cluster/mpich2
 	cdio? ( dev-libs/libcdio )
 	cue? ( >=media-libs/libcue-0.13 )
 	curl? ( net-misc/curl )
-	ffmpeg? ( media-video/ffmpeg )
+	ffmpeg? ( virtual/ffmpeg )
 	flac? ( media-libs/flac[ogg?] )
 	fluidsynth? ( media-sound/fluidsynth )
 	id3? ( media-libs/libid3tag )
