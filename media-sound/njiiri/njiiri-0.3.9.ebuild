@@ -7,7 +7,7 @@ inherit ruby
 EAPI=2
 DESCRIPTION="Njiiri is a GTK+ client for MPD, written in Ruby."
 HOMEPAGE="http://www.red-bean.com/decklin/njiiri/"
-LICENSE="AS-IS"
+LICENSE="as-is"
 SRC_URI="http://www.red-bean.com/decklin/njiiri/${P}.tar.gz"
 
 KEYWORDS="~alpha ~amd64 ~ia64 ~mips ~ppc ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
