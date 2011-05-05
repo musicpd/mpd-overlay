@@ -7,3 +7,5 @@ inherit gmpc-plugin
 DESCRIPTION="A GMPC plugin to view the wikipedia entry on an artist or album."
 KEYWORDS=""
 DEPEND="net-libs/webkit-gtk"
+RDEPEND="${DEPEND}"
+IUSE=""

@@ -14,6 +14,7 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="virtual/httpd-php"
+RDEPEND="${DEPEND}"
 DOCS="CHANGELOG README"
 
 src_install() {

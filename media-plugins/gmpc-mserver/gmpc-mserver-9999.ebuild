@@ -8,3 +8,5 @@ DESCRIPTION="This plugin allows seamless file transfers from the host which GMPC
 KEYWORDS=""
 DEPEND="media-libs/taglib
 	net-libs/libmicrohttpd"
+RDEPEND="${DEPEND}"
+IUSE=""

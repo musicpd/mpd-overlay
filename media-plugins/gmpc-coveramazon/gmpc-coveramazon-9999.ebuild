@@ -9,3 +9,5 @@ KEYWORDS=""
 EGIT_REPO_URI="git://repo.or.cz/${PN}.git"
 DEPEND="dev-libs/libxml2
 	x11-libs/gtk+:2[jpeg]"
+RDEPEND="${DEPEND}"
+IUSE=""

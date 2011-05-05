@@ -17,6 +17,7 @@ S="${WORKDIR}/${P/wm/WM}"
 
 DEPEND="x11-libs/libXext
 	x11-libs/libXpm"
+RDEPEND="${DEPEND}"
 
 src_prepare() {
 	eautoreconf

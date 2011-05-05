@@ -9,7 +9,8 @@ DESCRIPTION="The last.fm plugin can fetch artist images, from last.fm. This plug
 LICENSE="GPL-2"
 DEPEND="dev-libs/libxml2
 	x11-libs/gtk+:2[jpeg]"
+RDEPEND="${DEPEND}"
+IUSE=""
 
 KEYWORDS=""
 SLOT="0"
-IUSE=""

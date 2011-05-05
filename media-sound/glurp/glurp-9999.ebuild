@@ -17,9 +17,10 @@ IUSE="debug"
 DEPEND=">=x11-libs/gtk+-2.4.0
 	>=gnome-base/libglade-2.3.6
 	!media-sound/glurp-libmpd"
+RDEPEND="${DEPEND}"
 
 src_prepare() {
-        eautoreconf
+	eautoreconf
 }
 
 src_configure() {

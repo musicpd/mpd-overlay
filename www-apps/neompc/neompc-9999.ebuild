@@ -12,16 +12,16 @@ LICENSE="GPL-2"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="${RDEPEND}
-	virtual/httpd-php"
+DEPEND="virtual/httpd-php"
+RDEPEND="${DEPEND}"
 
 src_install() {
-        webapp_src_preinst
+	webapp_src_preinst
 
-        cp -r . "${D}/${MY_HTDOCSDIR}"
+	cp -r . "${D}/${MY_HTDOCSDIR}"
 
 	webapp_serverowned -R "${MY_HTDOCSDIR}/smarty/templates_c"
 
-        webapp_src_install
+	webapp_src_install
 }
 

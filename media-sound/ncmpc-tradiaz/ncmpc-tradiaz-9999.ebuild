@@ -19,6 +19,7 @@ DEPEND="sys-libs/ncurses
 	>=dev-libs/glib-2.4
 	net-misc/curl
 	!media-sound/ncmpc"
+RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	use search-screen && elog "Please note that the search-screen is experimental"

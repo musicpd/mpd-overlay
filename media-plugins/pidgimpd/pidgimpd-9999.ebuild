@@ -15,6 +15,8 @@ SLOT=0
 IUSE="debug"
 
 DEPEND="net-im/pidgin"
+RDEPEND="${DEPEND}"
+IUSE=""
 
 src_prepare() {
 	eautoreconf

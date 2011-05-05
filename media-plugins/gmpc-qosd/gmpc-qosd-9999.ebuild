@@ -7,3 +7,5 @@ inherit gmpc-plugin
 DESCRIPTION="A on-screen-display written to look nicer then xosd."
 KEYWORDS=""
 DEPEND="x11-libs/cairo"
+RDEPEND="${DEPEND}"
+IUSE=""

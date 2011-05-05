@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=3
+
 inherit distutils eutils mercurial
 
 DESCRIPTION="a Last.fm 'plugin' client for MPD, implemented in Python."
@@ -20,25 +22,24 @@ src_install() {
 	dodoc INSTALL
 
 	# Now install rc-scripts
-	doinitd ${FILESDIR}/lastfmsubmitd
-	doinitd ${FILESDIR}/lastmp
+	doinitd "${FILESDIR}"/lastfmsubmitd
+	doinitd "${FILESDIR}"/lastmp
 
 	# Directories at /var (spool, logs...)
 	for x in log run spool ; do
-		install -d ${D}/var/$x/lastfm
-		fowners lastfm /var/$x/lastfm
-		fperms 775 /var/$x/lastfm
-		keepdir /var/$x/lastfm
+		install -d "${D}"/var/"$x"/lastfm
+		fowners lastfm /var/"$x"/lastfm
+		fperms 775 /var/"$x"/lastfm
+		keepdir /var/"$x"/lastfm
 	done
-	touch ${D}/var/log/lastfm/lastfm.log
+	touch "${D}"/var/log/lastfm/lastfm.log
 	fowners lastfm /var/log/lastfm/lastfm.log
 
 	# Configuration files.
 	insinto /etc
-	doins ${FILESDIR}/lastfmsubmitd.conf
-	doins ${FILESDIR}/lastmp.conf
+	doins "${FILESDIR}"/lastfmsubmitd.conf
+	doins "${FILESDIR}"/lastmp.conf
 }
-
 
 pkg_postinst () {
 	einfo
@@ -47,7 +48,6 @@ pkg_postinst () {
 	einfo "default shipped with Gentoo."
 	einfo
 }
-
 
 pkg_setup () {
 	enewuser lastfm -1 "/bin/sh"

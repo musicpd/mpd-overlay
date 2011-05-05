@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
+
 DESCRIPTION="gmpc - a meta ebuild to pull in gmpc and all plugins"
 HOMEPAGE="http://sarine.nl/gmpc"
 LICENSE="GPL-2"

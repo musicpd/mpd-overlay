@@ -7,3 +7,5 @@ inherit gmpc-plugin
 DESCRIPTION="A GMPC plugin to find MPD servers and automatically make a profile for it."
 KEYWORDS=""
 DEPEND="net-dns/avahi"
+RDEPEND="${DEPEND}"
+IUSE=""

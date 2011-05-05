@@ -7,6 +7,8 @@ inherit gmpc-plugin
 DESCRIPTION="This plugin allows you to tag your music collection."
 KEYWORDS=""
 DEPEND="media-libs/taglib"
+RDEPEND="${DEPEND}"
+IUSE=""
 
 pkg_postinst() {
 	elog "This plugin is extremely alpha. Use with caution (and realize there won't be errors, yet)"

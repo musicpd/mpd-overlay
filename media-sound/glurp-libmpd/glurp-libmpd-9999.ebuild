@@ -14,14 +14,14 @@ KEYWORDS=""
 SLOT="0"
 IUSE="debug"
 
-DEPEND="${RDEPEND}
-	media-libs/libmpd
+DEPEND="media-libs/libmpd
 	>=x11-libs/gtk+-2.4.0
 	!media-sound/glurp
 	>=gnome-base/libglade-2.3.6"
+RDEPEND="${DEPEND}"
 
 src_prepare() {
-        eautoreconf
+	eautoreconf
 }
 
 src_configure() {

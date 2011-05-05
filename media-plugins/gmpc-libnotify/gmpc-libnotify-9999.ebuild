@@ -7,3 +7,5 @@ inherit gmpc-plugin
 DESCRIPTION="Song change notifier using libnotify, a general notification system"
 KEYWORDS=""
 DEPEND="x11-libs/libnotify"
+RDEPEND="${DEPEND}"
+IUSE=""
