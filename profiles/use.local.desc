@@ -1,5 +1,6 @@
 media-sound/gmpc:mmkeys - Enable support for multimedia keys
 media-sound/gmpc:xspf - Enable support for reading XSPF playlists
+media-sound/gmpc:unique - Enable single instance support using dev-libs/libunique
 
 media-sound/ncmpc:artist-screen - Enable support for an artist browser screen.
 media-sound/ncmpc:colors - Enable support for terminal colors.

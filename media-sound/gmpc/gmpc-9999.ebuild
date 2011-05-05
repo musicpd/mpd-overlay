@@ -3,9 +3,9 @@
 
 WANT_AUTOMAKE="1.11"
 
-EAPI=2
+EAPI=3
 
-inherit autotools git gnome2-utils
+inherit autotools git-2 gnome2-utils
 
 DESCRIPTION="A GTK+2 client for the Music Player Daemon."
 HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/GMPC"
@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://git.musicpd.org/master/gmpc.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="nls xspf"
+IUSE="nls unique xspf"
 
 RDEPEND="sys-libs/zlib
 	>=dev-libs/glib-2.16:2
@@ -26,6 +26,7 @@ RDEPEND="sys-libs/zlib
 	dev-db/sqlite:3
 	x11-libs/libSM
 	x11-libs/libICE
+	unique? ( dev-libs/libunique:1 )
 	xspf? ( >=media-libs/libxspf-1.2 )"
 DEPEND="${RDEPEND}
 	>=dev-util/gob-2.0.17
@@ -45,6 +46,7 @@ src_configure() {
 	econf \
 		$(use_enable nls) \
 		--disable-dependency-tracking \
+		$(use_enable unique) \
 		$(use_enable xspf libxspf) \
 		--disable-libspiff \
 		--with-extra-version="`git rev-parse ${EGIT_BRANCH} | cut -c 1-8`"
@@ -56,7 +58,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${ED}" install || die
 	dodoc AUTHORS ChangeLog NEWS README
 }
 
