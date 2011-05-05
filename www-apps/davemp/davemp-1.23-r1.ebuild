@@ -10,7 +10,7 @@ SRC_URI="http://ion0.com/davemp/downloads/files/${P}.tar.gz"
 
 LICENSE="CCPL-Attribution-NonCommercial-ShareAlike-2.5"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~mips ~ppc-macos ~s390 ~sh ~sparc-fbsd ~x86 ~x86-fbsd"
 
 DEPEND="dev-perl/JSON-XS
 	dev-perl/HTTP-Server-Simple
