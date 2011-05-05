@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layman>
-  <overlay type="git" src="git://github.com/musicpd/mpd-overlay.git" name="mpd" status="unofficial" contact="netzdamon@gmail.com">
+	<overlay type="git" src="git://github.com/musicpd/mpd-overlay.git" name="mpd" status="unofficial" contact="kelwert@mtu.edu">
     <description>The experimental gentoo overlay was designed as a
       way to keep up-to-date. Most of it are live ebuilds, ebuilds
       that pull the latest HEAD from whatever repository. It also
