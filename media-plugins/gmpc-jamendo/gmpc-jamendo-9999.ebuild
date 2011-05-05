@@ -5,7 +5,7 @@
 inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to interface jamendo.com API"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 DEPEND="dev-libs/libxml2
 	dev-db/sqlite
 	sys-libs/zlib"

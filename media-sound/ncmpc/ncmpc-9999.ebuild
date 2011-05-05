@@ -11,7 +11,7 @@ HOMEPAGE="http://mpd.wikia.com/wiki/Client:Ncmpc"
 LICENSE="GPL-2"
 EGIT_REPO_URI="git://git.musicpd.org/cirrus/ncmpc.git"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 SLOT="0"
 IUSE="artist-screen +colors debug help-screen key-screen lirc lyrics-screen minimal mouse nls outputs-screen search-screen +wcwidth"
 

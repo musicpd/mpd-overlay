@@ -5,6 +5,6 @@
 inherit gmpc-plugin
 
 DESCRIPTION="This plugin fetches stuff from discogs.com"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 DEPEND="dev-libs/libxml2
 	x11-libs/gtk+:2[jpeg]"

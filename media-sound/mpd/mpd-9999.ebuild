@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://git.musicpd.org/master/mpd.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 IUSE="aac +alsa ao audiofile avahi bzip2 cdio cue +curl debug +fifo +ffmpeg flac
 fluidsynth profile +id3 ipv6 jack lame lastfmradio libmms libsamplerate +mad
 mikmod modplug mpg123 musepack +network ogg oss pipe pulseaudio sid sndfile sqlite

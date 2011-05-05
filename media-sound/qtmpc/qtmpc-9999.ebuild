@@ -13,7 +13,7 @@ HOMEPAGE="http://qtmpc.lowblog.nl"
 LICENSE="GPL-2"
 ESVN_REPO_URI="http://qtmpc.lowblog.nl/svn/trunk"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 SLOT="0"
 IUSE="kde"
 RDEPEND="x11-libs/qt-gui:4

@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 IUSE="bash-completion clock curl fftw iconv outputs taglib +threads unicode visualizer"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 
 DEPEND="sys-libs/ncurses[unicode?]
 	>=media-libs/libmpdclient-9999

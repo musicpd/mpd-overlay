@@ -1,15 +1,14 @@
 # Kaleb Elwert <kelwert@mtu.edu> (5 May 2011)
-# Mask live ebuilds
-=media-sound/sonata-9999
+# The stuff in dev-perl has missing deps only in the perl overlay
+# So, they're getting masked for now
+dev-perl/Audio-MPD
+dev-perl/Audio-MPD-Common
+dev-perl/Getopt-Euclid
 
 # Kaleb Elwert <kelwert@mtu.edu> (5 May 2011)
 # update-live-ebuilds is old and not recommended.
 # Use either portage 2.2 with @live-rebuild or app-portage/smart-live-rebuild
 app-portage/update-live-ebuilds
-
-# It's not necessarily broken, but it's not finished
-# and who knows how good the security is?
-sys-fs/mpd-updater
 
 ## Masked due to no maintained version of py-libmpdclient
 ## TODO: This appears to be alive and kicking again, I'll fix this one up soon.

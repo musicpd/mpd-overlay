@@ -5,7 +5,7 @@
 inherit gmpc-plugin
 
 DESCRIPTION="The plugin allows you to browse, and preview available albums on www.magnatune.com."
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 DEPEND="x11-libs/gtk+:2[jpeg]
 	dev-libs/libxml2
 	dev-db/sqlite"

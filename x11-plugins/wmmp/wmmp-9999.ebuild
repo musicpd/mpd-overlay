@@ -10,7 +10,7 @@ HOMEPAGE="http://mpd.wikia.com/index.php?title=Client:WMmp&oldid=941"
 LICENSE="GPL-2"
 
 ESVN_REPO_URI="https://svn.musicpd.org/WMmp/trunk/"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 SLOT="0"
 IUSE=""
 S="${WORKDIR}/${P/wm/WM}"

@@ -10,7 +10,7 @@ DESCRIPTION="A suite of utilities to transfer, restore, save state for the Music
 HOMEPAGE="http://mpd.wikia.com/wiki/Client:State-utils"
 LICENSE="GPL-3"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 SLOT="0"
 IUSE=""
 

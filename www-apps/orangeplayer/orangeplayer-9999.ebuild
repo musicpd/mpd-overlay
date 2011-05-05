@@ -10,7 +10,7 @@ ECVS_SERVER="orangeplayer.cvs.sourceforge.net:/cvsroot/orangeplayer"
 ECVS_MODULE="orangeplayer"
 LICENSE="GPL-2"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 
 RDEPEND="virtual/httpd-php"
 

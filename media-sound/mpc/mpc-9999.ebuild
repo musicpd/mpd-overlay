@@ -10,7 +10,7 @@ DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
 HOMEPAGE="http://mpd.wikia.com/index.php?title=Client:Mpc&oldid=4111"
 LICENSE="GPL-2"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 SLOT="0"
 IUSE="+iconv"
 

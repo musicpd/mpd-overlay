@@ -10,7 +10,7 @@ HOMEPAGE="http://codingteam.net/project/sonata/"
 ESVN_REPO_URI="http://svn.codingteam.net/sonata/"
 
 LICENSE="GPL-3"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 SLOT="0"
 IUSE="dbus lyrics taglib +trayicon"
 

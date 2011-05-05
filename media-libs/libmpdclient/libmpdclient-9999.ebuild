@@ -12,7 +12,7 @@ LICENSE="BSD"
 IUSE="debug"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 
 src_prepare() {
 	eautoreconf

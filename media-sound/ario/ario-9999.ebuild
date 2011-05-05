@@ -11,7 +11,7 @@ HOMEPAGE="http://ario-player.sourceforge.net"
 LICENSE="GPL-2"
 ESVN_REPO_URI="https://ario-player.svn.sourceforge.net/svnroot/ario-player/trunk"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 SLOT="0"
 IUSE="audioscrobbler dbus debug idle libnotify nls python taglib zeroconf"
 

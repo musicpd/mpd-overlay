@@ -10,7 +10,7 @@ HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/Libmpd"
 LICENSE="GPL-2"
 EGIT_REPO_URI='git://repo.or.cz/libmpd.git'
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS=""
 SLOT="0"
 IUSE="doc"
 RDEPEND=">=dev-libs/glib-2.16:2
