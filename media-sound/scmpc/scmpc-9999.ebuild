@@ -34,5 +34,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Note: This version of scmpc requires mpd-0.14"
+	elog "Note: This version of scmpc requires >=mpd-0.14"
 }
