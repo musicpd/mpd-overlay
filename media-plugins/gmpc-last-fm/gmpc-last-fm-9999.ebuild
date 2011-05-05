@@ -1,5 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
 GMPC_PLUGIN="gmpc-last.fm"
 inherit gmpc-plugin
