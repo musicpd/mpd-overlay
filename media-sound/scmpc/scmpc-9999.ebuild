@@ -1,29 +1,31 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
-EAPI=2
-EGIT_REPO_URI="git://ngls.zakx.de/scmpc.git"
-inherit git autotools
+EAPI=4
+inherit autotools git
 
 DESCRIPTION="a client for MPD which submits your tracks to last.fm"
-HOMEPAGE="http://ngls.zakx.de/scmpc/"
-LICENSE="GPL-2"
+HOMEPAGE="http://scmpc.berlios.de/"
+EGIT_REPO_URI="git://git.berlios.de/scmpc"
+EGIT_BOOTSTRAP="eautoreconf"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=dev-libs/glib-2.16
-	>=net-misc/curl-7.15.4
-	dev-libs/confuse"
+RDEPEND="dev-libs/glib:2
+	dev-libs/confuse
+	net-misc/curl"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
-src_prepare() {
-	eautoreconf
-}
+DOCS="AUTHORS ChangeLog NEWS README scmpc.conf.example"
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS NEWS README scmpc.conf.example
+	default
+
 	newinitd "${FILESDIR}"/${PN}.init ${PN}
 	insinto /etc
 	insopts -m600
@@ -31,5 +33,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Note: This version of scmpc requires mpd-0.14"
+	elog "Note: This version of scmpc requires >=mpd-0.14"
 }
