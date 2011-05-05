@@ -1,4 +1,8 @@
 # Kaleb Elwert <kelwert@mtu.edu> (5 May 2011)
+# Mask live ebuilds
+=media-sound/sonata-9999
+
+# Kaleb Elwert <kelwert@mtu.edu> (5 May 2011)
 # update-live-ebuilds is old and not recommended.
 # Use either portage 2.2 with @live-rebuild or app-portage/smart-live-rebuild
 app-portage/update-live-ebuilds
