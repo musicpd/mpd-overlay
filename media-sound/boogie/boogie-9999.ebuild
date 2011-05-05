@@ -1,21 +1,21 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-EAPI=2
 # $Header: $
 
+EAPI=3
 inherit distutils git python
 
 DESCRIPTION="A lightweight console based MPD client"
 HOMEPAGE="http://github.com/alip/boogie/tree/master"
 EGIT_REPO_URI="git://github.com/alip/boogie.git"
 IUSE="zsh-completion"
+PYTHON_DEPEND="2"
 
 LICENSE="GPL-2"
 KEYWORDS=""
 SLOT="0"
 
-RDEPEND=">=virtual/python-2.4
-	dev-python/python-mpd
+RDEPEND="dev-python/python-mpd
 	dev-python/mako
 	dev-python/ipython"
 DEPEND="${RDEPEND}
@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS README"
 
 src_install() {
-	dodoc ${DOCS} 
+	dodoc ${DOCS}
 	doman doc/boogie.1
 	if use zsh-completion ; then
 		insinto /usr/share/zsh/site-functions
