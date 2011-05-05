@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=4
-inherit autotools git
+inherit autotools git-2
 
 DESCRIPTION="a client for MPD which submits your tracks to last.fm"
 HOMEPAGE="http://scmpc.berlios.de/"
@@ -21,7 +21,7 @@ RDEPEND="dev-libs/glib:2
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-DOCS="AUTHORS ChangeLog NEWS README scmpc.conf.example"
+DOCS=( AUTHORS NEWS README scmpc.conf.example )
 
 src_install() {
 	default
@@ -33,5 +33,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Note: This version of scmpc requires >=mpd-0.14"
+	elog "Note: This version of scmpc requires mpd-0.14"
 }
