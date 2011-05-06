@@ -19,10 +19,6 @@ IUSE=""
 DEPEND="dev-lang/python[ncurses]"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	epatch "${FILESDIR}/fix-exec.patch"
-}
-
 pkg_postinst() {
 	python_mod_optimize Evad
 }
