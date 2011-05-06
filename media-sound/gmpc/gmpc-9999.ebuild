@@ -15,7 +15,7 @@ EGIT_REPO_URI="git://git.musicpd.org/master/gmpc.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="nls unique xspf"
+IUSE="nls +unique xspf"
 
 RDEPEND=">=dev-libs/glib-2.16:2
 	>=x11-libs/gtk+-2.12:2
