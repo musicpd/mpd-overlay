@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-inherit bash-completion eutils autotools git
+inherit bash-completion eutils autotools git-2
 
 DESCRIPTION="An ncurses mpd client, ncmpc clone with some new features, written in C++"
 HOMEPAGE="http://unkart.ovh.org/ncmpcpp"

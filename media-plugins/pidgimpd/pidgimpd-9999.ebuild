@@ -10,6 +10,7 @@ inherit subversion autotools
 DESCRIPTION="A pidgin plugin for MPD"
 HOMEPAGE="http://ayeon.org/projects/pidgimpd/"
 KEYWORDS=""
+LICENSE="GPL-2"
 SLOT=0
 
 IUSE="debug"

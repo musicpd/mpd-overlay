@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit eutils autotools git
+inherit eutils autotools git-2
 
 DESCRIPTION="An Audioscrobbler MPD client"
 HOMEPAGE="http://unkart.ovh.org/scrobby"
@@ -15,8 +15,8 @@ IUSE=""
 SLOT="0"
 KEYWORDS=""
 
-DEPEND="net-misc/curl[ssl,-gnutls]"
-RDEPEND="${DEPEND}
+RDEPEND="net-misc/curl[ssl,-gnutls]"
+DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_prepare() {

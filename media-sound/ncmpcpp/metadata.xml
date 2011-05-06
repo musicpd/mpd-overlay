@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer>
+		<email>kaleb@elwert.org</email>
+		<name>Kaleb Elwert</name>
+	</maintainer>
+	<use>
+		<flag name='clock'>Enable clock screen</flag>
+		<flag name='fftw'>Build the visualizer plugin that pulls in
+			<pkg>sci-libs/fftw</pkg></flag>
+		<flag name='outputs'>Enable outputs screen</flag>
+		<flag name='visualizer'>Enable visualizer screen with sound wave/frequency
+			spectrum modes</flag>
+	</use>
+</pkgmetadata>

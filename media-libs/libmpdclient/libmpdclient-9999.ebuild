@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-inherit autotools git
+inherit autotools git-2
 
 DESCRIPTION="MPD client library"
 HOMEPAGE="http://mpd.wikia.com/wiki/ClientLib:libmpdclient"

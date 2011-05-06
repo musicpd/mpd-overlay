@@ -9,6 +9,7 @@ HOMEPAGE="http://mpd.wikicities.com/wiki/Client:GKrellMPC"
 SRC_URI="http://mina.naguib.ca/dist/${P}.tar.gz"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE=""
+LICENSE="GPL-2"
 
 DEPEND="app-admin/gkrellm"
 RDEPEND="net-misc/curl"

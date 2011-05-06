@@ -5,7 +5,7 @@
 EAPI=2
 WANT_AUTOMAKE="1.10"
 
-inherit git flag-o-matic autotools multilib
+inherit git-2 flag-o-matic autotools multilib
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
@@ -44,7 +44,7 @@ RDEPEND="!sys-cluster/mpich2
 	modplug? ( media-libs/libmodplug )
 	musepack? ( >=media-sound/musepack-tools-444 )
 	network? ( >=media-libs/libshout-2
-		tcpd? ( sys-apps/tcp-wrappers ) 
+		tcpd? ( sys-apps/tcp-wrappers )
 		!lame? ( !vorbis? ( media-libs/libvorbis ) ) )
 	ogg? ( media-libs/libogg )
 	pulseaudio? ( media-sound/pulseaudio )

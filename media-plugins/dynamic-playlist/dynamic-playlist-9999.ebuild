@@ -8,8 +8,10 @@ CMAKE_IN_SOURCE_BUILD=1
 inherit cmake-utils mercurial
 
 DESCRIPTION="Dynamic-playlist will search for similar songs/artists with lastfm or the genre tag."
+HOMEPAGE="https://bitbucket.org/misery/dynamic-playlist"
 KEYWORDS=""
 IUSE=""
+LICENSE="GPL-2"
 EHG_REPO_URI="http://bitbucket.org/misery/dynamic-playlist"
 
 SLOT=0

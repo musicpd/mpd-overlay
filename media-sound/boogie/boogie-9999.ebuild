@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit distutils git python
+inherit distutils git-2 python
 
 DESCRIPTION="A lightweight console based MPD client"
 HOMEPAGE="http://github.com/alip/boogie/tree/master"

@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-inherit autotools git
+inherit autotools git-2
 
 DESCRIPTION="A library handling connection to a MPD server."
 HOMEPAGE="http://gmpcwiki.sarine.nl/index.php/Libmpd"

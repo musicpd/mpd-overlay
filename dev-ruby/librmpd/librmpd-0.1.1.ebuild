@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit ruby gems
+EAPI=2
+USE_RUBY="ruby18"
+
+inherit ruby-fakegem
 
 DESCRIPTION="Ruby library for communicating with an MPD server"
 HOMEPAGE="http://librmpd.rubyforge.org/"

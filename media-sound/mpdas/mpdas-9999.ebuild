@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit toolchain-funcs git
+inherit toolchain-funcs git-2
 
 DESCRIPTION="An AudioScrobbler client for MPD written in C++"
 HOMEPAGE="http://50hz.ws/mpdas/"

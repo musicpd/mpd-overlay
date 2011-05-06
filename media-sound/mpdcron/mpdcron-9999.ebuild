@@ -4,7 +4,7 @@
 
 EAPI=2
 
-inherit autotools git
+inherit autotools git-2
 
 DESCRIPTION="mpdcron is a 'cron' like program for mpd.  It can execute scripts based on mpd's idle events."
 HOMEPAGE="http://repo.or.cz/w/mpdcron.git"

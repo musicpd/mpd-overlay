@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=3
 
 inherit python distutils subversion
 
@@ -11,6 +11,7 @@ HOMEPAGE="http://www.evadmusic.com"
 ESVN_REPO_URI="https://evad.svn.sourceforge.net/svnroot/evad/trunk"
 LICENSE="GPL-2"
 
+PYTHON_DEPEND="2"
 KEYWORDS=""
 SLOT="0"
 IUSE=""

@@ -2,7 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit ruby
+USE_RUBY="ruby18 ruby19"
+EAPI=2
+inherit ruby-ng
 
 DESCRIPTION="Ruby class for communicating with an MPD server"
 HOMEPAGE="http://rubyforge.org/projects/mpd/"
@@ -14,4 +16,10 @@ SLOT="0"
 IUSE=""
 RESTRICT="mirror"
 
-RDEPEND="virtual/ruby"
+each_ruby_install() {
+	${RUBY} setup.rb install --prefix="${D}/usr" || die "setup.rb failed"
+}
+
+each_ruby_configure() {
+	${RUBY} setup.rb config --prefix="${D}/usr" || die "setup.rb failed"
+}

@@ -4,7 +4,7 @@
 
 EAPI=2
 EGIT_REPO_URI="git://git.musicpd.org/master/mpc.git"
-inherit git autotools bash-completion
+inherit git-2 autotools bash-completion
 
 DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
 HOMEPAGE="http://mpd.wikia.com/index.php?title=Client:Mpc&oldid=4111"

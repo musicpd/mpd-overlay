@@ -10,6 +10,8 @@ DESCRIPTION="a Last.fm 'plugin' client for MPD, implemented in Python."
 HOMEPAGE="http://www.red-bean.com/~decklin/software/lastfmsubmitd/"
 EHG_REPO_URI="http://hg.red-bean.com/lastfmsubmitd/"
 
+PYTHON_NEED="2"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""

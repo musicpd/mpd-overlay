@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit webapp depend.php git
+inherit webapp depend.php git-2
 
 MY_PN="phpMp"
 MY_P="${MY_PN}-${PV}"

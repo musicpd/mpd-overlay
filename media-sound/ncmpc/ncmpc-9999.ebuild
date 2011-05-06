@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit git autotools
+inherit git-2 autotools
 
 DESCRIPTION="A ncurses client for the Music Player Daemon (MPD)"
 HOMEPAGE="http://mpd.wikia.com/wiki/Client:Ncmpc"

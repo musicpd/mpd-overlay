@@ -3,7 +3,8 @@
 # $Header: $
 
 EAPI=2
-inherit ruby
+USE_RUBY="ruby18"
+inherit ruby-ng
 
 DESCRIPTION="Njiiri is a GTK+ client for MPD, written in Ruby."
 HOMEPAGE="http://www.red-bean.com/decklin/njiiri/"
@@ -18,7 +19,7 @@ DEPEND="dev-ruby/ruby-gnome2
 	dev-ruby/librmpd"
 RDEPEND="${DEPEND}"
 
-src_install() {
+each_ruby_install() {
 	dobin bin/njiiri || die "dobin failed"
 
 	cd "${S}"/lib

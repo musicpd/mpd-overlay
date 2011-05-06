@@ -4,7 +4,7 @@
 
 EAPI=2
 EGIT_REPO_URI="git://git.musicpd.org/master/mpdscribble.git"
-inherit git autotools
+inherit git-2 autotools
 
 DESCRIPTION="An MPD client that submits information to Audioscrobbler"
 HOMEPAGE="http://mpd.wikia.com/wiki/Client:Mpdscribble"

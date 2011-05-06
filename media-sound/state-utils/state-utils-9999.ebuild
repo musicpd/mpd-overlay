@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-inherit git autotools
+inherit git-2 autotools
 EGIT_REPO_URI="git://repo.or.cz/state-utils.git"
 
 DESCRIPTION="A suite of utilities to transfer, restore, save state for the Music Player Daemon."
