@@ -56,7 +56,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${ED}" install || die
+	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README
 }
 
