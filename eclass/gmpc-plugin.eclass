@@ -1,6 +1,6 @@
 EAPI=2
 
-[ -z "${SRC_URI}" ] && inherit git
+[ -z "${SRC_URI}" ] && inherit git-2
 inherit autotools
 
 DEPEND="${DEPEND}

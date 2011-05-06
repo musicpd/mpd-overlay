@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-
 EDARCS_REPOSITORY="http://mroy31.dyndns.org/~roy/repository/ajaxmp/"
 inherit darcs webapp
 
@@ -20,7 +19,7 @@ DOCS="CHANGELOG README"
 src_install() {
 	webapp_src_preinst
 
-	cd ${WORKDIR}/${PN}
+	cd "${WORKDIR}/${PN}"
 
 	dodoc "ChangeLog"
 	dodoc "README"

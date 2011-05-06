@@ -24,5 +24,5 @@ src_prepare() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	dodoc README mpdcron.example  
+	dodoc README mpdcron.example
 }

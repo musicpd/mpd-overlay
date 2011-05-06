@@ -5,4 +5,4 @@
 inherit gmpc-plugin
 
 DESCRIPTION="Allows gmpc+mpd to play last.fm radio."
-KEYWORDS="-*"
+KEYWORDS=""

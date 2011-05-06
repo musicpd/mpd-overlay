@@ -14,7 +14,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh 
 RDEPEND="virtual/httpd-php
 	dev-php/PEAR-Net_Socket"
 
-S="${WORKDIR}/${P}"
+S="${WORKDIR}"/"${P}"
 
 pkg_setup() {
 	webapp_pkg_setup
@@ -27,7 +27,7 @@ pkg_setup() {
 src_install() {
 	webapp_src_preinst
 
-	cd ${WORKDIR}/${PN}
+	cd "${WORKDIR}/${PN}"
 
 	dodoc "doc/pitchfork.conf"
 	dodoc "doc/pitchfork_domain.conf"

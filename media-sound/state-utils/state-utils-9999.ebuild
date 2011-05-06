@@ -19,7 +19,7 @@ src_prepare() {
 }
 
 src_install() {
-       dodoc README
-       dobin src/state-restore src/state-save src/state-sync
-       doman doc/state-restore.1 doc/state-save.1 doc/state-sync.1
+	dodoc README
+	dobin src/state-restore src/state-save src/state-sync
+	doman doc/state-restore.1 doc/state-save.1 doc/state-sync.1
 }

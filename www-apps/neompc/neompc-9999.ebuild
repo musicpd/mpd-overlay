@@ -24,4 +24,3 @@ src_install() {
 
 	webapp_src_install
 }
-

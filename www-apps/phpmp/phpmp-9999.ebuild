@@ -12,7 +12,7 @@ HOMEPAGE="http://www.musicpd.org/"
 EGIT_REPO_URI="git://git.musicpd.org/avuton/phpmp.git"
 
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 ~ppc sparc x86 ~x86-fbsd"
+KEYWORDS=""
 IUSE=""
 
 need_httpd_cgi

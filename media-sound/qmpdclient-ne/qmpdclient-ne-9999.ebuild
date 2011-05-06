@@ -11,7 +11,7 @@ HOMEPAGE="http://github.com/Voker57/qmpdclient-ne/tree/master"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~hppa ppc ~sparc x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="x11-libs/qt-gui:4

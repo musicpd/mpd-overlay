@@ -52,7 +52,7 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog NEWS README TODO
-}   
+}
 
 pkg_preinst() {
 	gnome2_icon_savelist

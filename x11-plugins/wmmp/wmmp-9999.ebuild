@@ -24,7 +24,7 @@ src_prepare() {
 }
 
 src_install () {
-	emake install DESTDIR=${D} || die
+	emake install DESTDIR="${D}" || die
 
 	dodoc AUTHORS README THANKS TODO
 }

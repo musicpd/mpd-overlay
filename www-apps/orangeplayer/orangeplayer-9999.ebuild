@@ -14,12 +14,12 @@ KEYWORDS=""
 
 RDEPEND="virtual/httpd-php"
 
-S="${WORKDIR}/${P}"
+S="${WORKDIR}"/"${P}"
 
 pkg_setup() {
 	webapp_pkg_setup
 
-	if has_version 'dev-lang/php' ; then
+	if has_version 'dev-lang/php'; then
 		require_php_with_use simplexml json session
 	fi
 }
@@ -27,7 +27,7 @@ pkg_setup() {
 src_install() {
 	webapp_src_preinst
 
-	cd ${WORKDIR}/${PN}
+	cd "${WORKDIR}/${PN}"
 
 	cp -r . "${D}/${MY_HTDOCSDIR}"
 

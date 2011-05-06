@@ -81,7 +81,7 @@ src_configure() {
 		--disable-wildmidi
 		--disable-gme
 		--disable-documentation"
-	
+
 	if use network; then
 		mpdconf+=" --enable-libwrap --enable-shout $(use_enable vorbis vorbis-encoder)
 			--enable-httpd-output $(use_enable lame lame-encoder)"

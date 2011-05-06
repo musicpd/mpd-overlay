@@ -8,7 +8,7 @@ DESCRIPTION="lightweight low-dependency web interface to mpd"
 HOMEPAGE="http://ion0.com/davemp/"
 SRC_URI="http://ion0.com/davemp/downloads/files/${P}.tar.gz"
 
-LICENSE="CCPL-Attribution-NonCommercial-ShareAlike-2.5"
+LICENSE="CCPL-Attribution-ShareAlike-NonCommercial-2.5"
 SLOT="0"
 KEYWORDS="~amd64 ~mips ~ppc-macos ~s390 ~sh ~sparc-fbsd ~x86 ~x86-fbsd"
 
