@@ -23,7 +23,6 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	>=gnome-base/libglade-2
 	=media-libs/libmpd-9999
 	net-libs/libsoup:2.4
-	dev-lang/vala:0.12
 	dev-db/sqlite:3
 	xspf? ( >=media-libs/libxspf-1.2 )"
 DEPEND="${RDEPEND}
