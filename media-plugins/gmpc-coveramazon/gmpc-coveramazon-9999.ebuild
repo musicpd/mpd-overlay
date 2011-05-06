@@ -8,6 +8,6 @@ DESCRIPTION="This plugin fetches cover art, and album information from amazon."
 KEYWORDS=""
 EGIT_REPO_URI="git://repo.or.cz/${PN}.git"
 DEPEND="dev-libs/libxml2
-	x11-libs/gtk+:2[jpeg]"
-RDEPEND="${DEPEND}"
+	|| ( x11-libs/gdk-pixbuf:2[jpeg] x11-libs/gtk+:2[jpeg] )"
+DEPEND="${DEPEND}"
 IUSE=""

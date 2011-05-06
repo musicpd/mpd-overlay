@@ -7,6 +7,6 @@ inherit gmpc-plugin
 DESCRIPTION="This plugin fetches stuff from discogs.com"
 KEYWORDS=""
 DEPEND="dev-libs/libxml2
-	x11-libs/gtk+:2[jpeg]"
+	|| ( x11-libs/gdk-pixbuf:2[jpeg] x11-libs/gtk+:2[jpeg] )"
 RDEPEND="${DEPEND}"
 IUSE=""
