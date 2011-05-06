@@ -8,29 +8,31 @@ inherit gnome2-utils subversion autotools
 
 DESCRIPTION="a GTK2 MPD (Music Player Daemon) client inspired by Rythmbox"
 HOMEPAGE="http://ario-player.sourceforge.net"
-LICENSE="GPL-2"
 ESVN_REPO_URI="https://ario-player.svn.sourceforge.net/svnroot/ario-player/trunk"
 
-KEYWORDS=""
+LICENSE="GPL-2"
 SLOT="0"
-IUSE="audioscrobbler dbus debug idle libnotify nls python taglib zeroconf"
+KEYWORDS=""
+IUSE="audioscrobbler dbus debug +idle libnotify nls python taglib zeroconf"
 
-RDEPEND=">=dev-libs/glib-2.14:2
-	gnome-base/libglade:2.0
+DEPEND=">=dev-libs/glib-2.14:2
+	dev-libs/libunique:1
+	dev-libs/libxml2:2
+	=media-libs/libmpdclient-9999
 	net-misc/curl
 	net-libs/gnutls
-	=media-libs/libmpdclient-9999
-	>=x11-libs/gtk+-2.12:2
+	>=x11-libs/gtk+-2.16:2
 	audioscrobbler? ( net-libs/libsoup:2.4 )
 	dbus? ( dev-libs/dbus-glib )
 	libnotify? ( x11-libs/libnotify )
-	python? ( dev-python/pygtk
-		dev-python/pygobject )
+	python? ( dev-python/pygtk:2
+		dev-python/pygobject:2 )
 	taglib? ( media-libs/taglib )
 	zeroconf? ( net-dns/avahi )"
-DEPEND="sys-devel/gettext
+RDEPEND="${DEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	sys-devel/gettext"
 
 src_prepare() {
 	eautoreconf
@@ -38,6 +40,13 @@ src_prepare() {
 
 src_configure() {
 	econf \
+		--disable-dependency-tracking \
+		--disable-static \
+		--disable-xmms2 \
+		--enable-libmpdclient2 \
+		--enable-search \
+		--enable-playlists \
+		--disable-deprecations \
 		$(use_enable audioscrobbler) \
 		$(use_enable dbus) \
 		$(use_enable debug) \
@@ -50,8 +59,10 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README TODO
+
+	find "${D}" -name '*.la' -exec rm -f '{}' +
 }
 
 pkg_preinst() {
