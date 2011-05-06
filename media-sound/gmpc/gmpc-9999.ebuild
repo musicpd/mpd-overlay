@@ -38,7 +38,7 @@ export VALAC=$(type -p valac-0.12)
 src_prepare() {
 	einfo "Running intltoolize --automake"
 	intltoolize --force --copy --automake || die "intltoolize failed"
-	eautoreconf || die "eautoreconf Failed"
+	AT_M4DIR=m4 eautoreconf || die "eautoreconf Failed"
 }
 
 src_configure() {
@@ -49,6 +49,10 @@ src_configure() {
 		$(use_enable xspf libxspf) \
 		--disable-libspiff \
 		--with-extra-version="$(git rev-parse ${EGIT_BRANCH} | cut -c 1-8)"
+}
+
+src_compile() {
+	emake -j1 || die
 }
 
 src_install() {
