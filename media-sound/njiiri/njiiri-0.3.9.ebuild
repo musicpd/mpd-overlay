@@ -11,7 +11,7 @@ HOMEPAGE="http://www.red-bean.com/decklin/njiiri/"
 LICENSE="as-is"
 SRC_URI="http://www.red-bean.com/decklin/njiiri/${P}.tar.gz"
 
-KEYWORDS="~alpha ~amd64 ~ia64 ~mips ~ppc ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 IUSE=""
 DEPEND="dev-ruby/ruby-gnome2

@@ -8,7 +8,7 @@ HOMEPAGE="http://www.coonsden.com/main.htm"
 LICENSE="GPL-2"
 SRC_URI="mirror://sourceforge/musicpd/${PN/g/G}-${PV}src.tar.gz"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 SLOT="0"
 IUSE=""
 DEPEND="dev-cpp/cairomm

@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/musicpd/${P}.tar.bz2"
 LICENSE="GPL-2"
 IUSE=""
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 
 RDEPEND="virtual/httpd-php
 	dev-php/PEAR-Net_Socket"
