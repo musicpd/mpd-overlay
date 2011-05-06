@@ -6,8 +6,8 @@ inherit gmpc-plugin
 
 DESCRIPTION="The plugin allows you to browse, and preview available albums on www.magnatune.com."
 KEYWORDS=""
-DEPEND="x11-libs/gtk+:2[jpeg]
-	dev-libs/libxml2
-	dev-db/sqlite"
+DEPEND="dev-libs/libxml2
+	dev-db/sqlite
+	|| ( x11-libs/gdk-pixbuf:2[jpeg] x11-libs/gtk+:2[jpeg] )"
 RDEPEND="${DEPEND}"
 IUSE=""
