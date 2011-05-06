@@ -15,7 +15,7 @@ EGIT_REPO_URI="git://git.musicpd.org/master/gmpc.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="nls xspf"
+IUSE="nls unique xspf"
 
 RDEPEND=">=dev-libs/glib-2.16:2
 	>=x11-libs/gtk+-2.12:2
@@ -24,6 +24,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	=media-libs/libmpd-9999
 	net-libs/libsoup:2.4
 	dev-db/sqlite:3
+	unique? ( dev-libs/libunique:1 )
 	xspf? ( >=media-libs/libxspf-1.2 )"
 DEPEND="${RDEPEND}
 	dev-lang/vala:0.10
@@ -44,6 +45,7 @@ src_configure() {
 	VALAC=$(type -p valac-0.10) \
 	econf \
 		--disable-dependency-tracking \
+		$(use_enable unique) \
 		$(use_enable nls) \
 		$(use_enable xspf libxspf) \
 		--disable-libspiff \

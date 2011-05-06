@@ -8,5 +8,6 @@
 	</maintainer>
 	<use>
 		<flag name='xspf'>Enable support for reading and saving XSPF playlists</flag>
+		<flag name='unique'>Enable single instance support using dev-libs/libunique</flag>
 	</use>
 </pkgmetadata>
