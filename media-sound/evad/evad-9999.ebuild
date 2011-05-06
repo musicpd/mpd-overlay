@@ -24,11 +24,9 @@ src_prepare() {
 }
 
 pkg_postinst() {
-	python_version
-	python_mod_optimize /usr/lib/python${PYVER}/site-packages
+	python_mod_optimize Evad
 }
 
 pkg_postrm() {
-	python_version
-	python_mod_cleanup
+	python_mod_cleanup Evad
 }
