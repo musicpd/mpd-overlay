@@ -15,7 +15,11 @@ SLOT="0"
 KEYWORDS=""
 IUSE="audioscrobbler dbus debug +idle libnotify nls python taglib zeroconf"
 
-DEPEND=">=dev-libs/glib-2.14:2
+DEPEND="${RDEPEND}
+	dev-util/intltool
+	dev-util/pkgconfig
+	sys-devel/gettext"
+RDEPEND=">=dev-libs/glib-2.14:2
 	dev-libs/libunique:1
 	dev-libs/libxml2:2
 	=media-libs/libmpdclient-9999
@@ -29,10 +33,6 @@ DEPEND=">=dev-libs/glib-2.14:2
 		dev-python/pygobject:2 )
 	taglib? ( media-libs/taglib )
 	zeroconf? ( net-dns/avahi )"
-RDEPEND="${DEPEND}
-	dev-util/intltool
-	dev-util/pkgconfig
-	sys-devel/gettext"
 
 src_prepare() {
 	eautoreconf
