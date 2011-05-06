@@ -6,3 +6,4 @@ inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to sort the playlist in various ways."
 KEYWORDS=""
+IUSE=""

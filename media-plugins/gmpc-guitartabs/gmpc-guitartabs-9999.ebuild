@@ -6,3 +6,4 @@ inherit gmpc-plugin
 
 DESCRIPTION="Fetches Guitar Tabs from ultimate-guitar.com"
 KEYWORDS=""
+IUSE=""

@@ -6,3 +6,4 @@ inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin for alarm timer action."
 KEYWORDS=""
+IUSE=""

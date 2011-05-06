@@ -6,3 +6,4 @@ inherit gmpc-plugin
 
 DESCRIPTION="Lyrdb.com plugin for gmpc."
 KEYWORDS=""
+IUSE=""

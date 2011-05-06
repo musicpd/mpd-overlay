@@ -13,6 +13,7 @@ EGIT_REPO_URI="git://repo.or.cz/mpdcron.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
+IUSE=""
 
 RDEPEND="=media-libs/libmpdclient-9999"
 DEPEND="${RDEPEND}"

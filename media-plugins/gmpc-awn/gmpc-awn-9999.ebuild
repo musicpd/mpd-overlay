@@ -8,3 +8,4 @@ DESCRIPTION="A GMPC plugin to show album art and song progress in Avant Window N
 KEYWORDS=""
 DEPEND=""
 RDEPEND="gnome-extra/avant-window-navigator"
+IUSE=""

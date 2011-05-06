@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
 inherit ruby
 
-EAPI=2
 DESCRIPTION="Njiiri is a GTK+ client for MPD, written in Ruby."
 HOMEPAGE="http://www.red-bean.com/decklin/njiiri/"
 LICENSE="as-is"

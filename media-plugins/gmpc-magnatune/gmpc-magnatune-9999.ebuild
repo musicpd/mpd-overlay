@@ -10,3 +10,4 @@ DEPEND="x11-libs/gtk+:2[jpeg]
 	dev-libs/libxml2
 	dev-db/sqlite"
 RDEPEND="${DEPEND}"
+IUSE=""

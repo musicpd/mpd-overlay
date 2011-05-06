@@ -6,3 +6,4 @@ inherit gmpc-plugin
 
 DESCRIPTION="A GMPC plugin to expand a second window to open an external playlist."
 KEYWORDS=""
+IUSE=""

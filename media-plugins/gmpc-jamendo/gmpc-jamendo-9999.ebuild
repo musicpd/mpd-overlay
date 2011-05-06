@@ -10,3 +10,4 @@ DEPEND="dev-libs/libxml2
 	dev-db/sqlite
 	sys-libs/zlib"
 RDEPEND="${DEPEND}"
+IUSE=""

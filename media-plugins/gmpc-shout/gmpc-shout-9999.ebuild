@@ -8,3 +8,4 @@ DESCRIPTION="This plugin will automatically plug your local computer into your i
 KEYWORDS=""
 DEPEND="media-sound/vorbis-tools"
 RDEPEND="${DEPENDS}"
+IUSE=""

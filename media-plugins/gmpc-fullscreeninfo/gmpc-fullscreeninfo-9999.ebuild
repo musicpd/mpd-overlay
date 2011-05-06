@@ -7,3 +7,4 @@ inherit gmpc-plugin
 DESCRIPTION="Full screen information, used for htpcs."
 KEYWORDS=""
 EGIT_REPO_URI="git://repo.or.cz/${PN}.git"
+IUSE=""

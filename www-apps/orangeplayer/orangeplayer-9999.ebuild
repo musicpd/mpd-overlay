@@ -9,6 +9,7 @@ HOMEPAGE="http://orangeplayer.sourceforge.net/"
 ECVS_SERVER="orangeplayer.cvs.sourceforge.net:/cvsroot/orangeplayer"
 ECVS_MODULE="orangeplayer"
 LICENSE="GPL-2"
+IUSE=""
 
 KEYWORDS=""
 
