@@ -7,7 +7,7 @@ inherit gkrellm-plugin
 DESCRIPTION="A gkrellm plugin to control the MPD (Music Player Daemon)"
 HOMEPAGE="http://mpd.wikicities.com/wiki/Client:GKrellMPC"
 SRC_URI="http://mina.naguib.ca/dist/${P}.tar.gz"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 LICENSE="GPL-2"
 

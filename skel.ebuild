@@ -10,7 +10,7 @@ SRC_URI="ftp://foo.bar.com/${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 

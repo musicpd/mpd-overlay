@@ -10,7 +10,7 @@ SRC_URI="http://ion0.com/davemp/downloads/files/${P}.tar.gz"
 
 LICENSE="CCPL-Attribution-ShareAlike-NonCommercial-2.5"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-perl/JSON-XS
