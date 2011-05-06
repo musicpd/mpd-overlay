@@ -27,7 +27,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	unique? ( dev-libs/libunique:1 )
 	xspf? ( >=media-libs/libxspf-1.2 )"
 DEPEND="${RDEPEND}
-	dev-lang/vala:0.10
+	dev-lang/vala:0.12
 	>=dev-util/gob-2.0.17
 	dev-util/pkgconfig
 	nls? ( dev-util/intltool
