@@ -15,6 +15,7 @@
 		<flag name="mouse">Enable curses getmouse support</flag>
 		<flag name="outputs-screen">Enable output screen</flag>
 		<flag name="search-screen">Enable search screen</flag>
+		<flag name="song-screen">Enable song viewer screen</flag>
 		<flag name="wcwidth">Enable wide char width support</flag>
 	</use>
 </pkgmetadata>

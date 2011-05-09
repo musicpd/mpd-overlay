@@ -3,6 +3,10 @@
 # $Header: $
 
 EAPI=3
+PYTHON_DEPEND="2:2.6"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="2.[45] 3.* *-jython"
+
 inherit distutils subversion
 
 DESCRIPTION="an elegant GTK+ music client for the Music Player Daemon (MPD)."
@@ -10,14 +14,12 @@ HOMEPAGE="http://codingteam.net/project/sonata/"
 ESVN_REPO_URI="http://svn.codingteam.net/sonata/"
 
 LICENSE="GPL-3"
-KEYWORDS=""
 SLOT="0"
+KEYWORDS=""
 IUSE="dbus lyrics taglib +trayicon"
 
-PYTHON_DEPEND="2"
-
 RDEPEND=">=dev-python/pygtk-2.12
-	>=x11-libs/gtk+-2:2[jpeg]
+	|| ( x11-libs/gdk-pixbuf:2[jpeg] x11-libs/gtk+:2[jpeg] )
 	>=dev-python/python-mpd-0.2.1
 	dbus? ( dev-python/dbus-python )
 	lyrics? ( dev-python/zsi )
