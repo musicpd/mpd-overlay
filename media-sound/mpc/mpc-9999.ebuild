@@ -14,9 +14,9 @@ KEYWORDS=""
 SLOT="0"
 IUSE="+iconv"
 
-RDEPEND="iconv? ( virtual/libiconv )"
-DEPEND="${RDEPEND}
+RDEPEND="iconv? ( virtual/libiconv )
 	=media-libs/libmpdclient-9999"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	eautoreconf
