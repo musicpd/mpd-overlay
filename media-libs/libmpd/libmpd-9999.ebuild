@@ -22,9 +22,6 @@ DEPEND="${REDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-overflow.patch"
-}
-
-src_prepare() {
 	eautoreconf
 }
 
