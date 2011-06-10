@@ -19,7 +19,6 @@ IUSE="nls +unique xspf"
 
 RDEPEND=">=dev-libs/glib-2.16:2
 	>=x11-libs/gtk+-2.12:2
-	x11-libs/libsexy
 	>=gnome-base/libglade-2
 	=media-libs/libmpd-9999
 	net-libs/libsoup:2.4
