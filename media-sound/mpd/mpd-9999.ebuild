@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-WANT_AUTOMAKE="1.10"
+WANT_AUTOMAKE="1.11"
 
 inherit git-2 flag-o-matic autotools multilib
 
