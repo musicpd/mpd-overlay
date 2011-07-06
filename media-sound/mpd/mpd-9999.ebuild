@@ -108,12 +108,6 @@ src_configure() {
 		mpdconf+=" $(use_enable mpg123) --disable-mad"
 	fi
 
-	if use modplug; then
-		mpdconf+=" --disable-sndfile"
-	else
-		mpdconf+=" $(use_enable sndfile)"
-	fi
-
 	append-lfs-flags
 	append-ldflags "-L/usr/$(get_libdir)/sidplay/builders"
 
@@ -133,6 +127,7 @@ src_configure() {
 		$(use_enable flac) \
 		$(use_enable mikmod) \
 		$(use_enable modplug) \
+		$(use_enable sndfile) \
 		$(use_enable musepack mpc) \
 		$(use_enable vorbis) \
 		$(use_enable sid sidplay) \
