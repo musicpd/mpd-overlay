@@ -21,7 +21,6 @@ DEPEND="${REDEPEND}
 	dev-util/pkgconfig"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-overflow.patch"
 	eautoreconf
 }
 
