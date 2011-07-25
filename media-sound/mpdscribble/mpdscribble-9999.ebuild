@@ -4,7 +4,7 @@
 
 EAPI=4
 EGIT_REPO_URI="git://git.musicpd.org/master/mpdscribble.git"
-inherit git-2 autotools
+inherit git-2 autotools eutils
 
 DESCRIPTION="An MPD client that submits information to Audioscrobbler"
 HOMEPAGE="http://mpd.wikia.com/wiki/Client:Mpdscribble"
@@ -12,12 +12,12 @@ HOMEPAGE="http://mpd.wikia.com/wiki/Client:Mpdscribble"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug"
+IUSE="curl debug"
 
-RDEPEND="dev-libs/glib:2
-	|| ( >=dev-libs/glib-2.16:2 dev-libs/libgcrypt )
-	net-libs/libsoup:2.4
-	=media-libs/libmpdclient-9999"
+RDEPEND=">=dev-libs/glib-2.16:2
+	=media-libs/libmpdclient-9999
+	curl? ( net-misc/curl )
+	!curl? ( net-libs/libsoup:2.4 )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
@@ -26,14 +26,16 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_enable debug)
+	local myclient=soup
+	use curl && myclient=curl
+	econf \
+		--with-http-client-${myclient} \
+		--docdir="${EPREFIX}"/usr/share/doc/${PF} \
+		$(use_enable debug)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	default
 	newinitd "${FILESDIR}/mpdscribble.rc" mpdscribble
-	chmod 600 "${D}"/etc/mpdscribble.conf
-	dodoc AUTHORS NEWS README
-	rm -r -f "${D}"/usr/share/doc/${PN}
 	dodir /var/cache/mpdscribble
 }
