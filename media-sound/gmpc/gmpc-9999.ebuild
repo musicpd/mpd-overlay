@@ -29,6 +29,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 DEPEND="${RDEPEND}
 	>=dev-util/gob-2.0.17
 	dev-util/pkgconfig
+	media-libs/glyr
 	nls? ( dev-util/intltool
 		sys-devel/gettext )"
 
