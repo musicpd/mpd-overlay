@@ -8,7 +8,7 @@ inherit eutils cmake-utils git-2
 
 DESCRIPTION="a music related metadata searchengine, both with commandline interface and C API"
 HOMEPAGE="https://github.com/sahib/glyr"
-EGIT_REPO_URI="https://github.com/sahib/glyr.git"
+EGIT_REPO_URI="git://github.com/sahib/glyr.git"
 
 LICENSE="LGPL-2.1"
 KEYWORDS=""
