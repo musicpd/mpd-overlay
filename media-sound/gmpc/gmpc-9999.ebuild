@@ -22,7 +22,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	>=gnome-base/libglade-2
 	=media-libs/libmpd-9999
 	net-libs/libsoup:2.4
-	dev-lang/vala:0.12
+	dev-lang/vala:0.14
 	dev-db/sqlite:3
 	unique? ( dev-libs/libunique:1 )
 	xspf? ( >=media-libs/libxspf-1.2 )"
@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 	nls? ( dev-util/intltool
 		sys-devel/gettext )"
 
-export VALAC=$(type -p valac-0.12)
+export VALAC=$(type -p valac-0.14)
 
 src_prepare() {
 	einfo "Running intltoolize --automake"
