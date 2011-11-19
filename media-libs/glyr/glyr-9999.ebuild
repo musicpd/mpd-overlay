@@ -4,20 +4,22 @@
 
 EAPI=4
 
-inherit eutils cmake-utils git-2
+inherit cmake-utils eutils git-2
 
 DESCRIPTION="a music related metadata searchengine, both with commandline interface and C API"
 HOMEPAGE="https://github.com/sahib/glyr"
 EGIT_REPO_URI="git://github.com/sahib/glyr.git"
 
-LICENSE="LGPL-2.1"
+LICENSE="GPL-3"
 KEYWORDS=""
 SLOT="0"
 IUSE="ruby"
 
-DEPEND=">=dev-libs/glib-2.16:2
+RDEPEND="dev-db/sqlite:3
+	>=dev-libs/glib-2.16
 	net-misc/curl"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 src_configure() {
 	local mycmakeargs=(
@@ -28,6 +30,6 @@ src_configure() {
 }
 
 src_install() {
+	DOCS="AUTHORS CHANGELOG README* TODO"
 	cmake-utils_src_install
-
 }
