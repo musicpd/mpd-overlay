@@ -24,12 +24,13 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	net-libs/libsoup:2.4
 	dev-lang/vala:0.14
 	dev-db/sqlite:3
+	media-libs/glyr
 	unique? ( dev-libs/libunique:1 )
 	xspf? ( >=media-libs/libxspf-1.2 )"
 DEPEND="${RDEPEND}
+	app-text/gnome-doc-utils
 	>=dev-util/gob-2.0.17
 	dev-util/pkgconfig
-	media-libs/glyr
 	nls? ( dev-util/intltool
 		sys-devel/gettext )"
 
