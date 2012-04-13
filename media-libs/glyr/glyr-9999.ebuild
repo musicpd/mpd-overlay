@@ -30,6 +30,6 @@ src_configure() {
 }
 
 src_install() {
-	DOCS="AUTHORS CHANGELOG README* TODO"
+	DOCS="AUTHORS CHANGELOG README*"
 	cmake-utils_src_install
 }
