@@ -1,41 +1,39 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=4
 inherit autotools git-2
 
-DESCRIPTION="A library handling connection to a MPD server."
+DESCRIPTION="A library handling connections to a MPD server"
 HOMEPAGE="http://gmpc.wikia.com/wiki/Libmpd"
-EGIT_REPO_URI='git://repo.or.cz/libmpd.git'
+EGIT_REPO_URI="git://git.musicpd.org/master/${PN}.git"
+EGIT_BOOTSTRAP="eautoreconf"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc"
+IUSE="doc static-libs"
 
-RDEPEND=">=dev-libs/glib-2.16:2
-	sys-devel/libtool"
-DEPEND="${REDEPEND}
-	doc? ( >=app-doc/doxygen-1.4.6 )
-	dev-util/pkgconfig"
-
-src_prepare() {
-	eautoreconf
-}
+RDEPEND=">=dev-libs/glib-2.16:2"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig
+	doc? ( app-doc/doxygen )"
 
 src_configure() {
-	econf $(use_enable static-libs static)
+	econf \
+		$(use_enable static-libs static) \
+		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 }
 
 src_compile() {
 	emake
-	use doc && emake doc
+	use doc && emake -C doc doc
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-	use doc && dohtml -r doc/html/
-	dodoc AUTHORS ChangeLog NEWS README
-	find "${ED}" -name "*.la" -delete || die "failed to delete .la files"
+	default
+	use doc && dohtml -r doc/html/*
+	find "${ED}" -name "*.la" -exec rm -rf {} + || die
+	rm "${ED}"/usr/share/doc/${PF}/{README,ChangeLog} || die
 }
