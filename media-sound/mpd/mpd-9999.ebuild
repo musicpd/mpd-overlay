@@ -1,11 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-WANT_AUTOMAKE="1.11"
-
-inherit git-2 flag-o-matic autotools multilib
+EAPI=4
+inherit autotools eutils flag-o-matic git-2 linux-info multilib systemd user
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
@@ -14,180 +12,177 @@ EGIT_REPO_URI="git://git.musicpd.org/master/mpd.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="aac +alsa ao audiofile avahi bzip2 cdio cue +curl debug +fifo +ffmpeg flac
-fluidsynth profile +id3 ipv6 jack lame lastfmradio libmms libsamplerate +mad
-mikmod modplug mpg123 musepack +network ogg oss pipe pulseaudio sid sndfile sqlite
-tcpd twolame unicode vorbis wavpack zip doc"
+IUSE="aac +alsa ao audiofile bzip2 cdio +curl debug +fifo +ffmpeg flac
+fluidsynth +id3tag inotify ipv6 jack lame lastfmradio mms libsamplerate +mad
+mikmod modplug mpg123 musepack +network ogg openal oss pipe pulseaudio recorder
+sid sndfile soundcloud soup sqlite systemd tcpd twolame unicode vorbis wavpack
+wildmidi zeroconf zip"
 
-RDEPEND="!sys-cluster/mpich2
-	>=dev-libs/glib-2.4:2
-	aac? ( >=media-libs/faad2-2 )
-	alsa? ( media-sound/alsa-utils )
-	ao? ( >=media-libs/libao-0.8.4[alsa?,pulseaudio?] )
+OUTPUT_PLUGINS="alsa ao fifo jack network openal oss pipe pulseaudio recorder"
+INPUT_PLUGINS="aac audiofile ffmpeg flac fluidsynth mad mikmod modplug mpg123
+	musepack ogg flac sid vorbis wavpack wildmidi"
+ENCODER_PLUGINS="audiofile flac lame twolame vorbis"
+
+REQUIRED_USE="|| ( ${OUTPUT_PLUGINS} )
+	|| ( ${INPUT_PLUGINS} )
+	network? ( || ( ${ENCODER_PLUGINS} ) )
+	recorder? ( || ( ${ENCODER_PLUGINS} ) )
+	lastfmradio? ( curl )"
+
+RDEPEND="!<sys-cluster/mpich2-1.4_rc2
+	dev-libs/glib:2
+	aac? ( media-libs/faad2 )
+	alsa? ( media-sound/alsa-utils
+		media-libs/alsa-lib )
+	ao? ( media-libs/libao[alsa?,pulseaudio?] )
 	audiofile? ( media-libs/audiofile )
-	avahi? ( net-dns/avahi )
 	bzip2? ( app-arch/bzip2 )
-	cdio? ( dev-libs/libcdio )
-	cue? ( >=media-libs/libcue-0.13 )
+	cdio? ( dev-libs/libcdio[-minimal] )
 	curl? ( net-misc/curl )
 	ffmpeg? ( virtual/ffmpeg )
 	flac? ( media-libs/flac[ogg?] )
 	fluidsynth? ( media-sound/fluidsynth )
-	id3? ( media-libs/libid3tag )
+	id3tag? ( media-libs/libid3tag )
 	jack? ( media-sound/jack-audio-connection-kit )
 	lame? ( network? ( media-sound/lame ) )
-	libmms? ( >=media-libs/libmms-0.4 )
 	libsamplerate? ( media-libs/libsamplerate )
 	mad? ( media-libs/libmad )
-	mpg123? ( !mad? ( media-sound/mpg123 ) )
-	mikmod? ( media-libs/libmikmod )
+	mikmod? ( media-libs/libmikmod:0 )
+	mms? ( media-libs/libmms )
 	modplug? ( media-libs/libmodplug )
-	musepack? ( >=media-sound/musepack-tools-444 )
+	mpg123? ( >=media-sound/mpg123-1.12.2 )
+	musepack? ( media-sound/musepack-tools )
 	network? ( >=media-libs/libshout-2
-		tcpd? ( sys-apps/tcp-wrappers )
 		!lame? ( !vorbis? ( media-libs/libvorbis ) ) )
 	ogg? ( media-libs/libogg )
+	openal? ( media-libs/openal )
 	pulseaudio? ( media-sound/pulseaudio )
-	sid? ( >=media-libs/libsidplay-2.1.1-r2:2 )
-	sndfile? ( !modplug? ( media-libs/libsndfile ) )
+	sid? ( media-libs/libsidplay:2 )
+	sndfile? ( media-libs/libsndfile )
+	soundcloud? ( >=dev-libs/yajl-2 )
+	soup? ( net-libs/libsoup:2.4 )
 	sqlite? ( dev-db/sqlite:3 )
+	systemd? ( sys-apps/systemd )
+	tcpd? ( sys-apps/tcp-wrappers )
 	twolame? ( media-sound/twolame )
 	vorbis? ( media-libs/libvorbis )
 	wavpack? ( media-sound/wavpack )
+	wildmidi? ( media-sound/wildmidi )
+	zeroconf? ( net-dns/avahi[dbus] )
 	zip? ( dev-libs/zziplib )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	use network || ewarn "Icecast and Shoutcast streaming needs networking."
-
-	if use fluidsynth; then
-		ewarn "Use of fluidsynth USE is highly discouraged by upstream."
-		ewarn "Use wildmidi unless you know better."
-	fi
+	use fluidsynth && ewarn "Using fluidsynth is discouraged by upstream."
 
 	enewuser mpd "" "" "/var/lib/mpd" audio
+
+	if use inotify; then
+		CONFIG_CHECK="~INOTIFY_USER"
+		ERROR_INOTIFY_USER="${P} requires inotify in-kernel support."
+		linux-info_pkg_setup
+	fi
 }
 
 src_prepare() {
 	eautoreconf
 	cp -f doc/mpdconf.example doc/mpdconf.dist || die "cp failed"
-	epatch "${FILESDIR}"/mpdconf.patch || die "mpdconf patch failed"
+	epatch "${FILESDIR}"/${PN}conf.patch
 }
 
 src_configure() {
-	local mpdconf="--enable-tcp
-		--enable-un
-		--disable-wildmidi
-		--disable-gme
-		--disable-documentation"
+	local mpdconf="--disable-despotify --disable-documentation --disable-ffado
+		--disable-gme --disable-mvp --disable-roar --enable-largefile
+		--enable-tcp --enable-un --docdir=${EPREFIX}/usr/share/doc/${PF}"
 
 	if use network; then
-		mpdconf+=" --enable-libwrap --enable-shout $(use_enable vorbis vorbis-encoder)
-			--enable-httpd-output $(use_enable lame lame-encoder)"
-		if ! use lame && ! use vorbis; then
-			ewarn "At least one encoder is required, enabling vorbis for you."
-			mpdconf+=" --enable-vorbis-encoder"
-		fi
+		mpdconf+=" --enable-shout $(use_enable vorbis vorbis-encoder)
+			--enable-httpd-output $(use_enable lame lame-encoder)
+			$(use_enable twolame twolame-encoder)
+			$(use_enable audiofile wave-encoder)"
 	else
 		mpdconf+=" --disable-shout --disable-vorbis-encoder
-			--disable-httpd-output --disable-lame-encoder"
-	fi
-
-	if use flac && use ogg; then
-		mpdconf+=" --enable-oggflac"
-	else
-		mpdconf+=" --disable-oggflac"
-	fi
-
-	if use mad; then
-		use mpg123 && \
-		ewarn "libmad and libmpg123 are mutually exclusive, use libmad"
-		mpdconf+=" --enable-mad --disable-mpg123"
-	else
-		mpdconf+=" $(use_enable mpg123) --disable-mad"
+			--disable-httpd-output --disable-lame-encoder
+			--disable-twolame-encoder --disable-wave-encoder"
 	fi
 
 	append-lfs-flags
 	append-ldflags "-L/usr/$(get_libdir)/sidplay/builders"
 
 	econf \
-		$(use_enable ipv6) \
-		$(use_enable cue) \
-		$(use_enable sqlite) \
-		$(use_enable curl) \
-		$(use_enable lastfmradio lastfm) \
-		$(use_enable libmms mms) \
-		$(use_enable bzip2) \
-		$(use_enable zip zzip) \
-		$(use_enable cdio iso9660) \
-		$(use_enable id3) \
-		$(use_enable audiofile) \
-		$(use_enable ffmpeg) \
-		$(use_enable flac) \
-		$(use_enable mikmod) \
-		$(use_enable modplug) \
-		$(use_enable sndfile) \
-		$(use_enable musepack mpc) \
-		$(use_enable vorbis) \
-		$(use_enable sid sidplay) \
-		$(use_enable fluidsynth) \
-		$(use_enable wavpack) \
-		$(use_enable libsamplerate lsr) \
-		$(use_enable twolame twolame-encoder) \
+		$(use_enable aac) \
 		$(use_enable alsa) \
 		$(use_enable ao) \
-		$(use_enable fifo) \
-		$(use_enable pipe pipe-output) \
-		$(use_enable jack) \
-		$(use_enable oss) \
-		$(use_enable pulseaudio pulse) \
-		$(use_enable aac) \
+		$(use_enable audiofile) \
+		$(use_enable bzip2) \
+		$(use_enable cdio cdio-paranoia) \
+		$(use_enable cdio iso9660) \
+		$(use_enable curl) \
 		$(use_enable debug) \
-		$(use_enable profile gprof) \
-		$(use_with avahi zeroconf avahi) \
+		$(use_enable ffmpeg) \
+		$(use_enable fifo) \
+		$(use_enable flac) \
+		$(use_enable fluidsynth) \
+		$(use_enable id3tag id3) \
+		$(use_enable inotify) \
+		$(use_enable ipv6) \
+		$(use_enable jack) \
+		$(use_enable lastfmradio lastfm) \
+		$(use_enable libsamplerate lsr) \
+		$(use_enable mad) \
+		$(use_enable mikmod) \
+		$(use_enable mms) \
+		$(use_enable modplug) \
+		$(use_enable mpg123) \
+		$(use_enable musepack mpc) \
+		$(use_enable openal) \
+		$(use_enable oss) \
+		$(use_enable pipe pipe-output) \
+		$(use_enable pulseaudio pulse) \
+		$(use_enable recorder recorder-output) \
+		$(use_enable sid sidplay) \
+		$(use_enable sndfile sndfile) \
+		$(use_enable soundcloud) \
+		$(use_enable soup) \
+		$(use_enable sqlite) \
+		$(use_enable systemd systemd-daemon) \
+		$(use_enable tcpd libwrap) \
+		$(use_enable vorbis) \
+		$(use_enable wavpack) \
+		$(use_enable wildmidi) \
+		$(use_enable zip zzip) \
+		$(use_with zeroconf zeroconf avahi) \
+		"$(systemd_with_unitdir)" \
 		${mpdconf}
 }
 
 src_install() {
-	dodir /var/run/mpd
-	fowners mpd:audio /var/run/mpd
-	fperms 750 /var/run/mpd
-	keepdir /var/run/mpd
-
-	emake DESTDIR="${D}" install || die "emake install failed"
-	rm -rf "${D}"/usr/share/doc/mpd
-
-	dodoc AUTHORS NEWS README UPGRADING doc/mpdconf.dist
+	emake DESTDIR="${D}" install
 
 	insinto /etc
-	newins doc/mpdconf.example mpd.conf
+	newins doc/mpdconf.dist mpd.conf
 
-	newinitd "${FILESDIR}"/mpd.rc mpd
+	newinitd "${FILESDIR}"/mpd.init mpd
 
 	if use unicode; then
-		dosed 's:^#filesystem_charset.*$:filesystem_charset "UTF-8":' \
-			/etc/mpd.conf || die "dosed failed"
+		sed -i -e 's:^#filesystem_charset.*$:filesystem_charset "UTF-8":' \
+			"${ED}"/etc/mpd.conf || die "sed failed"
 	fi
 
-	diropts -m0755 -o mpd -g audio
+	use prefix || diropts -m0755 -o mpd -g audio
 	dodir /var/lib/mpd
 	keepdir /var/lib/mpd
 	dodir /var/lib/mpd/music
 	keepdir /var/lib/mpd/music
 	dodir /var/lib/mpd/playlists
 	keepdir /var/lib/mpd/playlists
-	dodir /var/log/mpd
-	keepdir /var/log/mpd
-
-	if use alsa; then
-		dosed 's:need :need alsasound :' /etc/init.d/mpd || die "dosed failed"
-	fi
 }
 
 pkg_postinst() {
 	elog "If you will be starting mpd via /etc/init.d/mpd, please make"
-	elog "sure that MPD's pid_file is set to /var/run/mpd/mpd.pid."
+	elog "sure that MPD's pid_file is unset."
 
 	# also change the homedir if the user has existed before
 	usermod -d "/var/lib/mpd" mpd

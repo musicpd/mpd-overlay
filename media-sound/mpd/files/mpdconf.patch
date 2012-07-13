@@ -1,5 +1,7 @@
---- doc/mpdconf.example	2009-07-23 14:53:18.874574959 -0400
-+++ mpdconf.example	2009-07-23 14:59:53.159700601 -0400
+Index: mpd-0.16/doc/mpdconf.dist
+===================================================================
+--- mpd-0.16.orig/doc/mpdconf.dist
++++ mpd-0.16/doc/mpdconf.dist
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -22,35 +24,29 @@
  # files over an accepted protocol.
  #
 -#db_file			"~/.mpd/database"
-+db_file				"/var/lib/mpd/database"
++db_file			"/var/lib/mpd/database"
  # 
  # These settings are the locations for the daemon log files for the daemon.
  # These logs are great for troubleshooting, depending on your log_level
-@@ -34,20 +34,20 @@
+@@ -34,7 +34,7 @@
  # The special value "syslog" makes MPD use the local syslog daemon. This
  # setting defaults to logging to syslog, otherwise logging is disabled.
  #
 -#log_file			"~/.mpd/log"
-+log_file			"/var/log/mpd/mpd.log"
++log_file			"/var/lib/mpd/log"
  #
  # This setting sets the location of the file which stores the process ID
  # for use of mpd --kill and some init scripts. This setting is disabled by
- # default and the pid file will not be stored.
- #
--#pid_file			"~/.mpd/pid"
-+pid_file			"/var/run/mpd/mpd.pid"
- #
- # This setting sets the location of the file which contains information about
- # most variables to get MPD back into the same general shape it was in before
+@@ -47,7 +47,7 @@
  # it was brought down. This setting is disabled by default and the server 
  # state will be reset on server start up.
  #
 -#state_file			"~/.mpd/state"
 +state_file			"/var/lib/mpd/state"
  #
- ###############################################################################
- 
-@@ -59,7 +59,7 @@
+ # The location of the sticker database.  This is a database which
+ # manages dynamic information attached to songs.
+@@ -64,7 +64,7 @@
  # initialization. This setting is disabled by default and MPD is run as the
  # current user.
  #
@@ -59,7 +55,7 @@
  #
  # This setting specifies the group that MPD will run as. If not specified
  # primary group of user specified with "user" setting will be used (if set).
-@@ -73,10 +73,10 @@
+@@ -78,10 +78,10 @@
  # This setting can deny access to control of the daemon.
  #
  # For network
@@ -68,7 +64,7 @@
  #
  # And for Unix Socket
 -#bind_to_address		"~/.mpd/socket"
-+#bind_to_address		"/var/lib/mpd/socket"
++bind_to_address		"/var/lib/mpd/socket"
  #
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
