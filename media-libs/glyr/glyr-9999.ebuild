@@ -3,33 +3,25 @@
 # $Header: $
 
 EAPI=4
+inherit cmake-utils git-2
 
-inherit cmake-utils eutils git-2
-
-DESCRIPTION="a music related metadata searchengine, both with commandline interface and C API"
-HOMEPAGE="https://github.com/sahib/glyr"
+DESCRIPTION="A music related metadata searchengine, both with commandline interface and C API"
+HOMEPAGE="http://github.com/sahib/glyr"
 EGIT_REPO_URI="git://github.com/sahib/glyr.git"
 
 LICENSE="GPL-3"
-KEYWORDS=""
 SLOT="0"
-IUSE="ruby"
+KEYWORDS=""
+IUSE=""
 
 RDEPEND="dev-db/sqlite:3
-	>=dev-libs/glib-2.16
+	>=dev-libs/glib-2.10
 	net-misc/curl"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
-src_configure() {
-	local mycmakeargs=(
-		$(cmake-utils_use ruby SWIG_RUBY )
-	)
+DOCS="AUTHORS README* TODO" # CHANGELOG is obsolete in favour of git history
 
-	cmake-utils_src_configure
-}
-
-src_install() {
-	DOCS="AUTHORS CHANGELOG README*"
-	cmake-utils_src_install
+src_prepare() {
+	sed -e 's:-Os -s::' -e 's:-ggdb3::' -i CMakeLists.txt || die
 }
