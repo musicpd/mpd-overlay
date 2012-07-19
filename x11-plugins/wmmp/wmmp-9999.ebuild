@@ -1,35 +1,33 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=4
-inherit git-2 autotools
+MY_P=${P/wm/WM}
+inherit autotools git-2
 
-DESCRIPTION="A Window Maker dock app client for Music Player Daemon (media-sound/mpd)"
-HOMEPAGE="http://mpd.wikia.com/index.php?title=Client:WMmp"
-EGIT_REPO_URI="git://git.musicpd.org/master/wmmp.git"
+DESCRIPTION="A Window Maker dock app client for Music Player Daemon(media-sound/mpd)"
+HOMEPAGE="http://mpd.wikia.com/wiki/Client:WMmp"
+EGIT_REPO_URI="git://git.musicpd.org/master/${PN}.git"
+EGIT_BOOTSTRAP="eautoreconf"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="x11-libs/libXext
+RDEPEND="x11-libs/libXext
 	x11-libs/libXpm"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/${P/wm/WM}"
+S=${WORKDIR}/${MY_P}
 
-src_prepare() {
-	eautoreconf
-}
+DOCS=( AUTHORS ChangeLog README THANKS TODO )
 
 src_configure() {
 	econf --with-default-port=6600
 }
 
-src_install () {
-	emake install DESTDIR="${D}"
-
-	dodoc AUTHORS ChangeLog README THANKS TODO
+src_compile() {
+	emake LDFLAGS="${LDFLAGS}"
 }
