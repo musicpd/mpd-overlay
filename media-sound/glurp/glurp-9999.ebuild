@@ -1,34 +1,35 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=4
-inherit git-2 autotools
-
-EGIT_REPO_URI="git://git.musicpd.org/master/glurp.git"
+inherit eutils autotools git-2
 
 DESCRIPTION="Glurp is a GTK2 based graphical client for the Music Player Daemon"
 HOMEPAGE="http://sourceforge.net/projects/glurp/"
-LICENSE="GPL-2"
+EGIT_REPO_URI="git://git.musicpd.org/master/glurp.git"
+EGIT_BOOTSTRAP="eautoreconf"
 
-KEYWORDS=""
+LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS=""
 IUSE="debug"
 
-DEPEND="media-libs/libmpd
-	>=x11-libs/gtk+-2.4.0
-	>=gnome-base/libglade-2.3.6"
-RDEPEND="${DEPEND}"
+RDEPEND="x11-libs/gtk+:2
+	>=dev-libs/glib-2.4:2
+	>=media-libs/libmpd-0.17"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
-src_prepare() {
-	eautoreconf
-}
+DOCS=( AUTHORS ChangeLog )
 
 src_configure() {
-	econf $(use_enable debug)
+	econf \
+		$(use_enable debug)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-	dodoc AUTHORS ChangeLog
+	default
+	doicon "${FILESDIR}"/${PN}.svg
+	make_desktop_entry glurp Glurp glurp AudioVideo
 }
