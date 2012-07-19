@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,7 +26,7 @@ RDEPEND=">=dev-python/pygtk-2.12
 	taglib? ( >=dev-python/tagpy-0.93 )
 	trayicon? ( dev-python/egg-python )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 DOCS="CHANGELOG README TODO TRANSLATORS"
 
