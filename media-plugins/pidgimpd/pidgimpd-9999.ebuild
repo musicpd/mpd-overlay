@@ -16,10 +16,10 @@ SLOT=0
 KEYWORDS=""
 IUSE=""
 
-DEPEND="dev-libs/glib:2
+RDEPEND="dev-libs/glib:2
 	media-libs/libmpd
 	net-im/pidgin"
-RDEPEND="${DEPEND}
+DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 DOCS=( AUTHORS README TODO )
