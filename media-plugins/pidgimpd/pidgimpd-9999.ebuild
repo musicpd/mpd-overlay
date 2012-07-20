@@ -4,29 +4,27 @@
 
 EAPI=4
 
-ESVN_REPO_URI="https://svn.ayeon.org/pidgimpd/trunk/"
-inherit subversion autotools
+inherit autotools git-2
 
 DESCRIPTION="A pidgin plugin for MPD"
 HOMEPAGE="http://ayeon.org/projects/pidgimpd/"
-KEYWORDS=""
+EGIT_REPO_URI="git://ayeon.org/pidgimpd.git"
+EGIT_BOOTSTRAP="eautoreconf"
+
 LICENSE="GPL-2"
 SLOT=0
-
-IUSE="debug"
-
-DEPEND="net-im/pidgin"
-RDEPEND="${DEPEND}"
+KEYWORDS=""
 IUSE=""
 
-src_prepare() {
-	eautoreconf
-}
+DEPEND="dev-libs/glib:2
+	media-libs/libmpd
+	net-im/pidgin"
+RDEPEND="${DEPEND}
+	virtual/pkgconfig"
 
-src_configure() {
-	econf $(use_enable debug) || 'Configure failed.'
-}
+DOCS=( AUTHORS README TODO )
 
 src_install() {
-	emake install DESTDIR="${D}" || die
+	default
+	find "${ED}" -name "*.la" -exec rm -rf {} + || die "failed to delete .la files"
 }
