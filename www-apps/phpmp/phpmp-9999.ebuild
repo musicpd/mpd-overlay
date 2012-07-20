@@ -1,8 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit webapp depend.php git-2
+EAPI="2"
+
+inherit webapp git-2
 
 MY_PN="phpMp"
 MY_P="${MY_PN}-${PV}"
@@ -15,15 +17,12 @@ LICENSE="GPL-2"
 KEYWORDS=""
 IUSE=""
 
+RDEPEND="virtual/httpd-php
+	|| ( <dev-lang/php-5.3[pcre] >=dev-lang/php-5.3 )"
+
 need_httpd_cgi
-need_php_httpd
 
 S="${WORKDIR}"/${MY_P}
-
-pkg_setup() {
-	webapp_pkg_setup
-	require_php_with_use pcre
-}
 
 src_install() {
 	webapp_src_preinst
