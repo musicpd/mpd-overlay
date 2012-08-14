@@ -20,7 +20,7 @@ RDEPEND="dev-db/sqlite:3
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
-DOCS="AUTHORS README* TODO" # CHANGELOG is obsolete in favour of git history
+DOCS="AUTHORS README*" # CHANGELOG is obsolete in favour of git history
 
 src_prepare() {
 	sed -e 's:-Os -s::' -e 's:-ggdb3::' -i CMakeLists.txt || die
