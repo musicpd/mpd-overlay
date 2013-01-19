@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://repo.or.cz/ncmpcpp.git"
 EGIT_BOOTSTRAP="eautoreconf"
 
 LICENSE="GPL-2"
-IUSE="bash-completion clock curl fftw iconv outputs taglib unicode visualizer"
+IUSE="bash-completion clock curl fftw outputs taglib unicode visualizer"
 SLOT="0"
 KEYWORDS=""
 
@@ -21,7 +21,6 @@ RDEPEND="
 	~media-libs/libmpdclient-9999
 	curl? ( net-misc/curl )
 	visualizer? ( fftw? ( sci-libs/fftw:3.0 ) )
-	iconv? ( virtual/libiconv )
 	taglib? ( media-libs/taglib )
 "
 DEPEND="
@@ -52,7 +51,6 @@ src_configure() {
 		$(use_enable unicode) \
 		$(use_enable visualizer) \
 		$(use_with curl) \
-		$(use_with iconv) \
 		$(use_with taglib)
 }
 
@@ -61,7 +59,7 @@ src_install() {
 
 	# use dodoc instead of upstream's doc install which does not compress
 	rm -rf "${D}"/usr/share/doc/${PN}
-	dodoc AUTHORS NEWS doc/config doc/keys
+	dodoc AUTHORS NEWS doc/config doc/bindings
 
 	if use bash-completion; then
 		newbashcomp doc/${PN}-completion.bash ${PN}
