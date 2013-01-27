@@ -1,9 +1,9 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/mpd-0.17.3.ebuild,v 1.2 2013/01/16 08:20:12 ssuominen Exp $
 
 EAPI=4
-inherit autotools eutils flag-o-matic git-2 linux-info multilib systemd user
+inherit eutils flag-o-matic linux-info multilib systemd user autotools git-2
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="aac +alsa ao audiofile bzip2 cdio +curl debug +fifo +ffmpeg flac
-fluidsynth +id3tag inotify ipv6 jack lame lastfmradio mms libsamplerate +mad
+fluidsynth gme +id3tag inotify ipv6 jack lame lastfmradio mms libsamplerate +mad
 mikmod modplug mpg123 musepack +network ogg openal oss pipe pulseaudio recorder
 sid sndfile soundcloud soup sqlite systemd tcpd twolame unicode vorbis wavpack
 wildmidi zeroconf zip"
@@ -37,11 +37,12 @@ RDEPEND="!<sys-cluster/mpich2-1.4_rc2
 	ao? ( media-libs/libao[alsa?,pulseaudio?] )
 	audiofile? ( media-libs/audiofile )
 	bzip2? ( app-arch/bzip2 )
-	cdio? ( dev-libs/libcdio[-minimal] )
+	cdio? ( || ( dev-libs/libcdio-paranoia <dev-libs/libcdio-0.90[-minimal] ) )
 	curl? ( net-misc/curl )
 	ffmpeg? ( virtual/ffmpeg )
 	flac? ( media-libs/flac[ogg?] )
 	fluidsynth? ( media-sound/fluidsynth )
+	gme? ( >=media-libs/game-music-emu-0.6.0_pre20120802 )
 	id3tag? ( media-libs/libid3tag )
 	jack? ( media-sound/jack-audio-connection-kit )
 	lame? ( network? ( media-sound/lame ) )
@@ -90,11 +91,17 @@ src_prepare() {
 	eautoreconf
 	cp -f doc/mpdconf.example doc/mpdconf.dist || die "cp failed"
 	epatch "${FILESDIR}"/${PN}conf.patch
+
+	if has_version dev-libs/libcdio-paranoia; then
+		sed -i \
+			-e 's:cdio/paranoia.h:cdio/paranoia/paranoia.h:' \
+			src/input/CdioParanoiaInputPlugin.cxx || die
+	fi
 }
 
 src_configure() {
 	local mpdconf="--disable-despotify --disable-documentation --disable-ffado
-		--disable-gme --disable-mvp --disable-roar --enable-largefile
+		--disable-mvp --disable-roar --enable-largefile
 		--enable-tcp --enable-un --docdir=${EPREFIX}/usr/share/doc/${PF}"
 
 	if use network; then
@@ -125,6 +132,7 @@ src_configure() {
 		$(use_enable fifo) \
 		$(use_enable flac) \
 		$(use_enable fluidsynth) \
+		$(use_enable gme) \
 		$(use_enable id3tag id3) \
 		$(use_enable inotify) \
 		$(use_enable ipv6) \
