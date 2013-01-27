@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libmpdclient/libmpdclient-2.7.ebuild,v 1.8 2012/07/29 16:02:32 armin76 Exp $
 
 EAPI=4
 inherit autotools git-2
@@ -17,6 +17,10 @@ IUSE="doc examples static-libs"
 
 RDEPEND=""
 DEPEND="doc? ( app-doc/doxygen )"
+
+src_prepare() {
+	sed -e "s:@top_srcdir@:.:" -i doc/doxygen.conf.in
+}
 
 src_configure() {
 	econf \
