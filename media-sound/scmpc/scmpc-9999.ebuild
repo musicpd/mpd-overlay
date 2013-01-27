@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,7 +22,7 @@ RDEPEND="dev-libs/glib:2
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
-DOCS=( AUTHORS NEWS README.md scmpc.conf.example )
+DOCS=( AUTHORS ChangeLog NEWS README.md scmpc.conf.example )
 
 src_install() {
 	default
