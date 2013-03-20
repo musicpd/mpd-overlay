@@ -7,7 +7,7 @@ EAPI="4"
 inherit autotools bash-completion-r1 eutils git-2
 
 DESCRIPTION="An ncurses mpd client, ncmpc clone with some new features, written in C++"
-HOMEPAGE="http://unkart.ovh.org/ncmpcpp"
+HOMEPAGE="http://ncmpcpp.rybczak.net/"
 EGIT_REPO_URI="git://repo.or.cz/ncmpcpp.git"
 EGIT_BOOTSTRAP="eautoreconf"
 
@@ -61,7 +61,7 @@ src_install() {
 
 	# use dodoc instead of upstream's doc install which does not compress
 	rm -rf "${D}"/usr/share/doc/${PN}
-	dodoc AUTHORS NEWS doc/config doc/keys
+	dodoc AUTHORS NEWS doc/config doc/bindings
 
 	if use bash-completion; then
 		newbashcomp doc/${PN}-completion.bash ${PN}
