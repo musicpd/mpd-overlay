@@ -29,6 +29,7 @@ RDEPEND="dev-db/sqlite:3
 DEPEND="${RDEPEND}
 	dev-lang/vala:0.14
 	>=dev-util/gob-2.0.17
+	app-text/gnome-doc-utils
 	virtual/pkgconfig
 	nls? ( dev-util/intltool
 		sys-devel/gettext )"
@@ -43,7 +44,6 @@ src_configure() {
 		--disable-appindicator \
 		--enable-mmkeys \
 		$(use_enable nls) \
-		$(use_enable unique) \
 		$(use_enable xspf libxspf) \
 		--with-extra-version="$(git rev-parse ${EGIT_BRANCH} | 	cut -c 1-8)"
 }
